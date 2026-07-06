@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVRFMZGHCX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZVRFMZGHCX');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- ブランド名 "Chem Trainer" を変えるときは、このファイルと apps_en.html の該当箇所を置換してください -->
+<title>Chem Trainer · Chemistry practice tools</title>
+<meta name="description" content="Free, browser-only chemistry practice tools. Start with Meimay, the IUPAC nomenclature trainer; spectroscopy and reaction-mechanism practice are coming soon.">
+<link rel="canonical" href="https://meimay-chem.com/apps_en.html">
+<link rel="alternate" hreflang="ja" href="https://meimay-chem.com/apps.html">
+<link rel="alternate" hreflang="en" href="https://meimay-chem.com/apps_en.html">
+<link rel="alternate" hreflang="x-default" href="https://meimay-chem.com/apps.html">
+<style>
+  :root{
+    --bg:#0B0F17; --surface:#121A27; --surface-2:#192335; --surface-3:#0E1521;
+    --border:rgba(150,170,200,0.13); --border-strong:rgba(150,170,200,0.30);
+    --text:#E7EEF8; --dim:#9CA9C0; --faint:#6C7A93;
+    --accent:#2DD4BF; --accent-2:#38BDF8; --warn:#FBBF24;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+    --r:16px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(45,212,191,0.08), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(56,189,248,0.07), transparent 55%),
+      var(--bg);
+    color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased;
+    line-height:1.6; min-height:100vh; overflow-x:hidden;
+  }
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image:radial-gradient(rgba(150,170,200,0.06) 1px, transparent 1px);
+    background-size:26px 26px; mask-image:linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.22));
+  }
+  .bgfx{position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;}
+  .bgfx svg{position:absolute; opacity:0.05;}
+  .bgfx .h1{top:10%; left:7%; width:130px;}
+  .bgfx .h2{top:64%; left:82%; width:170px;}
+  .bgfx .h3{top:34%; left:72%; width:80px;}
+
+  .wrap{position:relative; z-index:1; max-width:920px; margin:0 auto; padding:26px 18px 70px;}
+
+  .top{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:6px;}
+  .brand{display:flex; align-items:center; gap:13px; min-width:0;}
+  .brand .mark{width:42px; height:42px; flex:0 0 auto;}
+  .brand-title{font-family:var(--mono); font-weight:700; font-size:1.18rem; letter-spacing:0.12em; text-transform:uppercase;}
+  .brand-title b{color:var(--accent); font-weight:700;}
+  .brand-sub{font-family:var(--mono); font-size:0.66rem; letter-spacing:0.14em; color:var(--faint); text-transform:uppercase; margin-top:3px;}
+
+  .langtoggle{display:inline-flex; background:var(--surface-3); border:1px solid var(--border); border-radius:9px; padding:3px;}
+  .langtoggle a{appearance:none; text-decoration:none; color:var(--dim); font-family:var(--mono); font-size:0.72rem; font-weight:700; padding:5px 10px; border-radius:6px;}
+  .langtoggle a.on{background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#062b27;}
+
+  .lead{color:var(--dim); font-size:0.92rem; max-width:60ch; margin:14px 0 26px;}
+
+  .grid{display:grid; gap:16px; grid-template-columns:1fr;}
+  @media (min-width:680px){ .grid{grid-template-columns:1fr 1fr;} }
+  @media (min-width:1040px){ .grid{grid-template-columns:1fr 1fr 1fr;} }
+
+  .appcard{position:relative; display:flex; flex-direction:column; gap:12px;
+    background:linear-gradient(180deg,var(--surface),var(--surface-3));
+    border:1px solid var(--border); border-radius:var(--r); padding:20px 20px 18px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.28); transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;}
+  .appcard.live:hover{transform:translateY(-3px); border-color:var(--border-strong); box-shadow:0 14px 40px rgba(0,0,0,0.36);}
+  .appcard.soon{opacity:0.72;}
+  .appcard .ico{width:44px; height:44px;}
+  .appcard h2{font-family:var(--mono); font-size:1.06rem; letter-spacing:0.02em; margin:2px 0 0; color:var(--text);}
+  .appcard .tag{font-family:var(--mono); font-size:0.66rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--faint);}
+  .appcard p{font-size:0.86rem; color:var(--dim); margin:0; line-height:1.65; flex:1;}
+  .badge{position:absolute; top:16px; right:16px; font-family:var(--mono); font-size:0.62rem; font-weight:700; letter-spacing:0.08em;
+    padding:4px 9px; border-radius:99px; border:1px solid var(--border-strong); color:var(--warn);
+    background:color-mix(in oklab,var(--warn) 12%, transparent);}
+  .go{display:inline-flex; align-items:center; justify-content:center; gap:7px; align-self:flex-start;
+    font-family:var(--mono); font-size:0.82rem; font-weight:700; text-decoration:none; padding:10px 16px; min-height:44px;
+    border-radius:11px; border:0; cursor:pointer;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#062b27;}
+  .go:hover{filter:brightness(1.06);}
+  .go.disabled{background:var(--surface-2); color:var(--faint); border:1px solid var(--border); cursor:not-allowed; pointer-events:none;}
+
+  .ftr{margin-top:34px; padding-top:16px; border-top:1px solid var(--border);
+    font-size:0.74rem; color:var(--faint); line-height:1.8;}
+  .ftr a{color:var(--dim); text-decoration:none; border-bottom:1px dotted var(--faint);}
+  .ftr a:hover{color:var(--accent); border-color:var(--accent);}
+
+  @media (max-width:680px){
+    .wrap{padding:20px 14px 60px;}
+    .bgfx{display:none;}
+    .brand-title{font-size:1.02rem; letter-spacing:0.10em;}
+    .top{gap:10px;}
+  }
+</style>
+</head>
+<body>
+  <div class="bgfx" aria-hidden="true">
+    <svg class="h1" viewBox="0 0 40 40"><polygon points="20,3 34,11.5 34,28.5 20,37 6,28.5 6,11.5" fill="none" stroke="#2DD4BF" stroke-width="1.2"/></svg>
+    <svg class="h2" viewBox="0 0 40 40"><polygon points="20,3 34,11.5 34,28.5 20,37 6,28.5 6,11.5" fill="none" stroke="#38BDF8" stroke-width="1.2"/></svg>
+    <svg class="h3" viewBox="0 0 40 40"><polygon points="20,3 34,11.5 34,28.5 20,37 6,28.5 6,11.5" fill="none" stroke="#C792EA" stroke-width="1.2"/></svg>
+  </div>
+
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="20,4 33,12 33,28 20,36 7,28 7,12" stroke="#2DD4BF" stroke-width="1.6" fill="rgba(45,212,191,0.06)"/>
+          <circle cx="20" cy="20" r="7.5" stroke="#38BDF8" stroke-width="1.4" fill="none"/>
+          <circle cx="20" cy="20" r="1.8" fill="#2DD4BF"/>
+        </svg>
+        <div>
+          <div class="brand-title">Chem <b>·</b> Trainer</div>
+          <div class="brand-sub">Chemistry practice tools</div>
+        </div>
+      </div>
+      <div class="langtoggle" role="group" aria-label="Language">
+        <a href="apps.html">JA</a>
+        <a class="on" href="apps_en.html">EN</a>
+      </div>
+    </div>
+
+    <p class="lead">A set of free, browser-only chemistry practice tools. No install, no sign-up; your progress is saved on your own device. Pick whichever you want to start with.</p>
+
+    <div class="grid">
+
+      <!-- Meimay（稼働中） -->
+      <article class="appcard live">
+        <svg class="ico" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="20,4 33,12 33,28 20,36 7,28 7,12" stroke="#2DD4BF" stroke-width="1.6" fill="rgba(45,212,191,0.06)"/>
+          <circle cx="20" cy="20" r="7.5" stroke="#38BDF8" stroke-width="1.4" fill="none"/>
+          <circle cx="20" cy="20" r="1.8" fill="#2DD4BF"/>
+        </svg>
+        <div class="tag">IUPAC naming</div>
+        <h2>Meimay</h2>
+        <p>Practise naming organic compounds with IUPAC nomenclature: flashcards, type-in and step-by-step quizzes, a draw-the-structure reverse mode, and R/S assignment. Both current and pre-1993 locant styles are accepted.</p>
+        <a class="go" href="en.html">Start →</a>
+      </article>
+
+      <!-- スペクトル演習（準備中） -->
+      <article class="appcard soon">
+        <span class="badge">Coming soon</span>
+        <svg class="ico" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 28 L12 28 L15 14 L20 32 L25 10 L28 24 L35 24" stroke="#38BDF8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="tag">Spectroscopy</div>
+        <h2>Spectra practice</h2>
+        <p>Read IR, NMR and MS spectra to deduce structures. This one is on the way — check back soon.</p>
+        <span class="go disabled">Coming soon</span>
+      </article>
+
+      <!-- 反応機構演習（準備中） -->
+      <article class="appcard soon">
+        <span class="badge">Coming soon</span>
+        <svg class="ico" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="11" cy="20" r="5" stroke="#C792EA" stroke-width="1.6" fill="none"/>
+          <path d="M17 20 L27 20" stroke="#C792EA" stroke-width="1.6"/>
+          <path d="M23 16 L27 20 L23 24" stroke="#C792EA" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="32" cy="20" r="5" stroke="#FBBF24" stroke-width="1.6" fill="none"/>
+        </svg>
+        <div class="tag">Mechanisms</div>
+        <h2>Mechanism practice</h2>
+        <p>Follow the curly arrows and build the intermediate at each step. This one is on the way — check back soon.</p>
+        <span class="go disabled">Coming soon</span>
+      </article>
+
+    </div>
+
+    <div class="ftr">
+      Built by Shintaro Shimizu &amp; Jumpei Toshimori · Contact: <a href="mailto:meimei440126@gmail.com">meimei440126@gmail.com</a><br>
+      Each tool is an independent, non-commercial educational project.
+    </div>
+  </div>
+</body>
+</html>

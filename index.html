@@ -12,6 +12,9 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="alternate" hreflang="ja" href="https://meimay-chem.com/">
+<link rel="alternate" hreflang="en" href="https://meimay-chem.com/en.html">
+<link rel="alternate" hreflang="x-default" href="https://meimay-chem.com/">
 <title>Meimay · IUPAC命名トレーナー</title>
 <style>
   :root{
@@ -531,6 +534,87 @@
     font-family:var(--sans); font-size:0.76rem; border-bottom:1px dotted var(--faint);}
   .ftr-legal button:hover{color:var(--accent); border-color:var(--accent);}
 
+
+  /* ===== 新旧IUPAC併記 / 入力補助チップ / アプリ導線 ===== */
+  .oldnm{font-family:var(--mono); font-size:0.62em; font-weight:600; color:var(--faint); white-space:nowrap; margin-left:2px;}
+  .name .oldnm{display:inline-block; margin-top:2px;}
+  .apps-link{display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:0.74rem; font-weight:700; letter-spacing:0.04em; color:var(--dim); text-decoration:none; background:var(--surface-3); border:1px solid var(--border); border-radius:9px; padding:6px 11px; transition:all .18s ease;}
+  .apps-link:hover{color:var(--text); border-color:var(--border-strong); background:var(--surface-2);}
+  .typechips{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;}
+  .tchip{appearance:none; min-width:38px; padding:7px 10px; border-radius:9px; border:1px solid var(--border); background:var(--surface-3); color:var(--dim); font-family:var(--mono); font-size:0.9rem; font-weight:700; cursor:pointer; transition:all .15s ease;}
+  .tchip:hover{color:var(--text); border-color:var(--border-strong); background:var(--surface-2);}
+  .tchip:active{transform:translateY(1px);}
+  @media (hover:none) and (pointer:coarse){ .tchip{min-height:40px;} }
+  @media (min-width:900px){ .typechips{display:none;} }  /* デスクトップでは補助チップ不要 */
+
+  /* ===== スマホ大幅対応 (<=680px) ===== */
+  @media (max-width:680px){
+    .app{padding:14px 12px 68px;}
+    .bgfx{display:none;}                     /* 背景ヘキサゴンを止めてスクロール負荷を軽減 */
+    body::before{background-size:22px 22px;}
+
+    /* ヘッダー: ブランドとHUDを縦積み、HUDは全幅で見やすく */
+    .hdr{flex-direction:column; align-items:stretch; gap:10px; margin-bottom:12px;}
+    .brand{gap:10px;}
+    .brand-title{font-size:0.92rem; letter-spacing:0.10em;}
+    .brand-sub{font-size:0.6rem;}
+    .hud{justify-content:space-between; padding:8px 12px; gap:8px;}
+    .hud-text{font-size:0.66rem; line-height:1.5;}
+
+    /* アプリ導線＋言語トグルの行 */
+    .acctbar{gap:8px; margin-bottom:10px;}
+    .apps-link{font-size:0.72rem; padding:7px 12px;}
+
+    /* タブ: 折返しで縦に伸びるのを止め、横スクロールのストリップに */
+    .tabs{flex-wrap:nowrap; overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch;
+          scroll-snap-type:x proximity; gap:5px; padding:5px; margin-bottom:12px;
+          scrollbar-width:none;}
+    .tabs::-webkit-scrollbar{display:none;}
+    .tabs button{flex:0 0 auto; min-width:auto; white-space:nowrap; scroll-snap-align:start;
+                 font-size:0.8rem; padding:9px 13px; min-height:40px;}
+    .tab-sep{display:none;}
+
+    /* コントロール: セグメントは全幅で折返し、タップ標的を拡大 */
+    .controls{gap:7px; margin-bottom:12px;}
+    .seg{margin-left:0; width:100%; flex-wrap:wrap;}
+    .seg button{flex:1 1 auto; min-height:38px; font-size:0.72rem; padding:8px 10px;}
+    .ctl{min-height:38px;}
+
+    /* 構造式の描画領域: 画面幅に追従、はみ出し防止 */
+    .card{padding:14px;}
+    .mol{height:clamp(200px,52vw,270px);}
+    .mol svg{max-width:100%; height:auto;}
+    .drawprev,.drawans{height:clamp(170px,46vw,210px);}
+    .name{font-size:clamp(1.15rem,6.2vw,1.6rem);}
+    .prompt.revq{font-size:1.05rem;}
+
+    /* 記述入力: iOSの自動ズーム防止に16px、タップ標的拡大 */
+    .typewrap{gap:7px;}
+    .typewrap input{font-size:16px; padding:14px 14px;}
+    .typewrap button{padding:0 16px; min-height:48px;}
+
+    /* 採点ボタン等を親指が届く大きさに */
+    .grade button{font-size:0.82rem; padding:13px 6px; min-height:48px;}
+    .opt{min-height:44px;}
+    .optmol{min-height:44px;}
+
+    /* 規則ダッシュボードのラベル幅を圧縮 */
+    .rdlab{flex-basis:6.5em;}
+
+    /* フッター操作を全幅ボタンに */
+    .ftr-btns{gap:7px;}
+    .ftr-btns .mini, .ftr-btns button{flex:1 1 44%; min-height:42px; text-align:center;}
+
+    /* 立体R/S等のグリッドを詰める */
+    .exs{grid-template-columns:repeat(3,1fr); gap:7px;}
+  }
+
+  @media (max-width:400px){
+    .exs{grid-template-columns:repeat(2,1fr);}
+    .brand-title{font-size:0.86rem;}
+    .hud-text{font-size:0.62rem;}
+  }
+
 </style>
 </head>
 <body>
@@ -578,7 +662,12 @@
     </header>
 
     <div class="acctbar" id="acctbar">
+      <a class="apps-link" id="appsLink" href="apps.html" data-i18n="apps_link">⊞ アプリを選ぶ</a>
       <div class="acctbtns">
+        <div class="langtoggle" id="langToggle" role="group" aria-label="Language">
+          <button data-lang="ja">JA</button>
+          <button data-lang="en">EN</button>
+        </div>
       </div>
     </div>
 
@@ -1669,6 +1758,8 @@ const I18N = {
     footer_privacy:'Privacy Policy', footer_disclaimer:'Disclaimer',
   }
 };
+I18N.ja.apps_link = '⊞ アプリを選ぶ';
+I18N.en.apps_link = '⊞ Choose an app';
 function t(key){ const d = I18N[LANG] || I18N.ja; return (key in d) ? d[key] : (I18N.ja[key] || key); }
 function applyStaticI18n(){
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1973,6 +2064,15 @@ function fmtName(nm, sfx){
   const i = nm.lastIndexOf(sfx);
   if(i < 0) return esc(nm);
   return esc(nm.slice(0,i)) + '<span class="sfx">' + esc(nm.slice(i, i+sfx.length)) + '</span>' + esc(nm.slice(i+sfx.length));
+}
+/* 新旧IUPAC: 旧式(1979)が新式(2013)と異なる場合のみ併記する（解答表示用） */
+function oldNote(d){
+  var nm = d && d.nm ? d.nm : '';
+  var o = oldName(nm);
+  if(!o || o === nm) return '';
+  return (LANG === 'en')
+    ? ' <span class="oldnm">(old: ' + esc(o) + ')</span>'
+    : '<span class="oldnm">（旧: ' + esc(o) + '）</span>';
 }
 function cmText(d){
   if(LANG === 'en'){
@@ -2327,7 +2427,7 @@ function revealFlash(){
   ans.hidden = false;
   ans.classList.add('reveal-anim');
   ans.innerHTML =
-    '<div class="name" style="--c:var(' + GROUPS[d.g].cvar + ')">' + fmtName(curName(d), d.sfx) + '</div>' +
+    '<div class="name" style="--c:var(' + GROUPS[d.g].cvar + ')">' + fmtName(curName(d), d.sfx) + oldNote(d) + '</div>' +
     '<div class="meta">' +
       (cmText(d) ? '<span><b>慣用名</b>' + cmText(d) + '</span>' : '') +
       '<span><b>分類</b>' + GROUPS[d.g].jp + '</span>' +
@@ -2393,7 +2493,8 @@ function renderQuiz(){
   const head = cardTop + molBoxHTML('molInner');
   mainEl.innerHTML = head +
     '<div class="prompt">' + esc(t('prompt_type')) + '</div>' +
-    '<div class="typewrap"><input id="typeIn" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="' + esc(t('type_ph')) + '"><button id="checkBtn">' + esc(t('judge')) + '</button></div>' +
+    '<div class="typewrap"><input id="typeIn" type="text" inputmode="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" placeholder="' + esc(t('type_ph')) + '"><button id="checkBtn">' + esc(t('judge')) + '</button></div>' +
+    '<div class="typechips" id="typeChips" aria-hidden="true">' + ['-','(',')',',','1','2','3','4','5'].map(function(c){return '<button type="button" class="tchip" data-ins="'+c+'">'+c+'</button>';}).join('') + '</div>' +
     '<div class="typehint">' + esc(t('type_hint')) + '</div>' +
     '<div class="feedback" id="fb" hidden></div>' +
     '<button class="btn next" id="nextBtn" hidden>' + esc(t('next')) + '</button></div>';
@@ -2411,7 +2512,7 @@ function showFeedback(ok, d){
   fb.style.setProperty('--c', 'var(' + GROUPS[d.g].cvar + ')');
   fb.innerHTML =
     '<div class="head">' + (ok ? checkSVG() : crossSVG()) + (ok ? esc(t('correct')) : esc(t('incorrect'))) + '</div>' +
-    '<div class="ans">' + fmtName(d.nm, d.sfx) + (cmText(d) ? '　<span class="cmn">' + cmText(d) + '</span>' : '') + '</div>' +
+    '<div class="ans">' + fmtName(d.nm, d.sfx) + oldNote(d) + (cmText(d) ? '　<span class="cmn">' + cmText(d) + '</span>' : '') + '</div>' +
     '<div class="steps-h">' + esc(t('think')) + (hasEnSteps(d) ? ' <span class="cmn" style="font-weight:400">(walkthrough shown in Japanese)</span>' : '') + '</div>' + stepsHTML(d);
 }
 function checkType(d){
@@ -2653,7 +2754,7 @@ function renderDraw(){
     '<span class="tag" style="--c:var('+GROUPS[d.g].cvar+')">'+esc(gname(d.g))+'</span>'+
     '<span class="muted">'+esc(t('style_draw'))+'</span></div>';
   mainEl.innerHTML = cardTop +
-    '<div class="prompt revq">'+ fmtName(curName(d), d.sfx) + (cmText(d)?' <span class="cmn">'+cmText(d)+'</span>':'') +'</div>'+
+    '<div class="prompt revq">'+ fmtName(curName(d), d.sfx) + oldNote(d) + (cmText(d)?' <span class="cmn">'+cmText(d)+'</span>':'') +'</div>'+
     '<div class="typehint">'+esc(t('draw_hint'))+'</div>'+
     '<div class="md-tools">'+
       '<div class="md-pal">'+palHTML+'</div>'+
@@ -3437,7 +3538,7 @@ function rsCheck(){
   fb.style.setProperty('--c', 'var(' + GROUPS[d.g].cvar + ')');
   fb.innerHTML =
     '<div class="head">' + (allOk ? checkSVG() : crossSVG()) + (allOk ? esc(t('rs_allok')) : esc(t('incorrect'))) + '</div>' +
-    '<div class="ans">' + fmtName(d.nm, d.sfx) + (cmText(d) ? '　<span class="cmn">' + cmText(d) + '</span>' : '') + '</div>' +
+    '<div class="ans">' + fmtName(d.nm, d.sfx) + oldNote(d) + (cmText(d) ? '　<span class="cmn">' + cmText(d) + '</span>' : '') + '</div>' +
     '<div class="steps-h">' + esc(t('think')) + (hasEnSteps(d) ? ' <span class="cmn" style="font-weight:400">(walkthrough shown in Japanese)</span>' : '') + '</div>' + stepsHTML(d);
   if(allOk){ celebrate($('rsCheck'), d.g); cardFlash('ok'); removeWrong(d.id); }
   else { breakStreak(); Sound.wrong(); cardFlash('no'); addWrong(d.id); }
@@ -3472,7 +3573,11 @@ async function setLang(lang){
 function initLangToggle(){
   const lt = document.getElementById('langToggle');
   if(!lt) return;
-  lt.querySelectorAll('button').forEach(b => b.onclick = () => setLang(b.dataset.lang));
+  lt.querySelectorAll('button').forEach(b => b.onclick = () => {
+    const target = b.dataset.lang;
+    if(target === LANG) return;
+    location.href = (target === 'en') ? 'en.html' : './';
+  });
 }
 
 
@@ -3517,16 +3622,6 @@ function initLangToggle(){
      ? (Sound.bgmOn?'BGM: On':'BGM: Off') : (Sound.bgmOn?'BGM: オン':'BGM: オフ'); }
   function mount(){
     var host = soundBtn && soundBtn.parentNode; if(!host) return;
-    if(!document.getElementById('iupacBtn')){
-      var ib=makeBtn('iupacBtn', labelIupac());
-      ib.onclick=function(){
-        IUPAC_STYLE = (IUPAC_STYLE==='old')?'new':'old';
-        ib.textContent=labelIupac();
-        try{ saveSettings(); }catch(e){}
-        try{ start(); }catch(e){}
-      };
-      host.insertBefore(ib, soundBtn.nextSibling);
-    }
     if(!document.getElementById('bgmBtn')){
       var bb=makeBtn('bgmBtn', labelBgm());
       bb.onclick=function(){ var v=Sound.bgmToggle(); bb.textContent=labelBgm(); };
@@ -3539,6 +3634,22 @@ function initLangToggle(){
   var _mo = new MutationObserver(function(){ mount(); });
   try{ _mo.observe(document.body, {childList:true, subtree:true}); }catch(e){}
 })();
+
+/* ---- typing helper chips (mobile): insert char at cursor, typing still works fully ---- */
+document.addEventListener('click', function(e){
+  var b = e.target && e.target.closest ? e.target.closest('.tchip') : null;
+  if(!b) return;
+  var inp = document.getElementById('typeIn');
+  if(!inp || inp.disabled) return;
+  var ins = b.getAttribute('data-ins') || '';
+  var st = (inp.selectionStart==null) ? inp.value.length : inp.selectionStart;
+  var en = (inp.selectionEnd==null) ? inp.value.length : inp.selectionEnd;
+  inp.value = inp.value.slice(0, st) + ins + inp.value.slice(en);
+  var pos = st + ins.length;
+  inp.focus();
+  try{ inp.setSelectionRange(pos, pos); }catch(_){}
+  try{ Sound.key(); }catch(_){}
+}, true);
 
 /* ---- key-type sound on the answer input ---- */
 document.addEventListener('keydown', function(e){
