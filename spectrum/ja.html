@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8449288336764592"
      crossorigin="anonymous"></script>
@@ -14,9 +14,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0B0F17">
-<title>MEIMAY Spectra · IR/NMR/MS trainer</title>
-<meta name="description" content="A free, browser-only trainer for reading IR, NMR and MS spectra. Learn how characteristic bands and chemical shifts behave, then practise structure elucidation with drills and full analysis. Offline, no sign-up.">
-<link rel="canonical" href="https://meimay-chem.com/spectrum/">
+<title>MEIMAY 分光 · スペクトル解析トレーナー</title>
+<meta name="description" content="ブラウザだけで動く無料の IR・NMR・MS スペクトル解析トレーナー。特性吸収と化学シフトの読み方を学び，個別特訓と総合解析で構造決定を練習。オフライン完結・登録不要。">
+<link rel="canonical" href="https://meimay-chem.com/spectrum/ja.html">
 <link rel="alternate" hreflang="ja" href="https://meimay-chem.com/spectrum/ja.html">
 <link rel="alternate" hreflang="en" href="https://meimay-chem.com/spectrum/">
 <link rel="alternate" hreflang="x-default" href="https://meimay-chem.com/spectrum/">
@@ -364,8 +364,8 @@ header .brand{flex-direction:row;align-items:center;gap:12px}
 
   <header>
     <div class="brand">
-      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="20,4 33,12 33,28 20,36 7,28 7,12" stroke="#2DD4BF" stroke-width="1.6" fill="rgba(45,212,191,0.06)"/><circle cx="20" cy="20" r="7.5" stroke="#38BDF8" stroke-width="1.4" fill="none"/><circle cx="20" cy="20" r="1.8" fill="#2DD4BF"/></svg><div class="brandtext"><h1>MEIMAY Spectra</h1>
-      <span class="sub">Spectroscopy trainer · IR / ¹H-NMR / ¹³C-NMR / MS · structure elucidation</span></div></div>
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="20,4 33,12 33,28 20,36 7,28 7,12" stroke="#2DD4BF" stroke-width="1.6" fill="rgba(45,212,191,0.06)"/><circle cx="20" cy="20" r="7.5" stroke="#38BDF8" stroke-width="1.4" fill="none"/><circle cx="20" cy="20" r="1.8" fill="#2DD4BF"/></svg><div class="brandtext"><h1>MEIMAY 分光</h1>
+      <span class="sub">スペクトル解析トレーナー · IR / ¹H-NMR / ¹³C-NMR / MS · 構造決定</span></div></div>
     <div class="hud">
       <div class="ring">
         <svg width="56" height="56" viewBox="0 0 56 56">
@@ -376,189 +376,189 @@ header .brand{flex-direction:row;align-items:center;gap:12px}
         <span class="num" id="ringNum">0%</span>
       </div>
       <div class="hud-stats">
-        <div class="hud-stat"><span class="lab">Solved</span><span class="val" id="hudSolved"><b>0</b>/0</span></div>
-        <div class="hud-stat"><span class="lab">Streak</span><span class="val" id="hudStreak"><b>0</b></span></div>
-        <div class="hud-stat"><span class="lab">Accuracy</span><span class="val" id="hudAcc"><b>0%</b></span></div>
+        <div class="hud-stat"><span class="lab">解明</span><span class="val" id="hudSolved"><b>0</b>/0</span></div>
+        <div class="hud-stat"><span class="lab">連続</span><span class="val" id="hudStreak"><b>0</b></span></div>
+        <div class="hud-stat"><span class="lab">正答率</span><span class="val" id="hudAcc"><b>0%</b></span></div>
       </div>
     </div>
   </header>
 
   <div class="acctbar">
-    <a class="apps-link" href="../">⊞ Choose an app</a>
+    <a class="apps-link" href="../ja.html">⊞ アプリを選ぶ</a>
     <div class="langtoggle" role="group" aria-label="Language">
-      <a class="langswap" href="ja.html" aria-label="日本語に切り替え / Switch to Japanese"><span class="lt on">EN</span><span class="lt">JA</span></a>
+      <a class="langswap" href="index.html" aria-label="Switch to English / 英語に切り替え"><span class="lt">EN</span><span class="lt on">JA</span></a>
     </div>
   </div>
 
   <nav class="tabs" id="tabs">
-    <button data-mode="about">About</button>
-    <button data-mode="guide">Guide</button>
-    <button data-mode="nomen">Reference</button>
+    <button data-mode="about">このアプリ</button>
+    <button data-mode="guide">使い方</button>
+    <button data-mode="nomen">分光法解説</button>
     <span class="tab-sep" aria-hidden="true"></span>
-    <button data-mode="learn" class="active">Learn</button>
-    <button data-mode="train">Drill</button>
-    <button data-mode="analyze">Solve</button>
+    <button data-mode="learn" class="active">学ぶ</button>
+    <button data-mode="train">個別特訓</button>
+    <button data-mode="analyze">総合解析</button>
   </nav>
 
   <div id="controls"></div>
   <div id="main"></div>
 
-  <!-- ===== Static content pages (crawlable for review & search) ===== -->
+  <!-- ===== 静的コンテンツページ（審査・検索向けのクロール可能な本文） ===== -->
   <div class="pages" id="pages" hidden>
 
-    <!-- About -->
+    <!-- このアプリ -->
     <section class="pg" id="pg-about"><article>
       <div class="kicker">About MEIMAY Spectra</div>
-      <h1>A free IR, NMR &amp; MS spectroscopy trainer</h1>
-      <p>MEIMAY Spectra is a free, browser-based tool for practising structure elucidation from infrared (IR), nuclear magnetic resonance (¹H / ¹³C-NMR) and mass (MS) spectra. It is aimed at undergraduates studying organic chemistry and instrumental analysis, and at anyone sharpening their reflexes for structure problems before exams. It shares its design philosophy with its sibling app, MEIMAY Naming (an IUPAC nomenclature trainer).</p>
-      <p>Everything runs inside your browser. No account is required, and nothing you do is sent to a server. Your progress, streaks and accuracy are stored only in your device's browser storage, so your history is still there the next time you open the app.</p>
+      <h1>無料の IR・NMR・MS スペクトル解析トレーナー</h1>
+      <p>MEIMAY 分光は，赤外分光（IR）・核磁気共鳴（¹H / ¹³C-NMR）・質量分析（MS）のスペクトルを読み，未知化合物の構造を推定する練習をブラウザ上でおこなえる，無料の学習ツールです。大学で有機化学・機器分析を学ぶ学部生，大学院入試や定期試験に向けて構造決定の反射を鍛えたい人に向けています。姉妹アプリ「MEIMAY 命名」（IUPAC 命名トレーナー）と同じ思想でつくられています。</p>
+      <p>すべての処理はブラウザ内で完結します。アカウント登録は不要で，学習内容をサーバに送ることもありません。進捗・連続正解・正答率は，お使いの端末のブラウザストレージにローカル保存されます。タブを閉じても，次に開いたときに履歴はそのまま残ります。</p>
 
-      <h2>What you can practise</h2>
+      <h2>練習できること</h2>
       <ul>
-        <li><b>Learn to read spectra</b> — review each method's characteristic bands, chemical shifts and fragmentations, each with a spectrum figure.</li>
-        <li><b>Drills</b> — answer "which functional group is this band?" or "what does this splitting mean?" by reflex.</li>
-        <li><b>Full analysis</b> — read the MS, IR, ¹H and ¹³C spectra together and rebuild the structure of an unknown from fragments.</li>
+        <li><b>スペクトルの読み方を学ぶ</b>— 各手法の特性吸収・化学シフト・開裂を，スペクトル図つきで確認する。</li>
+        <li><b>個別特訓</b>— 「この吸収は何の官能基か」「この分裂は何を意味するか」を反射で答える基礎トレーニング。</li>
+        <li><b>総合解析</b>— MS・IR・¹H・¹³C の全スペクトルを読み，フラグメントを組み立てて未知試料の構造を再構築する。</li>
       </ul>
 
-      <h2>Chemical basis</h2>
-      <p>The characteristic bands, chemical shifts and fragmentations follow standard instrumental-analysis references (such as R. M. Silverstein et al., <i>Spectrometric Identification of Organic Compounds</i>). The spectra shown are schematic figures generated from each compound's peak data, not exact reproductions of measured spectra. Shifts and assignments are representative values; real values vary with solvent, concentration and instrument. Structures are drawn from SMILES strings with the open-source SmilesDrawer library (MIT licence).</p>
+      <h2>化学的な典拠</h2>
+      <p>特性吸収・化学シフト・開裂の記述は，機器分析の標準的な教科書（R. M. Silverstein ほか『有機化合物のスペクトルによる同定法—MS, IR, NMR の併用』など）の代表値に基づいています。表示されるスペクトルは各化合物のピークデータから模式的に生成した図であり，実測スペクトルの精密な再現ではありません。化学シフトや帰属は代表値であり，溶媒・濃度・装置により実測値は変動します。構造は SMILES 文字列からオープンソースの SmilesDrawer ライブラリ（MIT ライセンス）で描画しています。</p>
 
-      <h2>Who made it</h2>
-      <p>MEIMAY is built by Shintaro Shimizu and Jumpei Toshimori — the learning tools we wished existed. It is an independent, non-commercial educational project.</p>
+      <h2>制作</h2>
+      <p>MEIMAY は，清水 慎太朗・歳森 淳平が「あればいいのに」と思った学習ツールを自作したものです。独立した非営利の教育プロジェクトです。</p>
 
-      <h2>Contact</h2>
-      <p>Questions, corrections and suggestions are welcome. Email: <a href="mailto:meimei440126@gmail.com">meimei440126@gmail.com</a> · X (Twitter): <a href="https://x.com/Meimaytipg" target="_blank" rel="noopener">@Meimaytipg</a></p>
-      <p class="note">For data handling and the limitations of the tool, see the Privacy Policy and Disclaimer in the footer.</p>
+      <h2>お問い合わせ</h2>
+      <p>質問・誤りの指摘・改善提案を歓迎します。メール: <a href="mailto:meimei440126@gmail.com">meimei440126@gmail.com</a>／X（Twitter）: <a href="https://x.com/Meimaytipg" target="_blank" rel="noopener">@Meimaytipg</a></p>
+      <p class="note">データの取り扱いとツールの限界については，フッターのプライバシーポリシー・免責事項をご確認ください。</p>
     </article></section>
 
-    <!-- Guide -->
+    <!-- 使い方 -->
     <section class="pg" id="pg-guide"><article>
       <div class="kicker">How to use</div>
-      <h1>Getting the most out of MEIMAY Spectra</h1>
-      <p>MEIMAY Spectra is organised into modes you switch with the tabs at the top. A good flow is: get the big picture in <b>Reference</b>, review each method in <b>Learn</b>, warm up in <b>Drill</b>, then test yourself in <b>Solve</b>. Here is what each mode does.</p>
+      <h1>MEIMAY 分光 を使いこなす</h1>
+      <p>MEIMAY 分光は上部のタブで切り替えるいくつかのモードで構成されています。おすすめの流れは，まず「分光法解説」で全体像をつかみ，「学ぶ」で各手法の読み方を確認し，「個別特訓」で慣らし，「総合解析」で試す，という順です。各モードの役割は次のとおりです。</p>
 
-      <h2>Learn</h2>
-      <p>A reference / warm-up mode. Pick a category (MS, IR, ¹H-NMR, ¹³C-NMR) and review that method's key points — characteristic bands, chemical shifts and fragmentation — each illustrated with a spectrum. Read this before starting the exercises.</p>
+      <h2>学ぶ</h2>
+      <p>参照・ウォームアップ用のモードです。MS・IR・¹H-NMR・¹³C-NMR のカテゴリを選ぶと，その手法の要点（特性吸収・化学シフト・開裂）を，実際のスペクトル図つきでまとめて確認できます。演習に入る前に読む場所です。</p>
 
-      <h2>Drill</h2>
-      <p>Basic training to build reflexes. Answer one-shot questions such as "what is the broad band at 3340?" or "what does a doublet + septet indicate?", each shown with its spectrum. When you answer, the figure's annotation switches to the assignment to help you check. The ring in the header shows how many samples you have solved, your current streak and your accuracy.</p>
+      <h2>個別特訓</h2>
+      <p>反射で覚える基礎トレーニングです。「3340 の幅広い吸収は何か」「二重項＋七重項は何を示すか」といった一問一答を，スペクトル図とともに解きます。答えると図の注釈が帰属つきに切り替わり，答え合わせを助けます。ヘッダーのリングは，解いた試料の数・現在の連続正解・正答率を表示します。</p>
 
-      <h2>Solve</h2>
-      <p>The test mode. For an unknown sample, compare the MS, IR, ¹H and ¹³C spectra in tabs, then combine the parts (CH₃, C=O, OH, Ph, Cl…) to rebuild the structure. "Hint" shows the molecular formula, and confirming reveals the reasoning step by step. As with naming, practising both reading and building makes both faster.</p>
+      <h2>総合解析</h2>
+      <p>実力確認モードです。未知試料について MS・IR・¹H・¹³C の4種のスペクトルをタブで見比べ，画面下のパーツ（CH₃, C=O, OH, Ph, Cl…）を組み合わせて構造を再構築します。「ヒント」で分子式を確認でき，確定すると解析の思考プロセスが段階表示されます。命名と同じで，読解と組み立ての両方向を練習するとどちらも速くなります。</p>
 
-      <h2>Handy settings</h2>
+      <h2>知っておくと便利な設定</h2>
       <ul>
-        <li><b>Sound / BGM</b> — the footer "Sound" button toggles sound effects and the "BGM" button toggles the music, independently. Turning off effects leaves the BGM playing.</li>
-        <li><b>Reset progress</b> — clears your saved history (solved samples, streak, accuracy) to start over.</li>
-        <li><b>Language</b> — switch between Japanese and English with JA / EN at the top right.</li>
+        <li><b>効果音 / BGM</b>— フッターの「効果音」ボタンで効果音を，「BGM」ボタンで音楽を，それぞれ独立してオン/オフできます。効果音を切っても BGM は流れ続けます。</li>
+        <li><b>進捗をリセット</b>— 保存された履歴（解いた試料・連続正解・正答率）を消して最初からやり直せます。</li>
+        <li><b>言語切替</b>— 右上の JA / EN で日本語版と英語版を切り替えられます。</li>
       </ul>
-      <p class="note">The spectra shown are schematic figures for learning. Use them alongside practice on real measured spectra.</p>
+      <p class="note">表示されるスペクトルは学習用の模式図です。実測データの読み取り練習と併せて使うと効果的です。</p>
     </article></section>
 
-    <!-- Reference -->
+    <!-- 分光法解説 -->
     <section class="pg" id="pg-nomen"><article>
       <div class="kicker">Reference</div>
-      <h1>Structure elucidation with IR, NMR &amp; MS: a practical guide</h1>
-      <p>A practical introduction, meant to be read alongside the exercises, to how MS, IR and NMR are combined to determine the structure of an unknown. The three methods have different strengths; alone each often lacks a decisive answer, but combined they cover each other's weaknesses. This is a summary, not a substitute for the textbooks themselves.</p>
+      <h1>IR・NMR・MS による構造決定: 実践ガイド</h1>
+      <p>未知化合物の構造を，MS・IR・NMR の情報を突き合わせて決めていく流れを，演習と併読できる形でまとめた実践的な入門です。3つの手法は得意分野が違い，単独では決め手を欠くことが多い一方，組み合わせると互いの弱点を補い合います。これは要約であり，各手法の教科書そのものの代わりではありません。</p>
       <div class="toc">
-        <a href="#sec-flow">Combined workflow</a>
-        <a href="#sec-dbe">Degree of unsaturation</a>
-        <a href="#sec-ms">What MS tells you</a>
-        <a href="#sec-ir">What IR tells you</a>
-        <a href="#sec-nmr">What NMR tells you</a>
-        <a href="#sec-shift">Why positions move</a>
-        <a href="#sec-pitfall">Pitfalls</a>
-        <a href="#sec-check">Checklist</a>
+        <a href="#sec-flow">併用の流れ</a>
+        <a href="#sec-dbe">不飽和度</a>
+        <a href="#sec-ms">MS でわかること</a>
+        <a href="#sec-ir">IR でわかること</a>
+        <a href="#sec-nmr">NMR でわかること</a>
+        <a href="#sec-shift">位置が動く理由</a>
+        <a href="#sec-pitfall">落とし穴</a>
+        <a href="#sec-check">チェックリスト</a>
       </div>
 
-      <h2 id="sec-flow">1. The combined workflow</h2>
-      <p>Typically you build up information in this order. First use <b>MS</b> for the molecular weight and, where possible, composition (isotope pattern, nitrogen rule), then compute the <b>degree of unsaturation</b>. Next use <b>IR</b> to narrow down functional groups (O–H, N–H, C=O, C≡N — present or absent). Finally use <b>NMR</b> to assemble the carbon skeleton, the environment of each H/C and their connectivity, and check that everything is consistent with the MS fragmentation. The key is not to decide from any one method but to verify that <b>all of them point to the same structure</b>.</p>
+      <h2 id="sec-flow">1. 併用による構造決定の流れ</h2>
+      <p>典型的には次の順で情報を積み上げます。まず <b>MS</b> で分子量と，可能なら組成（同位体パターン・窒素則）をつかみ，そこから <b>不飽和度</b>を計算します。次に <b>IR</b> で官能基（O–H・N–H・C=O・C≡N など，あるかないか）を絞り込みます。最後に <b>NMR</b> で炭素骨格・各水素/炭素の環境・つながりを組み立て，MS の開裂と矛盾しないか確認します。どれか一つで断定せず，<b>すべてが同じ構造を指すか</b>を検証するのが要点です。</p>
 
-      <h2 id="sec-dbe">2. Degree of unsaturation (DBE)</h2>
-      <p>Given a molecular formula, you can count the total number of rings and multiple bonds. For C<sub>c</sub>H<sub>h</sub>N<sub>n</sub>O<sub>o</sub>X<sub>x</sub> (X = halogen):</p>
+      <h2 id="sec-dbe">2. 不飽和度（DBE, 二重結合等価数）</h2>
+      <p>分子式が分かれば，環と多重結合の総数（不飽和度）を計算できます。C<sub>c</sub>H<sub>h</sub>N<sub>n</sub>O<sub>o</sub>X<sub>x</sub>（X はハロゲン）に対して</p>
       <div class="ex">DBE = c − (h + x)/2 + n/2 + 1</div>
-      <p>Oxygen and sulfur do not affect the formula. DBE ≥ 4 often signals an <b>aromatic ring</b> (a benzene ring is 1 ring + 3 double bonds = 4). C=O, C=C and C≡N contribute 1, 1 and 2; C≡C contributes 2. Checking that the unsaturation found by IR/NMR matches the DBE total helps catch what you missed.</p>
+      <p>酸素・硫黄は式に影響しません。DBE = 4 以上はしばしば<b>芳香環</b>を示唆します（ベンゼン環は環1＋二重結合3で 4）。C=O・C=C・C≡N はそれぞれ 1，2，C≡C は 2 を与えます。IR/NMR で見つけた不飽和が DBE の総数と釣り合うかを確かめると，見落としに気づけます。</p>
 
-      <h2 id="sec-ms">3. What MS tells you</h2>
-      <p>The m/z of the <b>molecular ion M⁺</b> is the nominal molecular weight. Its intensity varies with structure — strong for stable molecules such as aromatics, weak (sometimes absent) for branched alcohols. <b>Nitrogen rule</b>: with only C, H, O the molecular weight is even; an odd value means an odd number of nitrogens. <b>Isotopes</b>: chlorine M:M+2 ≈ 3:1, bromine ≈ 1:1, sulfur ~4% at M+2. The M+1 intensity (≈ 1.1% × number of carbons) estimates carbon count. Read part-structures from <b>neutral losses</b> (mass difference from M) and <b>fragment ions</b> (−15=CH₃, −18=H₂O, −28=CO, −31=OCH₃, −45=COOH / m/z 43=CH₃CO⁺, 31=CH₂OH⁺, 30=CH₂NH₂⁺, 77=C₆H₅⁺, 91=tropylium C₇H₇⁺). The McLafferty rearrangement (a characteristic even-mass ion from carbonyls with a γ-hydrogen) and tropylium from a benzylic position are diagnostic.</p>
+      <h2 id="sec-ms">3. MS でわかること</h2>
+      <p><b>分子イオン M⁺</b> の m/z が公称分子量です。M⁺ の強度は構造で変わり，芳香族など安定な分子では強く，分岐アルコールなどでは弱く（時に消失）なります。<b>窒素則</b>: C・H・O のみなら分子量は偶数，奇数なら窒素を奇数個含みます。<b>同位体</b>: 塩素は M:M+2 ≈ 3:1，臭素は ≈ 1:1，硫黄は M+2 が約 4%。M+1 の相対強度（およそ 1.1% × 炭素数）から炭素数を見積もれます。<b>中性脱離</b>（M からの質量差）と<b>フラグメントイオン</b>から部分構造を読みます（−15=CH₃，−18=H₂O，−28=CO，−31=OCH₃，−45=COOH／m/z 43=CH₃CO⁺，31=CH₂OH⁺，30=CH₂NH₂⁺，77=C₆H₅⁺，91=トロピリウム C₇H₇⁺）。McLafferty 転位（γ 水素をもつカルボニルで特徴的な偶数質量イオン）や，ベンジル位のトロピリウム生成は診断的です。</p>
 
-      <h2 id="sec-ir">4. What IR tells you</h2>
-      <p>IR quickly judges the <b>presence or absence of functional groups</b>. <b>4000–1500</b> is the functional-group region, <b>1500–400</b> the fingerprint region. Scan the high-wavenumber side first for O–H/N–H (3200–3600), triple bonds (2100–2260) and the carbonyl (1650–1780). The "present/absent" call is especially powerful: the <b>absence</b> of a broad O–H, for instance, rules out an alcohol or acid. Whether there is a C=O, and if so what its position implies, is IR's main job (next section).</p>
+      <h2 id="sec-ir">4. IR でわかること</h2>
+      <p>IR は<b>官能基の有無</b>を素早く判定します。<b>4000–1500</b> が官能基領域，<b>1500–400</b> が指紋領域です。まず高波数側で O–H/N–H（3200–3600），三重結合（2100–2260），カルボニル（1650–1780）を拾います。「ある／ない」の判断が特に強力で，たとえば幅広い O–H が<b>無い</b>ことはアルコール・酸の否定に使えます。C=O があるかどうか，あるなら位置が何を示すかが，IR の主役です（次節）。</p>
 
-      <h2 id="sec-nmr">5. What NMR tells you</h2>
-      <p><b>¹H-NMR</b> gives part-structures and their connectivity from chemical shift (electronic environment), integration (H-number ratios) and multiplicity (number of neighbouring H, the n+1 rule). <b>¹³C-NMR</b> (proton-decoupled) shows <b>symmetry</b> directly — the number of signals equals the number of inequivalent carbons — and reveals quaternary carbons such as carbonyls. Learning ¹H patterns like "ethyl (t+q)", "isopropyl (d+septet)" and "monosubstituted benzene (5H near δ7)" ties a signal straight to a substructure.</p>
+      <h2 id="sec-nmr">5. NMR でわかること</h2>
+      <p><b>¹H-NMR</b> は，化学シフト（水素の電子環境）・積分（水素数の比）・多重度（隣接水素の数，n+1 則）から，部分構造とそのつながりを与えます。<b>¹³C-NMR</b>（プロトンデカップリング）は，シグナルの本数＝非等価な炭素の種類数として<b>対称性</b>を直接示し，カルボニルなど四級炭素も見えます。¹H で「エチル基（t+q）」「イソプロピル（d+七重）」「一置換ベンゼン（δ7 付近 5H）」のようなパターンを覚えると，一目で部分構造に直結します。</p>
 
-      <h2 id="sec-shift">6. Why the same group's peak moves</h2>
-      <p>Reference values like "methyl at δ0.9" or "C=O at 1715" are only a starting point. <b>The same functional group and the same bond can shift clearly with its environment.</b> Understanding why they move turns the deviation itself into a structural clue.</p>
-      <h3>Electronic effects (inductive and resonance)</h3>
-      <p>The nearer an electronegative atom or electron-withdrawing group, the further downfield (larger δ) the ¹H and ¹³C. Even a single methyl changes a lot with what it is bonded to.</p>
-      <table class="rtab"><thead><tr><th>environment</th><th>¹H δ (approx.)</th><th>why</th></tr></thead><tbody>
-        <tr><td>CH₃–C (alkane)</td><td>≈0.9</td><td>near baseline</td></tr>
-        <tr><td>CH₃–C=C / CH₃–Ar</td><td>≈1.6 / 2.3</td><td>π anisotropy, mild deshielding</td></tr>
-        <tr><td>CH₃–C=O (acetyl)</td><td>≈2.1</td><td>carbonyl induction/anisotropy</td></tr>
-        <tr><td>CH₃–N</td><td>≈2.2–3.0</td><td>nitrogen electronegativity</td></tr>
-        <tr><td>CH₃–O (methoxy)</td><td>≈3.3–3.9</td><td>strong oxygen electronegativity</td></tr>
-        <tr><td>CH₃–NO₂</td><td>≈4.3</td><td>very strong withdrawal</td></tr>
+      <h2 id="sec-shift">6. なぜ同じ基でもピーク位置が動くのか</h2>
+      <p>「メチルは δ0.9」「C=O は 1715」のような代表値は出発点にすぎません。<b>同じ官能基・同じ結合でも，周囲の環境によって吸収やシフトははっきり動きます</b>。動く理由を理解しておくと，代表値からのズレそのものが構造の手がかりになります。</p>
+      <h3>電子効果（誘起・共鳴）</h3>
+      <p>電気陰性な原子や電子求引基が近いほど，¹H・¹³C は低磁場（大きい δ）へ動きます。メチル基一つとっても，つながる相手で大きく変わります。</p>
+      <table class="rtab"><thead><tr><th>環境</th><th>¹H δ の目安</th><th>効くしくみ</th></tr></thead><tbody>
+        <tr><td>CH₃–C（アルカン）</td><td>約 0.9</td><td>基準に近い</td></tr>
+        <tr><td>CH₃–C=C / CH₃–Ar</td><td>約 1.6 / 2.3</td><td>π 系の異方性・弱い脱遮蔽</td></tr>
+        <tr><td>CH₃–C=O（アセチル）</td><td>約 2.1</td><td>カルボニルの誘起・異方性</td></tr>
+        <tr><td>CH₃–N</td><td>約 2.2–3.0</td><td>窒素の電気陰性度</td></tr>
+        <tr><td>CH₃–O（メトキシ）</td><td>約 3.3–3.9</td><td>酸素の強い電気陰性度</td></tr>
+        <tr><td>CH₃–NO₂</td><td>約 4.3</td><td>非常に強い求引</td></tr>
       </tbody></table>
-      <p>The effect is <b>additive</b>: more adjacent electronegative groups shift it further downfield (CH₂Cl₂ &gt; CH₃Cl; CHCl₃ further still).</p>
-      <h3>Conjugation lowers a carbonyl</h3>
-      <p>An IR C=O with conjugation (an adjacent C=C or ring) delocalises electrons, lowers the bond order and moves <b>15–40 cm⁻¹ lower</b>. Against a saturated ketone ≈1715, aryl ketones and α,β-unsaturated ketones are ≈1680–1690. This is why benzaldehyde's C=O (≈1700) is lower than an aliphatic aldehyde's (≈1725).</p>
-      <h3>Ring strain raises a carbonyl</h3>
-      <p>A ring C=O moves <b>higher</b> as the ring shrinks: cyclohexanone ≈1715, cyclopentanone ≈1745, cyclobutanone ≈1780. Ring lactones and anhydrides follow the same trend.</p>
-      <table class="rtab"><thead><tr><th>carbonyl type</th><th>C=O / cm⁻¹</th></tr></thead><tbody>
-        <tr><td>acyl halide</td><td>≈1800</td></tr>
-        <tr><td>anhydride</td><td>≈1820 and 1760 (2 bands)</td></tr>
-        <tr><td>ester</td><td>≈1735–1750</td></tr>
-        <tr><td>aldehyde</td><td>≈1725</td></tr>
-        <tr><td>ketone (saturated)</td><td>≈1715</td></tr>
-        <tr><td>carboxylic acid (dimer)</td><td>≈1710 (with broad O–H)</td></tr>
-        <tr><td>amide</td><td>≈1630–1690</td></tr>
-        <tr><td>conjugated / aromatic C=O</td><td>−15 to 40 from above</td></tr>
+      <p>効果は<b>加成的</b>で，電気陰性基が複数隣接するほどさらに低磁場へ動きます（例: CH₂Cl₂ ＞ CH₃Cl，CHCl₃ はさらに低磁場）。</p>
+      <h3>共役はカルボニルを下げる</h3>
+      <p>IR の C=O は，共役（隣に C=C や芳香環）があると電子が非局在化して結合次数が下がり，<b>15–40 cm⁻¹ ほど低波数</b>へ動きます。飽和ケトン ≈1715 に対し，アリールケトンや α,β-不飽和ケトンは ≈1680–1690。ベンズアルデヒドの C=O が ≈1700 と，脂肪族アルデヒド ≈1725 より低いのはこのためです。</p>
+      <h3>環ひずみはカルボニルを上げる</h3>
+      <p>環内 C=O は環が小さいほど<b>高波数</b>へ動きます。シクロヘキサノン ≈1715，シクロペンタノン ≈1745，シクロブタノン ≈1780。環ラクトン・環無水物でも同じ傾向です。</p>
+      <table class="rtab"><thead><tr><th>カルボニルの種類</th><th>C=O の目安 / cm⁻¹</th></tr></thead><tbody>
+        <tr><td>酸ハロゲン化物</td><td>約 1800</td></tr>
+        <tr><td>酸無水物</td><td>約 1820 と 1760（2 本）</td></tr>
+        <tr><td>エステル</td><td>約 1735–1750</td></tr>
+        <tr><td>アルデヒド</td><td>約 1725</td></tr>
+        <tr><td>ケトン（飽和）</td><td>約 1715</td></tr>
+        <tr><td>カルボン酸（二量体）</td><td>約 1710（幅広 O–H を伴う）</td></tr>
+        <tr><td>アミド</td><td>約 1630–1690</td></tr>
+        <tr><td>共役 / 芳香族 C=O</td><td>上記から −15〜40</td></tr>
       </tbody></table>
-      <h3>Hydrogen bonding moves O–H and N–H (concentration/solvent dependent)</h3>
-      <p>A free O–H is sharp and high (≈3600 in dilute solution), but hydrogen bonding makes it <b>broad and lower</b> (≈3200–3550). A carboxylic acid forms dimers and gives a very broad band spanning 2500–3300. In ¹H, O–H, N–H and COOH are exchangeable and their position and width change a lot with <b>concentration, solvent, temperature and D₂O exchange</b>. Intramolecular hydrogen bonding (e.g. the enol of a β-diketone) gives extreme downfield shifts (δ11–16).</p>
-      <h3>Magnetic anisotropy</h3>
-      <p>The ring current of an aromatic ring <b>deshields</b> the hydrogens on its outside, pushing aromatic H to δ7–8 and aldehyde H to δ9–10. Conversely, the π electrons of an alkyne <b>shield</b> the terminal H, keeping it at δ2–3. ¹³C behaves similarly; shifts cannot be explained by electronegativity alone.</p>
+      <h3>水素結合は O–H・N–H を動かす（濃度・溶媒依存）</h3>
+      <p>遊離の O–H は鋭く高波数（希薄溶液で ≈3600）ですが，水素結合すると<b>幅広く低波数</b>（≈3200–3550）になります。カルボン酸は二量体を作り，2500–3300 に及ぶ非常に幅広い吸収を示します。¹H でも O–H・N–H・COOH は交換性で，<b>濃度・溶媒・温度・D₂O 交換</b>で位置と幅が大きく変わります。分子内水素結合（β-ジケトンのエノールなど）は極端な低磁場（δ11–16）を与えます。</p>
+      <h3>磁気異方性</h3>
+      <p>芳香環の環電流は，環の外側の水素を<b>脱遮蔽</b>し，芳香族 H を δ7–8 に，アルデヒド H を δ9–10 に押し上げます。逆に，アルキンの π 電子は末端 H を<b>遮蔽</b>し δ2–3 に留めます。¹³C でも同様の傾向があり，シフトは「電気陰性度」だけでは説明できません。</p>
 
-      <h2 id="sec-pitfall">7. Common pitfalls</h2>
+      <h2 id="sec-pitfall">7. よくある落とし穴</h2>
       <ul>
-        <li><b>The highest m/z is not always M⁺</b> — don't mistake an isotope peak (M+1, M+2) or an M+1 adduct for M⁺.</li>
-        <li><b>The same m/z can have different origins</b> — e.g. m/z 29 is CHO⁺ or C₂H₅⁺; m/z 43 is CH₃CO⁺ or C₃H₇⁺. Judge with the neighbouring peaks.</li>
-        <li><b>Weak bands at 2200–2260</b> — separate C≡N (medium) from C≡C (weak; symmetric alkynes vanish) by position and intensity.</li>
-        <li><b>Exchangeable protons are variable</b> — don't treat O–H/N–H δ as fixed; confirm with integration and D₂O exchange.</li>
-        <li><b>Overlapping aromatic shifts</b> — the 5H of a monosubstituted benzene often overlap near δ7.2, limiting how well multiplicity reveals the substitution.</li>
+        <li><b>最高 m/z ＝ M⁺ とは限らない</b>— 同位体ピーク（M+1, M+2）や，ときに M+1 付加を M⁺ と誤認しない。</li>
+        <li><b>同じ m/z でも起源が違う</b>— 例: m/z 29 は CHO⁺ か C₂H₅⁺，m/z 43 は CH₃CO⁺ か C₃H₇⁺。周辺のピークと合わせて判断する。</li>
+        <li><b>2200–2260 の弱い吸収</b>— C≡N（中程度）と C≡C（弱い，対称アルキンは消失）を強度と位置で区別する。</li>
+        <li><b>交換性プロトンは可変</b>— O–H/N–H の δ を固定値と思わない。積分・D₂O 交換で確認する。</li>
+        <li><b>芳香族シフトの重なり</b>— 一置換ベンゼンの 5H はしばしば δ7.2 付近に重なって見え，多重度から置換位置を読むには限界がある。</li>
       </ul>
 
-      <h2 id="sec-check">8. A quick checklist</h2>
+      <h2 id="sec-check">8. 手早いチェックリスト</h2>
       <ol>
-        <li>Fix M⁺ (molecular weight) in the MS; get composition clues from the nitrogen rule and isotopes.</li>
-        <li>Once the formula is narrowed, compute the degree of unsaturation (DBE) to anticipate rings and multiple bonds.</li>
-        <li>Sort functional groups by "present/absent" in the IR (O–H, N–H, C=O, C≡N). Use the C=O position to narrow the type.</li>
-        <li>Read symmetry from the ¹³C count, and part-structures and connectivity from ¹H integration and multiplicity.</li>
-        <li>Check that any deviation from reference values is explained by conjugation, ring strain, hydrogen bonding or anisotropy.</li>
-        <li>Re-read to confirm the MS fragmentation (−15, −18, 43, 91, …) is consistent with the structure you built.</li>
+        <li>MS で M⁺（分子量）を確定し，窒素則と同位体から組成の手がかりを得る。</li>
+        <li>分子式が絞れたら不飽和度（DBE）を計算し，芳香環・多重結合の見当をつける。</li>
+        <li>IR で官能基を「ある／ない」で仕分ける（O–H・N–H・C=O・C≡N）。C=O の位置から種類を絞る。</li>
+        <li>¹³C の本数で対称性を，¹H の積分・多重度で部分構造とつながりを読む。</li>
+        <li>代表値からのズレを，共役・環ひずみ・水素結合・異方性で説明できるか確認する。</li>
+        <li>MS の開裂（−15, −18, 43, 91 など）と組み立てた構造が矛盾しないか読み返す。</li>
       </ol>
-      <p class="note">You can practise these judgements in Drill and Solve. The Learn tab summarises each method with spectrum figures.</p>
+      <p class="note">これらの判断は「個別特訓」「総合解析」で練習できます。「学ぶ」タブには各手法の要点がスペクトル図つきでまとまっています。</p>
     </article></section>
 
   </div>
 
-  <!-- Ad slot: after hosting, paste your AdSense code here (<ins class="adsbygoogle" ...>). Placeholder shown locally. -->
-  <div class="adslot" id="adslot" aria-hidden="true"><span>Ad space (responsive)</span></div>
+  <!-- 広告スロット: ホスティング後に AdSense 等のコードをここに貼る（<ins class="adsbygoogle" ...>）。ローカルではプレースホルダ表示。 -->
+  <div class="adslot" id="adslot" aria-hidden="true"><span>広告スペース（レスポンシブ）</span></div>
 
   <footer>
     <div class="ftr-src">
-      Characteristic bands, chemical shifts and fragmentations follow standard instrumental-analysis references (e.g. R. M. Silverstein et al., <i>Spectrometric Identification of Organic Compounds</i>). Spectra are schematic figures generated from peak data for learning. Structure drawing by SmilesDrawer (MIT).
+      特性吸収・化学シフト・開裂は機器分析の標準的な教科書（R. M. Silverstein ほか『有機化合物のスペクトルによる同定法』等）の代表値に準拠。スペクトルはピークデータから生成した学習用の模式図です。構造描画は SmilesDrawer (MIT)。
     </div>
-    <div class="credit">Built by Shintaro Shimizu &amp; Jumpei Toshimori</div>
+    <div class="credit">開発: 清水 慎太朗・歳森 淳平</div>
     <div class="ftr-legal">
-      <button id="privacyLink">Privacy Policy</button>
-      <button id="disclaimerLink">Disclaimer</button>
+      <button id="privacyLink">プライバシーポリシー</button>
+      <button id="disclaimerLink">免責事項</button>
     </div>
     <div class="ftr-btns">
-      <button class="mini" id="soundBtn">Sound: On</button>
-      <button class="mini" id="bgmBtn">BGM: On</button>
-      <button class="mini" id="resetBtn">Reset progress</button>
+      <button class="mini" id="soundBtn">効果音: オン</button>
+      <button class="mini" id="bgmBtn">BGM: オン</button>
+      <button class="mini" id="resetBtn">進捗をリセット</button>
     </div>
   </footer>
 
@@ -571,7 +571,7 @@ header .brand{flex-direction:row;align-items:center;gap:12px}
   <div class="legal">
     <h3 id="legalTitle"></h3>
     <div id="legalBody"></div>
-    <button class="btn close" id="legalClose">Close</button>
+    <button class="btn close" id="legalClose">閉じる</button>
   </div>
 </div>
 
@@ -661,22 +661,22 @@ chroma-js/chroma.js:
 <script>
 
 /* =========================================================
-   MEIMAY Spectra · spectroscopy trainer
-   Structure elucidation with IR / ¹H-NMR / ¹³C-NMR / MS
+   Kyomei · スペクトル解析トレーナー
+   IR / ¹H-NMR / ¹³C-NMR / MS による構造決定演習
    ---------------------------------------------------------
-   Two tiers: focused drills (basics) and full analysis (build from fragments)
-   Spectra are generated as SVG from each compound's peak list (fully offline)
+   個別特訓(基礎トレーニング) と 総合解析(実践・フラグメント組み立て) の2段構え
+   スペクトルは各化合物のピークリストから SVG を実時間生成(オフライン完結)
    ========================================================= */
 
-/* ---------- small helpers ---------- */
+/* ---------- 小物ヘルパー ---------- */
 function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
 function sub(s){ return String(s).replace(/([A-Za-z\)\]])(\d+)/g, function(_,a,b){ return a + '<sub>'+b+'</sub>'; }); }
 function $(id){ return document.getElementById(id); }
 function rnd(n){ return Math.floor(Math.random()*n); }
 function shuffle(a){ a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=rnd(i+1); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
-/* ---------- fragment dictionary (assembly parts) ----------
-   f: element composition {C,H,O,N,Cl,Br}  disp: display label (HTML)  c: colour var */
+/* ---------- フラグメント辞書（組み立て用パーツ） ----------
+   f: 元素構成 {C,H,O,N,Cl,Br}  disp: 表示ラベル(HTML)  c: 色変数 */
 const FRAG = {
   'CH3':  { disp:'CH<sub>3</sub>',        f:{C:1,H:3},        c:'--f-c' },
   'CH2':  { disp:'CH<sub>2</sub>',        f:{C:1,H:2},        c:'--f-c' },
@@ -707,2492 +707,486 @@ function formulaStr(t){
   return s;
 }
 
-/* ---------- full analysis: unknown-compound data ----------
-   name/en: common/IUPAC name, smi: SMILES for drawing, formula, mw
-   ms:{M, base, peaks:[{mz,i,l?}]}  ir:[{wn,w,d,a}]  (w:'b'|'m'|'s' width, d:0-1 depth, a:assignment)
-   h:[{d,m,n,a}] (m: multiplicity, n: integration H)   c:[{d,a}]
-   frags: fragment multiset   steps: reasoning walkthrough
-   iso: isotope hint (optional) */
+/* ---------- 総合解析: 未知化合物データ ----------
+   name/en: 慣用/IUPAC名, smi: 構造描画用SMILES, formula, mw
+   ms:{M, base, peaks:[{mz,i,l?}]}  ir:[{wn,w,d,a}]  (w:'b'|'m'|'s' 幅, d:0-1 深さ, a:帰属)
+   h:[{d,m,n,a}] (m: 多重度, n: 積分H数)   c:[{d,a}]
+   frags: 構成フラグメント多重集合   steps: 解析の思考プロセス
+   iso: 同位体ヒント(任意) */
 const COMPOUNDS = [
- {
-  "id": "ethanol",
-  "name": "ethanol",
-  "en": "ethanol",
-  "smi": "CCO",
-  "formula": "C2H6O",
-  "mw": 46,
-  "ms": {
-   "M": 46,
-   "base": 31,
-   "peaks": [
-    {
-     "mz": 15,
-     "i": 12
-    },
-    {
-     "mz": 27,
-     "i": 22
-    },
-    {
-     "mz": 29,
-     "i": 26,
-     "l": "C₂H₅⁺/CHO⁺"
-    },
-    {
-     "mz": 31,
-     "i": 100,
-     "l": "CH₂OH⁺"
-    },
-    {
-     "mz": 45,
-     "i": 30,
-     "l": "M−1"
-    },
-    {
-     "mz": 46,
-     "i": 28,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 3340,
-    "w": "b",
-    "d": 0.62,
-    "a": "O–H stretch (broad)"
-   },
-   {
-    "wn": 2970,
-    "w": "m",
-    "d": 0.5,
-    "a": "C–H stretch"
-   },
-   {
-    "wn": 1050,
-    "w": "m",
-    "d": 0.6,
-    "a": "C–O stretch"
-   },
-   {
-    "wn": 1400,
-    "w": "s",
-    "d": 0.25,
-    "a": "O–H in-plane bend"
-   }
-  ],
-  "h": [
-   {
-    "d": 3.7,
-    "m": "q",
-    "n": 2,
-    "a": "–CH₂–O"
-   },
-   {
-    "d": 2.5,
-    "m": "s",
-    "n": 1,
-    "a": "O–H (exchangeable)"
-   },
-   {
-    "d": 1.22,
-    "m": "t",
-    "n": 3,
-    "a": "CH₃–"
-   }
-  ],
-  "c": [
-   {
-    "d": 58,
-    "a": "CH₂–O"
-   },
-   {
-    "d": 18.2,
-    "a": "CH₃"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "CH2",
-   "OH"
-  ],
-  "steps": [
-   "MS: M⁺=46, even → no nitrogen. Base peak m/z 31 is <b>CH₂OH⁺</b> (methylene next to oxygen). M−1 (45) is also typical of a primary alcohol.",
-   "IR: <b>broad O–H</b> at 3340 and <b>C–O</b> at 1050 → confirms an alcohol.",
-   "¹H: triplet (3H, δ1.2) + quartet (2H, δ3.7) = an <b>ethyl group</b>. δ3.7 means next to oxygen. Exchangeable O–H (1H).",
-   "¹³C: only two lines, 58 (C–O) and 18 (CH₃) → a small, low-symmetry molecule.",
-   "Assemble: CH₃–CH₂–OH = <span class=\"nm\">ethanol</span>."
-  ]
- },
- {
-  "id": "ipa",
-  "name": "2-propanol",
-  "en": "propan-2-ol",
-  "smi": "CC(O)C",
-  "formula": "C3H8O",
-  "mw": 60,
-  "ms": {
-   "M": 60,
-   "base": 45,
-   "peaks": [
-    {
-     "mz": 27,
-     "i": 18
-    },
-    {
-     "mz": 43,
-     "i": 16
-    },
-    {
-     "mz": 45,
-     "i": 100,
-     "l": "M−15 (loss of CH₃)"
-    },
-    {
-     "mz": 59,
-     "i": 8,
-     "l": "M−1"
-    },
-    {
-     "mz": 60,
-     "i": 5,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 3350,
-    "w": "b",
-    "d": 0.6,
-    "a": "O–H stretch (broad)"
-   },
-   {
-    "wn": 2970,
-    "w": "m",
-    "d": 0.5,
-    "a": "C–H stretch"
-   },
-   {
-    "wn": 1150,
-    "w": "s",
-    "d": 0.4,
-    "a": "C–O (secondary)"
-   },
-   {
-    "wn": 1100,
-    "w": "s",
-    "d": 0.45,
-    "a": "C–O"
-   }
-  ],
-  "h": [
-   {
-    "d": 4,
-    "m": "sept",
-    "n": 1,
-    "a": ">CH–O (methine)"
-   },
-   {
-    "d": 2.2,
-    "m": "s",
-    "n": 1,
-    "a": "O–H"
-   },
-   {
-    "d": 1.16,
-    "m": "d",
-    "n": 6,
-    "a": "(CH₃)₂"
-   }
-  ],
-  "c": [
-   {
-    "d": 64,
-    "a": "CH–O"
-   },
-   {
-    "d": 25.3,
-    "a": "(CH₃)₂"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "CH3",
-   "CH",
-   "OH"
-  ],
-  "steps": [
-   "MS: M⁺=60. Base peak m/z 45 is <b>M−15</b> (loss of methyl) → a methyl at the branch point.",
-   "IR: broad O–H (3350) + C–O (~1100) → alcohol.",
-   "¹H: a <b>septet (1H)</b> with a <b>doublet (6H)</b> = an <b>isopropyl group (CH₃)₂CH–</b>. The methine is shifted to δ4.0 → next to oxygen.",
-   "¹³C: two lines, 64 (CH–O) and 25 (2×CH₃) → high symmetry.",
-   "Assemble: (CH₃)₂CH–OH = <span class=\"nm\">2-propanol</span>."
-  ]
- },
- {
-  "id": "acetone",
-  "name": "acetone",
-  "en": "propan-2-one",
-  "smi": "CC(=O)C",
-  "formula": "C3H6O",
-  "mw": 58,
-  "ms": {
-   "M": 58,
-   "base": 43,
-   "peaks": [
-    {
-     "mz": 15,
-     "i": 35,
-     "l": "CH₃⁺"
-    },
-    {
-     "mz": 43,
-     "i": 100,
-     "l": "CH₃CO⁺ (M−15)"
-    },
-    {
-     "mz": 58,
-     "i": 32,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 2990,
-    "w": "m",
-    "d": 0.35,
-    "a": "C–H stretch"
-   },
-   {
-    "wn": 1715,
-    "w": "m",
-    "d": 0.85,
-    "a": "C=O stretch (sharp, strong)"
-   },
-   {
-    "wn": 1360,
-    "w": "s",
-    "d": 0.3,
-    "a": "CH₃ bend"
-   }
-  ],
-  "h": [
-   {
-    "d": 2.1,
-    "m": "s",
-    "n": 6,
-    "a": "2×CH₃ (α to carbonyl)"
-   }
-  ],
-  "c": [
-   {
-    "d": 206,
-    "a": "C=O (ketone)"
-   },
-   {
-    "d": 30.6,
-    "a": "2×CH₃"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "C=O",
-   "CH3"
-  ],
-  "steps": [
-   "MS: M⁺=58. m/z 43 = <b>acylium CH₃CO⁺</b> (M−15) is the base peak → classic methyl ketone.",
-   "IR: <b>sharp, strong C=O at 1715</b>. No O–H, no N–H → ketone or aldehyde.",
-   "¹H: <b>a single 6H singlet (δ2.1)</b> only → two equivalent methyls flanking the carbonyl.",
-   "¹³C: <b>206 (ketone C=O)</b> and 30 (CH₃), two lines. Not an aldehyde C (~190).",
-   "Assemble: CH₃–CO–CH₃ = <span class=\"nm\">acetone</span>."
-  ]
- },
- {
-  "id": "mek",
-  "name": "2-butanone (MEK)",
-  "en": "butan-2-one",
-  "smi": "CCC(=O)C",
-  "formula": "C4H8O",
-  "mw": 72,
-  "ms": {
-   "M": 72,
-   "base": 43,
-   "peaks": [
-    {
-     "mz": 27,
-     "i": 25
-    },
-    {
-     "mz": 29,
-     "i": 30,
-     "l": "C₂H₅⁺"
-    },
-    {
-     "mz": 43,
-     "i": 100,
-     "l": "CH₃CO⁺"
-    },
-    {
-     "mz": 57,
-     "i": 18,
-     "l": "C₂H₅CO⁺ (M−15)"
-    },
-    {
-     "mz": 72,
-     "i": 20,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 2980,
-    "w": "m",
-    "d": 0.35,
-    "a": "C–H stretch"
-   },
-   {
-    "wn": 1715,
-    "w": "m",
-    "d": 0.85,
-    "a": "C=O stretch"
-   },
-   {
-    "wn": 1170,
-    "w": "s",
-    "d": 0.3,
-    "a": "C–C(=O)"
-   }
-  ],
-  "h": [
-   {
-    "d": 2.45,
-    "m": "q",
-    "n": 2,
-    "a": "–CH₂–CO"
-   },
-   {
-    "d": 2.13,
-    "m": "s",
-    "n": 3,
-    "a": "CH₃–CO"
-   },
-   {
-    "d": 1.05,
-    "m": "t",
-    "n": 3,
-    "a": "CH₃–CH₂"
-   }
-  ],
-  "c": [
-   {
-    "d": 209,
-    "a": "C=O"
-   },
-   {
-    "d": 36.5,
-    "a": "CH₂"
-   },
-   {
-    "d": 29.3,
-    "a": "CH₃CO"
-   },
-   {
-    "d": 7.9,
-    "a": "CH₃"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "C=O",
-   "CH2",
-   "CH3"
-  ],
-  "steps": [
-   "MS: M⁺=72. m/z 43 (CH₃CO⁺) and 57 (C₂H₅CO⁺) are <b>two acylium ions</b> → an unsymmetrical methyl ketone.",
-   "IR: strong C=O at 1715.",
-   "¹H: singlet (3H, δ2.1, methyl ketone) + an ethyl quartet (2H)/triplet (3H).",
-   "¹³C: four lines including 209 (C=O) → all four carbons inequivalent.",
-   "Assemble: CH₃–CO–CH₂–CH₃ = <span class=\"nm\">2-butanone</span>."
-  ]
- },
- {
-  "id": "aceticacid",
-  "name": "acetic acid",
-  "en": "acetic acid",
-  "smi": "CC(=O)O",
-  "formula": "C2H4O2",
-  "mw": 60,
-  "ms": {
-   "M": 60,
-   "base": 43,
-   "peaks": [
-    {
-     "mz": 15,
-     "i": 40,
-     "l": "CH₃⁺"
-    },
-    {
-     "mz": 43,
-     "i": 100,
-     "l": "CH₃CO⁺"
-    },
-    {
-     "mz": 45,
-     "i": 80,
-     "l": "COOH⁺"
-    },
-    {
-     "mz": 60,
-     "i": 60,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 3000,
-    "w": "b",
-    "d": 0.55,
-    "a": "O–H (acid; very broad, 2500–3300)"
-   },
-   {
-    "wn": 1710,
-    "w": "m",
-    "d": 0.85,
-    "a": "C=O stretch (acid)"
-   },
-   {
-    "wn": 1290,
-    "w": "s",
-    "d": 0.45,
-    "a": "C–O stretch"
-   }
-  ],
-  "h": [
-   {
-    "d": 11.4,
-    "m": "s",
-    "n": 1,
-    "a": "COOH (exchangeable, very downfield)"
-   },
-   {
-    "d": 2.1,
-    "m": "s",
-    "n": 3,
-    "a": "CH₃"
-   }
-  ],
-  "c": [
-   {
-    "d": 178,
-    "a": "C=O (carboxylic acid)"
-   },
-   {
-    "d": 20.6,
-    "a": "CH₃"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "COOH"
-  ],
-  "steps": [
-   "MS: M⁺=60 (even). m/z 45 = <b>COOH⁺</b>, 43 = CH₃CO⁺.",
-   "IR: <b>very broad O–H spanning 2500–3300</b> + C=O at 1710 = fingerprint of a <b>carboxylic acid</b>.",
-   "¹H: <b>a very downfield 1H near δ11</b> (COOH) and CH₃ (3H) at δ2.1.",
-   "¹³C: <b>178</b> is the acid/ester C=O region (upfield of a ketone at 206).",
-   "Assemble: CH₃–COOH = <span class=\"nm\">acetic acid</span>."
-  ]
- },
- {
-  "id": "etoac",
-  "name": "ethyl acetate",
-  "en": "ethyl acetate",
-  "smi": "CC(=O)OCC",
-  "formula": "C4H8O2",
-  "mw": 88,
-  "ms": {
-   "M": 88,
-   "base": 43,
-   "peaks": [
-    {
-     "mz": 29,
-     "i": 22,
-     "l": "C₂H₅⁺"
-    },
-    {
-     "mz": 43,
-     "i": 100,
-     "l": "CH₃CO⁺"
-    },
-    {
-     "mz": 61,
-     "i": 12,
-     "l": "M−27"
-    },
-    {
-     "mz": 70,
-     "i": 10,
-     "l": "M−18"
-    },
-    {
-     "mz": 88,
-     "i": 14,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 2985,
-    "w": "m",
-    "d": 0.35,
-    "a": "C–H stretch"
-   },
-   {
-    "wn": 1740,
-    "w": "m",
-    "d": 0.85,
-    "a": "C=O stretch (ester, high wavenumber)"
-   },
-   {
-    "wn": 1240,
-    "w": "m",
-    "d": 0.6,
-    "a": "C–O–C stretch"
-   },
-   {
-    "wn": 1050,
-    "w": "s",
-    "d": 0.45,
-    "a": "C–O stretch"
-   }
-  ],
-  "h": [
-   {
-    "d": 4.12,
-    "m": "q",
-    "n": 2,
-    "a": "–O–CH₂–"
-   },
-   {
-    "d": 2.04,
-    "m": "s",
-    "n": 3,
-    "a": "CH₃–CO"
-   },
-   {
-    "d": 1.26,
-    "m": "t",
-    "n": 3,
-    "a": "CH₃–CH₂"
-   }
-  ],
-  "c": [
-   {
-    "d": 171,
-    "a": "C=O (ester)"
-   },
-   {
-    "d": 60.4,
-    "a": "O–CH₂"
-   },
-   {
-    "d": 21,
-    "a": "CH₃CO"
-   },
-   {
-    "d": 14.2,
-    "a": "CH₃"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "C=O",
-   "O",
-   "CH2",
-   "CH3"
-  ],
-  "steps": [
-   "MS: M⁺=88. Base m/z 43 (CH₃CO⁺) → acetyl group.",
-   "IR: <b>high-wavenumber C=O at 1740</b> (above a ketone's 1715 = ester signature) + strong C–O–C at 1240. No O–H.",
-   "¹H: quartet (2H, <b>O–CH₂</b>) at δ4.1 and triplet (3H) at δ1.3 = the <b>ethyl of an ethoxy group</b>, plus CH₃CO (3H) at δ2.0.",
-   "¹³C: 171 (ester C=O) and 60 (O–CH₂) clinch the ester.",
-   "Assemble: CH₃–CO–O–CH₂–CH₃ = <span class=\"nm\">ethyl acetate</span>."
-  ]
- },
- {
-  "id": "meoac",
-  "name": "methyl acetate",
-  "en": "methyl acetate",
-  "smi": "CC(=O)OC",
-  "formula": "C3H6O2",
-  "mw": 74,
-  "ms": {
-   "M": 74,
-   "base": 43,
-   "peaks": [
-    {
-     "mz": 15,
-     "i": 30
-    },
-    {
-     "mz": 43,
-     "i": 100,
-     "l": "CH₃CO⁺"
-    },
-    {
-     "mz": 59,
-     "i": 22,
-     "l": "M−15"
-    },
-    {
-     "mz": 74,
-     "i": 30,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 2960,
-    "w": "m",
-    "d": 0.3,
-    "a": "C–H stretch"
-   },
-   {
-    "wn": 1745,
-    "w": "m",
-    "d": 0.85,
-    "a": "C=O (ester)"
-   },
-   {
-    "wn": 1240,
-    "w": "m",
-    "d": 0.6,
-    "a": "C–O–C"
-   }
-  ],
-  "h": [
-   {
-    "d": 3.67,
-    "m": "s",
-    "n": 3,
-    "a": "O–CH₃"
-   },
-   {
-    "d": 2.05,
-    "m": "s",
-    "n": 3,
-    "a": "CH₃–CO"
-   }
-  ],
-  "c": [
-   {
-    "d": 171.5,
-    "a": "C=O (ester)"
-   },
-   {
-    "d": 51.5,
-    "a": "O–CH₃"
-   },
-   {
-    "d": 20.6,
-    "a": "CH₃CO"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "C=O",
-   "O",
-   "CH3"
-  ],
-  "steps": [
-   "MS: M⁺=74. m/z 43 (CH₃CO⁺), 59 (M−15).",
-   "IR: ester C=O at 1745. No O–H.",
-   "¹H: <b>two singlets (3H each)</b> only. δ3.7 (O–CH₃) and δ2.0 (CH₃CO). No neighbouring H to couple to.",
-   "¹³C: 171 (ester), 51.5 (O–CH₃) → methoxy.",
-   "Assemble: CH₃–CO–O–CH₃ = <span class=\"nm\">methyl acetate</span>."
-  ]
- },
- {
-  "id": "ethanal",
-  "name": "acetaldehyde",
-  "en": "ethanal",
-  "smi": "CC=O",
-  "formula": "C2H4O",
-  "mw": 44,
-  "ms": {
-   "M": 44,
-   "base": 29,
-   "peaks": [
-    {
-     "mz": 15,
-     "i": 38,
-     "l": "CH₃⁺"
-    },
-    {
-     "mz": 29,
-     "i": 100,
-     "l": "CHO⁺"
-    },
-    {
-     "mz": 44,
-     "i": 82,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 2820,
-    "w": "s",
-    "d": 0.35,
-    "a": "aldehyde C–H (2720/2820 doublet)"
-   },
-   {
-    "wn": 2720,
-    "w": "s",
-    "d": 0.3,
-    "a": "aldehyde C–H"
-   },
-   {
-    "wn": 1725,
-    "w": "m",
-    "d": 0.85,
-    "a": "C=O stretch"
-   }
-  ],
-  "h": [
-   {
-    "d": 9.72,
-    "m": "q",
-    "n": 1,
-    "a": "–CHO (small coupling)"
-   },
-   {
-    "d": 2.18,
-    "m": "d",
-    "n": 3,
-    "a": "CH₃"
-   }
-  ],
-  "c": [
-   {
-    "d": 199.5,
-    "a": "C=O (aldehyde)"
-   },
-   {
-    "d": 30.8,
-    "a": "CH₃"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "CHO"
-  ],
-  "steps": [
-   "MS: M⁺=44. m/z 29 = <b>CHO⁺</b> is the base peak → strongly suggests an aldehyde.",
-   "IR: <b>aldehyde C–H doublet at 2820/2720</b> + C=O at 1725 = decisive for an aldehyde.",
-   "¹H: <b>1H at δ9.7</b> (aldehyde H) is diagnostic. It couples weakly to CH₃ to give a quartet.",
-   "¹³C: <b>199</b> (aldehyde C=O, slightly downfield of a ketone).",
-   "Assemble: CH₃–CHO = <span class=\"nm\">acetaldehyde</span>."
-  ]
- },
- {
-  "id": "benzaldehyde",
-  "name": "benzaldehyde",
-  "en": "benzaldehyde",
-  "smi": "O=Cc1ccccc1",
-  "formula": "C7H6O",
-  "mw": 106,
-  "ms": {
-   "M": 106,
-   "base": 105,
-   "peaks": [
-    {
-     "mz": 51,
-     "i": 30
-    },
-    {
-     "mz": 77,
-     "i": 80,
-     "l": "C₆H₅⁺"
-    },
-    {
-     "mz": 105,
-     "i": 100,
-     "l": "C₆H₅CO⁺ (M−1)"
-    },
-    {
-     "mz": 106,
-     "i": 90,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 3060,
-    "w": "s",
-    "d": 0.2,
-    "a": "aromatic C–H"
-   },
-   {
-    "wn": 2810,
-    "w": "s",
-    "d": 0.3,
-    "a": "aldehyde C–H"
-   },
-   {
-    "wn": 2740,
-    "w": "s",
-    "d": 0.28,
-    "a": "aldehyde C–H"
-   },
-   {
-    "wn": 1700,
-    "w": "m",
-    "d": 0.85,
-    "a": "C=O (conjugated, slightly lower)"
-   },
-   {
-    "wn": 1595,
-    "w": "s",
-    "d": 0.35,
-    "a": "aromatic C=C"
-   }
-  ],
-  "h": [
-   {
-    "d": 9.98,
-    "m": "s",
-    "n": 1,
-    "a": "–CHO"
-   },
-   {
-    "d": 7.85,
-    "m": "m",
-    "n": 2,
-    "a": "ortho aromatic H"
-   },
-   {
-    "d": 7.55,
-    "m": "m",
-    "n": 3,
-    "a": "meta/para aromatic H"
-   }
-  ],
-  "c": [
-   {
-    "d": 192.4,
-    "a": "C=O (conjugated aldehyde)"
-   },
-   {
-    "d": 136.4,
-    "a": "aromatic ipso C"
-   },
-   {
-    "d": 134.4,
-    "a": "para C"
-   },
-   {
-    "d": 129.7,
-    "a": "aromatic C"
-   },
-   {
-    "d": 129,
-    "a": "aromatic C"
-   }
-  ],
-  "frags": [
-   "Ph",
-   "CHO"
-  ],
-  "steps": [
-   "MS: M⁺=106. m/z 77 = <b>C₆H₅⁺ (phenyl)</b>, 105 = C₆H₅CO⁺ (M−1). The 77→51 sequence is further aromatic evidence.",
-   "IR: aldehyde C–H doublet (2810/2740) + C=O at 1700 (lowered by conjugation) + aromatic ring at 1595.",
-   "¹H: <b>1H near δ10</b> (CHO) and <b>5H at δ7.5–7.9</b> (monosubstituted benzene).",
-   "¹³C: 192 (conjugated aldehyde) and four aromatic lines (129–136).",
-   "Assemble: C₆H₅–CHO = <span class=\"nm\">benzaldehyde</span>."
-  ]
- },
- {
-  "id": "toluene",
-  "name": "toluene",
-  "en": "toluene",
-  "smi": "Cc1ccccc1",
-  "formula": "C7H8",
-  "mw": 92,
-  "ms": {
-   "M": 92,
-   "base": 91,
-   "peaks": [
-    {
-     "mz": 39,
-     "i": 20
-    },
-    {
-     "mz": 65,
-     "i": 30,
-     "l": "C₅H₅⁺"
-    },
-    {
-     "mz": 91,
-     "i": 100,
-     "l": "tropylium C₇H₇⁺"
-    },
-    {
-     "mz": 92,
-     "i": 70,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 3030,
-    "w": "s",
-    "d": 0.25,
-    "a": "aromatic C–H"
-   },
-   {
-    "wn": 2920,
-    "w": "m",
-    "d": 0.3,
-    "a": "aliphatic C–H"
-   },
-   {
-    "wn": 1605,
-    "w": "s",
-    "d": 0.35,
-    "a": "aromatic C=C"
-   },
-   {
-    "wn": 1495,
-    "w": "s",
-    "d": 0.4,
-    "a": "aromatic C=C"
-   },
-   {
-    "wn": 730,
-    "w": "m",
-    "d": 0.5,
-    "a": "monosubstituted out-of-plane bend"
-   }
-  ],
-  "h": [
-   {
-    "d": 7.2,
-    "m": "m",
-    "n": 5,
-    "a": "aromatic H"
-   },
-   {
-    "d": 2.34,
-    "m": "s",
-    "n": 3,
-    "a": "Ar–CH₃"
-   }
-  ],
-  "c": [
-   {
-    "d": 137.8,
-    "a": "ipso C"
-   },
-   {
-    "d": 129.1,
-    "a": "aromatic C"
-   },
-   {
-    "d": 128.3,
-    "a": "aromatic C"
-   },
-   {
-    "d": 125.4,
-    "a": "para C"
-   },
-   {
-    "d": 21.4,
-    "a": "CH₃"
-   }
-  ],
-  "frags": [
-   "Ph",
-   "CH3"
-  ],
-  "steps": [
-   "MS: M⁺=92. Base peak <b>m/z 91</b> = tropylium ion C₇H₇⁺ is the decisive marker for benzyl/toluene. Also 65 (C₅H₅⁺).",
-   "IR: aromatic C–H (3030) and C=C (1605/1495), plus the monosubstituted out-of-plane bend (~730). No C=O, no O–H.",
-   "¹H: <b>5H at δ7.2</b> (aromatic) and a <b>3H singlet at δ2.3</b> (Ar–CH₃).",
-   "¹³C: four aromatic lines + 21 (CH₃).",
-   "Assemble: C₆H₅–CH₃ = <span class=\"nm\">toluene</span>."
-  ]
- },
- {
-  "id": "mecn",
-  "name": "acetonitrile",
-  "en": "acetonitrile",
-  "smi": "CC#N",
-  "formula": "C2H3N",
-  "mw": 41,
-  "ms": {
-   "M": 41,
-   "base": 41,
-   "peaks": [
-    {
-     "mz": 38,
-     "i": 15
-    },
-    {
-     "mz": 40,
-     "i": 60,
-     "l": "M−1"
-    },
-    {
-     "mz": 41,
-     "i": 100,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 2990,
-    "w": "m",
-    "d": 0.3,
-    "a": "C–H stretch"
-   },
-   {
-    "wn": 2250,
-    "w": "s",
-    "d": 0.45,
-    "a": "C≡N stretch (sharp, medium)"
-   },
-   {
-    "wn": 1440,
-    "w": "s",
-    "d": 0.25,
-    "a": "CH₃ bend"
-   }
-  ],
-  "h": [
-   {
-    "d": 1.98,
-    "m": "s",
-    "n": 3,
-    "a": "CH₃"
-   }
-  ],
-  "c": [
-   {
-    "d": 118,
-    "a": "C≡N"
-   },
-   {
-    "d": 1.3,
-    "a": "CH₃ (very upfield)"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "CN"
-  ],
-  "steps": [
-   "MS: <b>M⁺=41 (odd)</b> → by the nitrogen rule, an odd number of nitrogens (one).",
-   "IR: <b>a sharp, medium band at 2250</b> = C≡N stretch (nitrile fingerprint; C≡C also appears here but differs in position/intensity).",
-   "¹H: a singlet (3H) at δ2.0 only.",
-   "¹³C: <b>118 (C≡N)</b> and 1.3 (CH₃), two lines. Nitrile carbon appears at 115–120.",
-   "Assemble: CH₃–C≡N = <span class=\"nm\">acetonitrile</span>."
-  ]
- },
- {
-  "id": "et2o",
-  "name": "diethyl ether",
-  "en": "diethyl ether",
-  "smi": "CCOCC",
-  "formula": "C4H10O",
-  "mw": 74,
-  "ms": {
-   "M": 74,
-   "base": 31,
-   "peaks": [
-    {
-     "mz": 15,
-     "i": 12
-    },
-    {
-     "mz": 29,
-     "i": 55,
-     "l": "C₂H₅⁺"
-    },
-    {
-     "mz": 31,
-     "i": 100,
-     "l": "CH₂=OH⁺"
-    },
-    {
-     "mz": 45,
-     "i": 35,
-     "l": "CH₃CH=OH⁺?"
-    },
-    {
-     "mz": 59,
-     "i": 40,
-     "l": "M−15"
-    },
-    {
-     "mz": 74,
-     "i": 8,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 2975,
-    "w": "m",
-    "d": 0.5,
-    "a": "C–H stretch"
-   },
-   {
-    "wn": 1120,
-    "w": "m",
-    "d": 0.65,
-    "a": "C–O–C antisym. stretch (strong)"
-   },
-   {
-    "wn": 1380,
-    "w": "s",
-    "d": 0.25,
-    "a": "CH₃ bend"
-   }
-  ],
-  "h": [
-   {
-    "d": 3.4,
-    "m": "q",
-    "n": 4,
-    "a": "2×O–CH₂"
-   },
-   {
-    "d": 1.18,
-    "m": "t",
-    "n": 6,
-    "a": "2×CH₃"
-   }
-  ],
-  "c": [
-   {
-    "d": 65.9,
-    "a": "O–CH₂"
-   },
-   {
-    "d": 15.3,
-    "a": "CH₃"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "CH2",
-   "O",
-   "CH2",
-   "CH3"
-  ],
-  "steps": [
-   "MS: M⁺=74. m/z 59 (M−15) with 31, 29. The base peak 31 is an oxocarbenium ion.",
-   "IR: <b>strong C–O–C at 1120</b>. <b>No</b> O–H (no broad band) → an ether, not an alcohol.",
-   "¹H: quartet (4H) + triplet (6H) for <b>two equivalent ethyls</b>. δ3.4 is next to oxygen. No exchangeable O–H.",
-   "¹³C: only two lines, 66 (O–CH₂) and 15 (CH₃) → a symmetric ether.",
-   "Assemble: CH₃CH₂–O–CH₂CH₃ = <span class=\"nm\">diethyl ether</span>."
-  ]
- },
- {
-  "id": "2clpropane",
-  "name": "2-chloropropane",
-  "en": "2-chloropropane",
-  "smi": "CC(Cl)C",
-  "formula": "C3H7Cl",
-  "mw": 78,
-  "ms": {
-   "M": 78,
-   "base": 43,
-   "peaks": [
-    {
-     "mz": 27,
-     "i": 35
-    },
-    {
-     "mz": 43,
-     "i": 100,
-     "l": "C₃H₇⁺ (M−Cl)"
-    },
-    {
-     "mz": 63,
-     "i": 22,
-     "l": "M−15"
-    },
-    {
-     "mz": 78,
-     "i": 30,
-     "l": "M⁺ (³⁵Cl)"
-    },
-    {
-     "mz": 80,
-     "i": 10,
-     "l": "M+2 (³⁷Cl)"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 2975,
-    "w": "m",
-    "d": 0.45,
-    "a": "C–H stretch"
-   },
-   {
-    "wn": 1385,
-    "w": "s",
-    "d": 0.3,
-    "a": "CH₃ bend (gem-dimethyl doublet)"
-   },
-   {
-    "wn": 1375,
-    "w": "s",
-    "d": 0.3,
-    "a": "CH₃ bend"
-   },
-   {
-    "wn": 610,
-    "w": "m",
-    "d": 0.5,
-    "a": "C–Cl stretch"
-   }
-  ],
-  "h": [
-   {
-    "d": 4.1,
-    "m": "sept",
-    "n": 1,
-    "a": ">CH–Cl (methine)"
-   },
-   {
-    "d": 1.52,
-    "m": "d",
-    "n": 6,
-    "a": "(CH₃)₂"
-   }
-  ],
-  "c": [
-   {
-    "d": 53.8,
-    "a": "CH–Cl"
-   },
-   {
-    "d": 27.2,
-    "a": "(CH₃)₂"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "CH3",
-   "CH",
-   "Cl"
-  ],
-  "iso": "M⁺(78) : M+2(80) ≈ 3 : 1 → one chlorine",
-  "steps": [
-   "MS: <b>M⁺(78) and M+2(80) about 3:1</b> → <b>one chlorine</b> (³⁵Cl:³⁷Cl ≈ 3:1). Base m/z 43 = C₃H₇⁺ (loss of Cl).",
-   "IR: C–Cl near 600. No O–H/C=O. The 1385/1375 doublet hints at gem-dimethyl.",
-   "¹H: <b>septet (1H) + doublet (6H) = isopropyl</b>. The methine is shifted to δ4.1 → next to electronegative Cl.",
-   "¹³C: 54 (CH–Cl), 27 (2CH₃).",
-   "Assemble: (CH₃)₂CH–Cl = <span class=\"nm\">2-chloropropane</span>."
-  ]
- },
- {
-  "id": "etbr",
-  "name": "bromoethane",
-  "en": "bromoethane",
-  "smi": "CCBr",
-  "formula": "C2H5Br",
-  "mw": 108,
-  "ms": {
-   "M": 108,
-   "base": 29,
-   "peaks": [
-    {
-     "mz": 27,
-     "i": 60
-    },
-    {
-     "mz": 29,
-     "i": 100,
-     "l": "C₂H₅⁺"
-    },
-    {
-     "mz": 108,
-     "i": 20,
-     "l": "M⁺ (⁷⁹Br)"
-    },
-    {
-     "mz": 110,
-     "i": 19,
-     "l": "M+2 (⁸¹Br)"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 2970,
-    "w": "m",
-    "d": 0.45,
-    "a": "C–H stretch"
-   },
-   {
-    "wn": 1430,
-    "w": "s",
-    "d": 0.3,
-    "a": "CH₂ bend"
-   },
-   {
-    "wn": 560,
-    "w": "m",
-    "d": 0.5,
-    "a": "C–Br stretch"
-   }
-  ],
-  "h": [
-   {
-    "d": 3.43,
-    "m": "q",
-    "n": 2,
-    "a": "–CH₂–Br"
-   },
-   {
-    "d": 1.67,
-    "m": "t",
-    "n": 3,
-    "a": "CH₃"
-   }
-  ],
-  "c": [
-   {
-    "d": 28.3,
-    "a": "CH₃"
-   },
-   {
-    "d": 26.6,
-    "a": "CH₂–Br"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "CH2",
-   "Br"
-  ],
-  "iso": "M⁺(108) : M+2(110) ≈ 1 : 1 → one bromine",
-  "steps": [
-   "MS: <b>M⁺(108) and M+2(110) roughly 1:1</b> → <b>one bromine</b> (⁷⁹Br:⁸¹Br ≈ 1:1). m/z 29 = C₂H₅⁺ (loss of Br).",
-   "IR: C–Br near 560. No O–H/C=O.",
-   "¹H: an ethyl group (quartet 2H + triplet 3H). The δ3.4 CH₂ is next to Br.",
-   "¹³C: only two lines.",
-   "Assemble: CH₃CH₂–Br = <span class=\"nm\">bromoethane</span>."
-  ]
- },
- {
-  "id": "etnh2",
-  "name": "ethylamine",
-  "en": "ethylamine",
-  "smi": "CCN",
-  "formula": "C2H7N",
-  "mw": 45,
-  "ms": {
-   "M": 45,
-   "base": 30,
-   "peaks": [
-    {
-     "mz": 18,
-     "i": 15
-    },
-    {
-     "mz": 28,
-     "i": 20
-    },
-    {
-     "mz": 30,
-     "i": 100,
-     "l": "CH₂=NH₂⁺"
-    },
-    {
-     "mz": 44,
-     "i": 20,
-     "l": "M−1"
-    },
-    {
-     "mz": 45,
-     "i": 25,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 3370,
-    "w": "m",
-    "d": 0.3,
-    "a": "N–H stretch (primary, 2 bands)"
-   },
-   {
-    "wn": 3290,
-    "w": "m",
-    "d": 0.28,
-    "a": "N–H stretch"
-   },
-   {
-    "wn": 1610,
-    "w": "s",
-    "d": 0.3,
-    "a": "N–H bend"
-   },
-   {
-    "wn": 1070,
-    "w": "s",
-    "d": 0.35,
-    "a": "C–N stretch"
-   }
-  ],
-  "h": [
-   {
-    "d": 2.68,
-    "m": "q",
-    "n": 2,
-    "a": "–CH₂–N"
-   },
-   {
-    "d": 1.3,
-    "m": "s",
-    "n": 2,
-    "a": "NH₂ (exchangeable)"
-   },
-   {
-    "d": 1.1,
-    "m": "t",
-    "n": 3,
-    "a": "CH₃"
-   }
-  ],
-  "c": [
-   {
-    "d": 36.9,
-    "a": "CH₂–N"
-   },
-   {
-    "d": 19,
-    "a": "CH₃"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "CH2",
-   "NH2"
-  ],
-  "steps": [
-   "MS: <b>M⁺=45 (odd)</b> → by the nitrogen rule, an odd number of nitrogens. Base m/z 30 = <b>CH₂=NH₂⁺</b> (iminium) = the characteristic amine cleavage.",
-   "IR: <b>two N–H bands</b> at 3300–3400 (primary amine) + N–H bend at 1610. The shape differs from a single O–H.",
-   "¹H: an ethyl group + exchangeable NH₂ (2H). The δ2.7 CH₂ is next to nitrogen (less downfield than next to oxygen).",
-   "¹³C: 37 (C–N), 19 (CH₃).",
-   "Assemble: CH₃CH₂–NH₂ = <span class=\"nm\">ethylamine</span>."
-  ]
- },
- {
-  "id": "propacid",
-  "name": "propanoic acid",
-  "en": "propanoic acid",
-  "smi": "CCC(=O)O",
-  "formula": "C3H6O2",
-  "mw": 74,
-  "ms": {
-   "M": 74,
-   "base": 28,
-   "peaks": [
-    {
-     "mz": 27,
-     "i": 30
-    },
-    {
-     "mz": 28,
-     "i": 70
-    },
-    {
-     "mz": 29,
-     "i": 40,
-     "l": "C₂H₅⁺"
-    },
-    {
-     "mz": 45,
-     "i": 35,
-     "l": "COOH⁺"
-    },
-    {
-     "mz": 57,
-     "i": 30,
-     "l": "M−17"
-    },
-    {
-     "mz": 74,
-     "i": 45,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 3000,
-    "w": "b",
-    "d": 0.55,
-    "a": "O–H (acid, broad)"
-   },
-   {
-    "wn": 1710,
-    "w": "m",
-    "d": 0.85,
-    "a": "C=O (acid)"
-   },
-   {
-    "wn": 1240,
-    "w": "s",
-    "d": 0.45,
-    "a": "C–O stretch"
-   }
-  ],
-  "h": [
-   {
-    "d": 11.6,
-    "m": "s",
-    "n": 1,
-    "a": "COOH"
-   },
-   {
-    "d": 2.4,
-    "m": "q",
-    "n": 2,
-    "a": "–CH₂–CO"
-   },
-   {
-    "d": 1.18,
-    "m": "t",
-    "n": 3,
-    "a": "CH₃"
-   }
-  ],
-  "c": [
-   {
-    "d": 180.5,
-    "a": "C=O (acid)"
-   },
-   {
-    "d": 27.4,
-    "a": "CH₂"
-   },
-   {
-    "d": 9,
-    "a": "CH₃"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "CH2",
-   "COOH"
-  ],
-  "steps": [
-   "MS: M⁺=74. m/z 45 (COOH⁺), 57 (M−17, loss of OH), 29 (C₂H₅⁺).",
-   "IR: <b>very broad acid O–H + C=O at 1710</b> → carboxylic acid.",
-   "¹H: <b>a 1H above δ11</b> (COOH) is decisive, plus an ethyl (quartet 2H + triplet 3H).",
-   "¹³C: <b>180</b> (carboxylic acid C=O).",
-   "Assemble: CH₃CH₂–COOH = <span class=\"nm\">propanoic acid</span>."
-  ]
- },
- {
-  "id": "butanol",
-  "name": "1-butanol",
-  "en": "butan-1-ol",
-  "smi": "CCCCO",
-  "formula": "C4H10O",
-  "mw": 74,
-  "ms": {
-   "M": 74,
-   "base": 31,
-   "peaks": [
-    {
-     "mz": 27,
-     "i": 30
-    },
-    {
-     "mz": 31,
-     "i": 100,
-     "l": "CH₂=OH⁺"
-    },
-    {
-     "mz": 41,
-     "i": 42
-    },
-    {
-     "mz": 43,
-     "i": 55,
-     "l": "C₃H₇⁺"
-    },
-    {
-     "mz": 56,
-     "i": 44,
-     "l": "M−18 (H₂O)"
-    },
-    {
-     "mz": 74,
-     "i": 3,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 3330,
-    "w": "b",
-    "d": 0.6,
-    "a": "O–H stretch (broad)"
-   },
-   {
-    "wn": 2960,
-    "w": "m",
-    "d": 0.5,
-    "a": "C–H stretch"
-   },
-   {
-    "wn": 1050,
-    "w": "s",
-    "d": 0.55,
-    "a": "C–O stretch (primary)"
-   },
-   {
-    "wn": 1465,
-    "w": "s",
-    "d": 0.25,
-    "a": "CH₂ bend"
-   }
-  ],
-  "h": [
-   {
-    "d": 3.62,
-    "m": "t",
-    "n": 2,
-    "a": "–CH₂–O"
-   },
-   {
-    "d": 2.2,
-    "m": "s",
-    "n": 1,
-    "a": "O–H (exchangeable)"
-   },
-   {
-    "d": 1.54,
-    "m": "quint",
-    "n": 2,
-    "a": "–CH₂–"
-   },
-   {
-    "d": 1.38,
-    "m": "sext",
-    "n": 2,
-    "a": "–CH₂–"
-   },
-   {
-    "d": 0.92,
-    "m": "t",
-    "n": 3,
-    "a": "CH₃"
-   }
-  ],
-  "c": [
-   {
-    "d": 62.4,
-    "a": "CH₂–O"
-   },
-   {
-    "d": 34.9,
-    "a": "CH₂"
-   },
-   {
-    "d": 19,
-    "a": "CH₂"
-   },
-   {
-    "d": 13.9,
-    "a": "CH₃"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "CH2",
-   "CH2",
-   "CH2",
-   "OH"
-  ],
-  "steps": [
-   "MS: M⁺=74. Base m/z 31 = <b>CH₂=OH⁺</b> (α-cleavage of a primary alcohol). m/z 56 is <b>M−18 (loss of water)</b>, characteristic of alcohols.",
-   "IR: <b>broad O–H</b> at 3330 and <b>C–O (primary)</b> at 1050 → alcohol.",
-   "¹H: a <b>triplet (2H, CH₂–O)</b> at δ3.6 + a propyl chain (quintet, sextet, triplet) + exchangeable O–H.",
-   "¹³C: <b>four lines</b> including 62 (C–O) → no symmetry.",
-   "Assemble: CH₃CH₂CH₂CH₂–OH = <span class=\"nm\">1-butanol</span>."
-  ]
- },
- {
-  "id": "cyclohexanone",
-  "name": "cyclohexanone",
-  "en": "cyclohexanone",
-  "smi": "O=C1CCCCC1",
-  "formula": "C6H10O",
-  "mw": 98,
-  "ms": {
-   "M": 98,
-   "base": 55,
-   "peaks": [
-    {
-     "mz": 42,
-     "i": 60
-    },
-    {
-     "mz": 55,
-     "i": 100,
-     "l": "C₃H₃O⁺?/cleavage"
-    },
-    {
-     "mz": 69,
-     "i": 42
-    },
-    {
-     "mz": 83,
-     "i": 30,
-     "l": "M−15"
-    },
-    {
-     "mz": 98,
-     "i": 45,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 2935,
-    "w": "m",
-    "d": 0.4,
-    "a": "C–H stretch"
-   },
-   {
-    "wn": 1715,
-    "w": "m",
-    "d": 0.85,
-    "a": "C=O stretch (6-membered ring ketone)"
-   },
-   {
-    "wn": 1450,
-    "w": "s",
-    "d": 0.25,
-    "a": "CH₂ bend"
-   },
-   {
-    "wn": 1120,
-    "w": "s",
-    "d": 0.3,
-    "a": "C–C(=O)"
-   }
-  ],
-  "h": [
-   {
-    "d": 2.33,
-    "m": "m",
-    "n": 4,
-    "a": "α-CH₂ ×2"
-   },
-   {
-    "d": 1.85,
-    "m": "m",
-    "n": 4,
-    "a": "β-CH₂ ×2"
-   },
-   {
-    "d": 1.71,
-    "m": "m",
-    "n": 2,
-    "a": "γ-CH₂"
-   }
-  ],
-  "c": [
-   {
-    "d": 211.8,
-    "a": "C=O (ketone)"
-   },
-   {
-    "d": 41.9,
-    "a": "α-CH₂(C2/6)"
-   },
-   {
-    "d": 27,
-    "a": "C3/5"
-   },
-   {
-    "d": 25,
-    "a": "C4"
-   }
-  ],
-  "frags": [
-   "CH2",
-   "CH2",
-   "CH2",
-   "CH2",
-   "CH2",
-   "C=O"
-  ],
-  "steps": [
-   "MS: M⁺=98. Ring cleavage gives the base m/z 55; also M−15 (83).",
-   "IR: <b>C=O at 1715</b>. A six-membered ring ketone sits at nearly the same position as an acyclic ketone (smaller rings move higher: 5-membered ≈1745, 4-membered ≈1780).",
-   "¹H: the <b>α-CH₂ (4H)</b> at δ2.3 with multiplets for the other ring CH₂ groups. No functional group other than C=O.",
-   "¹³C: <b>212 (ketone)</b> + only three aliphatic lines = four in total → a mirror plane makes C2=C6 and C3=C5 equivalent.",
-   "Assemble: a six-membered ring ketone = <span class=\"nm\">cyclohexanone</span>."
-  ]
- },
- {
-  "id": "phenol",
-  "name": "phenol",
-  "en": "phenol",
-  "smi": "Oc1ccccc1",
-  "formula": "C6H6O",
-  "mw": 94,
-  "ms": {
-   "M": 94,
-   "base": 94,
-   "peaks": [
-    {
-     "mz": 39,
-     "i": 25
-    },
-    {
-     "mz": 65,
-     "i": 30,
-     "l": "M−29"
-    },
-    {
-     "mz": 66,
-     "i": 28,
-     "l": "M−28 (loss of CO)"
-    },
-    {
-     "mz": 94,
-     "i": 100,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 3350,
-    "w": "b",
-    "d": 0.55,
-    "a": "O–H stretch (H-bonded)"
-   },
-   {
-    "wn": 3040,
-    "w": "s",
-    "d": 0.2,
-    "a": "aromatic C–H"
-   },
-   {
-    "wn": 1595,
-    "w": "s",
-    "d": 0.35,
-    "a": "aromatic C=C"
-   },
-   {
-    "wn": 1500,
-    "w": "s",
-    "d": 0.35,
-    "a": "aromatic C=C"
-   },
-   {
-    "wn": 1220,
-    "w": "s",
-    "d": 0.5,
-    "a": "C–O (phenol)"
-   },
-   {
-    "wn": 750,
-    "w": "m",
-    "d": 0.45,
-    "a": "monosubstituted out-of-plane bend"
-   }
-  ],
-  "h": [
-   {
-    "d": 7.25,
-    "m": "m",
-    "n": 2,
-    "a": "meta aromatic H"
-   },
-   {
-    "d": 6.92,
-    "m": "m",
-    "n": 1,
-    "a": "para aromatic H"
-   },
-   {
-    "d": 6.83,
-    "m": "m",
-    "n": 2,
-    "a": "ortho aromatic H"
-   },
-   {
-    "d": 5.2,
-    "m": "s",
-    "n": 1,
-    "a": "O–H (variable)"
-   }
-  ],
-  "c": [
-   {
-    "d": 155,
-    "a": "ipso C–OH"
-   },
-   {
-    "d": 129.7,
-    "a": "meta C"
-   },
-   {
-    "d": 121,
-    "a": "para C"
-   },
-   {
-    "d": 115.3,
-    "a": "ortho C"
-   }
-  ],
-  "frags": [
-   "Ph",
-   "OH"
-  ],
-  "steps": [
-   "MS: <b>M⁺=94 is the base peak</b> (stable aromatic). m/z 66 is <b>loss of CO (−28)</b>, characteristic of phenol.",
-   "IR: broad O–H + aromatic C=C (1595/1500) + <b>C–O (phenol)</b> at 1220.",
-   "¹H: five aromatic H (ortho/meta/para) + exchangeable O–H. <b>The O–H δ is variable with solvent and concentration</b>.",
-   "¹³C: <b>the ipso C–OH at 155</b> (downfield for an aromatic carbon, from oxygen resonance). Four aromatic lines.",
-   "Assemble: C₆H₅–OH = <span class=\"nm\">phenol</span>."
-  ]
- },
- {
-  "id": "mebenzoate",
-  "name": "methyl benzoate",
-  "en": "methyl benzoate",
-  "smi": "O=C(OC)c1ccccc1",
-  "formula": "C8H8O2",
-  "mw": 136,
-  "ms": {
-   "M": 136,
-   "base": 105,
-   "peaks": [
-    {
-     "mz": 51,
-     "i": 25
-    },
-    {
-     "mz": 77,
-     "i": 60,
-     "l": "C₆H₅⁺"
-    },
-    {
-     "mz": 105,
-     "i": 100,
-     "l": "C₆H₅CO⁺ (M−31)"
-    },
-    {
-     "mz": 136,
-     "i": 30,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 3000,
-    "w": "m",
-    "d": 0.25,
-    "a": "C–H stretch"
-   },
-   {
-    "wn": 1720,
-    "w": "m",
-    "d": 0.85,
-    "a": "C=O (conjugated ester)"
-   },
-   {
-    "wn": 1280,
-    "w": "s",
-    "d": 0.55,
-    "a": "C–O–C stretch"
-   },
-   {
-    "wn": 1110,
-    "w": "s",
-    "d": 0.45,
-    "a": "C–O stretch"
-   },
-   {
-    "wn": 710,
-    "w": "m",
-    "d": 0.4,
-    "a": "monosubstituted out-of-plane bend"
-   }
-  ],
-  "h": [
-   {
-    "d": 8.03,
-    "m": "m",
-    "n": 2,
-    "a": "ortho aromatic H"
-   },
-   {
-    "d": 7.53,
-    "m": "m",
-    "n": 1,
-    "a": "para aromatic H"
-   },
-   {
-    "d": 7.42,
-    "m": "m",
-    "n": 2,
-    "a": "meta aromatic H"
-   },
-   {
-    "d": 3.9,
-    "m": "s",
-    "n": 3,
-    "a": "O–CH₃"
-   }
-  ],
-  "c": [
-   {
-    "d": 166.9,
-    "a": "C=O (ester)"
-   },
-   {
-    "d": 132.9,
-    "a": "para C"
-   },
-   {
-    "d": 130.1,
-    "a": "aromatic C"
-   },
-   {
-    "d": 129.6,
-    "a": "ipso C"
-   },
-   {
-    "d": 128.3,
-    "a": "aromatic C"
-   },
-   {
-    "d": 52,
-    "a": "O–CH₃"
-   }
-  ],
-  "frags": [
-   "Ph",
-   "C=O",
-   "O",
-   "CH3"
-  ],
-  "steps": [
-   "MS: base m/z 105 = <b>benzoyl C₆H₅CO⁺</b> (M−31, loss of OCH₃). 77 = phenyl.",
-   "IR: the ester C=O is at <b>1720</b> — lower than an aliphatic ester (≈1740). An example where <b>conjugation with the ring lowers C=O</b>. Strong C–O–C.",
-   "¹H: an <b>O–CH₃ singlet (3H)</b> at δ3.9 + aromatics (the ortho H at δ8.0, deshielded by the carbonyl).",
-   "¹³C: <b>167 (ester)</b> + O–CH₃ at 52 + aromatics.",
-   "Assemble: C₆H₅–CO–O–CH₃ = <span class=\"nm\">methyl benzoate</span>."
-  ]
- },
- {
-  "id": "propanal",
-  "name": "propanal",
-  "en": "propanal",
-  "smi": "CCC=O",
-  "formula": "C3H6O",
-  "mw": 58,
-  "ms": {
-   "M": 58,
-   "base": 29,
-   "peaks": [
-    {
-     "mz": 27,
-     "i": 40
-    },
-    {
-     "mz": 28,
-     "i": 55
-    },
-    {
-     "mz": 29,
-     "i": 100,
-     "l": "CHO⁺/C₂H₅⁺"
-    },
-    {
-     "mz": 57,
-     "i": 30,
-     "l": "M−1"
-    },
-    {
-     "mz": 58,
-     "i": 48,
-     "l": "M⁺"
-    }
-   ]
-  },
-  "ir": [
-   {
-    "wn": 2960,
-    "w": "m",
-    "d": 0.35,
-    "a": "C–H stretch"
-   },
-   {
-    "wn": 2810,
-    "w": "s",
-    "d": 0.32,
-    "a": "aldehyde C–H"
-   },
-   {
-    "wn": 2710,
-    "w": "s",
-    "d": 0.3,
-    "a": "aldehyde C–H"
-   },
-   {
-    "wn": 1725,
-    "w": "m",
-    "d": 0.85,
-    "a": "C=O stretch"
-   }
-  ],
-  "h": [
-   {
-    "d": 9.79,
-    "m": "t",
-    "n": 1,
-    "a": "–CHO (small coupling)"
-   },
-   {
-    "d": 2.46,
-    "m": "q",
-    "n": 2,
-    "a": "–CH₂–CHO"
-   },
-   {
-    "d": 1.12,
-    "m": "t",
-    "n": 3,
-    "a": "CH₃"
-   }
-  ],
-  "c": [
-   {
-    "d": 202.5,
-    "a": "C=O (aldehyde)"
-   },
-   {
-    "d": 36.7,
-    "a": "CH₂"
-   },
-   {
-    "d": 5.8,
-    "a": "CH₃"
-   }
-  ],
-  "frags": [
-   "CH3",
-   "CH2",
-   "CHO"
-  ],
-  "steps": [
-   "MS: M⁺=58. m/z 29 = <b>CHO⁺</b> (and C₂H₅⁺); M−1 (57) is also aldehyde-like.",
-   "IR: <b>aldehyde C–H doublet at 2810/2710</b> + C=O at 1725 = confirms an aldehyde.",
-   "¹H: <b>1H at δ9.8</b> (aldehyde H) is diagnostic. It couples weakly to the adjacent CH₂ to give a triplet. Ethyl group.",
-   "¹³C: <b>202 (aldehyde)</b>.",
-   "Assemble: CH₃CH₂–CHO = <span class=\"nm\">propanal</span>."
-  ]
- }
-];
+  { id:'ethanol', name:'エタノール', en:'ethanol', smi:'CCO', formula:'C2H6O', mw:46,
+    ms:{ M:46, base:31, peaks:[{mz:15,i:12},{mz:27,i:22},{mz:29,i:26,l:'C₂H₅⁺/CHO⁺'},{mz:31,i:100,l:'CH₂OH⁺'},{mz:45,i:30,l:'M−1'},{mz:46,i:28,l:'M⁺'}] },
+    ir:[{wn:3340,w:'b',d:0.62,a:'O–H 伸縮(broad)'},{wn:2970,w:'m',d:0.5,a:'C–H 伸縮'},{wn:1050,w:'m',d:0.6,a:'C–O 伸縮'},{wn:1400,w:'s',d:0.25,a:'O–H 面内変角'}],
+    h:[{d:3.70,m:'q',n:2,a:'–CH₂–O'},{d:2.50,m:'s',n:1,a:'O–H(交換性)'},{d:1.22,m:'t',n:3,a:'CH₃–'}],
+    c:[{d:58.0,a:'CH₂–O'},{d:18.2,a:'CH₃'}],
+    frags:['CH3','CH2','OH'],
+    steps:['MS: M⁺=46, 偶数 → 窒素なし。基準ピーク m/z 31 は <b>CH₂OH⁺</b>（酸素隣接メチレンの特徴）。M−1(45)も第一級アルコールらしい。',
+      'IR: 3340 の<b>幅広い O–H</b> と 1050 の <b>C–O</b> → アルコール確定。',
+      '¹H: 三重項(3H, δ1.2)＋四重項(2H, δ3.7) = <b>エチル基</b>。δ3.7 は酸素隣接。交換性の O–H(1H)。',
+      '¹³C: 58(C–O) と 18(CH₃) の2本のみ → 対称性の低い小分子。',
+      '組み立て: CH₃–CH₂–OH = <span class="nm">エタノール</span>。'] },
 
+  { id:'ipa', name:'2-プロパノール', en:'propan-2-ol', smi:'CC(O)C', formula:'C3H8O', mw:60,
+    ms:{ M:60, base:45, peaks:[{mz:27,i:18},{mz:43,i:16},{mz:45,i:100,l:'M−15 (CH₃脱離)'},{mz:59,i:8,l:'M−1'},{mz:60,i:5,l:'M⁺'}] },
+    ir:[{wn:3350,w:'b',d:0.6,a:'O–H 伸縮(broad)'},{wn:2970,w:'m',d:0.5,a:'C–H 伸縮'},{wn:1150,w:'s',d:0.4,a:'C–O(第二級)'},{wn:1100,w:'s',d:0.45,a:'C–O'}],
+    h:[{d:4.00,m:'sept',n:1,a:'>CH–O(メチン)'},{d:2.20,m:'s',n:1,a:'O–H'},{d:1.16,m:'d',n:6,a:'(CH₃)₂'}],
+    c:[{d:64.0,a:'CH–O'},{d:25.3,a:'(CH₃)₂'}],
+    frags:['CH3','CH3','CH','OH'],
+    steps:['MS: M⁺=60。基準ピーク m/z 45 は <b>M−15</b>（メチル脱離）→ 分岐点にメチルがある示唆。',
+      'IR: 幅広い O–H(3350)＋C–O(1100前後) → アルコール。',
+      '¹H: <b>七重項(1H)</b> と <b>二重項(6H)</b> の組 = <b>イソプロピル基 (CH₃)₂CH–</b>。メチンが δ4.0 まで低磁場 → 酸素隣接。',
+      '¹³C: 64(CH–O), 25(2×CH₃) の2本 → 高い対称性。',
+      '組み立て: (CH₃)₂CH–OH = <span class="nm">2-プロパノール</span>。'] },
+
+  { id:'acetone', name:'アセトン', en:'propan-2-one', smi:'CC(=O)C', formula:'C3H6O', mw:58,
+    ms:{ M:58, base:43, peaks:[{mz:15,i:35,l:'CH₃⁺'},{mz:43,i:100,l:'CH₃CO⁺ (M−15)'},{mz:58,i:32,l:'M⁺'}] },
+    ir:[{wn:2990,w:'m',d:0.35,a:'C–H 伸縮'},{wn:1715,w:'m',d:0.85,a:'C=O 伸縮(鋭く強い)'},{wn:1360,w:'s',d:0.3,a:'CH₃ 変角'}],
+    h:[{d:2.10,m:'s',n:6,a:'2×CH₃(カルボニル隣接)'}],
+    c:[{d:206.0,a:'C=O(ケトン)'},{d:30.6,a:'2×CH₃'}],
+    frags:['CH3','C=O','CH3'],
+    steps:['MS: M⁺=58。m/z 43 = <b>アシリウム CH₃CO⁺</b>（M−15）が基準ピーク → メチルケトンの典型。',
+      'IR: <b>1715 の鋭く強い C=O</b>。O–H も N–H も無い → ケトンかアルデヒド。',
+      '¹H: <b>6H の単一シングレット(δ2.1)</b> のみ → カルボニルに挟まれた等価な2つのメチル。',
+      '¹³C: <b>206(ケトン C=O)</b> と 30(CH₃) の2本。アルデヒドC(190前後)ではない。',
+      '組み立て: CH₃–CO–CH₃ = <span class="nm">アセトン</span>。'] },
+
+  { id:'mek', name:'2-ブタノン (MEK)', en:'butan-2-one', smi:'CCC(=O)C', formula:'C4H8O', mw:72,
+    ms:{ M:72, base:43, peaks:[{mz:27,i:25},{mz:29,i:30,l:'C₂H₅⁺'},{mz:43,i:100,l:'CH₃CO⁺'},{mz:57,i:18,l:'C₂H₅CO⁺ (M−15)'},{mz:72,i:20,l:'M⁺'}] },
+    ir:[{wn:2980,w:'m',d:0.35,a:'C–H 伸縮'},{wn:1715,w:'m',d:0.85,a:'C=O 伸縮'},{wn:1170,w:'s',d:0.3,a:'C–C(=O)'}],
+    h:[{d:2.45,m:'q',n:2,a:'–CH₂–CO'},{d:2.13,m:'s',n:3,a:'CH₃–CO'},{d:1.05,m:'t',n:3,a:'CH₃–CH₂'}],
+    c:[{d:209.0,a:'C=O'},{d:36.5,a:'CH₂'},{d:29.3,a:'CH₃CO'},{d:7.9,a:'CH₃'}],
+    frags:['CH3','C=O','CH2','CH3'],
+    steps:['MS: M⁺=72。m/z 43(CH₃CO⁺) と 57(C₂H₅CO⁺) の<b>2種のアシリウム</b> → 非対称メチルケトン。',
+      'IR: 1715 の強い C=O。',
+      '¹H: シングレット(3H, δ2.1 メチルケトン) ＋ エチル基のカルテット(2H)/トリプレット(3H)。',
+      '¹³C: 209(C=O) を含む4本 → 炭素4種すべて非等価。',
+      '組み立て: CH₃–CO–CH₂–CH₃ = <span class="nm">2-ブタノン</span>。'] },
+
+  { id:'aceticacid', name:'酢酸', en:'acetic acid', smi:'CC(=O)O', formula:'C2H4O2', mw:60,
+    ms:{ M:60, base:43, peaks:[{mz:15,i:40,l:'CH₃⁺'},{mz:43,i:100,l:'CH₃CO⁺'},{mz:45,i:80,l:'COOH⁺'},{mz:60,i:60,l:'M⁺'}] },
+    ir:[{wn:3000,w:'b',d:0.55,a:'O–H(酸, 2500–3300 の非常に幅広い)'},{wn:1710,w:'m',d:0.85,a:'C=O 伸縮(酸)'},{wn:1290,w:'s',d:0.45,a:'C–O 伸縮'}],
+    h:[{d:11.4,m:'s',n:1,a:'COOH(交換性, 非常に低磁場)'},{d:2.10,m:'s',n:3,a:'CH₃'}],
+    c:[{d:178.0,a:'C=O(カルボン酸)'},{d:20.6,a:'CH₃'}],
+    frags:['CH3','COOH'],
+    steps:['MS: M⁺=60(偶数)。m/z 45 = <b>COOH⁺</b>、43 = CH₃CO⁺。',
+      'IR: <b>2500–3300 に及ぶ非常に幅広い O–H</b>＋1710 の C=O = <b>カルボン酸</b>の指紋。',
+      '¹H: <b>δ11 付近の非常に低磁場の 1H</b>（COOH）と δ2.1 の CH₃(3H)。',
+      '¹³C: <b>178</b> はカルボン酸/エステルC=O の領域(ケトン206より高磁場)。',
+      '組み立て: CH₃–COOH = <span class="nm">酢酸</span>。'] },
+
+  { id:'etoac', name:'酢酸エチル', en:'ethyl acetate', smi:'CC(=O)OCC', formula:'C4H8O2', mw:88,
+    ms:{ M:88, base:43, peaks:[{mz:29,i:22,l:'C₂H₅⁺'},{mz:43,i:100,l:'CH₃CO⁺'},{mz:61,i:12,l:'M−27'},{mz:70,i:10,l:'M−18'},{mz:88,i:14,l:'M⁺'}] },
+    ir:[{wn:2985,w:'m',d:0.35,a:'C–H 伸縮'},{wn:1740,w:'m',d:0.85,a:'C=O 伸縮(エステル, 高波数)'},{wn:1240,w:'m',d:0.6,a:'C–O–C 伸縮'},{wn:1050,w:'s',d:0.45,a:'C–O 伸縮'}],
+    h:[{d:4.12,m:'q',n:2,a:'–O–CH₂–'},{d:2.04,m:'s',n:3,a:'CH₃–CO'},{d:1.26,m:'t',n:3,a:'CH₃–CH₂'}],
+    c:[{d:171.0,a:'C=O(エステル)'},{d:60.4,a:'O–CH₂'},{d:21.0,a:'CH₃CO'},{d:14.2,a:'CH₃'}],
+    frags:['CH3','C=O','O','CH2','CH3'],
+    steps:['MS: M⁺=88。m/z 43(CH₃CO⁺) 基準 → アセチル基。',
+      'IR: <b>1740 の高波数 C=O</b>（ケトン1715より高い＝エステルの特徴）＋ 1240 の強い C–O–C。O–H は無い。',
+      '¹H: δ4.1 のカルテット(2H, <b>O–CH₂</b>) と δ1.3 のトリプレット(3H) = <b>エトキシ基のエチル</b>。加えて δ2.0 の CH₃CO(3H)。',
+      '¹³C: 171(エステルC=O), 60(O–CH₂) がエステルの決め手。',
+      '組み立て: CH₃–CO–O–CH₂–CH₃ = <span class="nm">酢酸エチル</span>。'] },
+
+  { id:'meoac', name:'酢酸メチル', en:'methyl acetate', smi:'CC(=O)OC', formula:'C3H6O2', mw:74,
+    ms:{ M:74, base:43, peaks:[{mz:15,i:30},{mz:43,i:100,l:'CH₃CO⁺'},{mz:59,i:22,l:'M−15'},{mz:74,i:30,l:'M⁺'}] },
+    ir:[{wn:2960,w:'m',d:0.3,a:'C–H 伸縮'},{wn:1745,w:'m',d:0.85,a:'C=O(エステル)'},{wn:1240,w:'m',d:0.6,a:'C–O–C'}],
+    h:[{d:3.67,m:'s',n:3,a:'O–CH₃'},{d:2.05,m:'s',n:3,a:'CH₃–CO'}],
+    c:[{d:171.5,a:'C=O(エステル)'},{d:51.5,a:'O–CH₃'},{d:20.6,a:'CH₃CO'}],
+    frags:['CH3','C=O','O','CH3'],
+    steps:['MS: M⁺=74。m/z 43(CH₃CO⁺), 59(M−15)。',
+      'IR: 1745 のエステル C=O。O–H 無し。',
+      '¹H: <b>2本のシングレット(各3H)</b>のみ。δ3.7(O–CH₃) と δ2.0(CH₃CO)。カップリングする隣接Hが無い。',
+      '¹³C: 171(エステル), 51.5(O–CH₃) → メトキシ。',
+      '組み立て: CH₃–CO–O–CH₃ = <span class="nm">酢酸メチル</span>。'] },
+
+  { id:'ethanal', name:'アセトアルデヒド', en:'ethanal', smi:'CC=O', formula:'C2H4O', mw:44,
+    ms:{ M:44, base:29, peaks:[{mz:15,i:38,l:'CH₃⁺'},{mz:29,i:100,l:'CHO⁺'},{mz:44,i:82,l:'M⁺'}] },
+    ir:[{wn:2820,w:'s',d:0.35,a:'アルデヒド C–H(2720/2820 二重線)'},{wn:2720,w:'s',d:0.3,a:'アルデヒド C–H'},{wn:1725,w:'m',d:0.85,a:'C=O 伸縮'}],
+    h:[{d:9.72,m:'q',n:1,a:'–CHO(小さくカップリング)'},{d:2.18,m:'d',n:3,a:'CH₃'}],
+    c:[{d:199.5,a:'C=O(アルデヒド)'},{d:30.8,a:'CH₃'}],
+    frags:['CH3','CHO'],
+    steps:['MS: M⁺=44。m/z 29 = <b>CHO⁺</b> が基準 → アルデヒド強く示唆。',
+      'IR: <b>2820/2720 のアルデヒド C–H 二重線</b>＋1725 の C=O = アルデヒドの決定的証拠。',
+      '¹H: <b>δ9.7 の 1H</b>（アルデヒドH）は診断的。CH₃ と小さくカップルして四重項。',
+      '¹³C: <b>199</b>（アルデヒドC=O, ケトンよりやや高磁場）。',
+      '組み立て: CH₃–CHO = <span class="nm">アセトアルデヒド</span>。'] },
+
+  { id:'benzaldehyde', name:'ベンズアルデヒド', en:'benzaldehyde', smi:'O=Cc1ccccc1', formula:'C7H6O', mw:106,
+    ms:{ M:106, base:105, peaks:[{mz:51,i:30},{mz:77,i:80,l:'C₆H₅⁺'},{mz:105,i:100,l:'C₆H₅CO⁺ (M−1)'},{mz:106,i:90,l:'M⁺'}] },
+    ir:[{wn:3060,w:'s',d:0.2,a:'芳香族 C–H'},{wn:2810,w:'s',d:0.3,a:'アルデヒド C–H'},{wn:2740,w:'s',d:0.28,a:'アルデヒド C–H'},{wn:1700,w:'m',d:0.85,a:'C=O(共役でやや低波数)'},{wn:1595,w:'s',d:0.35,a:'芳香族 C=C'}],
+    h:[{d:9.98,m:'s',n:1,a:'–CHO'},{d:7.85,m:'m',n:2,a:'オルト芳香族H'},{d:7.55,m:'m',n:3,a:'メタ/パラ芳香族H'}],
+    c:[{d:192.4,a:'C=O(共役アルデヒド)'},{d:136.4,a:'芳香族 ipso C'},{d:134.4,a:'para C'},{d:129.7,a:'芳香族C'},{d:129.0,a:'芳香族C'}],
+    frags:['Ph','CHO'],
+    steps:['MS: M⁺=106。m/z 77 = <b>C₆H₅⁺(フェニル)</b>、105 = C₆H₅CO⁺(M−1)。77→51 の連鎖も芳香族の証拠。',
+      'IR: アルデヒド C–H 二重線(2810/2740)＋ 1700 の C=O(共役で通常より低波数)＋ 1595 の芳香環。',
+      '¹H: <b>δ10 付近の 1H</b>(CHO) と <b>δ7.5–7.9 の 5H</b>(単置換ベンゼン)。',
+      '¹³C: 192(共役アルデヒド) と 芳香族4本(129–136)。',
+      '組み立て: C₆H₅–CHO = <span class="nm">ベンズアルデヒド</span>。'] },
+
+  { id:'toluene', name:'トルエン', en:'toluene', smi:'Cc1ccccc1', formula:'C7H8', mw:92,
+    ms:{ M:92, base:91, peaks:[{mz:39,i:20},{mz:65,i:30,l:'C₅H₅⁺'},{mz:91,i:100,l:'トロピリウム C₇H₇⁺'},{mz:92,i:70,l:'M⁺'}] },
+    ir:[{wn:3030,w:'s',d:0.25,a:'芳香族 C–H'},{wn:2920,w:'m',d:0.3,a:'脂肪族 C–H'},{wn:1605,w:'s',d:0.35,a:'芳香族 C=C'},{wn:1495,w:'s',d:0.4,a:'芳香族 C=C'},{wn:730,w:'m',d:0.5,a:'単置換 面外変角'}],
+    h:[{d:7.20,m:'m',n:5,a:'芳香族H'},{d:2.34,m:'s',n:3,a:'Ar–CH₃'}],
+    c:[{d:137.8,a:'ipso C'},{d:129.1,a:'芳香族C'},{d:128.3,a:'芳香族C'},{d:125.4,a:'para C'},{d:21.4,a:'CH₃'}],
+    frags:['Ph','CH3'],
+    steps:['MS: M⁺=92。基準ピーク <b>m/z 91</b>=トロピリウムイオン C₇H₇⁺ はベンジル/トルエンの決定的指標。65(C₅H₅⁺)も。',
+      'IR: 芳香族 C–H(3030) と C=C(1605/1495)、単置換ベンゼンの面外変角(≈730)。C=O も O–H も無し。',
+      '¹H: <b>δ7.2 の 5H</b>(芳香族) と <b>δ2.3 の 3H シングレット</b>(Ar–CH₃)。',
+      '¹³C: 芳香族4本＋21(CH₃)。',
+      '組み立て: C₆H₅–CH₃ = <span class="nm">トルエン</span>。'] },
+
+  { id:'mecn', name:'アセトニトリル', en:'acetonitrile', smi:'CC#N', formula:'C2H3N', mw:41,
+    ms:{ M:41, base:41, peaks:[{mz:38,i:15},{mz:40,i:60,l:'M−1'},{mz:41,i:100,l:'M⁺'}] },
+    ir:[{wn:2990,w:'m',d:0.3,a:'C–H 伸縮'},{wn:2250,w:'s',d:0.45,a:'C≡N 伸縮(鋭い中程度)'},{wn:1440,w:'s',d:0.25,a:'CH₃ 変角'}],
+    h:[{d:1.98,m:'s',n:3,a:'CH₃'}],
+    c:[{d:118.0,a:'C≡N'},{d:1.3,a:'CH₃(非常に高磁場)'}],
+    frags:['CH3','CN'],
+    steps:['MS: <b>M⁺=41(奇数)</b> → 窒素則より窒素が奇数個(1個)。',
+      'IR: <b>2250 の鋭い中強度の吸収</b>＝C≡N 伸縮（ニトリルの指紋。この領域は C≡C も出るが強度・位置で区別）。',
+      '¹H: δ2.0 のシングレット(3H)のみ。',
+      '¹³C: <b>118(C≡N)</b> と 1.3(CH₃) の2本。ニトリル炭素は 115–120 に出る。',
+      '組み立て: CH₃–C≡N = <span class="nm">アセトニトリル</span>。'] },
+
+  { id:'et2o', name:'ジエチルエーテル', en:'diethyl ether', smi:'CCOCC', formula:'C4H10O', mw:74,
+    ms:{ M:74, base:31, peaks:[{mz:15,i:12},{mz:29,i:55,l:'C₂H₅⁺'},{mz:31,i:100,l:'CH₂=OH⁺'},{mz:45,i:35,l:'CH₃CH=OH⁺?'},{mz:59,i:40,l:'M−15'},{mz:74,i:8,l:'M⁺'}] },
+    ir:[{wn:2975,w:'m',d:0.5,a:'C–H 伸縮'},{wn:1120,w:'m',d:0.65,a:'C–O–C 非対称伸縮(強い)'},{wn:1380,w:'s',d:0.25,a:'CH₃ 変角'}],
+    h:[{d:3.40,m:'q',n:4,a:'2×O–CH₂'},{d:1.18,m:'t',n:6,a:'2×CH₃'}],
+    c:[{d:65.9,a:'O–CH₂'},{d:15.3,a:'CH₃'}],
+    frags:['CH3','CH2','O','CH2','CH3'],
+    steps:['MS: M⁺=74。m/z 59(M−15) と 31, 29 の連鎖。基準31はオキソカルベニウム。',
+      'IR: <b>1120 の強い C–O–C</b>。O–H は<b>無い</b>（幅広い吸収が無い）→ アルコールではなくエーテル。',
+      '¹H: カルテット(4H)＋トリプレット(6H) で <b>2つの等価なエチル</b>。δ3.4 は酸素隣接。O–H に相当する交換性Hは無い。',
+      '¹³C: 66(O–CH₂), 15(CH₃) の2本のみ → 対称エーテル。',
+      '組み立て: CH₃CH₂–O–CH₂CH₃ = <span class="nm">ジエチルエーテル</span>。'] },
+
+  { id:'2clpropane', name:'2-クロロプロパン', en:'2-chloropropane', smi:'CC(Cl)C', formula:'C3H7Cl', mw:78,
+    ms:{ M:78, base:43, peaks:[{mz:27,i:35},{mz:43,i:100,l:'C₃H₇⁺ (M−Cl)'},{mz:63,i:22,l:'M−15'},{mz:78,i:30,l:'M⁺ (³⁵Cl)'},{mz:80,i:10,l:'M+2 (³⁷Cl)'}] },
+    ir:[{wn:2975,w:'m',d:0.45,a:'C–H 伸縮'},{wn:1385,w:'s',d:0.3,a:'CH₃ 変角(gem-ジメチル二重線)'},{wn:1375,w:'s',d:0.3,a:'CH₃ 変角'},{wn:610,w:'m',d:0.5,a:'C–Cl 伸縮'}],
+    h:[{d:4.10,m:'sept',n:1,a:'>CH–Cl(メチン)'},{d:1.52,m:'d',n:6,a:'(CH₃)₂'}],
+    c:[{d:53.8,a:'CH–Cl'},{d:27.2,a:'(CH₃)₂'}],
+    iso:'M⁺(78) : M+2(80) ≈ 3 : 1 → 塩素 1 個',
+    frags:['CH3','CH3','CH','Cl'],
+    steps:['MS: <b>M⁺(78) と M+2(80) が約 3:1</b> → <b>塩素が1個</b>(³⁵Cl:³⁷Cl ≈ 3:1)。基準 m/z 43 = C₃H₇⁺(Cl脱離)。',
+      'IR: 600 付近の C–Cl。O–H/C=O 無し。1385/1375 の二重線は gem-ジメチルの示唆。',
+      '¹H: <b>七重項(1H)＋二重項(6H)=イソプロピル</b>。メチンが δ4.1 まで低磁場 → 電気陰性なClが隣接。',
+      '¹³C: 54(CH–Cl), 27(2CH₃)。',
+      '組み立て: (CH₃)₂CH–Cl = <span class="nm">2-クロロプロパン</span>。'] },
+
+  { id:'etbr', name:'ブロモエタン', en:'bromoethane', smi:'CCBr', formula:'C2H5Br', mw:108,
+    ms:{ M:108, base:29, peaks:[{mz:27,i:60},{mz:29,i:100,l:'C₂H₅⁺'},{mz:108,i:20,l:'M⁺ (⁷⁹Br)'},{mz:110,i:19,l:'M+2 (⁸¹Br)'}] },
+    ir:[{wn:2970,w:'m',d:0.45,a:'C–H 伸縮'},{wn:1430,w:'s',d:0.3,a:'CH₂ 変角'},{wn:560,w:'m',d:0.5,a:'C–Br 伸縮'}],
+    h:[{d:3.43,m:'q',n:2,a:'–CH₂–Br'},{d:1.67,m:'t',n:3,a:'CH₃'}],
+    c:[{d:28.3,a:'CH₃'},{d:26.6,a:'CH₂–Br'}],
+    iso:'M⁺(108) : M+2(110) ≈ 1 : 1 → 臭素 1 個',
+    frags:['CH3','CH2','Br'],
+    steps:['MS: <b>M⁺(108) と M+2(110) がほぼ 1:1</b> → <b>臭素が1個</b>(⁷⁹Br:⁸¹Br ≈ 1:1)。m/z 29 = C₂H₅⁺(Br脱離)。',
+      'IR: 560 付近の C–Br。O–H/C=O 無し。',
+      '¹H: エチル基（カルテット2H＋トリプレット3H）。δ3.4 の CH₂ は Br 隣接。',
+      '¹³C: 2本のみ。',
+      '組み立て: CH₃CH₂–Br = <span class="nm">ブロモエタン</span>。'] },
+
+  { id:'etnh2', name:'エチルアミン', en:'ethylamine', smi:'CCN', formula:'C2H7N', mw:45,
+    ms:{ M:45, base:30, peaks:[{mz:18,i:15},{mz:28,i:20},{mz:30,i:100,l:'CH₂=NH₂⁺'},{mz:44,i:20,l:'M−1'},{mz:45,i:25,l:'M⁺'}] },
+    ir:[{wn:3370,w:'m',d:0.3,a:'N–H 伸縮(第一級, 2本)'},{wn:3290,w:'m',d:0.28,a:'N–H 伸縮'},{wn:1610,w:'s',d:0.3,a:'N–H 変角'},{wn:1070,w:'s',d:0.35,a:'C–N 伸縮'}],
+    h:[{d:2.68,m:'q',n:2,a:'–CH₂–N'},{d:1.30,m:'s',n:2,a:'NH₂(交換性)'},{d:1.10,m:'t',n:3,a:'CH₃'}],
+    c:[{d:36.9,a:'CH₂–N'},{d:19.0,a:'CH₃'}],
+    frags:['CH3','CH2','NH2'],
+    steps:['MS: <b>M⁺=45(奇数)</b> → 窒素則より窒素が奇数個。基準 m/z 30 = <b>CH₂=NH₂⁺</b>(イミニウム)＝アミンの特徴的開裂。',
+      'IR: 3300–3400 に <b>2本の N–H</b>(第一級アミン)＋1610 の N–H 変角。O–H 単独とは形が異なる。',
+      '¹H: エチル基＋交換性の NH₂(2H)。δ2.7 の CH₂ は窒素隣接(酸素ほど低磁場でない)。',
+      '¹³C: 37(C–N), 19(CH₃)。',
+      '組み立て: CH₃CH₂–NH₂ = <span class="nm">エチルアミン</span>。'] },
+
+  { id:'propacid', name:'プロパン酸', en:'propanoic acid', smi:'CCC(=O)O', formula:'C3H6O2', mw:74,
+    ms:{ M:74, base:28, peaks:[{mz:27,i:30},{mz:28,i:70},{mz:29,i:40,l:'C₂H₅⁺'},{mz:45,i:35,l:'COOH⁺'},{mz:57,i:30,l:'M−17'},{mz:74,i:45,l:'M⁺'}] },
+    ir:[{wn:3000,w:'b',d:0.55,a:'O–H(酸, 幅広い)'},{wn:1710,w:'m',d:0.85,a:'C=O(酸)'},{wn:1240,w:'s',d:0.45,a:'C–O 伸縮'}],
+    h:[{d:11.6,m:'s',n:1,a:'COOH'},{d:2.40,m:'q',n:2,a:'–CH₂–CO'},{d:1.18,m:'t',n:3,a:'CH₃'}],
+    c:[{d:180.5,a:'C=O(酸)'},{d:27.4,a:'CH₂'},{d:9.0,a:'CH₃'}],
+    frags:['CH3','CH2','COOH'],
+    steps:['MS: M⁺=74。m/z 45(COOH⁺), 57(M−17, OH脱離), 29(C₂H₅⁺)。',
+      'IR: <b>非常に幅広い O–H(酸)＋1710 の C=O</b> → カルボン酸。',
+      '¹H: <b>δ11 以上の 1H</b>(COOH) が決定的。加えてエチル(カルテット2H＋トリプレット3H)。',
+      '¹³C: <b>180</b>(カルボン酸C=O)。',
+      '組み立て: CH₃CH₂–COOH = <span class="nm">プロパン酸</span>。'] },
+
+  { id:'butanol', name:'1-ブタノール', en:'butan-1-ol', smi:'CCCCO', formula:'C4H10O', mw:74,
+    ms:{ M:74, base:31, peaks:[{mz:27,i:30},{mz:31,i:100,l:'CH₂=OH⁺'},{mz:41,i:42},{mz:43,i:55,l:'C₃H₇⁺'},{mz:56,i:44,l:'M−18 (H₂O)'},{mz:74,i:3,l:'M⁺'}] },
+    ir:[{wn:3330,w:'b',d:0.6,a:'O–H 伸縮(broad)'},{wn:2960,w:'m',d:0.5,a:'C–H 伸縮'},{wn:1050,w:'s',d:0.55,a:'C–O 伸縮(第一級)'},{wn:1465,w:'s',d:0.25,a:'CH₂ 変角'}],
+    h:[{d:3.62,m:'t',n:2,a:'–CH₂–O'},{d:2.20,m:'s',n:1,a:'O–H(交換性)'},{d:1.54,m:'quint',n:2,a:'–CH₂–'},{d:1.38,m:'sext',n:2,a:'–CH₂–'},{d:0.92,m:'t',n:3,a:'CH₃'}],
+    c:[{d:62.4,a:'CH₂–O'},{d:34.9,a:'CH₂'},{d:19.0,a:'CH₂'},{d:13.9,a:'CH₃'}],
+    frags:['CH3','CH2','CH2','CH2','OH'],
+    steps:['MS: M⁺=74。基準 m/z 31 = <b>CH₂=OH⁺</b>（第一級アルコールの α開裂）。m/z 56 は <b>M−18(水脱離)</b>でアルコールに特徴的。',
+      'IR: 3330 の<b>幅広い O–H</b> と 1050 の <b>C–O(第一級)</b> → アルコール。',
+      '¹H: δ3.6 の <b>三重項(2H, CH₂–O)</b> ＋ プロピル鎖(五重項・六重項・三重項) ＋ 交換性 O–H。',
+      '¹³C: 62(C–O) を含む <b>4本</b> → 対称性なし。',
+      '組み立て: CH₃CH₂CH₂CH₂–OH = <span class="nm">1-ブタノール</span>。'] },
+
+  { id:'cyclohexanone', name:'シクロヘキサノン', en:'cyclohexanone', smi:'O=C1CCCCC1', formula:'C6H10O', mw:98,
+    ms:{ M:98, base:55, peaks:[{mz:42,i:60},{mz:55,i:100,l:'C₃H₃O⁺?/開裂'},{mz:69,i:42},{mz:83,i:30,l:'M−15'},{mz:98,i:45,l:'M⁺'}] },
+    ir:[{wn:2935,w:'m',d:0.4,a:'C–H 伸縮'},{wn:1715,w:'m',d:0.85,a:'C=O 伸縮(6員環ケトン)'},{wn:1450,w:'s',d:0.25,a:'CH₂ 変角'},{wn:1120,w:'s',d:0.3,a:'C–C(=O)'}],
+    h:[{d:2.33,m:'m',n:4,a:'α-CH₂ ×2'},{d:1.85,m:'m',n:4,a:'β-CH₂ ×2'},{d:1.71,m:'m',n:2,a:'γ-CH₂'}],
+    c:[{d:211.8,a:'C=O(ケトン)'},{d:41.9,a:'α-CH₂(C2/6)'},{d:27.0,a:'C3/5'},{d:25.0,a:'C4'}],
+    frags:['CH2','CH2','CH2','CH2','CH2','C=O'],
+    steps:['MS: M⁺=98。環開裂で基準 m/z 55，M−15(83)も。',
+      'IR: <b>1715 の C=O</b>。6員環ケトンは鎖状ケトンとほぼ同じ位置(環が小さいほど高波数へ動く: 5員≈1745, 4員≈1780)。',
+      '¹H: δ2.3 の <b>α-CH₂(4H)</b> と，環の他の CH₂ の多重線。O–H/C=O 以外の官能基なし。',
+      '¹³C: <b>212(ケトン)</b> ＋ 脂肪族3本のみ = 計4本 → 対称面で C2=C6・C3=C5 が等価。',
+      '組み立て: 6員環ケトン = <span class="nm">シクロヘキサノン</span>。'] },
+
+  { id:'phenol', name:'フェノール', en:'phenol', smi:'Oc1ccccc1', formula:'C6H6O', mw:94,
+    ms:{ M:94, base:94, peaks:[{mz:39,i:25},{mz:65,i:30,l:'M−29'},{mz:66,i:28,l:'M−28 (CO脱離)'},{mz:94,i:100,l:'M⁺'}] },
+    ir:[{wn:3350,w:'b',d:0.55,a:'O–H 伸縮(H結合)'},{wn:3040,w:'s',d:0.2,a:'芳香族 C–H'},{wn:1595,w:'s',d:0.35,a:'芳香族 C=C'},{wn:1500,w:'s',d:0.35,a:'芳香族 C=C'},{wn:1220,w:'s',d:0.5,a:'C–O(フェノール)'},{wn:750,w:'m',d:0.45,a:'単置換 面外変角'}],
+    h:[{d:7.25,m:'m',n:2,a:'メタ芳香族H'},{d:6.92,m:'m',n:1,a:'パラ芳香族H'},{d:6.83,m:'m',n:2,a:'オルト芳香族H'},{d:5.20,m:'s',n:1,a:'O–H(可変)'}],
+    c:[{d:155.0,a:'ipso C–OH'},{d:129.7,a:'メタC'},{d:121.0,a:'パラC'},{d:115.3,a:'オルトC'}],
+    frags:['Ph','OH'],
+    steps:['MS: <b>M⁺=94 が基準ピーク</b>(芳香族で安定)。m/z 66 は <b>CO 脱離(−28)</b>でフェノールに特徴的。',
+      'IR: 幅広い O–H ＋ 芳香族 C=C(1595/1500) ＋ 1220 の <b>C–O(フェノール)</b>。',
+      '¹H: 芳香族 5H 相当(オルト/メタ/パラ)＋ 交換性 O–H。<b>O–H の δ は溶媒・濃度で可変</b>。',
+      '¹³C: <b>ipso C–OH が 155</b>(酸素の共鳴で高磁場側の芳香族としては低磁場)。芳香族4本。',
+      '組み立て: C₆H₅–OH = <span class="nm">フェノール</span>。'] },
+
+  { id:'mebenzoate', name:'安息香酸メチル', en:'methyl benzoate', smi:'O=C(OC)c1ccccc1', formula:'C8H8O2', mw:136,
+    ms:{ M:136, base:105, peaks:[{mz:51,i:25},{mz:77,i:60,l:'C₆H₅⁺'},{mz:105,i:100,l:'C₆H₅CO⁺ (M−31)'},{mz:136,i:30,l:'M⁺'}] },
+    ir:[{wn:3000,w:'m',d:0.25,a:'C–H 伸縮'},{wn:1720,w:'m',d:0.85,a:'C=O(共役エステル)'},{wn:1280,w:'s',d:0.55,a:'C–O–C 伸縮'},{wn:1110,w:'s',d:0.45,a:'C–O 伸縮'},{wn:710,w:'m',d:0.4,a:'単置換 面外変角'}],
+    h:[{d:8.03,m:'m',n:2,a:'オルト芳香族H'},{d:7.53,m:'m',n:1,a:'パラ芳香族H'},{d:7.42,m:'m',n:2,a:'メタ芳香族H'},{d:3.90,m:'s',n:3,a:'O–CH₃'}],
+    c:[{d:166.9,a:'C=O(エステル)'},{d:132.9,a:'パラC'},{d:130.1,a:'芳香族C'},{d:129.6,a:'ipso C'},{d:128.3,a:'芳香族C'},{d:52.0,a:'O–CH₃'}],
+    frags:['Ph','C=O','O','CH3'],
+    steps:['MS: 基準 m/z 105 = <b>ベンゾイル C₆H₅CO⁺</b>(M−31, OCH₃脱離)。77 = フェニル。',
+      'IR: エステル C=O が <b>1720</b> — 脂肪族エステル(≈1740)より低い。<b>芳香環との共役でC=Oが低波数へ動いた</b>例。強い C–O–C。',
+      '¹H: δ3.9 の <b>O–CH₃ シングレット(3H)</b> ＋ 芳香族(オルトH がカルボニルの脱遮蔽で δ8.0)。',
+      '¹³C: <b>167(エステル)</b> ＋ O–CH₃ 52 ＋ 芳香族。',
+      '組み立て: C₆H₅–CO–O–CH₃ = <span class="nm">安息香酸メチル</span>。'] },
+
+  { id:'propanal', name:'プロパナール', en:'propanal', smi:'CCC=O', formula:'C3H6O', mw:58,
+    ms:{ M:58, base:29, peaks:[{mz:27,i:40},{mz:28,i:55},{mz:29,i:100,l:'CHO⁺/C₂H₅⁺'},{mz:57,i:30,l:'M−1'},{mz:58,i:48,l:'M⁺'}] },
+    ir:[{wn:2960,w:'m',d:0.35,a:'C–H 伸縮'},{wn:2810,w:'s',d:0.32,a:'アルデヒド C–H'},{wn:2710,w:'s',d:0.3,a:'アルデヒド C–H'},{wn:1725,w:'m',d:0.85,a:'C=O 伸縮'}],
+    h:[{d:9.79,m:'t',n:1,a:'–CHO(小さくカップリング)'},{d:2.46,m:'q',n:2,a:'–CH₂–CHO'},{d:1.12,m:'t',n:3,a:'CH₃'}],
+    c:[{d:202.5,a:'C=O(アルデヒド)'},{d:36.7,a:'CH₂'},{d:5.8,a:'CH₃'}],
+    frags:['CH3','CH2','CHO'],
+    steps:['MS: M⁺=58。m/z 29 = <b>CHO⁺</b>(および C₂H₅⁺)，M−1(57)もアルデヒドらしい。',
+      'IR: <b>2810/2710 のアルデヒド C–H 二重線</b>＋1725 の C=O = アルデヒド確定。',
+      '¹H: <b>δ9.8 の 1H</b>(アルデヒドH)は診断的。隣の CH₂ と小さくカップルして三重項。エチル基。',
+      '¹³C: <b>202(アルデヒド)</b>。',
+      '組み立て: CH₃CH₂–CHO = <span class="nm">プロパナール</span>。'] },
+];
 const CMAP = {}; COMPOUNDS.forEach(c=> CMAP[c.id]=c);
 
+/* ---------- 個別特訓: 問題バンク ----------
+   各要素 {q: 設問(HTML), opts:[選択肢...], ans: 正解index, ex: 解説(HTML), fig?: 図種別} */
 const BANK = {
   ms:[
-    { q:'This compound (M⁺=72) also shows a peak at m/z=57. What neutral fragment was lost to reach 57?',
-      opts:['CH₃ (methyl)','H₂O','CO','C₂H₅'], ans:0,
-      ex:'72−57 = a loss of <b>15</b> → loss of a methyl (CH₃). −15 is common for methyl branches and methyl ketones.',
+    { q:'この化合物(M⁺=72)は m/z=57 にもピークを示す。57 へ至る際に脱離した中性フラグメントは？',
+      opts:['CH₃ (メチル基)','H₂O','CO','C₂H₅'], ans:0, ex:'72−57 = <b>15</b> の質量損失 → メチル基 CH₃ の脱離。−15 はメチル分岐やメチルケトンで頻出。',
       fig:{cid:'mek',type:'ms',mark:{mz:57,label:'m/z 57'}} },
-    { q:'In this mass spectrum the M⁺ and M+2 peaks are roughly 1:1. Which halogen is present?',
-      opts:['chlorine (Cl)','bromine (Br)','fluorine (F)','iodine (I)'], ans:1,
-      ex:'Because ⁷⁹Br:⁸¹Br ≈ 1:1, <b>M:M+2 ≈ 1:1 means bromine</b>. Chlorine gives 3:1; F and I are monoisotopic (no M+2).',
+    { q:'このマススペクトルで M⁺ と M+2 の強度がほぼ 1:1 になっている。含まれるハロゲンは？',
+      opts:['塩素 (Cl)','臭素 (Br)','フッ素 (F)','ヨウ素 (I)'], ans:1, ex:'⁷⁹Br:⁸¹Br ≈ 1:1 のため <b>M:M+2 ≈ 1:1 は臭素</b>。塩素なら 3:1、F と I は単一同位体で M+2 を作らない。',
       fig:{cid:'etbr',type:'ms',mark:{mz:110,label:'M+2'}} },
-    { q:'In this mass spectrum the M⁺ and M+2 peaks are about 3:1. Which halogen is present?',
-      opts:['bromine (Br)','chlorine (Cl)','sulfur (S)','nitrogen (N)'], ans:1,
-      ex:'³⁵Cl:³⁷Cl ≈ 3:1 → <b>M:M+2 ≈ 3:1 means chlorine</b>. Sulfur gives only ~4% at M+2.',
+    { q:'このマススペクトルで M⁺ と M+2 の強度が約 3:1 になっている。含まれるハロゲンは？',
+      opts:['臭素 (Br)','塩素 (Cl)','硫黄 (S)','窒素 (N)'], ans:1, ex:'³⁵Cl:³⁷Cl ≈ 3:1 → <b>M:M+2 ≈ 3:1 は塩素</b>。硫黄は M+2 が約4%と小さい。',
       fig:{cid:'2clpropane',type:'ms',mark:{mz:80,label:'M+2'}} },
-    { q:'This molecular ion is at m/z=45 (odd). What does the nitrogen rule tell you?',
-      opts:['an even number of N (including 0)','an odd number of N','contains oxygen','contains a halogen'], ans:1,
-      ex:'<b>Nitrogen rule</b>: an odd nominal mass ⇔ an odd number of nitrogen atoms. Useful for amines, nitriles, amides.',
-      fig:{cid:'etnh2',type:'ms',mark:{mz:45,label:'M⁺ 45 (odd)'}} },
-    { q:'This ester (M⁺=88) has its base peak at m/z=43. What is this ion?',
-      opts:['acylium CH₃CO⁺','COOH⁺','C₃H₇⁺','CHO⁺'], ans:0,
-      ex:'m/z 43 = <b>CH₃CO⁺ (acylium)</b>. It is often the base peak for acetate esters and methyl ketones.',
-      fig:{cid:'etoac',type:'ms',mark:{mz:43,label:'base 43'}} },
-    { q:'This alcohol has its base peak at m/z=31. Which ion is it?',
-      opts:['CH₂=OH⁺','CH₃⁺','C₂H₅⁺','NO⁺'], ans:0,
-      ex:'m/z 31 = <b>CH₂=OH⁺ (oxocarbenium)</b>, the base peak from α-cleavage of a primary alcohol.',
-      fig:{cid:'ethanol',type:'ms',mark:{mz:31,label:'base 31'}} },
-    { q:'For this ethyl acetate, m/z=70 arises from M⁺(88). What neutral molecule was lost?',
-      opts:['H₂O','CH₃','CO','NH₂'], ans:0,
-      ex:'88−70 = <b>18 = loss of water (H₂O)</b>. (−28 is CO/C₂H₄, −17 is OH.)',
+    { q:'この分子イオンピークは m/z=45(奇数)。窒素則から言えることは？',
+      opts:['窒素を偶数個(0を含む)含む','窒素を奇数個含む','酸素を含む','ハロゲンを含む'], ans:1, ex:'<b>窒素則</b>: 公称分子量が奇数 ⇔ 窒素原子が奇数個。アミン・ニトリル・アミド等の判別に有効。',
+      fig:{cid:'etnh2',type:'ms',mark:{mz:45,label:'M⁺ 45 (奇数)'}} },
+    { q:'この M⁺=88 のエステルは基準ピークが m/z=43。このイオンは？',
+      opts:['アシリウム CH₃CO⁺','COOH⁺','C₃H₇⁺','CHO⁺'], ans:0, ex:'m/z 43 = <b>CH₃CO⁺(アシリウム)</b>。酢酸エステルやメチルケトンで基準ピークになりやすい。',
+      fig:{cid:'etoac',type:'ms',mark:{mz:43,label:'基準 43'}} },
+    { q:'このアルコールの基準ピークは m/z=31。対応するイオンは？',
+      opts:['CH₂=OH⁺','CH₃⁺','C₂H₅⁺','NO⁺'], ans:0, ex:'m/z 31 = <b>CH₂=OH⁺(オキソカルベニウム)</b>。第一級アルコールで α開裂により生じる基準ピーク。',
+      fig:{cid:'ethanol',type:'ms',mark:{mz:31,label:'基準 31'}} },
+    { q:'この酢酸エチルで M⁺(88) から m/z=70 が生じている。脱離した中性分子は？',
+      opts:['H₂O','CH₃','CO','NH₂'], ans:0, ex:'88−70 = <b>18 = 水(H₂O)</b> の脱離。−28 は CO/C₂H₄、−17 は OH。',
       fig:{cid:'etoac',type:'ms',mark:{mz:70,label:'M−18'}} },
-    { q:'For this toluene (M⁺=92), what is the base-peak ion at m/z=91?',
-      opts:['tropylium C₇H₇⁺','C₆H₅⁺','C₅H₅⁺','C₆H₆⁺'], ans:0,
-      ex:'m/z 91 = <b>tropylium ion C₇H₇⁺</b>, a very stable marker for benzylic aromatics.',
-      fig:{cid:'toluene',type:'ms',mark:{mz:91,label:'base 91'}} },
-    { q:'This phenol (M⁺=94) shows a peak at m/z=66. What neutral species was lost?',
-      opts:['CO (carbon monoxide)','H₂O','CH₃','C₂H₄'], ans:0,
-      ex:'94−66 = <b>28 = loss of CO</b>, a cleavage characteristic of phenols and a marker for aromatic C–OH.',
-      fig:{cid:'phenol',type:'ms',mark:{mz:66,label:'M−28 (CO)'}} }
+    { q:'このトルエン(M⁺=92)の基準ピーク m/z=91 のイオンは？',
+      opts:['トロピリウム C₇H₇⁺','C₆H₅⁺','C₅H₅⁺','C₆H₆⁺'], ans:0, ex:'m/z 91 = <b>トロピリウムイオン C₇H₇⁺</b>。ベンジル位を持つ芳香族の非常に安定な指標イオン。',
+      fig:{cid:'toluene',type:'ms',mark:{mz:91,label:'基準 91'}} },
   ],
   ir:[
-    { q:'This spectrum shows a broad, strong band near 3340 cm⁻¹. Which functional group does it indicate?',
-      opts:['hydroxyl O–H','carbonyl C=O','nitrile C≡N','aromatic C=C'], ans:0,
-      ex:'A broad O–H stretch (H-bonded). Alcohols/phenols at 3200–3550; carboxylic acids even broader, 2500–3300.',
+    { q:'このスペクトルの 3340 cm⁻¹ 付近に見える幅広い(broad)強い吸収。示す官能基は？',
+      opts:['ヒドロキシ基 O–H','カルボニル C=O','ニトリル C≡N','芳香環 C=C'], ans:0, ex:'幅広い O–H 伸縮(水素結合)。アルコール/フェノールは 3200–3550、カルボン酸はさらに幅広く 2500–3300。',
       fig:{cid:'ethanol',type:'ir',mark:{wn:3340,label:'O–H'}} },
-    { q:'This spectrum shows a sharp, strong band at 1715 cm⁻¹ with no O–H or N–H. Which group?',
-      opts:['carbonyl C=O','C–O single bond','C=C','C–H'], ans:0,
-      ex:'<b>A strong band near 1700 = C=O</b>. Ketone ≈1715, aldehyde ≈1725, ester ≈1740, acid ≈1710 (with broad O–H).',
+    { q:'このスペクトルの 1715 cm⁻¹ の鋭く強い吸収。O–H も N–H も無い。官能基は？',
+      opts:['カルボニル C=O','C–O 単結合','C=C','C–H'], ans:0, ex:'<b>1700 付近の強い吸収 = C=O</b>。ケトン≈1715、アルデヒド≈1725、エステル≈1740、酸≈1710(幅広OH付き)。',
       fig:{cid:'acetone',type:'ir',mark:{wn:1715,label:'C=O'}} },
-    { q:'This spectrum shows a sharp, medium band at 2250 cm⁻¹. Which group does it indicate?',
-      opts:['nitrile C≡N','O–H','C=O','aromatic C–H'], ans:0,
-      ex:'A sharp band at 2200–2260 is <b>C≡N (nitrile)</b>. C≡C appears at 2100–2260 but tends to be weaker.',
+    { q:'このスペクトルの 2250 cm⁻¹ の鋭い中程度の吸収。示す基は？',
+      opts:['ニトリル C≡N','O–H','C=O','芳香族 C–H'], ans:0, ex:'2200–2260 の鋭い吸収は <b>C≡N(ニトリル)</b>。C≡C は 2100–2260 でより弱い傾向。',
       fig:{cid:'mecn',type:'ir',mark:{wn:2250,label:'C≡N'}} },
-    { q:'This ethyl acetate has C=O at 1740 cm⁻¹ (higher than a ketone, ≈1715). What else distinguishes an ester?',
-      opts:['a strong C–O–C near 1240','presence of O–H','disappearance of C=O','a band at 2250'], ans:0,
-      ex:'Esters show C=O <b>higher, ≈1735–1750</b>, with a <b>strong C–O–C at 1150–1300</b> — the key against a ketone.',
+    { q:'この酢酸エチルの 1740 cm⁻¹ の C=O はケトン(≈1715)よりやや高波数。加えて何が識別点になる？',
+      opts:['1240 付近の強い C–O–C','O–H の存在','C=O の消失','2250 の吸収'], ans:0, ex:'エステルは C=O が <b>≈1735–1750 と高波数</b>で、<b>1150–1300 に強い C–O–C</b> を伴う。ケトンとの識別点。',
       fig:{cid:'etoac',type:'ir',mark:{wn:1240,label:'C–O–C'}} },
-    { q:'This spectrum shows a weak doublet at 2820/2720 cm⁻¹ plus a strong band at 1725. Which group?',
-      opts:['aldehyde –CHO','ketone','carboxylic acid','alcohol'], ans:0,
-      ex:'The <b>aldehyde C–H doublet at 2820/2720</b> is diagnostic; with C=O it confirms –CHO.',
-      fig:{cid:'ethanal',type:'ir',mark:{wn:2720,label:'CHO C–H'}} },
-    { q:'This spectrum shows a very broad band 2500–3300 cm⁻¹ plus C=O near 1710. Which group?',
-      opts:['carboxylic acid –COOH','alcohol','primary amine','ether'], ans:0,
-      ex:'A <b>very broad O–H (2500–3300) with C=O</b> is the fingerprint of a <b>carboxylic acid</b> (dimeric H-bonding).',
-      fig:{cid:'aceticacid',type:'ir',mark:{wn:3000,label:'acid O–H'}} },
-    { q:'This spectrum shows two medium bands at 3300–3400 cm⁻¹. Which primary group fits?',
-      opts:['primary amine N–H₂','alcohol O–H','carbonyl','C≡C'], ans:0,
-      ex:'A primary amine shows <b>two N–H bands</b> (sym/antisym). A secondary amine gives one; an O–H is a single broad band.',
+    { q:'このスペクトルの 2820/2720 cm⁻¹ の弱い二重線＋1725 の強い吸収。官能基は？',
+      opts:['アルデヒド –CHO','ケトン','カルボン酸','アルコール'], ans:0, ex:'<b>2820/2720 のアルデヒド C–H 二重線</b>は診断的。C=O と組で –CHO を確定できる。',
+      fig:{cid:'ethanal',type:'ir',mark:{wn:2720,label:'CHO の C–H'}} },
+    { q:'このスペクトルの 2500–3300 cm⁻¹ の非常に幅広い吸収＋≈1710 の C=O。官能基は？',
+      opts:['カルボン酸 –COOH','アルコール','第一級アミン','エーテル'], ans:0, ex:'<b>非常に幅広い O–H(2500–3300)＋C=O</b> の組み合わせは <b>カルボン酸</b>の指紋。二量体の水素結合による。',
+      fig:{cid:'aceticacid',type:'ir',mark:{wn:3000,label:'酸の O–H'}} },
+    { q:'このスペクトルの 3300–3400 cm⁻¹ に2本の中程度の吸収。第一級で考えられる基は？',
+      opts:['第一級アミン N–H₂','アルコール O–H','カルボニル','C≡C'], ans:0, ex:'第一級アミンは <b>N–H が2本</b>(対称/非対称伸縮)に分裂。第二級アミンは1本、O–H は幅広い1本で区別。',
       fig:{cid:'etnh2',type:'ir',mark:{wn:3370,label:'N–H ×2'}} },
-    { q:'This methyl benzoate has C=O at 1720 cm⁻¹, lower than an aliphatic ester (≈1740). The best reason?',
-      opts:['conjugation with the ring lowers the C=O bond order','hydrogen bonding','ring strain','isotope effect'], ans:0,
-      ex:'<b>Conjugation lowers a carbonyl.</b> Conjugation with a ring or C=C delocalises electrons, lowering the bond order, so C=O drops ~15–40 cm⁻¹.',
-      fig:{cid:'mebenzoate',type:'ir',mark:{wn:1720,label:'conjugated C=O'}} },
-    { q:'This cyclohexanone has C=O at 1715 cm⁻¹. If the same ketone were in a 5-membered ring, where would C=O be?',
-      opts:['higher (≈1745)','lower','unchanged','it disappears'], ans:0,
-      ex:'<b>Ring strain raises a carbonyl.</b> 6-membered ≈1715, 5-membered ≈1745, 4-membered ≈1780 — smaller rings, higher wavenumber.',
-      fig:{cid:'cyclohexanone',type:'ir',mark:{wn:1715,label:'6-ring C=O'}} }
   ],
   h:[
-    { q:'This ¹H-NMR shows a doublet (6H) with a septet (1H). What substructure is implied?',
-      opts:['isopropyl (CH₃)₂CH–','ethyl CH₃CH₂–','tert-butyl','vinyl'], ans:0,
-      ex:'(CH₃)₂CH–: two equivalent methyls (6H) split by one methine → doublet; the methine, split by 6 H, gives a <b>septet</b>.',
+    { q:'この ¹H-NMR の 二重項(6H) と 七重項(1H) の組。示唆される部分構造は？',
+      opts:['イソプロピル基 (CH₃)₂CH–','エチル基 CH₃CH₂–','tert-ブチル基','ビニル基'], ans:0, ex:'(CH₃)₂CH–: 2つの等価メチル(6H)が1つのメチンで二重項、メチンは6個のHで <b>七重項</b>。',
       fig:{cid:'ipa',type:'h',mark:{d:1.16,label:'d, 6H'}} },
-    { q:'This ¹H-NMR shows a triplet (3H) with a quartet (2H). What substructure?',
-      opts:['ethyl –CH₂CH₃','isopropyl','a lone methyl','aromatic'], ans:0,
-      ex:'The classic <b>ethyl</b> pattern: CH₃ (3H) split by the neighbouring CH₂ → triplet; CH₂ (2H) split by CH₃ → quartet.',
+    { q:'この ¹H-NMR の 三重項(3H) と 四重項(2H) の組。部分構造は？',
+      opts:['エチル基 –CH₂CH₃','イソプロピル基','メチル単独','芳香族'], ans:0, ex:'<b>エチル基</b>の典型パターン: CH₃(3H)は隣のCH₂で三重項、CH₂(2H)は隣のCH₃で四重項。',
       fig:{cid:'ethanol',type:'h',mark:{d:1.22,label:'t, 3H'}} },
-    { q:'This ¹H-NMR shows a 1H signal at δ≈9.7. What is the assignment?',
-      opts:['aldehyde –CHO','aromatic H','O–H','vinyl H'], ans:0,
-      ex:'<b>An isolated 1H at δ9–10 is the aldehyde H.</b> Strongly deshielded, with little else in this region — diagnostic.',
+    { q:'この ¹H-NMR の δ≈9.7 に現れる 1H のシグナル。帰属は？',
+      opts:['アルデヒド –CHO の H','芳香族 H','O–H','ビニル H'], ans:0, ex:'<b>δ9–10 の孤立した1H はアルデヒドH</b>。強く脱遮蔽され、この領域には他がほとんど出ない診断的シグナル。',
       fig:{cid:'ethanal',type:'h',mark:{d:9.72,label:'–CHO'}} },
-    { q:'This ¹H-NMR shows a 3H singlet at δ≈2.1. The most likely assignment?',
-      opts:['methyl next to carbonyl CH₃–C=O','methyl next to oxygen CH₃–O','aromatic methyl','aldehyde H'], ans:0,
-      ex:'<b>A CH₃ singlet at δ2.0–2.2 = an acetyl group CH₃CO–</b> (singlet: no neighbouring H). An O–CH₃ would be δ3.3–3.9.',
-      fig:{cid:'acetone',type:'h',mark:{d:2.1,label:'s, 6H'}} },
-    { q:'A single large 9H singlet is observed. What group is implied?',
-      opts:['tert-butyl (CH₃)₃C–','isopropyl','three separate methyls','three ethyls'], ans:0,
-      ex:'Nine equivalent H (3×CH₃) with no neighbouring H give one <b>large singlet = a tert-butyl group</b>.' },
-    { q:'This ¹H-NMR shows a 5H multiplet at δ≈7.2. What structure is implied?',
-      opts:['monosubstituted benzene C₆H₅–','disubstituted benzene','vinyl','heteroaromatic'], ans:0,
-      ex:'<b>5H near δ7.2 = a monosubstituted benzene ring</b> (2 ortho / 2 meta / 1 para).',
-      fig:{cid:'toluene',type:'h',mark:{d:7.2,label:'5H aromatic'}} },
-    { q:'This ¹H-NMR shows a 3H singlet at δ≈3.7. The most likely assignment?',
-      opts:['methoxy CH₃–O','acetyl CH₃–CO','aromatic CH₃','tert-butyl'], ans:0,
-      ex:'<b>A CH₃ singlet at δ3.3–3.9 = O–CH₃ (methoxy)</b>, shifted downfield by the electronegative oxygen.',
+    { q:'この ¹H-NMR の δ≈2.1 の 3H シングレット。最も可能性が高い帰属は？',
+      opts:['カルボニル隣接メチル CH₃–C=O','酸素隣接メチル CH₃–O','芳香族メチル','アルデヒドH'], ans:0, ex:'<b>δ2.0–2.2 の CH₃ シングレット = アセチル基 CH₃CO–</b>。隣接Hが無いためシングレット。O–CH₃ なら δ3.3–3.9。',
+      fig:{cid:'acetone',type:'h',mark:{d:2.10,label:'s, 6H'}} },
+    { q:'9H の大きなシングレットが1本だけ観測された。示唆される基は？',
+      opts:['tert-ブチル基 (CH₃)₃C–','イソプロピル基','3つの別々のメチル','エチル×3'], ans:0, ex:'等価な9個のH(3×CH₃)が隣接Hを持たず1本の <b>大きなシングレット = tert-ブチル基</b>。' },
+    { q:'この ¹H-NMR の δ≈7.2 の 5H 多重線。示唆される構造は？',
+      opts:['単置換ベンゼン C₆H₅–','二置換ベンゼン','ビニル基','複素芳香環'], ans:0, ex:'<b>δ7.2 付近の 5H = 単置換ベンゼン環</b>。積分5Hが単置換の目安(オルト2/メタ2/パラ1)。',
+      fig:{cid:'toluene',type:'h',mark:{d:7.20,label:'5H 芳香族'}} },
+    { q:'この ¹H-NMR の δ≈3.7 の 3H シングレット。最も考えられる帰属は？',
+      opts:['メトキシ基 CH₃–O','アセチル CH₃–CO','芳香族CH₃','tert-ブチル'], ans:0, ex:'<b>δ3.3–3.9 の CH₃ シングレット = O–CH₃(メトキシ)</b>。電気陰性な酸素隣接で低磁場シフト。',
       fig:{cid:'meoac',type:'h',mark:{d:3.67,label:'O–CH₃'}} },
-    { q:'This ¹H-NMR shows a broad, exchangeable 1H at δ≈11. What is the assignment?',
-      opts:['carboxylic acid –COOH','alcohol O–H','amine N–H','aldehyde H'], ans:0,
-      ex:'<b>An exchangeable H at δ10–13 = the COOH of a carboxylic acid</b> (extreme downfield shift). An alcohol O–H is variable, δ1–5.',
+    { q:'この ¹H-NMR の δ≈11 の幅広い 1H(交換性)。帰属は？',
+      opts:['カルボン酸 –COOH','アルコール O–H','アミン N–H','アルデヒドH'], ans:0, ex:'<b>δ10–13 の交換性H = カルボン酸の COOH</b>。極端な低磁場シフトが特徴。アルコールO–Hは δ1–5 と幅広く可変。',
       fig:{cid:'aceticacid',type:'h',mark:{d:11.4,label:'COOH'}} },
-    { q:'This methyl benzoate shows a 3H singlet at δ≈3.9. What is the assignment?',
-      opts:['ester methoxy CH₃–O','acetyl CH₃–CO','aromatic CH₃','aldehyde H'], ans:0,
-      ex:'<b>A CH₃ singlet at δ3.3–3.9 = O–CH₃ (methoxy)</b>, shifted downfield by oxygen; an ester O–CH₃ sits ≈3.9.',
-      fig:{cid:'mebenzoate',type:'h',mark:{d:3.9,label:'O–CH₃'}} }
   ],
   c:[
-    { q:'This ¹³C-NMR shows a signal at δ≈206. Which carbon is assigned?',
-      opts:['ketone carbonyl C=O','ester C=O','aromatic C','nitrile C'], ans:0,
-      ex:'<b>δ195–220 = ketone/aldehyde carbonyl carbon.</b> Ketone ≈205–210, aldehyde ≈190–205.',
-      fig:{cid:'acetone',type:'c',mark:{d:206,label:'ketone C=O'}} },
-    { q:'This ¹³C-NMR shows a signal at δ≈171. The most likely assignment?',
-      opts:['acid/ester/amide C=O','ketone C=O','aromatic C','C–O single bond'], ans:0,
-      ex:'<b>δ160–180 = the C=O of an acid, ester or amide</b>, upfield of a ketone (≈205) due to the O/N lone pairs.',
-      fig:{cid:'etoac',type:'c',mark:{d:171,label:'ester C=O'}} },
-    { q:'This ¹³C-NMR shows several signals near δ≈128. Which carbons are these?',
-      opts:['aromatic/alkene sp² carbons','carbonyl','aliphatic CH₃','C–O'], ans:0,
-      ex:'<b>δ110–150 = sp² carbons of aromatics and alkenes.</b> Benzene is about 128.5.',
-      fig:{cid:'toluene',type:'c',mark:{d:128.3,label:'aromatic C'}} },
-    { q:'This ¹³C-NMR shows one sp signal at δ≈118. What is the assignment?',
-      opts:['nitrile C≡N','ketone C=O','aromatic C','C–O'], ans:0,
-      ex:'<b>A nitrile carbon C≡N is δ115–120.</b> Near the aromatic region but usually a single, weak signal.',
-      fig:{cid:'mecn',type:'c',mark:{d:118,label:'C≡N'}} },
-    { q:'This ¹³C-NMR shows a signal at δ≈60. The most likely assignment?',
-      opts:['carbon next to oxygen C–O','carbonyl','aromatic C','terminal methyl'], ans:0,
-      ex:'<b>δ50–70 = an sp³ carbon bonded to oxygen (C–O)</b> — the O–CH₂/O–CH₃ of alcohols, ethers and esters.',
+    { q:'この ¹³C-NMR の δ≈206 のシグナル。帰属される炭素は？',
+      opts:['ケトンのカルボニル C=O','エステルの C=O','芳香族C','ニトリルC'], ans:0, ex:'<b>δ195–220 = ケトン/アルデヒドのカルボニル炭素</b>。ケトン≈205–210、アルデヒド≈190–205。',
+      fig:{cid:'acetone',type:'c',mark:{d:206.0,label:'ケトン C=O'}} },
+    { q:'この ¹³C-NMR の δ≈171 のシグナル。最も考えられる帰属は？',
+      opts:['カルボン酸/エステル/アミドの C=O','ケトン C=O','芳香族C','C–O 単結合'], ans:0, ex:'<b>δ160–180 = カルボン酸・エステル・アミドの C=O</b>。ケトン(≈205)より高磁場で、酸素/窒素の非共有電子対による。',
+      fig:{cid:'etoac',type:'c',mark:{d:171.0,label:'エステル C=O'}} },
+    { q:'この ¹³C-NMR の δ≈128 付近の複数シグナル。帰属される炭素は？',
+      opts:['芳香族/アルケン sp² 炭素','カルボニル','脂肪族CH₃','C–O'], ans:0, ex:'<b>δ110–150 = 芳香環・アルケンの sp² 炭素</b>。ベンゼンは約128.5。',
+      fig:{cid:'toluene',type:'c',mark:{d:128.3,label:'芳香族C'}} },
+    { q:'この ¹³C-NMR の δ≈118 の1本(sp炭素)。帰属は？',
+      opts:['ニトリル C≡N','ケトンC=O','芳香族C','C–O'], ans:0, ex:'<b>ニトリル炭素 C≡N は δ115–120</b>。芳香族領域と近いが、しばしば単一で強度が低い。',
+      fig:{cid:'mecn',type:'c',mark:{d:118.0,label:'C≡N'}} },
+    { q:'この ¹³C-NMR の δ≈60 のシグナル。最も考えられる帰属は？',
+      opts:['酸素隣接の炭素 C–O','カルボニル','芳香族C','メチル(末端)'], ans:0, ex:'<b>δ50–70 = 酸素に結合した sp³ 炭素 C–O</b>(アルコール・エーテル・エステルのO–CH₂/O–CH₃)。',
       fig:{cid:'etoac',type:'c',mark:{d:60.4,label:'O–CH₂'}} },
-    { q:'This ¹³C-NMR shows an upfield signal at δ≈8. Which carbon is this?',
-      opts:['aliphatic alkyl C (CH₃/CH₂)','carbonyl','aromatic C','C–O'], ans:0,
-      ex:'<b>δ5–35 = aliphatic carbons far from electronegative groups</b> (a terminal CH₃ is especially upfield).',
+    { q:'この ¹³C-NMR の δ≈8 の高磁場シグナル。帰属される炭素は？',
+      opts:['脂肪族アルキル炭素 CH₃/CH₂','カルボニル','芳香族C','C–O'], ans:0, ex:'<b>δ5–35 = 電気陰性基から離れた脂肪族炭素</b>(末端CH₃は特に高磁場)。',
       fig:{cid:'mek',type:'c',mark:{d:7.9,label:'CH₃'}} },
-    { q:'This phenol shows an aromatic carbon at δ≈155. What is the assignment?',
-      opts:['the ipso carbon bearing oxygen, C–OH','the para carbon','C=O','aliphatic C'], ans:0,
-      ex:'The aromatic <b>ipso C–OH is ≈155.</b> Oxygen resonance moves it downfield of a normal aromatic (≈128) — the same carbon type shifts with its substituent.',
-      fig:{cid:'phenol',type:'c',mark:{d:155,label:'ipso C–OH'}} }
-  ]
+  ],
 };
 
-/* ---------- Learn: detailed reference (grounded in standard textbook values) ---------- */
+/* ---------- 学ぶ: 詳細リファレンス ----------
+   各トピック {t:見出し, body:解説HTML, fig?:{cid,type,mark}} */
+/* ---------- 学ぶ: 詳細リファレンス（書籍の代表値に基づき加筆） ---------- */
 const LEARN = {
   ms:[
-    { t:'The molecular ion M⁺ and molecular weight',
-      body:'The radical cation formed when a molecule loses one electron is the <b>molecular ion M⁺</b>, and its m/z equals the <b>nominal molecular weight</b>. The intensity of M⁺ depends on stability: strong for aromatics and rings (π systems), weak or absent for branched alcohols. The highest m/z is not always M⁺ — watch for isotope peaks (M+1, M+2) and impurities.',
+    { t:'分子イオンピーク M⁺ と分子量',
+      body:'試料分子が電子1個を失って生じる陽イオン(ラジカルカチオン)が <b>分子イオン M⁺</b> で，その m/z が<b>公称分子量</b>に等しい。M⁺ の強度は構造の安定性に依存し，芳香族などπ系や環では強く，分岐アルコール等では弱い(時に消失)。最も高い m/z が必ず M⁺ とは限らず，同位体ピーク(M+1, M+2)や不純物に注意する。',
       fig:{cid:'toluene',type:'ms',mark:{mz:92,label:'M⁺ 92'}} },
-    { t:'The nitrogen rule',
-      body:'A molecule of only C, H and O always has an <b>even</b> nominal mass. <b>An odd molecular weight means an odd number of nitrogens</b> (amines, nitriles, amides). Even means zero or an even number. Just reading the parity of M⁺ hints at nitrogen; the same logic distinguishes even- and odd-electron fragment ions.',
-      fig:{cid:'etnh2',type:'ms',mark:{mz:45,label:'M⁺ 45 → odd N'}} },
-    { t:'Isotope patterns (Cl, Br, S) and carbon count',
-      body:'Halogens have distinctive isotope ratios read from M vs M+2.<br>· <b>Chlorine</b> ³⁵Cl:³⁷Cl ≈ 3:1 → <b>M:M+2 ≈ 3:1</b><br>· <b>Bromine</b> ⁷⁹Br:⁸¹Br ≈ 1:1 → <b>M:M+2 ≈ 1:1</b><br>· <b>Sulfur</b> gives ~4% at M+2<br>Fluorine and iodine are monoisotopic (no M+2). Also, <b>the M+1 intensity ≈ 1.1% × number of carbons</b> estimates carbon count. Multiple Cl/Br spread the M+2/M+4… pattern binomially.',
+    { t:'窒素則 (nitrogen rule)',
+      body:'C・H・O のみからなる分子の公称分子量は必ず<b>偶数</b>。<b>公称分子量が奇数なら窒素を奇数個含む</b>(アミン・ニトリル・アミド等)。偶数なら窒素は0または偶数個。M⁺ の偶奇を見るだけで含窒素の手がかりになる。フラグメントでも同様で，偶数電子イオンと奇数電子イオンの区別に役立つ。',
+      fig:{cid:'etnh2',type:'ms',mark:{mz:45,label:'M⁺ 45 → N奇数'}} },
+    { t:'同位体パターン (Cl・Br・S) と炭素数',
+      body:'ハロゲンは特徴的な同位体比を持ち，M と M+2 の強度比で判別できる。<br>・<b>塩素</b> ³⁵Cl:³⁷Cl ≈ 3:1 → <b>M:M+2 ≈ 3:1</b><br>・<b>臭素</b> ⁷⁹Br:⁸¹Br ≈ 1:1 → <b>M:M+2 ≈ 1:1</b><br>・<b>硫黄</b> は M+2 が約4%<br>フッ素・ヨウ素は単一同位体で M+2 を作らない。さらに <b>M+1 の相対強度 ≈ 1.1% × 炭素数</b>から炭素数を見積もれる。塩素・臭素が複数個あると M+2/M+4… の比が二項分布状に広がる。',
       fig:{cid:'2clpropane',type:'ms',mark:{mz:80,label:'M+2 (3:1)'}} },
-    { t:'Common neutral losses (mass difference from M)',
-      body:'Read the group lost from the mass difference from M⁺.<br><b>−15</b> CH₃ / <b>−17</b> OH / <b>−18</b> H₂O / <b>−28</b> CO, C₂H₄ / <b>−29</b> CHO, C₂H₅ / <b>−31</b> OCH₃ / <b>−43</b> C₃H₇, CH₃CO / <b>−45</b> COOH, OC₂H₅ / <b>−35/37</b> Cl / <b>−79/81</b> Br. The same reading applies to differences between fragments.',
+    { t:'代表的な中性脱離 (M からの質量差)',
+      body:'M⁺ からの質量差で外れた基を読む。<br><b>−15</b> CH₃ ／ <b>−17</b> OH ／ <b>−18</b> H₂O ／ <b>−28</b> CO・C₂H₄ ／ <b>−29</b> CHO・C₂H₅ ／ <b>−31</b> OCH₃ ／ <b>−43</b> C₃H₇・CH₃CO ／ <b>−45</b> COOH・OC₂H₅ ／ <b>−35/37</b> Cl ／ <b>−79/81</b> Br。フラグメント間の差にも同じ読み方が使える。',
       fig:{cid:'etoac',type:'ms',mark:{mz:70,label:'M−18'}} },
-    { t:'Characteristic fragment ions',
-      body:'Stable cations become base peaks and are structure-defining.<br><b>m/z 43</b> CH₃CO⁺ (acylium; methyl ketones/acetate esters) / <b>31</b> CH₂=OH⁺ (primary alcohol) / <b>30</b> CH₂=NH₂⁺ (primary amine) / <b>29</b> CHO⁺, C₂H₅⁺ / <b>77</b> C₆H₅⁺ (phenyl) / <b>91</b> tropylium C₇H₇⁺ (benzyl) / <b>105</b> C₆H₅CO⁺ (benzoyl). Note the <b>same m/z can have different origins</b> (43 = CH₃CO⁺ or C₃H₇⁺).',
-      fig:{cid:'toluene',type:'ms',mark:{mz:91,label:'tropylium'}} },
-    { t:'Fragmentation modes (α-cleavage, McLafferty, RDA, benzyl)',
-      body:'Fragmentation is not random: paths giving a <b>stable ion and stable neutral</b> are preferred.<br>· <b>α-cleavage</b>: a bond next to a heteroatom breaks, giving a stable oxo/iminium ion (31, 30, …).<br>· <b>McLafferty rearrangement</b>: a carbonyl with a γ-hydrogen loses a neutral alkene via a six-membered transition state, giving a characteristic <b>even-mass</b> ion.<br>· <b>Retro-Diels–Alder (RDA)</b>: a cyclohexene ring splits into a diene and an alkene.<br>· <b>Benzylic cleavage</b>: the benzylic bond breaks to give <b>tropylium (91)</b>. The more stable the cation, the more readily it forms.',
-      fig:{cid:'benzaldehyde',type:'ms',mark:{mz:105,label:'benzoyl 105'}} },
+    { t:'特徴的なフラグメントイオン',
+      body:'安定な陽イオンは基準ピークになりやすく，構造の決め手になる。<br><b>m/z 43</b> CH₃CO⁺(アシリウム，メチルケトン/酢酸エステル) ／ <b>31</b> CH₂=OH⁺(第一級アルコール) ／ <b>30</b> CH₂=NH₂⁺(第一級アミン) ／ <b>29</b> CHO⁺・C₂H₅⁺ ／ <b>77</b> C₆H₅⁺(フェニル) ／ <b>91</b> トロピリウム C₇H₇⁺(ベンジル) ／ <b>105</b> C₆H₅CO⁺(ベンゾイル)。<b>同じ m/z でも起源が異なる</b>点に注意(43=CH₃CO⁺ か C₃H₇⁺ など)。',
+      fig:{cid:'toluene',type:'ms',mark:{mz:91,label:'トロピリウム'}} },
+    { t:'開裂の型 (α開裂・McLafferty・RDA・ベンジル)',
+      body:'開裂は無秩序ではなく，<b>安定なイオンと中性種を与える経路</b>が優先される。<br>・<b>α開裂</b>: ヘテロ原子隣の結合が切れ，オキソ/イミニウム等の安定イオン(31, 30 など)を与える。<br>・<b>McLafferty 転位</b>: γ位に水素をもつカルボニルで，六員環遷移状態を経て中性アルケンが脱離し，特徴的な<b>偶数質量</b>のイオンを与える。<br>・<b>レトロ Diels–Alder(RDA)</b>: シクロヘキセン環がジエンとアルケンに分裂する。<br>・<b>ベンジル開裂</b>: ベンジル位が切れて<b>トロピリウム(91)</b>を与える。安定なカチオンほど生成しやすい。',
+      fig:{cid:'benzaldehyde',type:'ms',mark:{mz:105,label:'ベンゾイル 105'}} },
   ],
   ir:[
-    { t:'How to read an IR spectrum',
-      body:'The x-axis is <b>wavenumber (cm⁻¹), high (4000) on the left → low (400) on the right</b>; the y-axis is %T (absorptions are downward troughs). <b>4000–1500 is the functional-group region</b>, <b>1500–400 the fingerprint region</b> (molecule-specific). First scan the group region for O–H/N–H, C=O and triple bonds and sort "present/absent". Matching fingerprints identifies a compound, but individual bands there are hard to assign.',
+    { t:'IR スペクトルの見方',
+      body:'横軸は<b>波数(cm⁻¹)で左が高波数(4000)→右が低波数(400)</b>，縦軸は透過率 %T(吸収は下向きの谷)。<b>4000–1500 が官能基領域</b>，<b>1500–400 が指紋領域</b>(分子固有)。まず官能基領域で O–H/N–H・C=O・三重結合を拾い，「ある／ない」を仕分ける。指紋領域の一致は化合物の同定に使えるが，個々の帰属は難しい。',
       fig:{cid:'etoac',type:'ir',mark:{wn:1740,label:'C=O'}} },
-    { t:'O–H / N–H region (3200–3650) and hydrogen bonding',
-      body:'A <b>free O–H</b> is sharp and high (≈3600 in dilute solution), but <b>hydrogen bonding makes it broad and lower</b> (≈3200–3550). A <b>carboxylic-acid O–H</b> forms dimers and gives a very broad band spanning 2500–3300. A <b>primary amine N–H₂</b> shows two bands, a <b>secondary amine</b> one (both medium). Bandwidth (H-bond strength) separates acid > alcohol > amine. Shape changes with concentration/solvent.',
-      fig:{cid:'aceticacid',type:'ir',mark:{wn:3000,label:'acid O–H'}} },
-    { t:'C–H region and the aldehyde doublet',
-      body:'Aliphatic sp³ C–H is ~2850–2960; aromatic/alkene sp² =C–H is ~3000–3100 (either side of 3000); terminal alkyne ≡C–H is ~3300. An <b>aldehyde –CHO</b> shows a weak characteristic doublet near 2820 and 2720 (Fermi resonance with the overtone of the C–H bend); with C=O it confirms –CHO.',
-      fig:{cid:'ethanal',type:'ir',mark:{wn:2720,label:'CHO C–H'}} },
-    { t:'Triple-bond region (2100–2260)',
-      body:'Bands in this quiet region are diagnostic. A <b>nitrile C≡N</b> is a sharp, medium band near 2250; an <b>alkyne C≡C</b> is weaker at 2100–2260 (symmetric alkynes vanish). Do not confuse with atmospheric CO₂ (≈2350).',
+    { t:'O–H・N–H 領域 (3200–3650) と水素結合',
+      body:'<b>遊離の O–H</b> は鋭く高波数(希薄溶液で ≈3600)だが，<b>水素結合すると幅広く低波数</b>(≈3200–3550)になる。<b>カルボン酸 O–H</b> は二量体を作り 2500–3300 に及ぶ非常に幅広い吸収を示す。<b>第一級アミン N–H₂</b> は2本，<b>第二級アミン</b>は1本(いずれも中程度)。幅の広さ(H結合の強さ)で酸＞アルコール＞アミンを見分ける。濃度・溶媒で形が変わる点に注意。',
+      fig:{cid:'aceticacid',type:'ir',mark:{wn:3000,label:'酸の O–H'}} },
+    { t:'C–H 領域とアルデヒドの二重線',
+      body:'脂肪族 sp³ C–H は約2850–2960，芳香族/アルケンの sp² =C–H は約3000–3100(3000を境に上下)，末端アルキンの ≡C–H は約3300。<b>アルデヒド –CHO</b> は 2820 と 2720 付近に特徴的な弱い二重線(C–H 変角の倍音との Fermi 共鳴)を示し，C=O と組で –CHO を確定できる。',
+      fig:{cid:'ethanal',type:'ir',mark:{wn:2720,label:'CHO の C–H'}} },
+    { t:'三重結合領域 (2100–2260)',
+      body:'この静かな領域の吸収は診断的。<b>ニトリル C≡N</b> は約2250の鋭い中程度の吸収，<b>アルキン C≡C</b> は2100–2260でより弱く(対称アルキンは消失)。二酸化炭素(≈2350)の混入吸収と混同しない。',
       fig:{cid:'mecn',type:'ir',mark:{wn:2250,label:'C≡N'}} },
-    { t:'The carbonyl C=O moves with context (1630–1820)',
-      body:'A strong, sharp band. Its position narrows down the type, but it <b>moves a lot with conjugation, ring strain and neighbouring atoms</b>. Conjugation (adjacent C=C/ring) delocalises electrons and lowers it <b>by 15–40 cm⁻¹</b>; ring strain raises it as the ring shrinks (6-membered 1715 → 5-membered 1745 → 4-membered 1780). Anchor on a ketone (≈1715) and learn the order below.',
-      fig:{cid:'acetone',type:'ir',mark:{wn:1715,label:'ketone C=O'}},
-      table:'<table class="rtab"><thead><tr><th>type</th><th>C=O / cm⁻¹</th></tr></thead><tbody>'+
-        '<tr><td>acyl halide</td><td class="hi">≈1800</td></tr>'+
-        '<tr><td>anhydride</td><td>≈1820, 1760 (2 bands)</td></tr>'+
-        '<tr><td>ester</td><td>≈1735–1750</td></tr>'+
-        '<tr><td>aldehyde</td><td>≈1725</td></tr>'+
-        '<tr><td>ketone (saturated)</td><td class="hi">≈1715</td></tr>'+
-        '<tr><td>carboxylic acid (dimer)</td><td>≈1710</td></tr>'+
-        '<tr><td>amide</td><td>≈1630–1690</td></tr>'+
-        '<tr><td>conjugated / aromatic</td><td>−15 to 40 from above</td></tr>'+
+    { t:'カルボニル C=O は文脈で動く (1630–1820)',
+      body:'強く鋭い吸収。位置で種類を絞るが，<b>共役・環ひずみ・隣接原子で大きく動く</b>。共役(隣の C=C/芳香環)は電子を非局在化して<b>15–40 低波数</b>へ，環ひずみは環が小さいほど<b>高波数</b>へ動かす(6員1715→5員1745→4員1780)。基準ケトン ≈1715 を軸に，下表の順で覚えると応用が利く。',
+      fig:{cid:'acetone',type:'ir',mark:{wn:1715,label:'ケトン C=O'}},
+      table:'<table class="rtab"><thead><tr><th>種類</th><th>C=O / cm⁻¹</th></tr></thead><tbody>'+
+        '<tr><td>酸ハロゲン化物</td><td class="hi">≈1800</td></tr>'+
+        '<tr><td>酸無水物</td><td>≈1820, 1760 (2本)</td></tr>'+
+        '<tr><td>エステル</td><td>≈1735–1750</td></tr>'+
+        '<tr><td>アルデヒド</td><td>≈1725</td></tr>'+
+        '<tr><td>ケトン(飽和)</td><td class="hi">≈1715</td></tr>'+
+        '<tr><td>カルボン酸(二量体)</td><td>≈1710</td></tr>'+
+        '<tr><td>アミド</td><td>≈1630–1690</td></tr>'+
+        '<tr><td>共役 / 芳香族</td><td>上記から −15〜40</td></tr>'+
         '</tbody></table>' },
-    { t:'Aromatics, alkenes and C–O',
-      body:'An <b>aromatic ring</b> shows several C=C bands at 1450–1600, and the <b>out-of-plane C–H bends at 690–900</b> reveal the substitution pattern (monosubstituted ≈690/750, para-disubstituted ≈820). <b>Alkene C=C</b> is ≈1620–1680 (lower when conjugated). A <b>C–O single bond</b> (alcohol/ether/ester/phenol) gives strong absorption at 1000–1300; the ester C–O–C at 1150–1300 separates it from a ketone.',
-      fig:{cid:'toluene',type:'ir',mark:{wn:730,label:'monosub. oop bend'}} },
+    { t:'芳香族・アルケン・C–O',
+      body:'<b>芳香環</b>は 1450–1600 に数本の C=C を示し，<b>690–900 の面外変角(C–H)</b>で置換様式が読める(一置換 ≈690・750，パラ二置換 ≈820)。<b>アルケン C=C</b>は ≈1620–1680(共役で低波数)。<b>C–O 単結合</b>(アルコール/エーテル/エステル/フェノール)は 1000–1300 に強い吸収を示し，エステルは 1150–1300 の C–O–C がケトンとの識別点になる。',
+      fig:{cid:'toluene',type:'ir',mark:{wn:730,label:'単置換 面外変角'}} },
   ],
   h:[
-    { t:'Chemical shift δ guide (¹H)',
-      body:'TMS = 0 ppm. The closer to an electronegative atom or π system, the further downfield (larger δ).<br><b>0.9–1.5</b> alkyl CH₃/CH₂ / <b>2.0–2.6</b> next to carbonyl/ring / <b>3.3–4.0</b> next to C–O/C–N / <b>4.5–6.5</b> vinyl / <b>6.5–8.0</b> aromatic / <b>9–10</b> aldehyde / <b>10–13</b> carboxylic acid / O–H, N–H variable (exchangeable).',
+    { t:'化学シフト δ の目安 (¹H)',
+      body:'基準 TMS = 0 ppm。電気陰性な原子や π 系に近いほど低磁場(大きい δ)へ。<br><b>0.9–1.5</b> アルキル CH₃/CH₂ ／ <b>2.0–2.6</b> カルボニル/芳香環隣接 ／ <b>3.3–4.0</b> C–O/C–N 隣接 ／ <b>4.5–6.5</b> ビニル ／ <b>6.5–8.0</b> 芳香族 ／ <b>9–10</b> アルデヒド ／ <b>10–13</b> カルボン酸 ／ O–H・N–H は可変(交換性)。',
       fig:{cid:'etoac',type:'h',mark:{d:4.12,label:'O–CH₂ 3.3–4.0'}} },
-    { t:'The same CH₃ moves (electronegativity and anisotropy)',
-      body:'Reference values are only a starting point. <b>The very same methyl moves a lot depending on what it is attached to</b>. The nearer an electronegative group — and the more it is deshielded by the anisotropy (ring current) of a π system — the further downfield. The effect is <b>additive</b>: more adjacent electronegative groups shift it further (CH₃Cl < CH₂Cl₂ < CHCl₃).',
+    { t:'同じ CH₃ でも位置が動く（電気陰性度と異方性）',
+      body:'代表値は出発点にすぎない。<b>つながる相手で同じメチルでも大きく動く</b>。電気陰性基が近いほど，そして芳香環など π 系の異方性(環電流)で脱遮蔽されるほど低磁場へ。効果は<b>加成的</b>で，電気陰性基が複数隣接するほどさらに低磁場になる(CH₃Cl ＜ CH₂Cl₂ ＜ CHCl₃)。',
       fig:{cid:'meoac',type:'h',mark:{d:3.67,label:'O–CH₃ ≈3.7'}},
-      table:'<table class="rtab"><thead><tr><th>environment</th><th>¹H δ (approx.)</th></tr></thead><tbody>'+
-        '<tr><td>CH₃–C (alkane)</td><td>≈0.9</td></tr>'+
+      table:'<table class="rtab"><thead><tr><th>環境</th><th>¹H δ の目安</th></tr></thead><tbody>'+
+        '<tr><td>CH₃–C (アルカン)</td><td>≈0.9</td></tr>'+
         '<tr><td>CH₃–C=C</td><td>≈1.6</td></tr>'+
         '<tr><td>CH₃–Ar</td><td>≈2.3</td></tr>'+
-        '<tr><td>CH₃–C=O (acetyl)</td><td class="hi">≈2.1</td></tr>'+
+        '<tr><td>CH₃–C=O (アセチル)</td><td class="hi">≈2.1</td></tr>'+
         '<tr><td>CH₃–N</td><td>≈2.2–3.0</td></tr>'+
-        '<tr><td>CH₃–O (methoxy)</td><td class="hi">≈3.3–3.9</td></tr>'+
+        '<tr><td>CH₃–O (メトキシ)</td><td class="hi">≈3.3–3.9</td></tr>'+
         '<tr><td>CH₃–NO₂</td><td>≈4.3</td></tr>'+
         '</tbody></table>' },
-    { t:'Multiplicity and the n+1 rule',
-      body:'If a proton has n equivalent neighbouring H, its signal splits into <b>n+1 lines</b> (first order), with intensities from Pascal\'s triangle (binomial).<br>s(1) / d(1:1) / t(1:2:1) / q(1:3:3:1) / quintet(1:4:6:4:1) / septet(1:6:15:20:15:6:1). The number of lines tells you how many H are next door. First-order breaks down when several neighbours have similar J, or when δ separations are small.',
-      fig:{cid:'ethanol',type:'h',mark:{d:3.70,label:'q (3 neighbours)'}} },
-    { t:'Integration = proton-number ratio',
-      body:'Each signal\'s <b>area (integration) is proportional to the number of H</b> it contains. Ratios of integrals give the H-count ratio of each environment; reconcile with the total H in the molecular formula to get real H counts. Watch aromatic overlap and exchangeable H when assigning.',
+    { t:'多重度と n+1 則',
+      body:'あるプロトンの隣接する等価Hが n 個あると，シグナルは <b>n+1 本</b>に分裂する(一次近似)。強度比はパスカルの三角形(二項係数)に従う。<br>s(1) ／ d(1:1) ／ t(1:2:1) ／ q(1:3:3:1) ／ 五重(1:4:6:4:1) ／ 七重(1:6:15:20:15:6:1)。分裂本数から「隣に何個Hがあるか」を逆算できる。J(結合定数)が近い複数の隣接がある場合や，δ 差が小さい場合は一次近似が崩れる。',
+      fig:{cid:'ethanol',type:'h',mark:{d:3.70,label:'q (隣に3H)'}} },
+    { t:'積分比 = プロトン数比',
+      body:'各シグナルの<b>面積(積分)は含まれるH数に比例</b>する。積分値の比から各環境のH数比が読め，分子式の総H数と照合して実H数を決める。芳香族の重なりや交換性Hに注意して割り付ける。',
       fig:{cid:'etoac',type:'h',mark:{d:1.26,label:'3H'}} },
-    { t:'Exchangeable protons (O–H, N–H, COOH) are variable',
-      body:'The δ of O–H, N–H and COOH is <b>not fixed</b>: it moves with concentration, solvent, temperature and hydrogen bonding, and adding D₂O exchanges them away (useful for confirming an assignment). Carboxylic acids sit at δ10–13 from strong dimeric H-bonding; intramolecular H-bonding (β-diketone enols) goes even further (δ11–16). They often lack multiplicity (or are broad).',
+    { t:'交換性プロトン (O–H・N–H・COOH) は可変',
+      body:'O–H・N–H・COOH の δ は<b>固定値でない</b>。濃度・溶媒・温度・水素結合で動き，D₂O を加えると交換して消える(帰属確認に有効)。カルボン酸は二量体の強い水素結合で δ10–13 と極端に低磁場。分子内水素結合(β-ジケトンのエノール等)はさらに低磁場(δ11–16)になる。多重度を持たない(あるいは幅広い)ことが多い。',
       fig:{cid:'aceticacid',type:'h',mark:{d:11.4,label:'COOH ≈11'}} },
-    { t:'Patterns worth memorising',
-      body:'<b>Ethyl</b> CH₃CH₂– : t(3H)+q(2H) / <b>isopropyl</b> (CH₃)₂CH– : d(6H)+septet(1H) / <b>tert-butyl</b> (CH₃)₃C– : s(9H) / <b>monosubstituted benzene</b> : ≈7.2 with 5H / <b>acetyl</b> CH₃CO– : s(3H, ≈2.1) / <b>methoxy</b> CH₃O– : s(3H, ≈3.3–3.9). These map straight to a substructure at a glance.',
-      fig:{cid:'ipa',type:'h',mark:{d:4.00,label:'septet (CH)'}} },
+    { t:'覚えておきたい代表パターン',
+      body:'<b>エチル基</b> CH₃CH₂– : t(3H)＋q(2H) ／ <b>イソプロピル基</b> (CH₃)₂CH– : d(6H)＋七重(1H) ／ <b>tert-ブチル基</b> (CH₃)₃C– : s(9H) ／ <b>単置換ベンゼン</b> : ≈7.2 に 5H ／ <b>アセチル</b> CH₃CO– : s(3H, ≈2.1) ／ <b>メトキシ</b> CH₃O– : s(3H, ≈3.3–3.9)。これらは一目で部分構造に直結する。',
+      fig:{cid:'ipa',type:'h',mark:{d:4.00,label:'七重項(CH)'}} },
   ],
   c:[
-    { t:'¹³C is simplified by proton decoupling',
-      body:'Routine ¹³C irradiates ¹H to remove coupling (proton decoupling), so each carbon appears as a single line. <b>The number of signals = the number of inequivalent carbon types</b>, reading out molecular symmetry directly. Peak heights are not quantitative (NOE and relaxation differences). DEPT then distinguishes CH₃/CH₂/CH/quaternary.',
-      fig:{cid:'acetone',type:'c',mark:{d:206.0,label:'2 carbon types → 2 lines'}} },
-    { t:'Chemical shift δ guide (¹³C)',
-      body:'A wider range than ¹H, 0–220 ppm.<br><b>5–40</b> alkyl / <b>30–60</b> C–N / <b>50–90</b> C–O / <b>65–90</b> alkyne / <b>110–150</b> aromatic/alkene sp² / <b>115–120</b> nitrile / <b>160–180</b> acid/ester/amide C=O / <b>190–220</b> ketone/aldehyde C=O. The <b>parity of the carbonyl</b> (≈170 vs ≈205) separates acid derivatives from ketones/aldehydes.',
-      fig:{cid:'benzaldehyde',type:'c',mark:{d:192.4,label:'conjugated CHO'}},
-      table:'<table class="rtab"><thead><tr><th>carbon type</th><th>¹³C δ / ppm</th></tr></thead><tbody>'+
-        '<tr><td>alkyl C</td><td>5–40</td></tr>'+
+    { t:'¹³C はプロトンデカップリングで単純化',
+      body:'通常の ¹³C 測定は ¹H を照射して分裂を消す(プロトンデカップリング)ため，各炭素は原則<b>1本のシングレット</b>として観測される。<b>シグナルの本数 = 非等価な炭素の種類数</b>で，分子の対称性が直接読める。ピーク強度は定量的でない(核オーバーハウザー効果や緩和時間の差による)点に注意。DEPT を併用すると CH₃/CH₂/CH/四級 を区別できる。',
+      fig:{cid:'acetone',type:'c',mark:{d:206.0,label:'2種の炭素→2本'}} },
+    { t:'化学シフト δ の目安 (¹³C)',
+      body:'¹H より広い 0–220 ppm を使う。<br><b>5–40</b> アルキル ／ <b>30–60</b> C–N ／ <b>50–90</b> C–O ／ <b>65–90</b> アルキン ／ <b>110–150</b> 芳香族・アルケン sp² ／ <b>115–120</b> ニトリル ／ <b>160–180</b> 酸/エステル/アミド C=O ／ <b>190–220</b> ケトン/アルデヒド C=O。<b>カルボニルの偶奇</b>(≈170 か ≈205 か)で酸誘導体とケトン/アルデヒドを分けられる。',
+      fig:{cid:'benzaldehyde',type:'c',mark:{d:192.4,label:'共役 CHO'}},
+      table:'<table class="rtab"><thead><tr><th>炭素の種類</th><th>¹³C δ / ppm</th></tr></thead><tbody>'+
+        '<tr><td>アルキル C</td><td>5–40</td></tr>'+
         '<tr><td>C–N</td><td>30–60</td></tr>'+
         '<tr><td>C–O (sp³)</td><td>50–90</td></tr>'+
-        '<tr><td>alkyne</td><td>65–90</td></tr>'+
-        '<tr><td>nitrile C≡N</td><td>115–120</td></tr>'+
-        '<tr><td>aromatic/alkene sp²</td><td>110–150</td></tr>'+
-        '<tr><td>acid/ester/amide C=O</td><td class="hi">160–180</td></tr>'+
-        '<tr><td>ketone/aldehyde C=O</td><td class="hi">190–220</td></tr>'+
+        '<tr><td>アルキン</td><td>65–90</td></tr>'+
+        '<tr><td>ニトリル C≡N</td><td>115–120</td></tr>'+
+        '<tr><td>芳香族・アルケン sp²</td><td>110–150</td></tr>'+
+        '<tr><td>酸/エステル/アミド C=O</td><td class="hi">160–180</td></tr>'+
+        '<tr><td>ケトン/アルデヒド C=O</td><td class="hi">190–220</td></tr>'+
         '</tbody></table>' },
-    { t:'Substituent effects move it too (same C type, different position)',
-      body:'¹³C is sensitive to its electronic environment, so <b>even the same kind of carbon moves a lot with its neighbours</b>. A carbon α to an electronegative group shifts downfield; in conjugated/aromatic systems the ipso/ortho/para carbons shift systematically with the substituent. The aromatic C–OH ipso carbon at ≈155 (from oxygen resonance) is an example. Carbonyls also shift with conjugation (saturated ketone ≈205 vs an aryl ketone ≈197).',
+    { t:'置換基効果でも動く（同じ C 種でも位置が変わる）',
+      body:'¹³C は電子環境に敏感で，<b>同じ種類の炭素でも隣接基で大きく動く</b>。電気陰性基が近い炭素(α位)は低磁場へ，共役や芳香環の ipso/ortho/para では置換基によって系統的にずれる。芳香族 C–OH の ipso 炭素が ≈155 と高いのは酸素の共鳴による例。'
+        +'カルボニルも共役で ¹³C が高磁場側へ動く(飽和ケトン ≈205 に対しアリールケトン ≈197)。',
       fig:{cid:'toluene',type:'c',mark:{d:137.8,label:'ipso C'}} },
-    { t:'Reading symmetry',
-      body:'Equivalent carbons overlap into one line. E.g. 2-propanol (CH₃)₂CHOH has three carbons but two equivalent methyls → <b>2 lines</b>. Cyclohexanone has six carbons but a mirror plane → <b>4 lines</b> (C=O, α, β, γ). The gap between the carbon count and the signal count measures symmetry.',
-      fig:{cid:'ipa',type:'c',mark:{d:25.3,label:'2×CH₃ as one line'}} },
+    { t:'対称性の読み方',
+      body:'等価な炭素は重なって1本になる。例: 2-プロパノール (CH₃)₂CHOH は炭素3個だが2つのメチルが等価なので <b>2本</b>。シクロヘキサノンは炭素6個だが対称面により <b>4本</b>(C=O・α・β・γ)。炭素数とシグナル数の差が対称性の指標になる。',
+      fig:{cid:'ipa',type:'c',mark:{d:25.3,label:'2×CH₃ が1本'}} },
   ],
 };
 
 /* =========================================================
-   Spectrum SVG renderer (offline)
-   Dark theme: axes/text #C7D2E6, grid rgba, accent-coloured curves
+   スペクトル SVG レンダラ（オフライン生成）
+   ダークテーマ配色: 軸/文字 #C7D2E6, グリッド rgba, 曲線に各種アクセント
    ========================================================= */
 const SPEC = (function(){
   const AX='#8FA0BC', TXT='#C7D2E6', GRID='rgba(150,170,200,0.14)', GRID2='rgba(150,170,200,0.08)';
   function gauss(x,mu,sig){ const z=(x-mu)/sig; return Math.exp(-0.5*z*z); }
-  /* annotation callout: label pill + dotted guide inside the top */
+  /* 注釈コールアウト: プロット上端内側にラベルピル＋点線ガイド */
   function callout(x, ML, MT, pW, pH, label, color){
     color = color||'#FBBF24';
     const chars=[...String(label)].reduce((s,ch)=> s + (ch.charCodeAt(0)>0x2000?9.2:6.2), 0);
@@ -3205,7 +1199,7 @@ const SPEC = (function(){
     return g;
   }
 
-  /* ---- IR: transmittance (downward dips) ---- */
+  /* ---- IR: 透過率(下向きにディップ) ---- */
   function ir(bands, opt){
     opt=opt||{};
     const W=560,H=290, ML=46,MR=14,MT=14,MB=40, pW=W-ML-MR, pH=H-MT-MB;
@@ -3240,8 +1234,8 @@ const SPEC = (function(){
     // curve
     g+='<polyline points="'+pts.join(' ')+'" fill="none" stroke="#5BB0FF" stroke-width="1.6" stroke-linejoin="round"/>';
     // axis titles
-    g+='<text x="'+(ML+pW/2)+'" y="'+(H-4)+'" fill="'+TXT+'" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">Wavenumber / cm⁻¹</text>';
-    g+='<text x="12" y="'+(MT+pH/2)+'" fill="'+TXT+'" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace" transform="rotate(-90 12 '+(MT+pH/2)+')">Transmittance %T</text>';
+    g+='<text x="'+(ML+pW/2)+'" y="'+(H-4)+'" fill="'+TXT+'" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">波数 / cm⁻¹</text>';
+    g+='<text x="12" y="'+(MT+pH/2)+'" fill="'+TXT+'" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace" transform="rotate(-90 12 '+(MT+pH/2)+')">透過率 %T</text>';
     // optional band annotations
     if(opt.annotate){
       bands.forEach(b=>{ if(b.d<0.4) return; const x=xOf(b.wn), y=yOf(Tat(b.wn));
@@ -3252,7 +1246,7 @@ const SPEC = (function(){
     return svgWrap(W,H,g);
   }
 
-  /* ---- NMR: build peaks from multiplicity (upward) ---- */
+  /* ---- NMR: 多重度を分解して山を合成(上向き) ---- */
   const MULT={ s:[1], d:[1,1], t:[1,2,1], q:[1,3,3,1], quint:[1,4,6,4,1], sext:[1,5,10,10,5,1], sept:[1,6,15,20,15,6,1], m:null };
   function nmr(peaks, type, opt){
     opt=opt||{};
@@ -3264,15 +1258,15 @@ const SPEC = (function(){
     if(isH && hi>9.5) dmax=Math.max(12, Math.ceil(hi)+1);
     if(!isH && hi>200) dmax=Math.ceil(hi/10)*10+10;
     const dmin=0, dspan=dmax-dmin;
-    const xOf=d=> ML + (dmax-d)/dspan*pW;   // high field (large) on the left
-    const J = isH ? 0.045 : 0;              // apparent ppm spacing
-    const sigP = isH ? 0.011 : 0.7;         // line width (ppm)
-    // build component lines
+    const xOf=d=> ML + (dmax-d)/dspan*pW;   // 高磁場(大)を左に
+    const J = isH ? 0.045 : 0;              // ppm 間隔(見かけ)
+    const sigP = isH ? 0.011 : 0.7;         // ライン幅(ppm)
+    // 成分ライン生成
     let comps=[];
     peaks.forEach(p=>{
       const patt = MULT[p.m] || null;
-      const amp = isH ? (p.n||1) : 1;       // ¹H scaled by integration, ¹³C uniform
-      if(!patt){ // 'm' (multiplet) = one broad hump
+      const amp = isH ? (p.n||1) : 1;       // ¹H は積分Hで高さ配分, ¹³C は均一
+      if(!patt){ // 多重(m)は幅広の1山
         comps.push({mu:p.d, a:amp, sig:sigP*3.2});
       } else {
         const tot = patt.reduce((s,x)=>s+x,0);
@@ -3283,7 +1277,7 @@ const SPEC = (function(){
         });
       }
     });
-    // sample the curve
+    // 曲線サンプリング
     function val(d){ let s=0; comps.forEach(c=>{ s+=c.a*gauss(d,c.mu,c.sig); }); return s; }
     let vmax=0;
     const NP=pW;
@@ -3330,7 +1324,7 @@ const SPEC = (function(){
     return svgWrap(W,H,g);
   }
 
-  /* ---- MS: stick spectrum ---- */
+  /* ---- MS: 棒(スティック)スペクトル ---- */
   function ms(data, opt){
     opt=opt||{};
     const W=560,H=290, ML=34,MR=14,MT=16,MB=40, pW=W-ML-MR, pH=H-MT-MB;
@@ -3364,7 +1358,7 @@ const SPEC = (function(){
       }
     });
     g+='<text x="'+(ML+pW/2)+'" y="'+(H-4)+'" fill="'+TXT+'" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace">m/z</text>';
-    g+='<text x="12" y="'+(MT+pH/2)+'" fill="'+TXT+'" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace" transform="rotate(-90 12 '+(MT+pH/2)+')">Relative intensity %</text>';
+    g+='<text x="12" y="'+(MT+pH/2)+'" fill="'+TXT+'" font-size="10.5" text-anchor="middle" font-family="ui-monospace,monospace" transform="rotate(-90 12 '+(MT+pH/2)+')">相対強度 %</text>';
     if(opt.mark){ const mk=Array.isArray(opt.mark)?opt.mark:[opt.mark]; mk.forEach(m=> g+=callout(xOf(m.mz), ML, MT, pW, pH, m.label||'', m.color)); }
     return svgWrap(W,H,g);
   }
@@ -3376,21 +1370,50 @@ const SPEC = (function(){
   return { ir, nmr, ms };
 })();
 
-/* export (browser/Node) */
+/* エクスポート(ブラウザ/Node 両対応の簡易) */
 if(typeof module!=='undefined' && module.exports){
   module.exports = { FRAG, fragFormula, formulaStr, COMPOUNDS, CMAP, BANK, LEARN, SPEC };
 }
 
 
 
+/* ---------- 個別特訓バンク: 追加問題（文脈依存シフト等） ---------- */
+BANK.ir.push(
+  { q:'この安息香酸メチルの C=O は 1720 cm⁻¹ で，脂肪族エステル(≈1740)より低い。理由として最も適切なのは？',
+    opts:['芳香環との共役でC=Oの結合次数が下がる','水素結合','環ひずみ','同位体効果'], ans:0,
+    ex:'<b>共役はカルボニルを低波数へ動かす</b>。芳香環やC=Cと共役すると電子が非局在化して結合次数が下がり，C=O が 15〜40 cm⁻¹ ほど低波数になる。',
+    fig:{cid:'mebenzoate',type:'ir',mark:{wn:1720,label:'共役 C=O'}} },
+  { q:'このシクロヘキサノンの C=O は 1715 cm⁻¹。もし同じケトンが5員環だったら C=O の位置は？',
+    opts:['より高波数(≈1745)へ動く','より低波数へ動く','変わらない','消失する'], ans:0,
+    ex:'<b>環ひずみはカルボニルを高波数へ動かす</b>。6員環≈1715 に対し5員環≈1745，4員環≈1780。環が小さいほど高波数へ。',
+    fig:{cid:'cyclohexanone',type:'ir',mark:{wn:1715,label:'6員環 C=O'}} }
+);
+BANK.ms.push(
+  { q:'このフェノール(M⁺=94)は m/z=66 にピークを示す。脱離した中性種は？',
+    opts:['CO (一酸化炭素)','H₂O','CH₃','C₂H₄'], ans:0,
+    ex:'94−66 = <b>28 = CO の脱離</b>。フェノール類に特徴的な開裂で，芳香族 C–OH の指標になる。',
+    fig:{cid:'phenol',type:'ms',mark:{mz:66,label:'M−28 (CO)'}} }
+);
+BANK.h.push(
+  { q:'この安息香酸メチルの δ≈3.9 の 3H シングレット。帰属は？',
+    opts:['エステルのメトキシ CH₃–O','アセチル CH₃–CO','芳香族CH₃','アルデヒドH'], ans:0,
+    ex:'<b>δ3.3–3.9 の CH₃ シングレット = O–CH₃(メトキシ)</b>。酸素の電気陰性度で低磁場シフト。エステル O–CH₃ は ≈3.9。',
+    fig:{cid:'mebenzoate',type:'h',mark:{d:3.90,label:'O–CH₃'}} }
+);
+BANK.c.push(
+  { q:'このフェノールの ¹³C で δ≈155 の芳香族炭素。帰属は？',
+    opts:['酸素の付いた ipso 炭素 C–OH','パラ位の炭素','C=O','脂肪族C'], ans:0,
+    ex:'芳香族 <b>C–OH の ipso 炭素は ≈155</b>。酸素の共鳴により，通常の芳香族(≈128)より低磁場へ動く。同じ芳香族C でも置換基で位置が変わる好例。',
+    fig:{cid:'phenol',type:'c',mark:{d:155.0,label:'ipso C–OH'}} }
+);
 
 </script>
 <script>
 /* =========================================================
-   MEIMAY Spectra · UI logic (UI unified with the naming app)
+   MEIMAY 分光 · UI ロジック（IUPAC アプリと UI を統一）
    ========================================================= */
 
-/* ---------- persistent store (window.storage + localStorage + memory fallback) ---------- */
+/* ---------- 永続ストア (window.storage + localStorage + メモリfallback) ---------- */
 const Store = (() => {
   const mem = {};
   const hasWS = (typeof window!=='undefined' && window.storage && typeof window.storage.get==='function');
@@ -3404,18 +1427,18 @@ const Store = (() => {
 })();
 const STATS_KEY='meimay_spec_stats_v1', SET_KEY='meimay_spec_settings_v1';
 
-/* ---------- state ---------- */
+/* ---------- 状態 ---------- */
 let STATS = { seen:{}, correct:{}, solved:{}, streak:0, totalQ:0, totalC:0 };
 let SETTINGS = { sound:true, bgm:true };
 let reducedMotion = (typeof matchMedia!=='undefined') && matchMedia('(prefers-reduced-motion: reduce)').matches;
-let MODE='learn';            // about|guide|nomen (static) / learn|train|analyze (exercises)
-let TTYPE='ms';              // ms|ir|h|c (drill)
-let LTYPE='ms';              // ms|ir|h|c (learn)
+let MODE='learn';            // about|guide|nomen（静的） / learn|train|analyze（演習）
+let TTYPE='ms';              // ms|ir|h|c (個別特訓)
+let LTYPE='ms';              // ms|ir|h|c (学ぶ)
 let curTrain=null, lastTrain=-1;
 let curCmp=null, specTab='ms', tray=[], analyzeAttempts=0, analyzeSolvedThis=false;
 const PAGE_MODES=['about','guide','nomen'];
 
-/* ---------- sound (Web Audio: key clicks + pentatonic BGM) ---------- */
+/* ---------- サウンド (Web Audio: キークリック + ペンタトニックBGM) ---------- */
 const Sound=(function(){
   let ctx=null, master=null, bgmTimer=null, step=0;
   const SCALE=[261.63,293.66,329.63,392.00,440.00,523.25,587.33,659.25];
@@ -3440,7 +1463,7 @@ const Sound=(function(){
   };
 })();
 
-/* ---------- SmilesDrawer structure rendering ---------- */
+/* ---------- SmilesDrawer 構造描画 ---------- */
 const DOPTS={ width:420,height:250,padding:20,bondThickness:1.5,bondLength:26,fontSizeLarge:12,fontSizeSmall:9,
   themes:{ dark:{ C:'#E6EDF7',O:'#FF6B81',N:'#5BB0FF',F:'#9EE37D',CL:'#9EE37D',BR:'#C792EA',I:'#C792EA',P:'#FFB454',S:'#FFD479',B:'#FF9E64',SI:'#A0A8B7',H:'#E6EDF7',BACKGROUND:'transparent' } } };
 let _drawer=null;
@@ -3454,15 +1477,15 @@ function drawMol(container, smi){
   } else container.textContent=smi;
 }
 
-/* ---------- SVG icons ---------- */
+/* ---------- SVG アイコン ---------- */
 function checkSVG(){ return '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>'; }
 function crossSVG(){ return '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>'; }
 function flameSVG(){ return '<svg class="flame" width="11" height="13" viewBox="0 0 24 28" fill="currentColor" style="vertical-align:-1px"><path d="M12 0c1 5-3 7-3 12a3 3 0 006 0c0-1 0-2-1-3 3 1 5 4 5 8a9 9 0 11-18 0c0-6 6-9 6-13 0-2 0-3-1-4z"/></svg>'; }
 function sparkSVG(){ return '<svg width="20" height="20" viewBox="0 0 24 24" fill="#062b27"><path d="M12 2l2.4 6.3L21 9l-5 4.2L17.6 21 12 17.2 6.4 21 8 13.2 3 9l6.6-.7z"/></svg>'; }
 
-/* ---------- effects ---------- */
+/* ---------- 演出 ---------- */
 let comboEl, fxCanvas;
-function showCombo(n){ if(reducedMotion||!comboEl) return; let txt=n+' streak'; if(n>=10) txt=n+' COMBO!'; else if(n>=5) txt=n+' streak!'; comboEl.innerHTML=sparkSVG()+'<span>'+txt+'</span>'; comboEl.hidden=false; comboEl.classList.remove('show'); void comboEl.offsetWidth; comboEl.classList.add('show'); clearTimeout(comboEl._t); comboEl._t=setTimeout(()=>{ comboEl.classList.remove('show'); comboEl.hidden=true; },1250); }
+function showCombo(n){ if(reducedMotion||!comboEl) return; let txt=n+' 連続'; if(n>=10) txt=n+' COMBO!'; else if(n>=5) txt=n+' 連続!'; comboEl.innerHTML=sparkSVG()+'<span>'+txt+'</span>'; comboEl.hidden=false; comboEl.classList.remove('show'); void comboEl.offsetWidth; comboEl.classList.add('show'); clearTimeout(comboEl._t); comboEl._t=setTimeout(()=>{ comboEl.classList.remove('show'); comboEl.hidden=true; },1250); }
 function flashCard(ok){ const card=$('card'); if(!card||reducedMotion) return; card.classList.remove('flash-ok','flash-no'); void card.offsetWidth; card.classList.add(ok?'flash-ok':'flash-no'); }
 function burst(){ if(reducedMotion||!fxCanvas) return; const ctx=fxCanvas.getContext('2d'); if(!ctx) return; const W=fxCanvas.width=innerWidth, H=fxCanvas.height=innerHeight; const cols=['#2DD4BF','#38BDF8','#FBBF24','#C792EA','#34D399']; let ps=[]; for(let i=0;i<70;i++) ps.push({x:W/2,y:H*0.32,vx:(Math.random()*2-1)*7,vy:(Math.random()*-1-0.2)*9,g:0.28,c:cols[rnd(cols.length)],s:3+Math.random()*3,a:1}); let t=0; (function anim(){ ctx.clearRect(0,0,W,H); let alive=false; ps.forEach(p=>{ p.vy+=p.g; p.x+=p.vx; p.y+=p.vy; p.a-=0.014; if(p.a>0){ alive=true; ctx.globalAlpha=Math.max(0,p.a); ctx.fillStyle=p.c; ctx.fillRect(p.x,p.y,p.s,p.s); } }); ctx.globalAlpha=1; t++; if(alive&&t<140) requestAnimationFrame(anim); else ctx.clearRect(0,0,W,H); })(); }
 
@@ -3480,7 +1503,7 @@ function renderHUD(){
   const ha=$('hudAcc'); if(ha) ha.innerHTML='<b>'+(STATS.totalQ?acc+'%':'—')+'</b>';
 }
 
-/* ---------- tabs / mode switching ---------- */
+/* ---------- タブ / モード切替 ---------- */
 function setMode(m){
   MODE=m; STATS.streak=0;
   document.querySelectorAll('#tabs button').forEach(b=> b.classList.toggle('active', b.dataset.mode===m));
@@ -3503,8 +1526,8 @@ function render(){
   else { ctrl.innerHTML=''; renderAnalyze(main); }
 }
 
-/* Return a spectrum figure (compound + type + marker) as an SVG string.
-   When neutral=true, marker labels are replaced by the position value to hide the answer. */
+/* スペクトル図(化合物+種別+マーカー)を SVG 文字列で返す。
+   neutral=true のとき，マーカーのラベルを「位置の値」に置換して答えを伏せる。 */
 function specFig(fig, neutral){
   const c=CMAP[fig.cid]; if(!c) return '';
   let mark=fig.mark;
@@ -3526,12 +1549,12 @@ function specFig(fig, neutral){
   return svg;
 }
 
-/* ========================================================= Learn ========================================================= */
-const LTYPE_TITLE={ ms:'MS · mass spectrometry', ir:'IR · infrared', h:'¹H-NMR · proton NMR', c:'¹³C-NMR · carbon-13 NMR' };
+/* ========================================================= 学ぶ ========================================================= */
+const LTYPE_TITLE={ ms:'MS · 質量分析', ir:'IR · 赤外分光', h:'¹H-NMR · プロトンNMR', c:'¹³C-NMR · 炭素NMR' };
 function renderLearn(main){
   const list=LEARN[LTYPE]||[]; const m=TTYPE_META[LTYPE];
-  let h='<div class="learn-lead"><span class="tag" style="--c:var('+m.c+')">Learn · '+esc(LTYPE_TITLE[LTYPE])+'</span>'+
-    '<span class="muted">Review the key points and how to read them, with spectrum figures. Practise in Drill, then test yourself in Solve.</span></div>';
+  let h='<div class="learn-lead"><span class="tag" style="--c:var('+m.c+')">学ぶ · '+esc(LTYPE_TITLE[LTYPE])+'</span>'+
+    '<span class="muted">要点と読み方をスペクトル図つきで確認しよう。演習は「個別特訓」，実践は「総合解析」へ。</span></div>';
   list.forEach((topic,i)=>{
     h+='<section class="lcard" style="--c:var('+m.c+');animation-delay:'+(i*0.04)+'s">';
     h+='<h3><span class="ln">'+(i+1)+'</span>'+esc(topic.t)+'</h3>';
@@ -3543,8 +1566,8 @@ function renderLearn(main){
   list.forEach((topic,i)=>{ if(topic.fig){ const host=$('lfig-'+i); if(host) host.innerHTML=specFig(topic.fig,false); } });
 }
 
-/* ========================================================= Drill ========================================================= */
-const TTYPE_META = { ms:{lab:'MS · mass spec', c:'--g-nitrile'}, ir:{lab:'IR · infrared', c:'--g-alcohol'}, h:{lab:'¹H-NMR', c:'--g-aldehyde'}, c:{lab:'¹³C-NMR', c:'--g-ester'} };
+/* ========================================================= 個別特訓 ========================================================= */
+const TTYPE_META = { ms:{lab:'MS 質量分析', c:'--g-nitrile'}, ir:{lab:'IR 赤外', c:'--g-alcohol'}, h:{lab:'¹H-NMR', c:'--g-aldehyde'}, c:{lab:'¹³C-NMR', c:'--g-ester'} };
 function renderCatControls(ctrl, kind){
   const cur = kind==='learn'?LTYPE:TTYPE;
   let h='<div class="chips">';
@@ -3558,8 +1581,8 @@ function renderTrain(main){
   if(!curTrain) pickTrain();
   const it=curTrain.item, m=TTYPE_META[TTYPE];
   let h='<div class="card" id="card"><div class="card-top">'+
-    '<span class="tag" style="--c:var('+m.c+')">Drill · '+esc(m.lab)+'</span>'+
-    '<span class="muted">Basic training to build reflexes</span></div>';
+    '<span class="tag" style="--c:var('+m.c+')">個別特訓 · '+esc(m.lab)+'</span>'+
+    '<span class="muted">反射で覚える基礎トレーニング</span></div>';
   if(it.fig){ h+='<div class="specview train-fig" id="trainFig"></div>'; }
   h+='<div class="qtext">'+it.q+'</div>';
   h+='<div class="options" id="opts">';
@@ -3567,7 +1590,7 @@ function renderTrain(main){
   order.forEach((oi,idx)=>{ const key=String.fromCharCode(65+idx); h+='<button class="opt" data-oi="'+oi+'"><span class="k">'+key+'</span><span>'+esc(it.opts[oi])+'</span></button>'; });
   h+='</div>';
   h+='<div class="feedback" id="fb" hidden></div>';
-  h+='<button class="btn next" id="nextBtn" hidden>Next question →</button>';
+  h+='<button class="btn next" id="nextBtn" hidden>次の問題 →</button>';
   h+='</div>';
   main.innerHTML=h;
   if(it.fig){ const fh=$('trainFig'); if(fh) fh.innerHTML=specFig(it.fig,true); }
@@ -3580,14 +1603,14 @@ function answerTrain(oi, btn){
   const opts=$('opts'); opts.querySelectorAll('.opt').forEach(b=>{ b.disabled=true; const bi=+b.dataset.oi; if(bi===it.ans) b.classList.add('correct'); if(bi===oi && !ok) b.classList.add('wrong'); });
   const key='t_'+TTYPE+'_'+curTrain.i; STATS.seen[key]=1; STATS.totalQ++; if(ok){ STATS.totalC++; STATS.correct[key]=1; STATS.streak++; } else { STATS.streak=0; }
   const fb=$('fb'); fb.hidden=false; fb.className='feedback '+(ok?'ok':'no');
-  fb.innerHTML='<div class="head">'+(ok?checkSVG()+'Correct':crossSVG()+'Incorrect')+'</div><div>'+it.ex+'</div>';
+  fb.innerHTML='<div class="head">'+(ok?checkSVG()+'正解':crossSVG()+'不正解')+'</div><div>'+it.ex+'</div>';
   flashCard(ok); Sound.ding(ok);
   if(ok && STATS.streak>=3) showCombo(STATS.streak);
   if(it.fig){ const fh=$('trainFig'); if(fh) fh.innerHTML=specFig(it.fig,false); }
   $('nextBtn').hidden=false; saveStats(); renderHUD();
 }
 
-/* ========================================================= Solve ========================================================= */
+/* ========================================================= 総合解析 ========================================================= */
 function pickAnalyze(force){
   let pool=COMPOUNDS.filter(c=> !STATS.solved[c.id]);
   if(!pool.length) pool=COMPOUNDS.slice();
@@ -3599,8 +1622,8 @@ function renderAnalyze(main){
   if(!curCmp) pickAnalyze();
   const c=curCmp;
   let h='<div class="card" id="card"><div class="card-top">'+
-    '<span class="tag" style="--c:var(--accent)">Solve · structure</span>'+
-    '<span class="muted">Read all the spectra and build the molecule from parts</span></div>';
+    '<span class="tag" style="--c:var(--accent)">総合解析 · 構造決定</span>'+
+    '<span class="muted">全スペクトルを読み、パーツで分子を組み立てよ</span></div>';
   h+='<div class="spectabs" id="spectabs">'+
      ['ms','ir','h','c'].map(k=>{ const lab={ms:'MS',ir:'IR',h:'¹H-NMR',c:'¹³C-NMR'}[k]; return '<button class="spectab'+(specTab===k?' active':'')+'" data-spec="'+k+'">'+lab+'</button>'; }).join('')+'</div>';
   h+='<div class="specview" id="specview"></div>';
@@ -3608,18 +1631,18 @@ function renderAnalyze(main){
   if(analyzeSolvedThis){
     h+=renderSolved(c);
   } else {
-    h+='<div class="asm-h">Rebuild the structure from parts <span class="asm-count" id="asmCount"></span></div>';
+    h+='<div class="asm-h">パーツを組み立てて構造を再構築 <span class="asm-count" id="asmCount"></span></div>';
     h+='<div class="tray" id="tray"></div>';
     h+='<div class="palette" id="palette">';
     PALETTE.forEach(k=>{ h+='<button class="pbtn" data-frag="'+k+'" style="--c:var('+FRAG[k].c+')">'+FRAG[k].disp+'</button>'; });
     h+='</div>';
     h+='<div class="asm-actions">'+
-       '<button class="btn ghost" id="clearBtn">Clear</button>'+
-       '<button class="btn ghost" id="hintBtn">Hint</button>'+
-       '<button class="btn submit" id="submitBtn">Confirm</button></div>';
+       '<button class="btn ghost" id="clearBtn">クリア</button>'+
+       '<button class="btn ghost" id="hintBtn">ヒント</button>'+
+       '<button class="btn submit" id="submitBtn">解析を確定</button></div>';
     h+='<div class="feedback" id="fb" hidden></div>';
   }
-  h+='<button class="btn next" id="nextCmp" hidden>Next unknown →</button>';
+  h+='<button class="btn next" id="nextCmp" hidden>次の未知試料 →</button>';
   h+='</div>';
   main.innerHTML=h;
   $('spectabs').querySelectorAll('[data-spec]').forEach(b=> b.onclick=()=>{ Sound.key(); specTab=b.dataset.spec; drawSpec(); $('spectabs').querySelectorAll('.spectab').forEach(x=>x.classList.toggle('active',x.dataset.spec===specTab)); });
@@ -3646,7 +1669,7 @@ function drawSpec(){
   host.innerHTML=svg;
   const ro=$('readout'); if(!ro) return;
   let r='';
-  if(specTab==='ms'){ r='<span><b>M⁺</b> = '+c.ms.M+'</span><span><b>base peak</b> m/z '+c.ms.base+'</span>'; if(c.iso) r+='<span class="iso">'+esc(c.iso)+'</span>'; r+='<span class="rule">Nitrogen rule: M='+c.ms.M+' is '+(c.ms.M%2? '<b>odd</b> → odd N':'even → even N (incl. 0)')+'</span>'; }
+  if(specTab==='ms'){ r='<span><b>M⁺</b> = '+c.ms.M+'</span><span><b>基準ピーク</b> m/z '+c.ms.base+'</span>'; if(c.iso) r+='<span class="iso">'+esc(c.iso)+'</span>'; r+='<span class="rule">窒素則: M='+c.ms.M+' は'+(c.ms.M%2? '<b>奇数</b>→N奇数個':'偶数→N偶数個(0含む)')+'</span>'; }
   else if(specTab==='ir'){ r=c.ir.slice().sort((a,b)=>b.wn-a.wn).map(b=>'<span>'+b.wn+' cm⁻¹ · '+esc(b.a)+'</span>').join(''); }
   else if(specTab==='h'){ r=c.h.map(p=>'<span>δ'+p.d.toFixed(2)+' ('+esc(p.m)+', '+p.n+'H) · '+esc(p.a)+'</span>').join(''); }
   else { r=c.c.map(p=>'<span>δ'+p.d.toFixed(1)+' · '+esc(p.a)+'</span>').join(''); }
@@ -3654,21 +1677,21 @@ function drawSpec(){
 }
 function renderTray(){
   const el=$('tray'); if(!el) return;
-  if(!tray.length){ el.innerHTML='<span class="tray-empty">Parts appear here (tap to add / tap a placed part to remove)</span>'; }
+  if(!tray.length){ el.innerHTML='<span class="tray-empty">ここにパーツが並びます（タップで追加／並んだパーツをタップで削除）</span>'; }
   else {
     el.innerHTML = tray.map((k,i)=> (i>0?'<span class="bond">–</span>':'') + '<button class="tchip" data-i="'+i+'" style="--c:var('+FRAG[k].c+')">'+FRAG[k].disp+'</button>').join('');
     el.querySelectorAll('.tchip').forEach(b=> b.onclick=()=>{ Sound.key(); tray.splice(+b.dataset.i,1); renderTray(); });
   }
-  const cnt=$('asmCount'); if(cnt) cnt.innerHTML='Selected '+tray.length+' / need '+curCmp.frags.length+' parts';
+  const cnt=$('asmCount'); if(cnt) cnt.innerHTML='選択 '+tray.length+' / 必要 '+curCmp.frags.length+' パーツ';
 }
 function msKey(list){ return list.slice().sort().join('|'); }
 function showHint(){
   Sound.key(); analyzeAttempts=Math.max(analyzeAttempts,1);
   const fb=$('fb'); fb.hidden=false; fb.className='feedback';
   const t=fragFormula(curCmp.frags);
-  fb.innerHTML='<div class="head" style="color:var(--warn)">Hint</div><div>The molecular formula is <b>'+sub(formulaStr(t))+'</b> (M⁺='+curCmp.mw+'). '+
-    (curCmp.iso? 'MS isotopes: '+esc(curCmp.iso)+'. ':'')+
-    'You need <b>'+curCmp.frags.length+'</b> parts. Pick out functional groups from the assignments (list below) in each spectrum.</div>';
+  fb.innerHTML='<div class="head" style="color:var(--warn)">ヒント</div><div>分子式は <b>'+sub(formulaStr(t))+'</b>（M⁺='+curCmp.mw+'）。'+
+    (curCmp.iso? 'MSの同位体: '+esc(curCmp.iso)+'。 ':'')+
+    '必要パーツ数は <b>'+curCmp.frags.length+'</b>。各スペクトルの帰属(下の一覧)から官能基を拾い出そう。</div>';
 }
 function submitAnalyze(){
   if(!tray.length){ showHint(); return; }
@@ -3687,66 +1710,65 @@ function submitAnalyze(){
     fb.className='feedback no';
     const need=fragFormula(curCmp.frags), got=fragFormula(tray);
     let diff=[]; ['C','H','O','N','Cl','Br'].forEach(e=>{ const d=(got[e]||0)-(need[e]||0); if(d!==0) diff.push(e+(d>0?' +'+d:' '+d)); });
-    fb.innerHTML='<div class="head">'+crossSVG()+'The set of parts does not match</div><div>'+
-      (diff.length? 'Difference from the deduced formula: <b>'+esc(diff.join(', '))+'</b>.' : 'The count or type differs.')+
-      ' Read the spectra again. "Hint" shows the molecular formula.</div>';
+    fb.innerHTML='<div class="head">'+crossSVG()+'パーツ構成が一致しません</div><div>'+
+      (diff.length? '推定分子式との差分: <b>'+esc(diff.join(', '))+'</b>。' : '個数か種類が違います。')+
+      ' もう一度スペクトルを読み直そう。「ヒント」で分子式を確認できます。</div>';
     renderHUD();
-    if(analyzeAttempts>=3){ const rb=document.createElement('button'); rb.className='btn reveal'; rb.style.marginTop='10px'; rb.textContent='Reveal answer'; rb.onclick=()=>{ analyzeSolvedThis=true; render(); }; fb.appendChild(rb); }
+    if(analyzeAttempts>=3){ const rb=document.createElement('button'); rb.className='btn reveal'; rb.style.marginTop='10px'; rb.textContent='答えを見る'; rb.onclick=()=>{ analyzeSolvedThis=true; render(); }; fb.appendChild(rb); }
   }
 }
 function renderSolved(c){
   let h='<div class="answer reveal-anim">';
   h+='<div class="mol" id="molWrap"><div class="mol-host" id="molHost"></div></div>';
   h+='<div class="name"><span>'+esc(c.name)+'</span></div>';
-  h+='<div class="meta"><span><b>IUPAC</b> '+esc(c.en)+'</span><span><b>Formula</b> '+sub(c.formula)+'</span><span><b>M</b> '+c.mw+'</span><span><b>Parts</b> '+
+  h+='<div class="meta"><span><b>IUPAC</b> '+esc(c.en)+'</span><span><b>分子式</b> '+sub(c.formula)+'</span><span><b>M</b> '+c.mw+'</span><span><b>構造</b> '+
      c.frags.map(k=>FRAG[k].disp).join('–')+'</span></div>';
-  h+='<div class="steps-h">Reasoning</div><ol class="steps">';
+  h+='<div class="steps-h">解析の思考プロセス</div><ol class="steps">';
   c.steps.forEach((s,i)=>{ const fin=i===c.steps.length-1; h+='<li class="'+(fin?'final':'')+'" style="animation-delay:'+(i*0.06)+'s"><span class="sn">'+(i+1)+'</span>'+s+'</li>'; });
   h+='</ol></div>';
   return h;
 }
 
-/* ---------- legal modal (privacy policy / disclaimer) ---------- */
+/* ---------- 法務モーダル（プライバシーポリシー / 免責事項） ---------- */
 function legalTexts(kind){
-  const privacy = '<p>This app, "MEIMAY Spectra" (the "App"), is a free educational tool for instrumental analysis (IR, NMR, MS). Our handling of privacy is set out below.</p>'+
-    '<h4>1. Advertising</h4>'+
-    '<p>The App may use third-party advertising services (such as Google AdSense). These providers may use <b>cookies</b> to show ads based on your interests, using information about your prior visits to this and other sites.</p>'+
-    '<p>You can disable personalised advertising (cookie use) in Google\'s <a href="https://adssettings.google.com/" target="_blank" rel="noopener">Ad Settings</a>, and opt out of third-party cookies at <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">www.aboutads.info</a>. For Google\'s practices, see <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google\'s policies</a>.</p>'+
-    '<h4>2. Your learning data</h4>'+
-    '<p>Your <b>progress, streaks, accuracy and settings</b> are stored only in your browser\'s <b>local storage</b>. This data is <b>never sent to any server</b> and cannot be viewed or collected by the developers or any third party. No account or sign-in is required, and no data is synced across devices. You can delete everything by clearing your browser data.</p>'+
-    '<h4>3. Analytics</h4>'+
-    '<p>The App may use Google Analytics to understand usage. It uses cookies to collect traffic data but does not include personally identifying information.</p>'+
-    '<h4>4. Contact</h4>'+
-    '<p>For questions about this policy, please contact the developers. This policy may change without notice.</p>'+
-    '<div class="upd">Last updated: July 2026</div>';
-  const disc = '<p>The App is an <b>educational training tool</b> for learning structure elucidation by IR, NMR and MS in organic chemistry.</p>'+
-    '<h4>1. Accuracy of spectra and values</h4>'+
-    '<p>The spectra shown are <b>schematic figures generated from peak data</b>, not exact reproductions of measured spectra (relative intensities, line widths and fine shifts are simplified for learning). Chemical shifts, characteristic bands and assignments are <b>representative values</b>; real values vary with solvent, concentration and instrument. The App does <b>not guarantee the accuracy or completeness</b> of its explanations or judgements.</p>'+
-    '<h4>2. Limitation of liability</h4>'+
-    '<p>The developers accept <b>no liability</b> for any loss arising from use of the App (including learning mistakes, exam outcomes, or any direct or indirect damage). The App is provided <b>as is</b>. For academic or professional structure determination, always consult primary sources and measured data.</p>'+
-    '<h4>3. External links / third parties</h4>'+
-    '<p>The developers are not responsible for the content of external sites referenced from the App, or of any advertisements shown.</p>'+
-    '<div class="upd">Last updated: July 2026</div>';
-  return kind==='privacy' ? {title:'Privacy Policy', body:privacy} : {title:'Disclaimer', body:disc};
+  const privacy = '<p>本アプリ「MEIMAY 分光」（以下「本アプリ」）は，利用者に無料で提供する機器分析（IR・NMR・MS）の学習ツールです。以下のとおりプライバシーの取り扱いを定めます。</p>'+
+    '<h4>1. 広告配信について</h4>'+
+    '<p>本アプリでは，第三者配信の広告サービス（Google AdSense 等）を利用する場合があります。これらの広告配信事業者は，利用者の興味に応じた広告を表示するために <b>Cookie</b> を使用することがあります。Cookie を使用することで，当サイトや他サイトへの過去のアクセス情報に基づいて広告が配信されます。</p>'+
+    '<p>利用者は，Google の <a href="https://adssettings.google.com/" target="_blank" rel="noopener">広告設定</a> でパーソナライズド広告（Cookie 利用）を無効にできます。また，<a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">www.aboutads.info</a> で第三者配信事業者の Cookie を無効化できます。Google の取り扱いは <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google のポリシーと規約</a> をご確認ください。</p>'+
+    '<h4>2. 学習データの取り扱い</h4>'+
+    '<p>本アプリの<b>学習進捗・連続正解数・正答率・各種設定</b>などのデータは，すべて利用者のブラウザ内の <b>ローカルストレージ（localStorage）</b> にのみ保存されます。これらのデータが<b>外部サーバーへ送信されることはなく</b>，開発者を含む第三者が閲覧・収集することはありません。アカウント登録やログインも不要で，複数端末間の同期も行いません。データはブラウザのデータを消去することで完全に削除できます。</p>'+
+    '<h4>3. アクセス解析</h4>'+
+    '<p>本アプリでは，利用状況の把握のために Google Analytics を使用する場合があります。これはトラフィックデータの収集のために Cookie を使用しますが，個人を特定する情報は含みません。</p>'+
+    '<h4>4. お問い合わせ</h4>'+
+    '<p>本ポリシーに関するお問い合わせは，本アプリの提供元までご連絡ください。本ポリシーは予告なく変更されることがあります。</p>'+
+    '<div class="upd">最終更新: 2026年7月</div>';
+  const disc = '<p>本アプリは，有機化学の機器分析（IR・NMR・MS）による構造決定を学ぶための<b>教育用トレーニングツール</b>です。</p>'+
+    '<h4>1. スペクトルと数値の正確性について</h4>'+
+    '<p>表示されるスペクトルは，各化合物のピークデータから<b>模式的に生成した図</b>であり，実測スペクトルの精密な再現ではありません（相対強度・線幅・微細な化学シフトは学習用に簡略化されています）。化学シフト・特性吸収・帰属は<b>代表値</b>であり，溶媒・濃度・装置により実測値は変動します。本アプリの解説・判定の<b>正確性・完全性を100%保証するものではありません</b>。</p>'+
+    '<h4>2. 損害の免責</h4>'+
+    '<p>利用者が本アプリを利用することにより生じたいかなる損害（学習上の誤り，試験結果，その他直接・間接の損害を含む）についても，<b>開発者は一切の責任を負いません</b>。本アプリは現状有姿（as is）で提供されます。学術・実務での構造決定には，必ず一次資料・実測データをご参照ください。</p>'+
+    '<h4>3. 外部リンク・第三者サービス</h4>'+
+    '<p>本アプリから参照される外部サイトや，表示される広告の内容について，開発者は責任を負いません。</p>'+
+    '<div class="upd">最終更新: 2026年7月</div>';
+  return kind==='privacy' ? {title:'プライバシーポリシー', body:privacy} : {title:'免責事項', body:disc};
 }
-
 function openLegal(kind){ const ov=$('legalOv'); const t=legalTexts(kind); $('legalTitle').textContent=t.title; $('legalBody').innerHTML=t.body; ov.hidden=false; }
 
-/* ---------- settings UI (footer) ---------- */
+/* ---------- 設定 UI (footer) ---------- */
 function updateFooterBtns(){
-  const sb=$('soundBtn'); if(sb) sb.textContent='Sound: '+(SETTINGS.sound?'On':'Off');
-  const bb=$('bgmBtn'); if(bb) bb.textContent='BGM: '+(SETTINGS.bgm?'On':'Off');
+  const sb=$('soundBtn'); if(sb) sb.textContent='効果音: '+(SETTINGS.sound?'オン':'オフ');
+  const bb=$('bgmBtn'); if(bb) bb.textContent='BGM: '+(SETTINGS.bgm?'オン':'オフ');
 }
 function wireFooter(){
   $('soundBtn').onclick=()=>{ SETTINGS.sound=!SETTINGS.sound; saveSettings(); updateFooterBtns(); if(SETTINGS.sound){ Sound.resume(); Sound.key(); } };
   $('bgmBtn').onclick=()=>{ SETTINGS.bgm=!SETTINGS.bgm; saveSettings(); updateFooterBtns(); if(SETTINGS.bgm) Sound.resume(); else Sound.bgmStop(); };
-  $('resetBtn').onclick=()=>{ if(confirm('Reset all progress (solved samples, streak, accuracy)?')){ STATS={ seen:{},correct:{},solved:{},streak:0,totalQ:0,totalC:0 }; saveStats(); curTrain=null; curCmp=null; render(); } };
+  $('resetBtn').onclick=()=>{ if(confirm('学習進捗（解いた試料・連続正解・正答率）をすべてリセットしますか？')){ STATS={ seen:{},correct:{},solved:{},streak:0,totalQ:0,totalC:0 }; saveStats(); curTrain=null; curCmp=null; render(); } };
   const pv=$('privacyLink'), dc=$('disclaimerLink');
   if(pv) pv.onclick=()=> openLegal('privacy');
   if(dc) dc.onclick=()=> openLegal('disclaimer');
 }
 
-/* ---------- init ---------- */
+/* ---------- 初期化 ---------- */
 async function init(){
   comboEl=$('combo'); fxCanvas=$('fx');
   try{ const s=await Store.get(STATS_KEY); if(s){ const o=JSON.parse(s); STATS=Object.assign(STATS,o); } }catch(e){}
