@@ -623,7 +623,14 @@
   .btn:hover,.grade button:hover,.opt:hover,.apps-link:hover{filter:brightness(1.07)}
   .btn:active,.chip:active,.foot-ctrl button:active,.tabs button:active,.seg button:active,.grade button:active,.opt:active,.typewrap button:active{transform:translateY(1px)}
   @media (prefers-reduced-motion: reduce){.wrap,.app{animation:none!important}.btn,.chip,.foot-ctrl button,.tabs button,.seg button,.grade button,.opt,.typewrap button,.apps-link{transition:none}}
+
+  .qkeys{display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;}
+  .qkey{flex:0 0 auto; min-width:40px; min-height:40px; padding:6px 10px; border-radius:9px; border:1px solid var(--border-strong); background:var(--surface-2); color:var(--dim); font-family:var(--mono); font-size:1rem; line-height:1; cursor:pointer;}
+  .qkey:hover{color:var(--text); border-color:var(--accent);}
+  .qkey:active{transform:translateY(1px);}
 </style>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8449288336764592" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="bgfx" aria-hidden="true">
@@ -2515,7 +2522,7 @@ function renderQuiz(){
   const head = cardTop + molBoxHTML('molInner');
   mainEl.innerHTML = head +
     '<div class="prompt">' + esc(t('prompt_type')) + '</div>' +
-    '<div class="typewrap"><input id="typeIn" type="text" inputmode="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" placeholder="' + esc(t('type_ph')) + '"><button id="checkBtn">' + esc(t('judge')) + '</button></div>' +
+    '<div class="qkeys"><button type="button" class="qkey" data-ch="-">-</button><button type="button" class="qkey" data-ch=",">,</button><button type="button" class="qkey" data-ch="(">(</button><button type="button" class="qkey" data-ch=")">)</button><button type="button" class="qkey" data-ch="[">[</button><button type="button" class="qkey" data-ch="]">]</button></div><div class="typewrap"><input id="typeIn" type="text" inputmode="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" placeholder="' + esc(t('type_ph')) + '"><button id="checkBtn">' + esc(t('judge')) + '</button></div>' +
     '<div class="typechips" id="typeChips" aria-hidden="true">' + ['-','(',')',',','1','2','3','4','5'].map(function(c){return '<button type="button" class="tchip" data-ins="'+c+'">'+c+'</button>';}).join('') + '</div>' +
     '<div class="typehint">' + esc(t('type_hint')) + '</div>' +
     '<div class="feedback" id="fb" hidden></div>' +
@@ -3691,9 +3698,9 @@ document.addEventListener('keydown', function(e){
   var unlocked=false;
   function unlock(){ if(unlocked) return; unlocked=true;
     try{ var s=S(); if(s&&s.resume) s.resume(); }catch(e){}
-    ['pointerdown','touchend','click','keydown'].forEach(function(ev){ document.removeEventListener(ev, unlock, true); });
+    ['touchend','click','keydown'].forEach(function(ev){ document.removeEventListener(ev, unlock, true); });
   }
-  ['pointerdown','touchend','click','keydown'].forEach(function(ev){ document.addEventListener(ev, unlock, {capture:true, passive:true}); });
+  ['touchend','click','keydown'].forEach(function(ev){ document.addEventListener(ev, unlock, {capture:true, passive:true}); });
   function setup(){ var el=document.getElementById('hudStreak'); var s=S();
     if(!el||!s||!s.bgmIntensity) return false;
     function lvl(n){ return n>=10?4:n>=7?3:n>=4?2:n>=2?1:0; }
@@ -3704,6 +3711,22 @@ document.addEventListener('keydown', function(e){
     return true;
   }
   if(!setup()){ var n=0; var iv=setInterval(function(){ if(setup()||++n>40) clearInterval(iv); },150); }
+})();
+</script>
+<script id="qkey-addon">
+(function(){
+  document.addEventListener('pointerdown', function(e){
+    var k=(e.target&&e.target.closest)?e.target.closest('.qkey'):null; if(!k) return;
+    e.preventDefault();
+    var inp=document.getElementById('typeIn'); if(!inp) return;
+    var ch=k.getAttribute('data-ch')||'';
+    var s=(inp.selectionStart==null)?inp.value.length:inp.selectionStart;
+    var en=(inp.selectionEnd==null)?inp.value.length:inp.selectionEnd;
+    inp.value=inp.value.slice(0,s)+ch+inp.value.slice(en);
+    var pos=s+ch.length; try{ inp.setSelectionRange(pos,pos); }catch(_){}
+    inp.focus();
+    try{ inp.dispatchEvent(new Event('input',{bubbles:true})); }catch(_){}
+  }, {passive:false});
 })();
 </script>
 </body>

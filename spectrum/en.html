@@ -333,6 +333,8 @@ nav.tabs .tab-sep{width:1px;height:22px;background:var(--line);margin:0 4px;flex
 .ftr-src a:hover{color:var(--accent);border-color:var(--accent)}
 
 </style>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8449288336764592" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="bgfx"></div>
@@ -3751,9 +3753,9 @@ if(typeof document!=='undefined'){ if(document.readyState==='loading') document.
   var unlocked=false;
   function unlock(){ if(unlocked) return; unlocked=true;
     try{ var s=S(); if(s&&s.resume) s.resume(); }catch(e){}
-    ['pointerdown','touchend','click','keydown'].forEach(function(ev){ document.removeEventListener(ev, unlock, true); });
+    ['touchend','click','keydown'].forEach(function(ev){ document.removeEventListener(ev, unlock, true); });
   }
-  ['pointerdown','touchend','click','keydown'].forEach(function(ev){ document.addEventListener(ev, unlock, {capture:true, passive:true}); });
+  ['touchend','click','keydown'].forEach(function(ev){ document.addEventListener(ev, unlock, {capture:true, passive:true}); });
   function setup(){ var el=document.getElementById('hudStreak'); var s=S();
     if(!el||!s||!s.bgmIntensity) return false;
     function lvl(n){ return n>=10?4:n>=7?3:n>=4?2:n>=2?1:0; }
