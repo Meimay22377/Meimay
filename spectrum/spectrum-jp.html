@@ -53,10 +53,11 @@ body{
 
 /* ---- ヘッダ ---- */
 header{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px}
-.brand{display:flex;flex-direction:column;gap:2px;min-width:0}
-.brand h1{font-family:var(--mono);font-size:26px;letter-spacing:.5px;margin:0;font-weight:700;
-  background:linear-gradient(92deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.brand .sub{font-size:11.5px;color:var(--muted);letter-spacing:.6px;font-family:var(--mono)}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand .mark{width:40px;height:40px;flex:none}
+.brand-title{font-family:var(--mono);font-weight:700;font-size:0.98rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--txt)}
+.brand-title b{color:var(--accent);font-weight:700}
+.brand-sub{font-family:var(--mono);font-size:0.64rem;letter-spacing:0.16em;color:var(--muted2);text-transform:uppercase;margin-top:2px}
 .hud{margin-left:auto;display:flex;align-items:center;gap:14px}
 .ring{position:relative;width:56px;height:56px;flex:0 0 auto}
 .ring svg{transform:rotate(-90deg)}
@@ -149,6 +150,9 @@ header{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14p
 .readout .iso{color:var(--warn);border-color:color-mix(in srgb,var(--warn) 40%,transparent);background:color-mix(in srgb,var(--warn) 8%,transparent)}
 .readout .rule{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
 .readout .rule b{color:var(--accent)}
+.readout .rvbtn{appearance:none;font-family:var(--mono);font-size:11px;color:var(--warn);background:color-mix(in srgb,var(--warn) 8%,transparent);border:1px solid color-mix(in srgb,var(--warn) 40%,transparent);border-radius:8px;padding:4px 10px;cursor:pointer;min-height:30px}
+.readout .rvbtn:disabled{opacity:.55;cursor:default}
+.readout .rvbtn:not(:disabled):hover{filter:brightness(1.18)}
 
 /* ---- 学ぶ ---- */
 .learn-lead{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
@@ -244,7 +248,8 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);display
 .legal .close:hover{border-color:var(--accent);color:var(--accent)}
 
 @media (max-width:560px){
-  .brand h1{font-size:22px}
+  .brand-title{font-size:0.86rem;letter-spacing:0.10em}
+  .brand-sub{font-size:0.6rem}
   .hud{gap:10px}
   .hud-stats{gap:10px}
   .wrap{padding:14px 12px 50px}
@@ -267,9 +272,10 @@ footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--line);display
   font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.3px;
   border:1px solid var(--line);background:var(--surface);border-radius:9px;padding:7px 12px;min-height:38px;transition:.16s}
 .apps-link:hover{color:var(--txt);border-color:var(--accent)}
-.langtoggle{display:inline-flex;background:var(--bg2);border:1px solid var(--line);border-radius:9px;padding:3px}
-.langtoggle a{appearance:none;text-decoration:none;color:var(--muted);font-family:var(--mono);font-size:12px;font-weight:700;padding:6px 11px;border-radius:6px;min-height:32px;display:inline-flex;align-items:center}
-.langtoggle a.on{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#062b27}
+.langtoggle{display:inline-flex;background:var(--bg2);border:1px solid var(--line);border-radius:9px;padding:3px;text-decoration:none;cursor:pointer;user-select:none;-webkit-user-select:none}
+.langtoggle .lt{color:var(--muted);font-family:var(--mono);font-size:12px;font-weight:700;padding:6px 11px;border-radius:6px;min-height:32px;display:inline-flex;align-items:center;transition:color .15s ease}
+.langtoggle .lt.on{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#062b27}
+.langtoggle:hover .lt:not(.on){color:var(--txt)}
 
 /* タブ */
 nav.tabs{display:flex;gap:4px;flex-wrap:wrap;align-items:center;background:var(--surface);border:1px solid var(--line);
@@ -342,8 +348,14 @@ nav.tabs .tab-sep{width:1px;height:22px;background:var(--line);margin:0 4px;flex
 
   <header>
     <div class="brand">
-      <h1>Meimay 分光</h1>
-      <span class="sub">スペクトル解析トレーナー · IR / ¹H-NMR / ¹³C-NMR / MS · 構造決定</span>
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <polygon points="20,4 33,12 33,28 20,36 7,28 7,12" stroke="#2DD4BF" stroke-width="1.6" fill="rgba(45,212,191,0.06)"/>
+        <path d="M9 25 L14 25 L16.5 14 L20 29 L23.5 11 L26 22 L31 22" stroke="#38BDF8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="brand-title">Meimay <b>·</b> スペクトル解析トレーナー</div>
+        <div class="brand-sub">IR · ¹H/¹³C-NMR · MS · 構造決定</div>
+      </div>
     </div>
     <div class="hud">
       <div class="ring">
@@ -364,10 +376,9 @@ nav.tabs .tab-sep{width:1px;height:22px;background:var(--line);margin:0 4px;flex
 
   <div class="acctbar">
     <a class="apps-link" href="../">⊞ アプリを選ぶ</a>
-    <div class="langtoggle" role="group" aria-label="Language">
-      <a class="on" href="index.html">JA</a>
-      <a href="en.html">EN</a>
-    </div>
+    <a class="langtoggle" href="en.html" aria-label="Switch to English / 英語に切り替え">
+      <span class="lt on">JA</span><span class="lt">EN</span>
+    </a>
   </div>
 
   <nav class="tabs" id="tabs">
@@ -1415,7 +1426,7 @@ let MODE='learn';            // about|guide|nomen（静的） / learn|train|anal
 let TTYPE='ms';              // ms|ir|h|c (個別特訓)
 let LTYPE='ms';              // ms|ir|h|c (学ぶ)
 let curTrain=null, lastTrain=-1;
-let curCmp=null, specTab='ms', tray=[], analyzeAttempts=0, analyzeSolvedThis=false;
+let curCmp=null, specTab='ms', tray=[], analyzeAttempts=0, analyzeSolvedThis=false, analyzeRevealed=false;
 const PAGE_MODES=['about','guide','nomen'];
 
 /* ---------- サウンド (Web Audio: キークリック + ペンタトニックBGM) ---------- */
@@ -1599,7 +1610,7 @@ function pickAnalyze(force){
   let pool=COMPOUNDS.filter(c=> !STATS.solved[c.id]);
   if(!pool.length) pool=COMPOUNDS.slice();
   let c; do{ c=pool[rnd(pool.length)]; }while(pool.length>1 && curCmp && c.id===curCmp.id && !force);
-  curCmp=c; specTab='ms'; tray=[]; analyzeAttempts=0; analyzeSolvedThis=false;
+  curCmp=c; specTab='ms'; tray=[]; analyzeAttempts=0; analyzeSolvedThis=false; analyzeRevealed=false;
 }
 const PALETTE=['CH3','CH2','CH','C','OH','O','C=O','CHO','COOH','NH2','CN','Ph','Cl','Br'];
 function renderAnalyze(main){
@@ -1653,11 +1664,18 @@ function drawSpec(){
   host.innerHTML=svg;
   const ro=$('readout'); if(!ro) return;
   let r='';
-  if(specTab==='ms'){ r='<span><b>M⁺</b> = '+c.ms.M+'</span><span><b>基準ピーク</b> m/z '+c.ms.base+'</span>'; if(c.iso) r+='<span class="iso">'+esc(c.iso)+'</span>'; r+='<span class="rule">窒素則: M='+c.ms.M+' は'+(c.ms.M%2? '<b>奇数</b>→N奇数個':'偶数→N偶数個(0含む)')+'</span>'; }
-  else if(specTab==='ir'){ r=c.ir.slice().sort((a,b)=>b.wn-a.wn).map(b=>'<span>'+b.wn+' cm⁻¹ · '+esc(b.a)+'</span>').join(''); }
-  else if(specTab==='h'){ r=c.h.map(p=>'<span>δ'+p.d.toFixed(2)+' ('+esc(p.m)+', '+p.n+'H) · '+esc(p.a)+'</span>').join(''); }
-  else { r=c.c.map(p=>'<span>δ'+p.d.toFixed(1)+' · '+esc(p.a)+'</span>').join(''); }
+  const rv = analyzeRevealed || analyzeSolvedThis;
+  if(specTab==='ms'){ r='<span><b>M⁺</b> = '+c.ms.M+'</span><span><b>基準ピーク</b> m/z '+c.ms.base+'</span>';
+    if(rv){ if(c.iso) r+='<span class="iso">'+esc(c.iso)+'</span>'; r+='<span class="rule">窒素則: M='+c.ms.M+' は'+(c.ms.M%2? '<b>奇数</b>→N奇数個':'偶数→N偶数個(0含む)')+'</span>'; } }
+  else if(specTab==='ir'){ r=c.ir.slice().sort((a,b)=>b.wn-a.wn).map(b=>'<span>'+b.wn+' cm⁻¹'+(rv?' · '+esc(b.a):'')+'</span>').join(''); }
+  else if(specTab==='h'){ r=c.h.map(p=>'<span>δ'+p.d.toFixed(2)+' ('+esc(p.m)+', '+p.n+'H)'+(rv?' · '+esc(p.a):'')+'</span>').join(''); }
+  else { r=c.c.map(p=>'<span>δ'+p.d.toFixed(1)+(rv?' · '+esc(p.a):'')+'</span>').join(''); }
+  if(!analyzeSolvedThis){
+    r+='<button class="rvbtn" id="revealAssign"'+(rv?' disabled':'')+'>'+(rv?'帰属を表示中':'🔍 帰属・判定則を表示(ヒント)')+'</button>';
+  }
   ro.innerHTML=r;
+  const rvb=document.getElementById('revealAssign');
+  if(rvb && !rv){ rvb.onclick=()=>{ Sound.key(); analyzeRevealed=true; analyzeAttempts=Math.max(analyzeAttempts,1); drawSpec(); renderTray(); }; }
 }
 function renderTray(){
   const el=$('tray'); if(!el) return;
@@ -1666,11 +1684,12 @@ function renderTray(){
     el.innerHTML = tray.map((k,i)=> (i>0?'<span class="bond">–</span>':'') + '<button class="tchip" data-i="'+i+'" style="--c:var('+FRAG[k].c+')">'+FRAG[k].disp+'</button>').join('');
     el.querySelectorAll('.tchip').forEach(b=> b.onclick=()=>{ Sound.key(); tray.splice(+b.dataset.i,1); renderTray(); });
   }
-  const cnt=$('asmCount'); if(cnt) cnt.innerHTML='選択 '+tray.length+' / 必要 '+curCmp.frags.length+' パーツ';
+  const cnt=$('asmCount'); if(cnt) cnt.innerHTML= (analyzeRevealed||analyzeSolvedThis) ? ('選択 '+tray.length+' / 必要 '+curCmp.frags.length+' パーツ') : ('選択 '+tray.length+' パーツ');
 }
 function msKey(list){ return list.slice().sort().join('|'); }
 function showHint(){
   Sound.key(); analyzeAttempts=Math.max(analyzeAttempts,1);
+  if(!analyzeRevealed){ analyzeRevealed=true; drawSpec(); renderTray(); }
   const fb=$('fb'); fb.hidden=false; fb.className='feedback';
   const t=fragFormula(curCmp.frags);
   fb.innerHTML='<div class="head" style="color:var(--warn)">ヒント</div><div>分子式は <b>'+sub(formulaStr(t))+'</b>（M⁺='+curCmp.mw+'）。'+
@@ -1683,7 +1702,7 @@ function submitAnalyze(){
   const ok = msKey(tray)===msKey(curCmp.frags);
   const fb=$('fb'); fb.hidden=false;
   if(ok){
-    analyzeSolvedThis=true;
+    analyzeSolvedThis=true; analyzeRevealed=true;
     if(!STATS.solved[curCmp.id]){ STATS.solved[curCmp.id]=1; }
     STATS.totalQ++; STATS.totalC++; STATS.streak++;
     saveStats(); flashCard(true); Sound.ding(true); burst(); if(STATS.streak>=3) showCombo(STATS.streak);
@@ -1698,7 +1717,7 @@ function submitAnalyze(){
       (diff.length? '推定分子式との差分: <b>'+esc(diff.join(', '))+'</b>。' : '個数か種類が違います。')+
       ' もう一度スペクトルを読み直そう。「ヒント」で分子式を確認できます。</div>';
     renderHUD();
-    if(analyzeAttempts>=3){ const rb=document.createElement('button'); rb.className='btn reveal'; rb.style.marginTop='10px'; rb.textContent='答えを見る'; rb.onclick=()=>{ analyzeSolvedThis=true; render(); }; fb.appendChild(rb); }
+    if(analyzeAttempts>=3){ const rb=document.createElement('button'); rb.className='btn reveal'; rb.style.marginTop='10px'; rb.textContent='答えを見る'; rb.onclick=()=>{ analyzeSolvedThis=true; analyzeRevealed=true; render(); }; fb.appendChild(rb); }
   }
 }
 function renderSolved(c){

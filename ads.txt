@@ -1,3 +1,0 @@
-# AdSense 承認後、Google が指定する1行をここに貼ってください。形式は次のとおり:
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
-# （pub- のあとの数字はあなたの AdSense パブリッシャーID）
