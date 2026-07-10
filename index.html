@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8449288336764592"
-     crossorigin="anonymous"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVRFMZGHCX"></script>
 <script>
@@ -13,11 +11,11 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>MEIMAY · Chemistry trainers</title>
-<meta name="description" content="MEIMAY is a free, browser-only chemistry learning suite: an IUPAC nomenclature trainer and a spectroscopy trainer for IR, NMR and MS. No install, no sign-up, works offline.">
+<title>Meimay · 化学トレーナー</title>
+<meta name="description" content="ブラウザだけで動く無料の化学学習ツール Meimay。IUPAC 命名トレーナーと，IR・NMR・MS のスペクトル解析トレーナーを収録。インストール不要・登録不要でオフライン完結。">
 <link rel="canonical" href="https://meimay-chem.com/">
-<link rel="alternate" hreflang="ja" href="https://meimay-chem.com/ja.html">
-<link rel="alternate" hreflang="en" href="https://meimay-chem.com/">
+<link rel="alternate" hreflang="ja" href="https://meimay-chem.com/">
+<link rel="alternate" hreflang="en" href="https://meimay-chem.com/en.html">
 <link rel="alternate" hreflang="x-default" href="https://meimay-chem.com/">
 <style>
   :root{
@@ -97,32 +95,59 @@
     .bgfx{display:none;}
     .brand-title{font-size:1.28rem;}
   }
-</style>
-<style>
-/* --- MEIMAY polish: lang toggle / motion / mobile --- */
-.langtoggle{cursor:pointer;padding:2px}
-.langswap{display:inline-flex;align-items:center;gap:2px;text-decoration:none;border-radius:7px;font-family:var(--mono);font-weight:700;color:var(--dim,var(--muted,#9CA9C0))}
-.langswap .lt{padding:5px 9px;border-radius:6px;font-size:0.72rem;line-height:1;min-height:30px;display:inline-flex;align-items:center;transition:.15s}
-.langswap .lt.on{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#062b27}
-.langswap:hover .lt:not(.on){color:var(--text,var(--txt,#E7EEF8))}
-/* brand mark subtle glow */
-.mark{filter:drop-shadow(0 0 10px color-mix(in oklab,var(--accent) 40%, transparent))}
-/* progress ring gentle pulse */
-@keyframes meimayPulse{0%,100%{opacity:1}50%{opacity:.74}}
-#ringFg{animation:meimayPulse 2.6s ease-in-out infinite}
-/* mobile: scrollable tabs + bigger tap targets */
-@media (max-width:680px){
-  nav.tabs,.tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  nav.tabs::-webkit-scrollbar,.tabs::-webkit-scrollbar{display:none}
-  nav.tabs button,.tabs button{flex:0 0 auto}
-}
-@media (hover:none) and (pointer:coarse){
-  nav.tabs button,.tabs button{min-height:42px}
-  .chip,.tchip{min-height:40px}
-  .go,.apps-link,.langswap{min-height:44px}
-}
-@media (prefers-reduced-motion:reduce){#ringFg{animation:none}}
 
+  /* ===== 追加: 演出（モーション）とスマホ最適化 ===== */
+  /* 読み込み時に上品に立ち上がる（順番に少しずつ） */
+  @keyframes riseIn{from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:none;}}
+  .brand,.langtoggle,.lead,.appcard,.about,.ftr{animation:riseIn .7s cubic-bezier(.2,.7,.2,1) backwards;}
+  .langtoggle{animation-delay:.05s;}
+  .lead{animation-delay:.12s;}
+  .grid .appcard:nth-child(1){animation-delay:.18s;}
+  .grid .appcard:nth-child(2){animation-delay:.26s;}
+  .about{animation-delay:.34s;}
+  .ftr{animation-delay:.40s;}
+
+  /* カード上端に走るアクセントバー＋ホバー時の淡い発光 */
+  .appcard{overflow:hidden;}
+  .appcard::before{content:""; position:absolute; top:0; left:0; right:0; height:2px;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    transform:scaleX(0); transform-origin:left; transition:transform .35s ease;}
+  .appcard.live:hover::before{transform:scaleX(1);}
+  .appcard.live:hover{box-shadow:0 14px 40px rgba(0,0,0,0.36), 0 10px 34px -14px rgba(45,212,191,0.40);}
+
+  /* ボタンに光沢がスッと流れる */
+  .go{position:relative; overflow:hidden;}
+  .go::after{content:""; position:absolute; top:0; left:-130%; width:55%; height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,0.28),transparent);
+    transform:skewX(-18deg); transition:left .6s ease; pointer-events:none;}
+  .appcard:hover .go::after{left:150%;}
+
+  /* スペクトルのアイコンが波形を描くように現れる（分光のモチーフ） */
+  @keyframes scanDraw{from{stroke-dashoffset:120;} to{stroke-dashoffset:0;}}
+  .ico .wave{stroke-dasharray:120; animation:scanDraw 1.5s ease-out .55s backwards;}
+
+  /* 背景の六角形（＝分子）がゆっくり漂う（PCのみ） */
+  @keyframes drift1{0%,100%{transform:translate(0,0) rotate(0);} 50%{transform:translate(10px,-14px) rotate(7deg);}}
+  @keyframes drift2{0%,100%{transform:translate(0,0) rotate(0);} 50%{transform:translate(-14px,12px) rotate(-8deg);}}
+  @keyframes drift3{0%,100%{transform:translate(0,0) rotate(0);} 50%{transform:translate(8px,16px) rotate(10deg);}}
+  .bgfx .h1{animation:drift1 22s ease-in-out infinite;}
+  .bgfx .h2{animation:drift2 28s ease-in-out infinite;}
+  .bgfx .h3{animation:drift3 25s ease-in-out infinite;}
+
+  /* スマホ: セーフエリア対応＋ボタンを押しやすく全幅に */
+  @media (max-width:680px){
+    .wrap{padding:22px calc(14px + env(safe-area-inset-right)) calc(60px + env(safe-area-inset-bottom)) calc(14px + env(safe-area-inset-left));}
+    .top{gap:10px;}
+    .go{width:100%;}
+  }
+
+  /* 動きを減らす設定の人には自動アニメを止める */
+  @media (prefers-reduced-motion: reduce){
+    .brand,.langtoggle,.lead,.appcard,.about,.ftr,
+    .bgfx .h1,.bgfx .h2,.bgfx .h3,.ico .wave{animation:none !important;}
+    .go::after{display:none;}
+    .appcard::before{transition:none;}
+  }
 </style>
 </head>
 <body>
@@ -141,54 +166,55 @@
           <circle cx="20" cy="20" r="1.8" fill="#2DD4BF"/>
         </svg>
         <div>
-          <div class="brand-title">MEI<b>MAY</b></div>
-          <div class="brand-sub">Chemistry trainers</div>
+          <div class="brand-title">Mei<b>may</b></div>
+          <div class="brand-sub">化学トレーナー</div>
         </div>
       </div>
       <div class="langtoggle" role="group" aria-label="Language">
-        <a class="langswap" href="ja.html" aria-label="日本語に切り替え / Switch to Japanese"><span class="lt on">EN</span><span class="lt">JA</span></a>
+        <a class="on" href="index.html">JA</a>
+        <a href="en.html">EN</a>
       </div>
     </div>
 
-    <p class="lead">MEIMAY is a set of free, browser-only chemistry learning tools. No install, no sign-up; your progress is saved on your own device. Pick a trainer to begin.</p>
+    <p class="lead">Meimay は，ブラウザだけで動く無料の化学学習ツールです。インストール不要・登録不要で，学習の記録はお使いの端末に保存されます。使いたいトレーナーを選んでください。</p>
 
     <div class="grid">
 
-      <!-- IUPAC nomenclature (live) -->
+      <!-- IUPAC 命名（稼働中） -->
       <article class="appcard live">
         <svg class="ico" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <polygon points="20,4 33,12 33,28 20,36 7,28 7,12" stroke="#2DD4BF" stroke-width="1.6" fill="rgba(45,212,191,0.06)"/>
           <circle cx="20" cy="20" r="7.5" stroke="#38BDF8" stroke-width="1.4" fill="none"/>
           <circle cx="20" cy="20" r="1.8" fill="#2DD4BF"/>
         </svg>
-        <div class="tag">IUPAC naming</div>
-        <h2>MEIMAY Naming</h2>
-        <p>Practise naming organic compounds with IUPAC nomenclature: flashcards, type-in and step-by-step quizzes, a draw-the-structure reverse mode, and R/S assignment. Both current and pre-1993 locant styles are accepted.</p>
-        <a class="go" href="iupac/">Start →</a>
+        <div class="tag">IUPAC 命名</div>
+        <h2>Meimay 命名</h2>
+        <p>有機化合物を IUPAC 命名法で命名する練習。フラッシュカード，記述・逐次クイズ，構造を描く逆問題，不斉炭素の R/S 判定まで。新旧どちらの位置番号表記にも対応します。</p>
+        <a class="go" href="iupac/">はじめる →</a>
       </article>
 
-      <!-- Spectroscopy (live) -->
+      <!-- 分光解析（稼働中） -->
       <article class="appcard live">
         <svg class="ico" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M5 28 L12 28 L15 14 L20 32 L25 10 L28 24 L35 24" stroke="#38BDF8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="wave" d="M5 28 L12 28 L15 14 L20 32 L25 10 L28 24 L35 24" stroke="#38BDF8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <div class="tag">IR · NMR · MS</div>
-        <h2>MEIMAY Spectra</h2>
-        <p>Read IR, ¹H/¹³C-NMR and MS spectra to deduce structures. Learn how characteristic bands and chemical shifts behave, sharpen reflexes in focused drills, then rebuild unknowns from fragments in full analysis mode.</p>
-        <a class="go" href="spectrum/">Start →</a>
+        <h2>Meimay 分光</h2>
+        <p>IR・¹H/¹³C-NMR・MS のスペクトルを読み，構造を推定する練習。特性吸収と化学シフトの読み方を学び，個別特訓で反射を鍛え，総合解析で未知試料をパーツから組み立てます。</p>
+        <a class="go" href="spectrum/">はじめる →</a>
       </article>
 
     </div>
 
     <div class="about">
-      <h3>About MEIMAY</h3>
-      <p>MEIMAY is an independent, non-commercial educational project built by Shintaro Shimizu and Jumpei Toshimori — the learning tools we wished existed. Everything runs in your browser, no account is needed, and your progress is stored only in your device's local storage and is never sent to any server.</p>
-      <p>Each trainer follows standard references but includes representations simplified for learning. For details on data handling and limitations, see the Privacy Policy and Disclaimer inside each app.</p>
+      <h3>Meimay について</h3>
+      <p>Meimay は，清水 慎太朗・歳森 淳平が「あればいいのに」と思った学習ツールを自作した，独立した非営利の教育プロジェクトです。すべての処理はブラウザ内で完結し，アカウント登録は不要です。学習進捗はお使いの端末のローカルストレージにのみ保存され，外部サーバーへ送信されません。</p>
+      <p>各トレーナーは代表的な典拠に基づいていますが，学習用に簡略化した表示を含みます。詳しいデータの取り扱いと免責は，各アプリ内のプライバシーポリシー・免責事項をご確認ください。</p>
     </div>
 
     <div class="ftr">
-      Built by Shintaro Shimizu &amp; Jumpei Toshimori · Contact: <a href="mailto:meimei440126@gmail.com">meimei440126@gmail.com</a> · <a href="https://x.com/Meimaytipg" target="_blank" rel="noopener">@Meimaytipg</a><br>
-      Each tool is an independent, non-commercial educational project.
+      開発: 清水 慎太朗・歳森 淳平 ／ お問い合わせ: <a href="mailto:meimei440126@gmail.com">meimei440126@gmail.com</a> ／ <a href="https://x.com/Meimaytipg" target="_blank" rel="noopener">@Meimaytipg</a><br>
+      各ツールは独立した非営利の教育プロジェクトです。
     </div>
   </div>
 </body>

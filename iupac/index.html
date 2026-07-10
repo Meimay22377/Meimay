@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8449288336764592"
-     crossorigin="anonymous"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVRFMZGHCX"></script>
 <script>
@@ -15,10 +13,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="canonical" href="https://meimay-chem.com/iupac/">
-<link rel="alternate" hreflang="ja" href="https://meimay-chem.com/iupac/ja.html">
-<link rel="alternate" hreflang="en" href="https://meimay-chem.com/iupac/">
+<link rel="alternate" hreflang="ja" href="https://meimay-chem.com/iupac/">
+<link rel="alternate" hreflang="en" href="https://meimay-chem.com/iupac/en.html">
 <link rel="alternate" hreflang="x-default" href="https://meimay-chem.com/iupac/">
-<title>MEIMAY · IUPAC Nomenclature Trainer</title>
+<title>Meimay · IUPAC命名トレーナー</title>
 <style>
   :root{
     --bg:#0B0F17; --surface:#121A27; --surface-2:#192335; --surface-3:#0E1521;
@@ -618,32 +616,13 @@
     .hud-text{font-size:0.62rem;}
   }
 
-</style>
-<style>
-/* --- MEIMAY polish: lang toggle / motion / mobile --- */
-.langtoggle{cursor:pointer;padding:2px}
-.langswap{display:inline-flex;align-items:center;gap:2px;text-decoration:none;border-radius:7px;font-family:var(--mono);font-weight:700;color:var(--dim,var(--muted,#9CA9C0))}
-.langswap .lt{padding:5px 9px;border-radius:6px;font-size:0.72rem;line-height:1;min-height:30px;display:inline-flex;align-items:center;transition:.15s}
-.langswap .lt.on{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#062b27}
-.langswap:hover .lt:not(.on){color:var(--text,var(--txt,#E7EEF8))}
-/* brand mark subtle glow */
-.mark{filter:drop-shadow(0 0 10px color-mix(in oklab,var(--accent) 40%, transparent))}
-/* progress ring gentle pulse */
-@keyframes meimayPulse{0%,100%{opacity:1}50%{opacity:.74}}
-#ringFg{animation:meimayPulse 2.6s ease-in-out infinite}
-/* mobile: scrollable tabs + bigger tap targets */
-@media (max-width:680px){
-  nav.tabs,.tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  nav.tabs::-webkit-scrollbar,.tabs::-webkit-scrollbar{display:none}
-  nav.tabs button,.tabs button{flex:0 0 auto}
-}
-@media (hover:none) and (pointer:coarse){
-  nav.tabs button,.tabs button{min-height:42px}
-  .chip,.tchip{min-height:40px}
-  .go,.apps-link,.langswap{min-height:44px}
-}
-@media (prefers-reduced-motion:reduce){#ringFg{animation:none}}
-
+  /* ===== Meimay motion polish (added) ===== */
+  @keyframes mmRise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .wrap,.app{animation:mmRise .6s cubic-bezier(.2,.7,.2,1) backwards}
+  .btn,.chip,.foot-ctrl button,.tabs button,.seg button,.grade button,.opt,.typewrap button,.apps-link{transition:transform .14s ease, box-shadow .2s ease, border-color .2s ease, filter .2s ease, background-color .2s ease}
+  .btn:hover,.grade button:hover,.opt:hover,.apps-link:hover{filter:brightness(1.07)}
+  .btn:active,.chip:active,.foot-ctrl button:active,.tabs button:active,.seg button:active,.grade button:active,.opt:active,.typewrap button:active{transform:translateY(1px)}
+  @media (prefers-reduced-motion: reduce){.wrap,.app{animation:none!important}.btn,.chip,.foot-ctrl button,.tabs button,.seg button,.grade button,.opt,.typewrap button,.apps-link{transition:none}}
 </style>
 </head>
 <body>
@@ -664,7 +643,7 @@
           <circle cx="20" cy="20" r="1.8" fill="#2DD4BF"/>
         </svg>
         <div>
-          <div class="brand-title" id="brandTitle">MEIMAY <b>·</b> IUPAC Nomenclature Trainer</div>
+          <div class="brand-title" id="brandTitle">Meimay <b>·</b> IUPAC命名トレーナー</div>
           <div class="brand-sub" id="brandSub">序列 · 立体(R/S・E/Z) · 逐次演習</div>
         </div>
       </div>
@@ -691,18 +670,19 @@
     </header>
 
     <div class="acctbar" id="acctbar">
-      <a class="apps-link" id="appsLink" href="../" data-i18n="apps_link">⊞ Choose an app</a>
+      <a class="apps-link" id="appsLink" href="../" data-i18n="apps_link">⊞ アプリを選ぶ</a>
       <div class="acctbtns">
         <div class="langtoggle" id="langToggle" role="group" aria-label="Language">
-          <a class="langswap" href="ja.html" aria-label="日本語に切り替え / Switch to Japanese"><span class="lt on">EN</span><span class="lt">JA</span></a>
+          <button data-lang="ja">JA</button>
+          <button data-lang="en">EN</button>
         </div>
       </div>
     </div>
 
     <nav class="tabs" id="tabs">
-      <button data-mode="about" data-i18n="tab_about">About</button>
-      <button data-mode="guide" data-i18n="tab_guide">Guide</button>
-      <button data-mode="nomen" data-i18n="tab_nomen">Nomenclature</button>
+      <button data-mode="about" data-i18n="tab_about">このアプリ</button>
+      <button data-mode="guide" data-i18n="tab_guide">使い方</button>
+      <button data-mode="nomen" data-i18n="tab_nomen">命名法解説</button>
       <span class="tab-sep" aria-hidden="true"></span>
       <button data-mode="learn" data-i18n="tab_learn">学ぶ</button>
       <button data-mode="flash" class="active" data-i18n="tab_flash">フラッシュカード</button>
@@ -715,147 +695,147 @@
 
     <main id="main"></main>
 
-    <!-- ===== static content pages (crawlable text for reviewers & search) ===== -->
+    <!-- ===== 静的コンテンツページ（審査・検索向けのクロール可能な本文） ===== -->
     <div class="pages" id="pages" hidden>
 
-      <!-- ABOUT -->
+      <!-- このアプリ -->
       <section class="pg" id="pg-about"><article>
-        <div class="kicker">About MEIMAY</div>
-        <h1>A free IUPAC nomenclature trainer</h1>
-        <p>MEIMAY is a free, browser-based practice tool for learning how to name organic compounds using the IUPAC nomenclature of organic chemistry. It is aimed at undergraduate chemistry students, high-school students preparing for university entrance chemistry, and anyone who wants to get faster and more confident at turning a structure into a systematic name and back again.</p>
-        <p>Everything runs entirely in your browser. There is no account to create and no server that stores your work: your progress, streaks and review queue are kept locally on your own device using your browser's storage. You can close the tab and come back later, and your history is still there.</p>
+        <div class="kicker">About Meimay</div>
+        <h1>無料の IUPAC 命名法トレーナー</h1>
+        <p>Meimay は、有機化合物を IUPAC 命名法で命名する練習をブラウザ上でおこなえる無料の学習ツールです。大学で有機化学を学ぶ学部生、大学入試の化学に取り組む高校生、そして構造から系統名を導き、また名前から構造を読み取る力を速く確実にしたいすべての人に向けています。</p>
+        <p>すべての処理はブラウザ内で完結します。アカウント登録は不要で、学習内容をサーバに送ることもありません。進捗・連続正解・復習キューは、お使いの端末のブラウザストレージにローカル保存されます。タブを閉じても、次に開いたときに履歴はそのまま残ります。</p>
 
-        <h2>What you can practise</h2>
+        <h2>練習できること</h2>
         <ul>
-          <li><b>Naming from structure</b> — read a skeletal formula and give the correct systematic name.</li>
-          <li><b>Drawing from a name</b> — go the other way and identify the structure a name describes.</li>
-          <li><b>Stereochemistry</b> — assign <code>R/S</code> configuration at each stereocentre and <code>E/Z</code> across double bonds.</li>
-          <li><b>Functional-group seniority</b> — decide which group becomes the suffix and which become prefixes.</li>
+          <li><b>構造からの命名</b>— 線画（骨格構造式）を読み、正しい系統名を答える。</li>
+          <li><b>名前からの同定</b>— 逆方向に、名前が表す構造を読み取る。</li>
+          <li><b>立体化学</b>— 各不斉炭素の <code>R/S</code>、二重結合の <code>E/Z</code> を判定する。</li>
+          <li><b>官能基の序列</b>— どの基を接尾辞（主基）にし、どれを接頭辞にするかを決める。</li>
         </ul>
 
-        <h2>Where the chemistry comes from</h2>
-        <p>The naming conventions follow the IUPAC Recommendations on the Nomenclature of Organic Chemistry (the 2013 recommendations and Preferred IUPAC Names). Individual compound names can be cross-checked against public chemical databases. Structures are rendered from SMILES strings using the open-source SmilesDrawer library (MIT licence).</p>
-        <p>Reference sources: the IUPAC Blue Book at <a href="https://iupac.org/what-we-do/books/bluebook/" target="_blank" rel="noopener">iupac.org</a>, the online edition edited by G. P. Moss at <a href="https://www.qmul.ac.uk/sbcs/iupac/BlueBook/" target="_blank" rel="noopener">qmul.ac.uk</a>, and PubChem (NIH) at <a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">pubchem.ncbi.nlm.nih.gov</a>.</p>
+        <h2>化学的な典拠</h2>
+        <p>命名の規則は、IUPAC 有機化学命名法勧告（2013年勧告・Preferred IUPAC Names）に準拠しています。個別の化合物名は公開化学データベースで照合できます。構造は SMILES 文字列からオープンソースの SmilesDrawer ライブラリ（MIT ライセンス）で描画しています。</p>
+        <p>参照元: IUPAC Blue Book <a href="https://iupac.org/what-we-do/books/bluebook/" target="_blank" rel="noopener">iupac.org</a>、G. P. Moss 編のオンライン版 <a href="https://www.qmul.ac.uk/sbcs/iupac/BlueBook/" target="_blank" rel="noopener">qmul.ac.uk</a>、および PubChem（NIH） <a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">pubchem.ncbi.nlm.nih.gov</a>。</p>
 
-        <h2>Who makes it</h2>
-        <p>MEIMAY is developed and maintained by Shintaro Shimizu and Jumpei Toshimori, building study tools they wished existed. It is an independent, non-commercial educational project and is not affiliated with IUPAC.</p>
+        <h2>制作</h2>
+        <p>Meimay は、清水 慎太朗・歳森 淳平が「あればいいのに」と思った学習ツールを自作したものです。独立した非営利の教育プロジェクトであり、IUPAC とは関係ありません。</p>
 
-        <h2>Contact</h2>
-        <p>Questions, corrections or suggestions are welcome. If you spot a name you believe is wrong, please get in touch and include the compound so it can be checked.</p>
-        <p>Email: <a href="mailto:meimei440126@gmail.com">meimei440126@gmail.com</a></p>
-        <p>X (Twitter): <a href="https://x.com/Meimaytipg" target="_blank" rel="noopener">@Meimaytipg</a></p>
-        <p class="note">See the Privacy Policy and Disclaimer links in the footer for how data is handled and the limits of the tool.</p>
+        <h2>お問い合わせ</h2>
+        <p>質問・誤りの指摘・改善提案を歓迎します。名前が誤っていると思われる場合は、対象の化合物を添えてご連絡いただけると確認できます。</p>
+        <p>メール: <a href="mailto:meimei440126@gmail.com">meimei440126@gmail.com</a></p>
+        <p>X（Twitter）: <a href="https://x.com/Meimaytipg" target="_blank" rel="noopener">@Meimaytipg</a></p>
+        <p class="note">データの取り扱いとツールの限界については、フッターのプライバシーポリシー・免責事項をご確認ください。</p>
       </article></section>
 
-      <!-- GUIDE -->
+      <!-- 使い方 -->
       <section class="pg" id="pg-guide"><article>
         <div class="kicker">How to use</div>
-        <h1>Getting the most out of MEIMAY</h1>
-        <p>MEIMAY is organised into a few practice modes, selectable from the tabs at the top. A good routine is to read the Learn material for a group, warm up with Flashcards, then test yourself with the Quiz. Here is what each mode does.</p>
+        <h1>Meimay を使いこなす</h1>
+        <p>Meimay は上部のタブで切り替えるいくつかの練習モードで構成されています。おすすめの流れは、あるグループの「学ぶ」を読み、「フラッシュカード」で慣らし、「クイズ」で試す、という順です。各モードの役割は次のとおりです。</p>
 
-        <h2>Learn</h2>
-        <p>A reference and warm-up view. Pick a functional-group category to see its core rule, its suffix, and a few worked examples drawn as skeletal formulas. This is the place to check how a group behaves before you start being tested on it.</p>
+        <h2>学ぶ</h2>
+        <p>参照・ウォームアップ用のモードです。官能基のカテゴリを選ぶと、そのグループの基本ルール、接尾辞、線画で描かれた例をまとめて確認できます。テストに入る前に、そのグループの挙動を押さえる場所です。</p>
 
-        <h2>Flashcards</h2>
-        <p>The core drill. You are shown a structure and asked for its name; reveal the answer to check yourself. Cards you find hard come back more often, so time spent here is weighted towards your weak spots. The header ring tracks how many compounds you have mastered, along with your current streak and accuracy.</p>
+        <h2>フラッシュカード</h2>
+        <p>中心となる反復練習です。構造が示され、その名前を答えます。答えを表示して自己採点してください。苦手なカードほど再び出やすくなるので、弱点に時間が集中します。ヘッダーのリングは、習得した化合物の数・現在の連続正解・正答率を表示します。</p>
 
-        <h2>Quiz</h2>
-        <p>Assessment mode. It offers a <b>Type</b> variant, where you enter the English name yourself, and a <b>Step-by-step</b> variant, where the compound is named one decision at a time with hints — useful when a full name feels overwhelming and you want to see where your reasoning breaks down.</p>
+        <h2>クイズ</h2>
+        <p>実力確認モードです。英語名を自分で入力する<b>記述</b>と、ヒントを見ながら一手ずつ命名する<b>逐次</b>の二つがあります。逐次は、名前全体が難しく感じるときに、どこで考えがつまずくかを確かめるのに役立ちます。</p>
 
-        <h2>Draw</h2>
-        <p>The reverse task: you are given a name and asked to identify the structure it describes. Naming and interpreting names use slightly different skills, and practising both directions makes each stronger.</p>
+        <h2>描く</h2>
+        <p>逆方向の課題です。名前が与えられ、それが表す構造を同定します。命名と名前の読解は少し異なる力を使うので、両方向を練習するとどちらも強くなります。</p>
 
-        <h2>Stereo R/S</h2>
-        <p>Focused stereochemistry practice. For each stereocentre you read the bold wedge (bond coming toward you) and the hashed wedge (bond going away), rank the four groups by CIP priority, and assign <code>R</code> or <code>S</code>. See the Nomenclature guide for the priority rules themselves.</p>
+        <h2>立体R/S</h2>
+        <p>立体化学に絞った練習です。各不斉炭素について、実線くさび（手前に伸びる結合）と破線くさび（奥に伸びる結合）を読み、四つの基を CIP 優先順位で並べて <code>R</code> か <code>S</code> を判定します。優先順位の規則そのものは「命名法解説」を参照してください。</p>
 
-        <h2>Options worth knowing</h2>
+        <h2>知っておくと便利な設定</h2>
         <ul>
-          <li><b>Advanced</b> — narrows practice to harder territory: poly-functional compounds, stereochemistry (<code>R/S</code>, <code>E/Z</code>), meso compounds and cis/trans.</li>
-          <li><b>Old / new IUPAC</b> — switches between older locant placement (for example <code>2-butanol</code>) and the current style (<code>butan-2-ol</code>), so you can match whichever your course uses.</li>
-          <li><b>Sound effects / BGM</b> — toggle the sound effects and the background music independently from the footer buttons; turning effects off leaves the music playing.</li>
-          <li><b>Reset progress</b> — clears your saved history if you want a clean start.</li>
+          <li><b>上級</b>— 多官能基・立体（<code>R/S</code>・<code>E/Z</code>）・meso・cis/trans など、難しい範囲に練習を絞ります。</li>
+          <li><b>旧式 / 新式 IUPAC</b>— 位置番号の書き方を旧式（例: <code>2-butanol</code>）と現行式（<code>butan-2-ol</code>）で切り替えます。授業で使う流儀に合わせられます。</li>
+          <li><b>効果音 / BGM</b>— フッターの「効果音」ボタンで効果音を、「BGM」ボタンで音楽を、それぞれ独立してオン/オフできます。効果音を切っても BGM は流れ続けます。</li>
+          <li><b>進捗をリセット</b>— 保存された履歴を消して最初からやり直せます。</li>
         </ul>
-        <p class="note">Per-rule mastery is shown in the bar beneath the exercises, so you can see which rules still need work rather than just an overall score.</p>
+        <p class="note">規則別の習得度は演習の下の帯に表示されるので、総合スコアだけでなく、どの規則がまだ弱いかを確認できます。</p>
       </article></section>
 
-      <!-- NOMENCLATURE -->
+      <!-- 命名法解説 -->
       <section class="pg" id="pg-nomen"><article>
         <div class="kicker">Reference</div>
-        <h1>IUPAC organic nomenclature: a working guide</h1>
-        <p>This is a practical primer on how a systematic name is built, written to be read alongside the exercises. It covers the decisions you actually make when naming a compound, in the order you make them. It is a summary, not a substitute for the full IUPAC recommendations.</p>
+        <h1>IUPAC 有機命名法: 実践ガイド</h1>
+        <p>系統名がどう組み立てられるかを、演習と併読できる形でまとめた実践的な入門です。命名の際に実際におこなう判断を、判断する順番どおりに扱います。これは要約であり、IUPAC 勧告そのものの代わりではありません。</p>
         <div class="toc">
-          <a href="#sec-anatomy">Anatomy of a name</a>
-          <a href="#sec-parent">Parent chain</a>
-          <a href="#sec-pcg">Principal group</a>
-          <a href="#sec-number">Numbering</a>
-          <a href="#sec-prefix">Substituents</a>
-          <a href="#sec-unsat">Double & triple bonds</a>
-          <a href="#sec-ring">Rings</a>
-          <a href="#sec-stereo">Stereochemistry</a>
-          <a href="#sec-style">Old vs new style</a>
-          <a href="#sec-check">Checklist</a>
+          <a href="#sec-anatomy">名前の構造</a>
+          <a href="#sec-parent">母体鎖</a>
+          <a href="#sec-pcg">主基</a>
+          <a href="#sec-number">番号付け</a>
+          <a href="#sec-prefix">接頭辞</a>
+          <a href="#sec-unsat">二重・三重結合</a>
+          <a href="#sec-ring">環</a>
+          <a href="#sec-stereo">立体化学</a>
+          <a href="#sec-style">旧式と新式</a>
+          <a href="#sec-check">チェックリスト</a>
         </div>
 
-        <h2 id="sec-anatomy">1. The anatomy of a name</h2>
-        <p>A systematic name is assembled from four parts that always appear in the same order: <b>substituent prefixes</b>, then a <b>parent</b> (the main chain or ring), then any <b>unsaturation ending</b> (<code>-ene</code> or <code>-yne</code>), then a <b>principal-group suffix</b>. Locants — the numbers that say where things are attached — are inserted next to the part they refer to. So <code>4-chloro-3-methylpent-2-en-1-ol</code> reads as: two prefixes (chloro, methyl), the five-carbon parent (pent), a double bond (en), and the senior group as suffix (ol), each with its own locant.</p>
+        <h2 id="sec-anatomy">1. 名前の構造</h2>
+        <p>系統名は、つねに同じ順で並ぶ四つの部分から組み立てられます。<b>置換接頭辞</b>、<b>母体</b>（主鎖または環）、<b>不飽和の語尾</b>（<code>-ene</code> / <code>-yne</code>）、<b>主基の接尾辞</b>です。位置番号（何がどこに付くかを示す数字）は、それが指す部分のすぐ隣に入ります。たとえば <code>4-chloro-3-methylpent-2-en-1-ol</code> は、二つの接頭辞（chloro, methyl）、炭素5個の母体（pent）、二重結合（en）、主基の接尾辞（ol）が、それぞれ番号を伴って並んだものです。</p>
 
-        <h2 id="sec-parent">2. Choosing the parent chain</h2>
-        <p>The parent is the backbone the rest of the name hangs off. Selecting it is the first real decision, and getting it wrong cascades into every later step.</p>
+        <h2 id="sec-parent">2. 母体鎖を選ぶ</h2>
+        <p>母体は、残りの名前がぶら下がる骨格です。最初の実質的な判断であり、ここを誤ると以降のすべての手順に波及します。</p>
         <ul>
-          <li>Choose the chain that contains the <b>principal characteristic group</b> (see next section), even if a longer chain exists without it.</li>
-          <li>Among candidates, prefer the chain with the <b>most skeletal atoms</b>.</li>
-          <li>If chains tie on length, prefer the one with the <b>greatest number of skeletal double and triple bonds</b>.</li>
-          <li>Still tied? Prefer the chain with the most substituents cited as prefixes, then the lowest locants.</li>
+          <li><b>主基（次節）</b>を含む鎖を選ぶ。主基を含まないより長い鎖があっても、主基を含む鎖を優先する。</li>
+          <li>候補のうち、<b>骨格原子の数が最も多い</b>鎖を選ぶ。</li>
+          <li>長さで並んだら、<b>二重結合・三重結合の数が最も多い</b>鎖を選ぶ。</li>
+          <li>なお並ぶなら、接頭辞として挙がる置換基が最も多い鎖、次いで位置番号が最小になる鎖を選ぶ。</li>
         </ul>
-        <p>The chain length gives the stem: 1–10 carbons are meth, eth, prop, but, pent, hex, hept, oct, non, dec.</p>
+        <p>鎖の長さが語幹になります。炭素1〜10個は meth, eth, prop, but, pent, hex, hept, oct, non, dec です。</p>
 
-        <h2 id="sec-pcg">3. The principal characteristic group and seniority</h2>
-        <p>When a molecule has several functional groups, exactly one is chosen as the <b>principal characteristic group</b> and expressed as the suffix. Everything else is demoted to a prefix. Which group wins is fixed by a seniority order (highest to lowest):</p>
-        <div class="ex"><b>carboxylic acid</b> &gt; ester &gt; amide &gt; nitrile &gt; aldehyde &gt; ketone &gt; alcohol &gt; amine</div>
-        <p>Groups that lose out become prefixes, changing form as they do: a demoted <code>C=O</code> becomes <b>oxo-</b>, <code>-OH</code> becomes <b>hydroxy-</b>, <code>-NH₂</code> becomes <b>amino-</b>, and <code>-OR</code> becomes <b>alkoxy-</b>. Two families never win at all: ethers and the halogens (fluoro, chloro, bromo, iodo) are <b>always</b> prefixes.</p>
-        <div class="ex">A molecule with both a ketone and an alcohol: the ketone sits higher in the list, so it becomes the suffix (<b>-one</b>) while the alcohol is demoted to <b>hydroxy-</b> — for example 4-hydroxybutan-2-one, not 2-oxobutan-1-ol.</div>
+        <h2 id="sec-pcg">3. 主基と序列</h2>
+        <p>複数の官能基をもつ分子では、ただ一つを<b>主基（principal characteristic group）</b>に選び、接尾辞で表します。残りはすべて接頭辞に降格します。どの基が主基になるかは、次の序列（高い→低い）で決まります。</p>
+        <div class="ex"><b>カルボン酸</b> &gt; エステル &gt; アミド &gt; ニトリル &gt; アルデヒド &gt; ケトン &gt; アルコール &gt; アミン</div>
+        <p>主基にならなかった基は接頭辞に変わり、その際に形も変わります。降格した <code>C=O</code> は <b>oxo-</b>、<code>-OH</code> は <b>hydroxy-</b>、<code>-NH₂</code> は <b>amino-</b>、<code>-OR</code> は <b>alkoxy-</b> になります。二つの仲間はそもそも主基になりません。エーテルとハロゲン（fluoro, chloro, bromo, iodo）は<b>つねに</b>接頭辞です。</p>
+        <div class="ex">ケトンとアルコールを併せもつ分子では、ケトンのほうが序列で上なので、ケトンが接尾辞（<b>-one</b>）になり、アルコールは <b>hydroxy-</b> に降格します。たとえば 4-hydroxybutan-2-one であり、2-oxobutan-1-ol ではありません。</div>
 
-        <h2 id="sec-number">4. Numbering: the lowest-locant rule</h2>
-        <p>Once the parent is fixed, number its atoms from one end so that the important features get the smallest numbers. Apply these tie-breakers in order:</p>
+        <h2 id="sec-number">4. 番号付け: 最小番号の規則</h2>
+        <p>母体が決まったら、その原子を一端から番号付けし、重要な特徴に最小の番号がつくようにします。優先順位は次の順に適用します。</p>
         <ol>
-          <li>Give the <b>principal characteristic group</b> the lowest possible locant.</li>
-          <li>If tied, give the <b>set of double and triple bonds</b> the lowest locants.</li>
-          <li>If still tied, give the <b>set of all prefix substituents</b> the lowest locants as a set.</li>
-          <li>If still tied, give the substituent that is <b>first alphabetically</b> the lower locant.</li>
+          <li><b>主基</b>に、可能なかぎり小さい位置番号を与える。</li>
+          <li>並んだら、<b>二重・三重結合の組</b>に最小の位置番号を与える。</li>
+          <li>なお並んだら、<b>すべての接頭辞置換基の組</b>に、集合として最小の位置番号を与える。</li>
+          <li>それでも並んだら、<b>アルファベット順で先に来る</b>置換基に小さい番号を与える。</li>
         </ol>
-        <p>"Lowest as a set" compares the locants in ascending order at the first point of difference: {2,3,6} beats {2,4,5} because 3 &lt; 4.</p>
+        <p>「集合として最小」とは、位置番号を昇順に並べ、最初に差がつく箇所で比べることです。{2,3,6} は {2,4,5} に勝ちます。3 &lt; 4 だからです。</p>
 
-        <h2 id="sec-prefix">5. Substituent prefixes and their order</h2>
-        <p>Substituents cited as prefixes are listed <b>alphabetically</b>, not by locant. Multiplying prefixes (di, tri, tetra) are added to say how many, but they are <b>ignored when alphabetising</b>: "dimethyl" files under m, not d. Complex substituents named with enclosing marks (such as dimethylamino) alphabetise by their first letter and use multipliers like bis, tris instead.</p>
-        <div class="ex">3-ethyl-2-methylhexane: ethyl (e) is cited before methyl (m) despite its higher locant, because the list is alphabetical.</div>
+        <h2 id="sec-prefix">5. 接頭辞とその順序</h2>
+        <p>接頭辞として挙げる置換基は、位置番号ではなく<b>アルファベット順</b>に並べます。倍数接頭辞（di, tri, tetra）は数を示すために付けますが、<b>アルファベット順を決めるときは無視</b>します。「dimethyl」は d ではなく m で並びます。囲み記号を伴う複雑な置換基（例: dimethylamino）は最初の文字で並べ、倍数には bis, tris を使います。</p>
+        <div class="ex">3-ethyl-2-methylhexane では、ethyl（e）は位置番号が大きいのに methyl（m）より先に挙げます。並びがアルファベット順だからです。</div>
 
-        <h2 id="sec-unsat">6. Double and triple bonds</h2>
-        <p>Unsaturation is shown by changing the ending: <code>-ane</code> (saturated) becomes <code>-ene</code> for a C=C and <code>-yne</code> for a C≡C, with a locant for the first atom of the multiple bond. Where both are present, ene precedes yne, and if a choice of numbering remains, the double bond takes priority for the lower locant. The final <b>-e</b> of the parent is elided before a suffix beginning with a vowel (pentan-2-<b>ol</b>, not pentane-2-ol) but kept before a consonant (pentane-2,4-di<b>one</b>).</p>
+        <h2 id="sec-unsat">6. 二重結合と三重結合</h2>
+        <p>不飽和は語尾で示します。<code>-ane</code>（飽和）が、C=C では <code>-ene</code>、C≡C では <code>-yne</code> になり、多重結合の最初の原子の位置番号を伴います。両方あるときは ene が yne に先立ち、番号の選択が残るなら二重結合が小さい番号を取ります。母音で始まる接尾辞の前では母体末尾の <b>-e</b> を省き（pentan-2-<b>ol</b>、pentane-2-ol ではない）、子音の前では残します（pentane-2,4-di<b>one</b>）。</p>
 
-        <h2 id="sec-ring">7. Rings and ring systems</h2>
-        <p>A saturated ring takes the prefix <b>cyclo-</b>: cyclohexane, cyclopentanol. When a ring and a chain compete for the role of parent, the ring is chosen if it has the principal group or the greater number of skeletal atoms; otherwise the chain is parent and the ring is a substituent (cyclohexyl). Benzene-derived rings keep many retained names — toluene, phenol, aniline, benzoic acid — which serve as parents in their own right, with substituents numbered to give lowest locants.</p>
+        <h2 id="sec-ring">7. 環と環系</h2>
+        <p>飽和の環は接頭辞 <b>cyclo-</b> を取ります（cyclohexane, cyclopentanol）。環と鎖が母体の座を争うときは、主基を含むか骨格原子が多いほうの環が母体になり、そうでなければ鎖が母体で環は置換基（cyclohexyl）になります。ベンゼン由来の環は慣用名が多く残されており（toluene, phenol, aniline, benzoic acid）、それ自体が母体として働き、置換基は位置番号が最小になるように番号付けします。</p>
 
-        <h2 id="sec-stereo">8. Stereochemistry</h2>
-        <h3>E/Z across double bonds</h3>
-        <p>On each carbon of a C=C, rank the two attached groups by <b>CIP priority</b> (higher atomic number wins; ties are broken by looking outward atom by atom). If the two higher-priority groups are on the same side, the bond is <b>Z</b> (zusammen, together); on opposite sides, <b>E</b> (entgegen, opposite).</p>
-        <h3>R/S at a stereocentre</h3>
-        <p>Rank the four groups on the stereocentre by CIP priority, 1 (highest) to 4 (lowest). Orient the molecule so the lowest-priority group points away from you, then trace 1→2→3: clockwise is <b>R</b> (rectus), anticlockwise is <b>S</b> (sinister). In a wedge drawing, a bold wedge comes toward you and a hashed wedge goes away; if the lowest group is already on a hashed wedge, you can read the sense directly.</p>
-        <p>Stereodescriptors are placed at the front of the name in italics and parentheses, for example <code>(2R,3S)</code>. Meso compounds contain stereocentres but an internal mirror plane, so the molecule as a whole is achiral even though individual centres are labelled.</p>
+        <h2 id="sec-stereo">8. 立体化学</h2>
+        <h3>二重結合の E/Z</h3>
+        <p>C=C の各炭素で、結合した二つの基を <b>CIP 優先順位</b>で比べます（原子番号が大きいほうが上位。同点なら外側へ一原子ずつ辿って決める）。優先順位の高い二つが同じ側なら <b>Z</b>（zusammen、一緒）、反対側なら <b>E</b>（entgegen、反対）です。</p>
+        <h3>不斉炭素の R/S</h3>
+        <p>不斉炭素上の四つの基を CIP 優先順位で 1（最上位）〜4（最下位）に並べます。最下位の基が自分から見て奥を向くように分子を置き、1→2→3 を辿ります。時計回りなら <b>R</b>（rectus）、反時計回りなら <b>S</b>（sinister）です。くさび表記では、実線くさびが手前、破線くさびが奥です。最下位の基がすでに破線くさびにあるなら、その回り方をそのまま読めます。</p>
+        <p>立体記号は名前の先頭に、イタリックで括弧に入れて置きます（例: <code>(2R,3S)</code>）。meso 化合物は不斉炭素をもちますが分子内に鏡面をもつため、各中心には記号がつくのに分子全体としては非キラルです。</p>
 
-        <h2 id="sec-style">9. Old versus new locant style</h2>
-        <p>Current IUPAC style places each locant immediately before the part it refers to: <code>butan-2-ol</code>, <code>hex-3-ene</code>, <code>pentan-2-one</code>. Older textbooks front-load the locant: <code>2-butanol</code>, <code>3-hexene</code>, <code>2-pentanone</code>. Both point to the same structure; use whichever convention your course expects, and the toggle in the app will match it.</p>
+        <h2 id="sec-style">9. 旧式と新式の番号表記</h2>
+        <p>現行の IUPAC 表記は、各位置番号をそれが指す部分の直前に置きます（<code>butan-2-ol</code>, <code>hex-3-ene</code>, <code>pentan-2-one</code>）。古い教科書は番号を前に出します（<code>2-butanol</code>, <code>3-hexene</code>, <code>2-pentanone</code>）。どちらも同じ構造を指します。授業が求める流儀を使えばよく、アプリのトグルでそれに合わせられます。</p>
 
-        <h2 id="sec-check">10. A quick checklist</h2>
+        <h2 id="sec-check">10. 手早いチェックリスト</h2>
         <ol>
-          <li>Identify all functional groups; pick the senior one as suffix.</li>
-          <li>Find the longest chain (or the ring) that contains it — that is the parent.</li>
-          <li>Number to give the principal group the lowest locant, then bonds, then prefixes.</li>
-          <li>Name and alphabetise the remaining groups as prefixes with locants.</li>
-          <li>Add <code>-ene</code>/<code>-yne</code> endings and elide the final -e where needed.</li>
-          <li>Add stereodescriptors (<code>E/Z</code>, <code>R/S</code>) at the front.</li>
-          <li>Read it back: does every locant point where you meant?</li>
+          <li>すべての官能基を洗い出し、序列が最上位のものを接尾辞にする。</li>
+          <li>それを含む最長の鎖（または環）を見つける。それが母体。</li>
+          <li>主基が最小番号になるよう番号付けし、次に多重結合、次に接頭辞で調整する。</li>
+          <li>残りの基を接頭辞として命名し、位置番号を付けてアルファベット順に並べる。</li>
+          <li><code>-ene</code>/<code>-yne</code> の語尾を付け、必要なら末尾の -e を省く。</li>
+          <li>立体記号（<code>E/Z</code>・<code>R/S</code>）を先頭に付ける。</li>
+          <li>読み返す。すべての位置番号が意図した場所を指しているか。</li>
         </ol>
-        <p class="note">Practise these decisions in the Flashcards and Quiz tabs; the Learn tab shows worked examples for each functional-group family.</p>
+        <p class="note">これらの判断は「フラッシュカード」「クイズ」で練習できます。「学ぶ」タブには各官能基の例題があります。</p>
       </article></section>
 
     </div>
@@ -866,7 +846,7 @@
 
     <footer class="ftr">
       <span data-i18n="footer_note">命名はIUPAC有機化学命名法（2013年勧告・Preferred IUPAC Names）に準拠。</span>
-      Source: IUPAC Blue Book <a href="https://iupac.org/what-we-do/books/bluebook/" target="_blank" rel="noopener">iupac.org/what-we-do/books/bluebook</a> (online edition, ed. G. P. Moss <a href="https://www.qmul.ac.uk/sbcs/iupac/BlueBook/" target="_blank" rel="noopener">qmul.ac.uk/sbcs/iupac/BlueBook</a>) / <span data-i18n="footer_src2">個別化合物名は PubChem (NIH)</span> <a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">pubchem.ncbi.nlm.nih.gov</a> <span data-i18n="footer_src3">で照合可能。構造描画は SmilesDrawer (MIT)。</span>
+      出典: IUPAC Blue Book <a href="https://iupac.org/what-we-do/books/bluebook/" target="_blank" rel="noopener">iupac.org/what-we-do/books/bluebook</a>（オンライン版 G. P. Moss 編 <a href="https://www.qmul.ac.uk/sbcs/iupac/BlueBook/" target="_blank" rel="noopener">qmul.ac.uk/sbcs/iupac/BlueBook</a>）／<span data-i18n="footer_src2">個別化合物名は PubChem (NIH)</span> <a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">pubchem.ncbi.nlm.nih.gov</a> <span data-i18n="footer_src3">で照合可能。構造描画は SmilesDrawer (MIT)。</span>
       <div class="ftr-credit" data-i18n="credit">開発: 清水 慎太朗・歳森 淳平</div>
       <div class="ftr-legal">
         <button id="privacyLink" data-i18n="footer_privacy">プライバシーポリシー</button>
@@ -979,7 +959,7 @@ chroma-js/chroma.js:
   </script>
   <script>
   /* =========================================================
-   MEIMAY · IUPAC命名トレーナー  (aldehyde/ketone/acid/ester/nitrile)
+   Meimay · IUPAC命名トレーナー  (aldehyde/ketone/acid/ester/nitrile)
    命名: IUPAC 2013勧告 (Preferred IUPAC Names) 準拠
    慣用名は英語（必要に応じ日本語を併記）。各化合物に命名の思考プロセスを収録。
    ========================================================= */
@@ -1687,7 +1667,7 @@ async function verifyUser(name, pass){
 }
 
 /* ---------- 多言語 (i18n) ---------- */
-let LANG = 'en';
+let LANG = 'ja';
 const I18N = {
   ja: {
     brand_sub:'序列 · 立体(R/S・E/Z) · 逐次演習',
@@ -1909,9 +1889,9 @@ Sound.key = function(){
   var c = Sound.ctx && Sound.ctx();
 };
 (function(){
-  var ctx=null, master=null, on=Sound.on, bgmOn=true, bgmTimer=null, bgmNode=null, step=0;
+  var ctx=null, master=null, on=Sound.on, bgmOn=true, bgmTimer=null, bgmNode=null, step=0, intensity=0, lastTick=0, lim=null, curStreak=0;
   function ac(){
-    if(!ctx){ try{ ctx=new (window.AudioContext||window.webkitAudioContext)(); master=ctx.createGain(); master.gain.value=0.9; master.connect(ctx.destination);}catch(e){ctx=null;} }
+    if(!ctx){ try{ ctx=new (window.AudioContext||window.webkitAudioContext)(); master=ctx.createGain(); master.gain.value=0.7; lim=ctx.createDynamicsCompressor(); lim.threshold.value=-6; lim.knee.value=0; lim.ratio.value=20; lim.attack.value=0.003; lim.release.value=0.25; master.connect(lim); lim.connect(ctx.destination);}catch(e){ctx=null;} }
     if(ctx && ctx.state==='suspended'){ try{ctx.resume();}catch(e){} }
     return ctx;
   }
@@ -1944,14 +1924,25 @@ Sound.key = function(){
     g.gain.exponentialRampToValueAtTime(0.0001, t+dur);
     o.connect(g); g.connect(master); o.start(t); o.stop(t+dur+0.1);
   }
+  function kickDrum(){ var c=ac(); if(!c) return; var t=c.currentTime; var o=c.createOscillator(),g=c.createGain(); o.type='sine'; o.frequency.setValueAtTime(150,t); o.frequency.exponentialRampToValueAtTime(55,t+0.16); g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(0.055+0.015*intensity,t+0.01); g.gain.exponentialRampToValueAtTime(0.0001,t+0.22); o.connect(g); g.connect(master); o.start(t); o.stop(t+0.24); }
+  function period(){ return Math.max(470, 900 - 25*curStreak); }
+  function bgmLoop(){ tick(); bgmTimer=setTimeout(bgmLoop, period()); }
   function tick(){
     if(!bgmOn){ return; }   /* BGMは効果音マスターから独立: 効果音OFFでもBGMは継続 */
     /* chord/arp note */
+    var c0=ac(); if(!c0) return; if(c0.currentTime-lastTick < period()/1000*0.55) return; lastTick=c0.currentTime;
+    var gm=1+intensity*0.22;
     var n=SCALE[(step*3+ (step%2?2:0))%SCALE.length];
-    voice(n, 2.2, 0.045, 'triangle', -4);
-    voice(n*1.001, 2.2, 0.04, 'sine', 5);
-    if(step%4===0){ voice(BASS[(step/4|0)%BASS.length], 3.2, 0.05, 'sine'); }
-    if(step%2===0){ voice(SCALE[(step*5)%SCALE.length]*2, 1.4, 0.02, 'sine'); }
+    voice(n, 2.2, 0.045*gm, 'triangle', -4);
+    voice(n*1.001, 2.2, 0.04*gm, 'sine', 5);
+    if(step%4===0){ voice(BASS[(step/4|0)%BASS.length], 3.2, 0.05*gm, 'sine'); }
+    if(step%2===0){ voice(SCALE[(step*5)%SCALE.length]*2, 1.4, 0.02*gm, 'sine'); }
+    if(intensity>=1 && step%4===2){ voice(BASS[(step/2|0)%BASS.length], 1.6, 0.045, 'triangle'); }
+    if(intensity>=2){ voice(SCALE[(step*7)%SCALE.length]*2, 0.5, 0.02, 'square', 3); }
+    if(intensity>=2 && step%2===0){ kickDrum(); }
+    if(intensity>=3){ kickDrum(); }
+    if(intensity>=3){ voice(SCALE[(step*4+2)%SCALE.length]*2, 0.9, 0.025, 'triangle', -6); }
+    if(intensity>=4){ voice(SCALE[(step*6)%SCALE.length]*4, 0.35, 0.012, 'sine'); }
     step++;
   }
   Sound.bgmToggle = function(){
@@ -1961,9 +1952,12 @@ Sound.key = function(){
   };
   Sound.bgmStart = function(){
     if(!bgmOn || bgmTimer) return; var c=ac(); if(!c) return;
-    tick(); bgmTimer=setInterval(tick, 900);
+    tick(); bgmTimer=setTimeout(bgmLoop, period());
   };
-  Sound.bgmStop = function(){ if(bgmTimer){ clearInterval(bgmTimer); bgmTimer=null; } };
+  Sound.bgmIntensity = function(n){
+    n=n<0?0:(n|0); curStreak=n; intensity = n>=10?4:n>=7?3:n>=4?2:n>=2?1:0;
+  };
+  Sound.bgmStop = function(){ if(bgmTimer){ clearTimeout(bgmTimer); bgmTimer=null; } };
   Object.defineProperty(Sound,'bgmOn',{ get:function(){ return bgmOn; } });
   var _origResume = Sound.resume;
   Sound.resume = function(){ if(_origResume) _origResume(); ac(); if(bgmOn) Sound.bgmStart(); };
@@ -2273,9 +2267,9 @@ function drawMolStereo(container, smi, fo){
 /* ---------- 演出: コンボ・カードフラッシュ・祝福 ---------- */
 function showCombo(n){
   if(reducedMotion || !comboEl) return;
-  let txt = n + ' streak';
+  let txt = n + ' 連続';
   if(n >= 10) txt = n + ' COMBO!';
-  else if(n >= 5) txt = n + ' streak!';
+  else if(n >= 5) txt = n + ' 連続!';
   comboEl.innerHTML = sparkSVG() + '<span>' + txt + '</span>';
   comboEl.hidden = false;
   comboEl.classList.remove('show'); void comboEl.offsetWidth; comboEl.classList.add('show');
@@ -2323,7 +2317,7 @@ function wrongChipHTML(){
   const on = gFilter === 'wrong';
   const dis = (c === 0 && !on) ? ' disabled' : '';
   return '<button class="chip wrong-zone ' + (on?'on':'') + '" data-g="wrong"' + dis + '>' +
-    '<span class="dot"></span>Mistakes <span class="wc">' + c + '</span></button>';
+    '<span class="dot"></span>間違い <span class="wc">' + c + '</span></button>';
 }
 function renderControls(){
   if(mode === 'learn' || mode === 'rscenter'){ controlsEl.innerHTML = ''; controlsEl.style.display = 'none'; return; }
@@ -2425,9 +2419,9 @@ function buildSession(){
 }
 function emptyMsg(){
   if(gFilter === 'wrong'){
-    return '<div class="empty">No mistakes saved yet.<br>When you miss a question in the quiz or flashcards (or choose “Again”), it is saved here so you can review them together later.</div>';
+    return '<div class="empty">間違えた問題はありません。<br>クイズやフラッシュカードで間違える（または「もう一度」を選ぶ）と、ここに保存され、後でまとめて解き直せます。</div>';
   }
-  return '<div class="empty">No questions available for this group.</div>';
+  return '<div class="empty">このグループに表示できる問題がありません。</div>';
 }
 
 function renderFlash(){
@@ -2437,12 +2431,12 @@ function renderFlash(){
   const d = byId(session[sIdx]);
   mainEl.innerHTML =
     '<div class="card"><div class="card-top">' +
-      '<span class="tag" style="--c:var(' + GROUPS[d.g].cvar + ')">' + gname(d.g) + '</span>' +
+      '<span class="tag" style="--c:var(' + GROUPS[d.g].cvar + ')">' + GROUPS[d.g].jp + '</span>' +
       '<span class="muted">' + (sIdx+1) + ' / ' + session.length + boxbar(boxOf(d.id), d.g) + '</span>' +
     '</div>' +
     molBoxHTML('molInner') +
-    '<div class="prompt">What is the IUPAC name of this structure?</div>' +
-    '<button class="btn reveal" id="revealBtn">Show answer</button>' +
+    '<div class="prompt">この構造の IUPAC 名（英語）は？</div>' +
+    '<button class="btn reveal" id="revealBtn">答えを表示</button>' +
     '<div class="answer" id="answer" hidden></div></div>';
   drawMol($('molInner'), d.smi, d.fo, null);
   $('revealBtn').onclick = revealFlash;
@@ -2457,14 +2451,14 @@ function revealFlash(){
   ans.innerHTML =
     '<div class="name" style="--c:var(' + GROUPS[d.g].cvar + ')">' + fmtName(curName(d), d.sfx) + oldNote(d) + '</div>' +
     '<div class="meta">' +
-      (cmText(d) ? '<span><b>Common name</b>' + cmText(d) + '</span>' : '') +
-      '<span><b>Class</b>' + gname(d.g) + '</span>' +
+      (cmText(d) ? '<span><b>慣用名</b>' + cmText(d) + '</span>' : '') +
+      '<span><b>分類</b>' + GROUPS[d.g].jp + '</span>' +
       '<span><b>SMILES</b>' + esc(d.smi) + '</span></div>' +
-    '<div class="steps-h">Naming walkthrough</div>' + stepsHTML(d) +
+    '<div class="steps-h">命名の思考プロセス</div>' + stepsHTML(d) +
     '<div class="grade">' +
-      '<button data-q="again">Again<small>&lt; 1 day</small></button>' +
-      '<button data-q="good">Got it<small>longer interval</small></button>' +
-      '<button data-q="easy">Easy<small>much longer</small></button></div>';
+      '<button data-q="again">もう一度<small>&lt; 1日</small></button>' +
+      '<button data-q="good">覚えた<small>復習を延長</small></button>' +
+      '<button data-q="easy">簡単<small>大きく延長</small></button></div>';
   ans.querySelectorAll('.grade button').forEach(b => {
     b.onclick = async () => {
       const q = b.dataset.q;
@@ -2851,7 +2845,7 @@ function showDrawFeedback(ok,d,g){
 function md_legalTexts(kind){
   var ja = {
     privacy_title:'プライバシーポリシー',
-    privacy: '<p>本アプリ「MEIMAY」（以下「本アプリ」）は，利用者に無料で提供する IUPAC 命名法の学習ツールです。以下のとおりプライバシーへの取り扱いを定めます。</p>'+
+    privacy: '<p>本アプリ「Meimay」（以下「本アプリ」）は，利用者に無料で提供する IUPAC 命名法の学習ツールです。以下のとおりプライバシーへの取り扱いを定めます。</p>'+
       '<h4>1. 広告配信について</h4>'+
       '<p>本アプリでは，第三者配信の広告サービス（Google AdSense 等）を利用する場合があります。これらの広告配信事業者は，利用者の興味に応じた広告を表示するために <b>Cookie</b> を使用することがあります。Cookie を使用することで，当サイトや他サイトへの過去のアクセス情報に基づいて広告が配信されます。</p>'+
       '<p>利用者は，Google の <a href="https://adssettings.google.com/" target="_blank" rel="noopener">広告設定</a> にアクセスして，パーソナライズド広告（Cookie 利用）を無効にできます。また，<a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">www.aboutads.info</a> で第三者配信事業者の Cookie を無効化できます。Google がどのように Cookie を扱うかは，<a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google のポリシーと規約</a> をご確認ください。</p>'+
@@ -2859,7 +2853,7 @@ function md_legalTexts(kind){
       '<p>本アプリの<b>学習進捗・連続正解数・間違えた問題の記録・各種設定</b>などのデータは，すべて利用者のブラウザ内の <b>ローカルストレージ（localStorage）</b> にのみ保存されます。これらのデータが<b>外部サーバーへ送信されることはなく</b>，開発者を含む第三者がこれらを閲覧・収集することはありません。アカウント登録やログインも不要で，複数端末間の同期も行いません。データはブラウザのデータを消去することで完全に削除できます。</p>'+
       '<h4>3. お問い合わせ</h4>'+
       '<p>本ポリシーに関するお問い合わせは，本アプリの提供元までご連絡ください。本ポリシーは予告なく変更されることがあります。</p>'+
-      '<div class="upd">最終更新: 2026年7月</div>',
+      '<div class="upd">最終更新: 2025年</div>',
     disc_title:'免責事項',
     disc: '<p>本アプリは，IUPAC 有機化学命名法（2013年勧告・Preferred IUPAC Names 等）の学習を目的とした教育用ツールです。</p>'+
       '<h4>1. 命名・判定の正確性について</h4>'+
@@ -2868,11 +2862,11 @@ function md_legalTexts(kind){
       '<p>利用者が本アプリを利用することにより生じたいかなる損害（学習上の誤り，試験結果，その他直接・間接の損害を含む）についても，<b>開発者は一切の責任を負いません</b>。本アプリは現状有姿（as is）で提供されます。</p>'+
       '<h4>3. 外部リンク・第三者サービス</h4>'+
       '<p>本アプリから参照される外部サイトや，表示される広告の内容について，開発者は責任を負いません。</p>'+
-      '<div class="upd">最終更新: 2026年7月</div>'
+      '<div class="upd">最終更新: 2025年</div>'
   };
   var en = {
     privacy_title:'Privacy Policy',
-    privacy: '<p>“MEIMAY” (the “App”) is a free learning tool for IUPAC nomenclature. This policy describes how privacy is handled.</p>'+
+    privacy: '<p>“Meimay” (the “App”) is a free learning tool for IUPAC nomenclature. This policy describes how privacy is handled.</p>'+
       '<h4>1. Advertising</h4>'+
       '<p>The App may use third-party advertising services (such as Google AdSense). These ad providers may use <b>cookies</b> to serve ads based on your prior visits to this and other websites. Cookies let them show ads tailored to your interests.</p>'+
       '<p>You can opt out of personalized advertising via Google’s <a href="https://adssettings.google.com/" target="_blank" rel="noopener">Ads Settings</a>, or opt out of third-party vendor cookies at <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener">www.aboutads.info</a>. For how Google uses cookies, see <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google’s policies</a>.</p>'+
@@ -2880,7 +2874,7 @@ function md_legalTexts(kind){
       '<p>All of your <b>progress, streaks, saved mistakes and settings</b> are stored <b>only in your browser’s localStorage</b>. This data is <b>never sent to any external server</b>, and cannot be viewed or collected by the developers or any third party. No account or login is required, and there is no cross-device sync. You can delete the data completely by clearing your browser data.</p>'+
       '<h4>3. Contact</h4>'+
       '<p>For questions about this policy, please contact the provider of the App. This policy may be updated without notice.</p>'+
-      '<div class="upd">Last updated: July 2026</div>',
+      '<div class="upd">Last updated: 2025</div>',
     disc_title:'Disclaimer',
     disc: '<p>The App is an educational tool for learning IUPAC organic nomenclature (2013 Recommendations / Preferred IUPAC Names).</p>'+
       '<h4>1. Accuracy of naming and checking</h4>'+
@@ -2889,7 +2883,7 @@ function md_legalTexts(kind){
       '<p>The developers accept <b>no liability whatsoever</b> for any damages arising from use of the App (including learning errors, exam outcomes, or any other direct or indirect loss). The App is provided <b>as is</b>.</p>'+
       '<h4>3. External links and third-party services</h4>'+
       '<p>The developers are not responsible for the content of external sites referenced by the App or of any advertisements shown.</p>'+
-      '<div class="upd">Last updated: July 2026</div>'
+      '<div class="upd">Last updated: 2025</div>'
   };
   var L=(typeof LANG!=='undefined'&&LANG==='en')?en:ja;
   return kind==='privacy' ? {title:L.privacy_title, body:L.privacy} : {title:L.disc_title, body:L.disc};
@@ -3216,53 +3210,53 @@ STEREO.forEach(d => { if(!DATA_BY[d.id]){ DATA.push(d); DATA_BY[d.id] = d; } });
 /* ---------- 逐次スキャフォールド（構造→主鎖→主基→番号→名前） ---------- */
 const SCAFFOLD = [
   {id:'ket02', steps:[
-    {q:'How many carbons are in the main (longest) chain?', opts:['4','5','6'], ai:1, ex:'CH\u2083-CO-CH\u2082-CH\u2082-CH\u2083 has 5 carbons \u2192 parent pentane.'},
-    {q:'What is the principal characteristic group?', opts:['Alcohol','Ketone','Carboxylic acid'], ai:1, ex:'An internal C=O is a ketone (suffix -one).'},
-    {q:'What is the locant of the carbonyl?', opts:['1','2','3'], ai:1, ex:'Numbering from the end that gives the lowest locant \u2192 C2.'},
-    {q:'What is the final name?', opts:['pentan-3-one','pentan-2-one','pentan-2-ol'], ai:1, ex:'pentan-2-one.'}]},
+    {q:'主鎖（最長炭素鎖）の炭素数は？', opts:['4','5','6'], ai:1, ex:'CH₃-CO-CH₂-CH₂-CH₃ は炭素5個。母体は pentane。'},
+    {q:'主特性基は？', opts:['アルコール','ケトン','カルボン酸'], ai:1, ex:'鎖内部の C=O はケトン（語尾 -one）。'},
+    {q:'カルボニルの位置番号は？', opts:['1','2','3'], ai:1, ex:'最小番号になる向きから数えて C2。'},
+    {q:'完成名は？', opts:['pentan-3-one','pentan-2-one','pentan-2-ol'], ai:1, ex:'pentan-2-one。'}]},
   {id:'aci06', steps:[
-    {q:'Carbons in the longest chain containing the senior group?', opts:['3','4','5'], ai:1, ex:'The COOH chain has 4 carbons \u2192 butanoic acid.'},
-    {q:'What is the principal characteristic group?', opts:['Ketone','Carboxylic acid','Aldehyde'], ai:1, ex:'-COOH is a carboxylic acid (most senior, suffix -oic acid).'},
-    {q:'What is the locant of the methyl group?', opts:['2','3','4'], ai:1, ex:'The COOH carbon is C1, so the branch is at C3.'},
-    {q:'What is the final name?', opts:['2-methylbutanoic acid','3-methylbutanoic acid','3-methylbutanal'], ai:1, ex:'3-methylbutanoic acid.'}]},
+    {q:'主基を含む最長鎖の炭素数は？', opts:['3','4','5'], ai:1, ex:'COOH を含む鎖は炭素4個 → butanoic acid。'},
+    {q:'主特性基は？', opts:['ケトン','カルボン酸','アルデヒド'], ai:1, ex:'-COOH はカルボン酸（最上位，語尾 -oic acid）。'},
+    {q:'メチル基の位置番号は？', opts:['2','3','4'], ai:1, ex:'COOH の炭素が C1，分岐は C3。'},
+    {q:'完成名は？', opts:['2-methylbutanoic acid','3-methylbutanoic acid','3-methylbutanal'], ai:1, ex:'3-methylbutanoic acid。'}]},
   {id:'alc05', steps:[
-    {q:'Carbons in the longest chain containing OH?', opts:['3','4','5'], ai:1, ex:'4 carbons \u2192 butane skeleton.'},
-    {q:'What is the principal characteristic group?', opts:['Ether','Alcohol','Ketone'], ai:1, ex:'-OH is an alcohol (suffix -ol).'},
-    {q:'What is the locant of OH?', opts:['1','2','3'], ai:1, ex:'The direction that gives OH the lowest locant \u2192 C2.'},
-    {q:'What is the final name?', opts:['butan-1-ol','butan-2-ol','butan-3-ol'], ai:1, ex:'butan-2-ol.'}]},
+    {q:'OH を含む最長鎖の炭素数は？', opts:['3','4','5'], ai:1, ex:'炭素4個 → butane 骨格。'},
+    {q:'主特性基は？', opts:['エーテル','アルコール','ケトン'], ai:1, ex:'-OH はアルコール（語尾 -ol）。'},
+    {q:'OH の位置番号は？', opts:['1','2','3'], ai:1, ex:'OH が最小になる向きで C2。'},
+    {q:'完成名は？', opts:['butan-1-ol','butan-2-ol','butan-3-ol'], ai:1, ex:'butan-2-ol。'}]},
   {id:'ald07', steps:[
-    {q:'Carbons in the longest chain containing CHO?', opts:['3','4','5'], ai:1, ex:'Counting the CHO carbon gives 4 carbons \u2192 butanal skeleton.'},
-    {q:'What is the principal characteristic group?', opts:['Ketone','Aldehyde','Carboxylic acid'], ai:1, ex:'A terminal CHO is an aldehyde (suffix -al, fixed at C1).'},
-    {q:'What is the locant of the methyl group?', opts:['2','3','4'], ai:0, ex:'CHO is C1, so the branch is at C2.'},
-    {q:'What is the final name?', opts:['2-methylbutanal','3-methylbutanal','2-methylbutan-1-ol'], ai:0, ex:'2-methylbutanal.'}]},
+    {q:'CHO を含む最長鎖の炭素数は？', opts:['3','4','5'], ai:1, ex:'CHO 含め炭素4個 → butanal 骨格。'},
+    {q:'主特性基は？', opts:['ケトン','アルデヒド','カルボン酸'], ai:1, ex:'末端 CHO はアルデヒド（語尾 -al，C1 固定）。'},
+    {q:'メチル基の位置番号は？', opts:['2','3','4'], ai:0, ex:'CHO が C1，分岐は C2。'},
+    {q:'完成名は？', opts:['2-methylbutanal','3-methylbutanal','2-methylbutan-1-ol'], ai:0, ex:'2-methylbutanal。'}]},
   {id:'acx04', steps:[
-    {q:'Which functional groups are present?', opts:['Carboxylic acid and ketone','Alcohol and ketone','Carboxylic acid only'], ai:0, ex:'Both -COOH and a C=O (ketone).'},
-    {q:'Which is the senior group?', opts:['Ketone','Carboxylic acid'], ai:1, ex:'Carboxylic acid &gt; ketone, so the acid is senior.'},
-    {q:'How is the ketone expressed?', opts:['suffix -one','prefix oxo-','prefix keto-'], ai:1, ex:'A non-senior ketone becomes the prefix oxo-.'},
-    {q:'What is the final name?', opts:['3-oxobutanoic acid','3-carboxybutan-2-one','4-oxobutanoic acid'], ai:0, ex:'3-oxobutanoic acid.'}]},
+    {q:'存在する官能基は？', opts:['カルボン酸とケトン','アルコールとケトン','カルボン酸のみ'], ai:0, ex:'-COOH と C=O（ケトン）の2つ。'},
+    {q:'主特性基（序列が上）は？', opts:['ケトン','カルボン酸'], ai:1, ex:'カルボン酸 &gt; ケトン。主基はカルボン酸。'},
+    {q:'ケトンはどう表す？', opts:['語尾 -one','接頭辞 oxo-','接頭辞 keto-'], ai:1, ex:'主基でないケトンは接頭辞 oxo-。'},
+    {q:'完成名は？', opts:['3-oxobutanoic acid','3-carboxybutan-2-one','4-oxobutanoic acid'], ai:0, ex:'3-oxobutanoic acid。'}]},
   {id:'alx00', steps:[
-    {q:'Which functional groups are present?', opts:['Alcohol and amine','Ether and amine','Alcohol only'], ai:0, ex:'Both -OH and -NH\u2082.'},
-    {q:'Which is the senior group?', opts:['Amine','Alcohol'], ai:1, ex:'Alcohol &gt; amine, so the alcohol is senior.'},
-    {q:'How is NH\u2082 expressed?', opts:['suffix -amine','prefix amino-','prefix azo-'], ai:1, ex:'A non-senior amine becomes the prefix amino-.'},
-    {q:'What is the final name?', opts:['2-hydroxyethan-1-amine','2-aminoethan-1-ol','aminoethanol'], ai:1, ex:'2-aminoethan-1-ol.'}]},
+    {q:'存在する官能基は？', opts:['アルコールとアミン','エーテルとアミン','アルコールのみ'], ai:0, ex:'-OH と -NH₂ の2つ。'},
+    {q:'主特性基（序列が上）は？', opts:['アミン','アルコール'], ai:1, ex:'アルコール &gt; アミン。主基はアルコール。'},
+    {q:'NH₂ はどう表す？', opts:['語尾 -amine','接頭辞 amino-','接頭辞 azo-'], ai:1, ex:'主基でないアミンは接頭辞 amino-。'},
+    {q:'完成名は？', opts:['2-hydroxyethan-1-amine','2-aminoethan-1-ol','aminoethanol'], ai:1, ex:'2-aminoethan-1-ol。'}]},
   {id:'hal13', steps:[
-    {q:'What is the parent (longest chain)?', opts:['methane','ethane','propane'], ai:1, ex:'2 carbons \u2192 ethane.'},
-    {q:'How are halogens treated?', opts:['become the suffix','always a prefix','become the parent'], ai:1, ex:'Halogens are always prefixes (never the senior group).'},
-    {q:'What is the locant of bromo?', opts:['1','2'], ai:0, ex:'It is a tie, so alphabetical order gives bromo the lower locant, 1.'},
-    {q:'What is the final name?', opts:['2-bromo-1-chloroethane','1-bromo-2-chloroethane','1,2-bromochloroethane'], ai:1, ex:'1-bromo-2-chloroethane.'}]},
+    {q:'母体（最長鎖）は？', opts:['methane','ethane','propane'], ai:1, ex:'炭素2個 → ethane。'},
+    {q:'ハロゲンはどう扱う？', opts:['語尾になる','常に接頭辞','母体になる'], ai:1, ex:'ハロゲンは常に接頭辞（主基にならない）。'},
+    {q:'bromo の位置番号は？', opts:['1','2'], ai:0, ex:'同点なのでアルファベット順で先の bromo に 1 を与える。'},
+    {q:'完成名は？', opts:['2-bromo-1-chloroethane','1-bromo-2-chloroethane','1,2-bromochloroethane'], ai:1, ex:'1-bromo-2-chloroethane。'}]},
   {id:'eth01', steps:[
-    {q:'Which (larger) chain is the parent?', opts:['methane','ethane'], ai:1, ex:'The larger hydrocarbon, ethane, is the parent.'},
-    {q:'How is the smaller OR group expressed?', opts:['prefix methoxy-','suffix -ol','prefix methyl-'], ai:0, ex:'CH\u2083O- is the alkoxy prefix methoxy-.'},
-    {q:'What is the final name?', opts:['ethoxymethane','methoxyethane','methoxymethane'], ai:1, ex:'methoxyethane.'}]},
+    {q:'母体にする（大きい方の）鎖は？', opts:['methane','ethane'], ai:1, ex:'大きい炭化水素 ethane を母体にする。'},
+    {q:'小さい OR 基はどう表す？', opts:['接頭辞 methoxy-','語尾 -ol','接頭辞 methyl-'], ai:0, ex:'CH₃O- はアルコキシ接頭辞 methoxy-。'},
+    {q:'完成名は？', opts:['ethoxymethane','methoxyethane','methoxymethane'], ai:1, ex:'methoxyethane。'}]},
   {id:'amn02', steps:[
-    {q:'Which is the senior group?', opts:['Amine','Ether'], ai:0, ex:'With no more senior group present, the amine is senior (suffix -amine).'},
-    {q:'What is the locant of NH\u2082?', opts:['1','2'], ai:1, ex:'In (CH\u2083)\u2082CH-NH\u2082 the central carbon is C2.'},
-    {q:'What is the final name?', opts:['propan-1-amine','propan-2-amine','2-aminopropane'], ai:1, ex:'propan-2-amine.'}]},
+    {q:'主基（最上位）は？', opts:['アミン','エーテル'], ai:0, ex:'他に上位基が無いのでアミンが主基（語尾 -amine）。'},
+    {q:'NH₂ の位置番号は？', opts:['1','2'], ai:1, ex:'(CH₃)₂CH-NH₂ の中心炭素は C2。'},
+    {q:'完成名は？', opts:['propan-1-amine','propan-2-amine','2-aminopropane'], ai:1, ex:'propan-2-amine。'}]},
   {id:'ket08', steps:[
-    {q:'Carbons in the parent (longest) chain?', opts:['4','5','6'], ai:1, ex:'CH\u2083COCH\u2082COCH\u2083 has 5 carbons \u2192 pentane.'},
-    {q:'What is the principal characteristic group?', opts:['Two ketones (-dione)','Carboxylic acid','Alcohol'], ai:0, ex:'Two C=O groups \u2192 -dione.'},
-    {q:'What about the final -e of the parent?', opts:['elide it (pentan-)','keep it (pentane-)'], ai:1, ex:'-dione starts with a consonant, so keep the e \u2192 pentane-.'},
-    {q:'What is the final name?', opts:['pentan-2,4-dione','pentane-2,4-dione','pentane-1,3-dione'], ai:1, ex:'pentane-2,4-dione.'}]},
+    {q:'母体（最長鎖）の炭素数は？', opts:['4','5','6'], ai:1, ex:'CH₃COCH₂COCH₃ は炭素5個 → pentane。'},
+    {q:'主特性基は？', opts:['ケトン2個（-dione）','カルボン酸','アルコール'], ai:0, ex:'C=O が2つ → -dione。'},
+    {q:'語尾の e は？', opts:['脱落させる(pentan-)','残す(pentane-)'], ai:1, ex:'-dione は子音始まりなので e を残す → pentane-。'},
+    {q:'完成名は？', opts:['pentan-2,4-dione','pentane-2,4-dione','pentane-1,3-dione'], ai:1, ex:'pentane-2,4-dione。'}]},
 ];
 
 /* ---------- 逐次スキャフォールド用の状態 ---------- */
@@ -3275,8 +3269,8 @@ function renderScaffold(){
   scafStep=0; scafScore=0;
   const d=DATA_BY[scafItem.id];
   mainEl.innerHTML='<div class="card"><div class="card-top">'+
-    '<span class="tag" style="--c:var('+GROUPS[d.g].cvar+')">'+gname(d.g)+'</span>'+
-    '<span class="muted">Step-by-step</span></div>'+
+    '<span class="tag" style="--c:var('+GROUPS[d.g].cvar+')">'+GROUPS[d.g].jp+'</span>'+
+    '<span class="muted">逐次スキャフォールド</span></div>'+
     molBoxHTML('molInner')+
     '<div class="scafsteps" id="scafSteps"></div></div>';
   drawMol($('molInner'), d.smi, d.fo, null);
@@ -3315,9 +3309,9 @@ function pickScaf(block,btn,oi,st,d){
     grade(d.id, all ? 'good' : 'again');
     const done=document.createElement('div'); done.className='scafdone';
     done.innerHTML='<div class="name" style="--c:var('+GROUPS[d.g].cvar+')">'+fmtName(d.nm,d.sfx)+(cmText(d)?' <span class="cmn">'+cmText(d)+'</span>':'')+'</div>'+
-      '<div class="scafscore">This item: '+scafScore+' / '+scafItem.steps.length+' correct</div>'+
-      '<div class="steps-h">Naming walkthrough (full)</div>'+stepsHTML(d)+
-      '<button class="btn next" id="nextBtn">Next</button>';
+      '<div class="scafscore">この問題: '+scafScore+' / '+scafItem.steps.length+' 正解</div>'+
+      '<div class="steps-h">命名の思考プロセス（全体）</div>'+stepsHTML(d)+
+      '<button class="btn next" id="nextBtn">次の問題</button>';
     $('scafSteps').appendChild(done);
     $('nextBtn').onclick=renderScaffold;
   }
@@ -3624,7 +3618,7 @@ function initLangToggle(){
 (async function init(){
   Confetti.init();
   // 言語の復元
-  LANG = 'en';
+  LANG = 'ja';
   document.documentElement.lang = LANG;
   applyStaticI18n();
   initLangToggle();
@@ -3691,5 +3685,26 @@ document.addEventListener('keydown', function(e){
 })();
 
   </script>
+<script id="bgm-addon">
+(function(){
+  function S(){ return (typeof Sound!=='undefined')?Sound:null; }
+  var unlocked=false;
+  function unlock(){ if(unlocked) return; unlocked=true;
+    try{ var s=S(); if(s&&s.resume) s.resume(); }catch(e){}
+    ['pointerdown','touchend','click','keydown'].forEach(function(ev){ document.removeEventListener(ev, unlock, true); });
+  }
+  ['pointerdown','touchend','click','keydown'].forEach(function(ev){ document.addEventListener(ev, unlock, {capture:true, passive:true}); });
+  function setup(){ var el=document.getElementById('hudStreak'); var s=S();
+    if(!el||!s||!s.bgmIntensity) return false;
+    function lvl(n){ return n>=10?4:n>=7?3:n>=4?2:n>=2?1:0; }
+    function read(){ var b=el.querySelector('b'); var t=b?b.textContent:el.textContent; var n=parseInt((t||'').replace(/[^0-9]/g,''),10); return isNaN(n)?0:n; }
+    var mo=new MutationObserver(function(){ try{ s.bgmIntensity(read()); }catch(e){} });
+    mo.observe(el,{childList:true,subtree:true,characterData:true});
+    try{ s.bgmIntensity(read()); }catch(e){}
+    return true;
+  }
+  if(!setup()){ var n=0; var iv=setInterval(function(){ if(setup()||++n>40) clearInterval(iv); },150); }
+})();
+</script>
 </body>
 </html>

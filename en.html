@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8449288336764592"
-     crossorigin="anonymous"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVRFMZGHCX"></script>
 <script>
@@ -97,6 +95,59 @@
     .bgfx{display:none;}
     .brand-title{font-size:1.28rem;}
   }
+
+  /* ===== added: motion & mobile polish ===== */
+  /* gentle staggered entrance on load */
+  @keyframes riseIn{from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:none;}}
+  .brand,.langtoggle,.lead,.appcard,.about,.ftr{animation:riseIn .7s cubic-bezier(.2,.7,.2,1) backwards;}
+  .langtoggle{animation-delay:.05s;}
+  .lead{animation-delay:.12s;}
+  .grid .appcard:nth-child(1){animation-delay:.18s;}
+  .grid .appcard:nth-child(2){animation-delay:.26s;}
+  .about{animation-delay:.34s;}
+  .ftr{animation-delay:.40s;}
+
+  /* accent bar sweeping the card top + soft glow on hover */
+  .appcard{overflow:hidden;}
+  .appcard::before{content:""; position:absolute; top:0; left:0; right:0; height:2px;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    transform:scaleX(0); transform-origin:left; transition:transform .35s ease;}
+  .appcard.live:hover::before{transform:scaleX(1);}
+  .appcard.live:hover{box-shadow:0 14px 40px rgba(0,0,0,0.36), 0 10px 34px -14px rgba(45,212,191,0.40);}
+
+  /* sheen sweeping across the button */
+  .go{position:relative; overflow:hidden;}
+  .go::after{content:""; position:absolute; top:0; left:-130%; width:55%; height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,0.28),transparent);
+    transform:skewX(-18deg); transition:left .6s ease; pointer-events:none;}
+  .appcard:hover .go::after{left:150%;}
+
+  /* the spectroscopy icon draws itself like a scan */
+  @keyframes scanDraw{from{stroke-dashoffset:120;} to{stroke-dashoffset:0;}}
+  .ico .wave{stroke-dasharray:120; animation:scanDraw 1.5s ease-out .55s backwards;}
+
+  /* background hexagons (= molecules) drift slowly (desktop only) */
+  @keyframes drift1{0%,100%{transform:translate(0,0) rotate(0);} 50%{transform:translate(10px,-14px) rotate(7deg);}}
+  @keyframes drift2{0%,100%{transform:translate(0,0) rotate(0);} 50%{transform:translate(-14px,12px) rotate(-8deg);}}
+  @keyframes drift3{0%,100%{transform:translate(0,0) rotate(0);} 50%{transform:translate(8px,16px) rotate(10deg);}}
+  .bgfx .h1{animation:drift1 22s ease-in-out infinite;}
+  .bgfx .h2{animation:drift2 28s ease-in-out infinite;}
+  .bgfx .h3{animation:drift3 25s ease-in-out infinite;}
+
+  /* mobile: respect safe areas + full-width, easy-to-tap button */
+  @media (max-width:680px){
+    .wrap{padding:22px calc(14px + env(safe-area-inset-right)) calc(60px + env(safe-area-inset-bottom)) calc(14px + env(safe-area-inset-left));}
+    .top{gap:10px;}
+    .go{width:100%;}
+  }
+
+  /* honour reduced-motion preference */
+  @media (prefers-reduced-motion: reduce){
+    .brand,.langtoggle,.lead,.appcard,.about,.ftr,
+    .bgfx .h1,.bgfx .h2,.bgfx .h3,.ico .wave{animation:none !important;}
+    .go::after{display:none;}
+    .appcard::before{transition:none;}
+  }
 </style>
 </head>
 <body>
@@ -145,7 +196,7 @@
       <!-- Spectroscopy (live) -->
       <article class="appcard live">
         <svg class="ico" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M5 28 L12 28 L15 14 L20 32 L25 10 L28 24 L35 24" stroke="#38BDF8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path class="wave" d="M5 28 L12 28 L15 14 L20 32 L25 10 L28 24 L35 24" stroke="#38BDF8" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <div class="tag">IR · NMR · MS</div>
         <h2>Meimay Spectra</h2>
