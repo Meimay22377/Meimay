@@ -12,7 +12,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Meimay · Chemistry trainers</title>
-<meta name="description" content="Meimay is a free, browser-only chemistry learning suite: an IUPAC nomenclature trainer and a spectroscopy trainer for IR, NMR and MS. No install, no sign-up, works offline.">
+<meta name="description" content="Meimay is a free, browser-only chemistry learning suite: an IUPAC nomenclature trainer, a spectroscopy trainer for IR, NMR and MS, and a curly-arrow reaction mechanism trainer. No install, no sign-up, works offline.">
 <link rel="canonical" href="https://meimay-chem.com/en.html">
 <link rel="alternate" hreflang="ja" href="https://meimay-chem.com/">
 <link rel="alternate" hreflang="en" href="https://meimay-chem.com/en.html">
@@ -92,7 +92,7 @@
 
   @media (max-width:680px){
     .wrap{padding:22px 14px 60px;}
-    .bgfx{display:block;}
+    .bgfx{display:none;}
     .brand-title{font-size:1.28rem;}
   }
 
@@ -104,8 +104,9 @@
   .lead{animation-delay:.12s;}
   .grid .appcard:nth-child(1){animation-delay:.18s;}
   .grid .appcard:nth-child(2){animation-delay:.26s;}
-  .about{animation-delay:.34s;}
-  .ftr{animation-delay:.40s;}
+  .grid .appcard:nth-child(3){animation-delay:.34s;}
+  .about{animation-delay:.42s;}
+  .ftr{animation-delay:.48s;}
 
   /* accent bar sweeping the card top + soft glow on hover */
   .appcard{overflow:hidden;}
@@ -126,6 +127,10 @@
   @keyframes scanDraw{from{stroke-dashoffset:120;} to{stroke-dashoffset:0;}}
   .ico .wave{stroke-dasharray:120; animation:scanDraw 1.5s ease-out .55s backwards;}
 
+  /* the mechanism icon draws its curly arrow */
+  @keyframes curlDraw{from{stroke-dashoffset:44;} to{stroke-dashoffset:0;}}
+  .ico .curl{stroke-dasharray:44; animation:curlDraw 1.2s ease-out .6s backwards;}
+
   /* background hexagons (= molecules) drift slowly (desktop only) */
   @keyframes drift1{0%,100%{transform:translate(0,0) rotate(0);} 50%{transform:translate(10px,-14px) rotate(7deg);}}
   @keyframes drift2{0%,100%{transform:translate(0,0) rotate(0);} 50%{transform:translate(-14px,12px) rotate(-8deg);}}
@@ -144,13 +149,11 @@
   /* honour reduced-motion preference */
   @media (prefers-reduced-motion: reduce){
     .brand,.langtoggle,.lead,.appcard,.about,.ftr,
-    .bgfx .h1,.bgfx .h2,.bgfx .h3,.ico .wave{animation:none !important;}
+    .bgfx .h1,.bgfx .h2,.bgfx .h3,.ico .wave,.ico .curl{animation:none !important;}
     .go::after{display:none;}
     .appcard::before{transition:none;}
   }
 </style>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8449288336764592" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="bgfx" aria-hidden="true">
@@ -204,6 +207,20 @@
         <h2>Meimay Spectra</h2>
         <p>Read IR, ¹H/¹³C-NMR and MS spectra to deduce structures. Learn how characteristic bands and chemical shifts behave, sharpen reflexes in focused drills, then rebuild unknowns from fragments in full analysis mode.</p>
         <a class="go" href="spectrum/en.html">Start →</a>
+      </article>
+
+      <!-- Reaction mechanisms (live) -->
+      <article class="appcard live">
+        <svg class="ico" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="20,4 33,12 33,28 20,36 7,28 7,12" stroke="#2DD4BF" stroke-width="1.6" fill="rgba(45,212,191,0.06)"/>
+          <path class="curl" d="M11 26 Q20 8 29 22" stroke="#FBBF24" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+          <path d="M29 22 l-4.5 -0.6 M29 22 l-1.4 -4.2" stroke="#FBBF24" stroke-width="1.7" stroke-linecap="round"/>
+          <circle cx="11" cy="26" r="1.8" fill="#2DD4BF"/>
+        </svg>
+        <div class="tag">Reaction mechanisms</div>
+        <h2>Meimay Arrows</h2>
+        <p>Draw the curly arrows yourself and build organic reaction mechanisms step by step: start an arrow at a bond or a lone pair and push electrons through SN1, SN2, E2, carbonyl additions and more.</p>
+        <a class="go" href="arrow/en.html">Start →</a>
       </article>
 
     </div>

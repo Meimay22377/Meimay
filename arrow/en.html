@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8449288336764592"
+     crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZVRFMZGHCX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZVRFMZGHCX');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Free curly-arrow trainer for organic reaction mechanisms. Click a bond or lone pair, then a target, to push electrons step by step through SN1, SN2, E2, carbonyl additions and more.">
+<link rel="canonical" href="https://meimay-chem.com/arrow/en.html">
+<link rel="alternate" hreflang="ja" href="https://meimay-chem.com/arrow/">
+<link rel="alternate" hreflang="en" href="https://meimay-chem.com/arrow/en.html">
+<link rel="alternate" hreflang="x-default" href="https://meimay-chem.com/arrow/">
+<title>Meimay · Curly Arrow Trainer — Reaction Mechanism Practice</title>
+<style>
+  :root{
+    --bg:#0B0F17; --surface:#121A27; --surface-2:#192335; --surface-3:#0E1521;
+    --border:rgba(150,170,200,0.13); --border-strong:rgba(150,170,200,0.30);
+    --text:#E7EEF8; --dim:#9CA9C0; --faint:#6C7A93;
+    --accent:#2DD4BF; --accent-2:#38BDF8;
+    --good:#34D399; --bad:#FB7185; --warn:#FBBF24;
+    --arrow:#FBBF24;
+    --el-O:#FB7185; --el-N:#60A5FA; --el-Br:#F0ABFC; --el-Cl:#A3E635; --el-H:#9CA9C0;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+    --r:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(45,212,191,0.08), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(251,191,36,0.05), transparent 55%),
+      var(--bg);
+    color:var(--text); font-family:var(--sans);
+    -webkit-font-smoothing:antialiased; line-height:1.5;
+    min-height:100vh; overflow-x:hidden;
+  }
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+    background-image:radial-gradient(rgba(150,170,200,0.06) 1px, transparent 1px);
+    background-size:26px 26px; mask-image:linear-gradient(180deg,rgba(0,0,0,0.7),rgba(0,0,0,0.22));
+  }
+  .bgfx{position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;}
+  .bgfx svg{position:absolute; opacity:0.06;}
+  .bgfx .h1{top:8%; left:6%; width:120px; animation:drift1 22s ease-in-out infinite;}
+  .bgfx .h2{top:62%; left:84%; width:170px; animation:drift2 28s ease-in-out infinite;}
+  .bgfx .h3{top:30%; left:70%; width:80px; animation:drift1 18s ease-in-out infinite reverse;}
+  .bgfx .h4{top:80%; left:14%; width:100px; animation:drift2 25s ease-in-out infinite reverse;}
+  @keyframes drift1{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(14px,-18px) rotate(9deg)}}
+  @keyframes drift2{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(-16px,12px) rotate(-7deg)}}
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  .app{position:relative; z-index:1; max-width:1060px; margin:0 auto; padding:18px 16px 40px;}
+
+  /* header */
+  .hdr{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;}
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand .mark{width:40px; height:40px; flex:none;}
+  .brand-title{font-weight:800; letter-spacing:0.02em; font-size:18px;}
+  .brand-title b{color:var(--accent); font-weight:800;}
+  .brand-sub{color:var(--dim); font-size:12.5px; margin-top:1px;}
+  .acctbar{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:10px;}
+  .apps-link{color:var(--dim); font-size:13px; text-decoration:none; border:1px solid var(--border); border-radius:999px; padding:5px 12px; background:var(--surface);}
+  .apps-link:hover{color:var(--text); border-color:var(--border-strong);}
+  .acctbtns{display:flex; align-items:center; gap:8px;}
+  .langswap{display:inline-flex; border:1px solid var(--border); border-radius:999px; overflow:hidden; text-decoration:none; background:var(--surface);}
+  .langswap .lt{padding:5px 12px; font-size:12.5px; color:var(--faint);}
+  .langswap .lt.on{background:linear-gradient(135deg, rgba(45,212,191,0.18), rgba(56,189,248,0.18)); color:var(--text); font-weight:700;}
+  .langswap:hover .lt:not(.on){color:var(--dim);}
+  .iconbtn{border:1px solid var(--border); background:var(--surface); color:var(--dim); border-radius:999px; padding:5px 12px; font-size:12.5px; cursor:pointer;}
+  .iconbtn:hover{color:var(--text); border-color:var(--border-strong);}
+
+  /* generic card */
+  .card{background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:16px;}
+  .kicker{color:var(--accent); font-size:11.5px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase;}
+
+  /* home view */
+  #home{margin-top:22px;}
+  .home-lead{color:var(--dim); font-size:14px; max-width:760px; margin:6px 0 18px;}
+  .pgrid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:12px;}
+  .pcard{position:relative; background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:12px; cursor:pointer; transition:border-color 0.15s, transform 0.15s;}
+  .pcard:hover{border-color:var(--border-strong); transform:translateY(-2px);}
+  .pcard:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  .pcard .mini{width:100%; height:86px; display:block; background:var(--surface-3); border-radius:9px; border:1px solid var(--border);}
+  .pcard .pt{font-weight:700; font-size:14px; margin-top:9px;}
+  .pcard .pm{display:flex; align-items:center; gap:6px; margin-top:5px; flex-wrap:wrap;}
+  .chip{font-size:11px; color:var(--dim); border:1px solid var(--border); border-radius:999px; padding:2px 8px; background:var(--surface-2);}
+  .chip.d1{color:var(--good); border-color:rgba(52,211,153,0.35);}
+  .chip.d2{color:var(--accent-2); border-color:rgba(56,189,248,0.35);}
+  .chip.d3{color:var(--warn); border-color:rgba(251,191,36,0.35);}
+  .pcard .done{position:absolute; top:8px; right:8px; width:22px; height:22px; border-radius:999px; background:rgba(52,211,153,0.16); border:1px solid rgba(52,211,153,0.5); color:var(--good); font-size:13px; display:flex; align-items:center; justify-content:center;}
+
+  /* game view */
+  #game{display:none; margin-top:18px;}
+  .gtop{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;}
+  .backbtn{border:1px solid var(--border); background:var(--surface); color:var(--dim); border-radius:999px; padding:6px 13px; font-size:13px; cursor:pointer;}
+  .backbtn:hover{color:var(--text); border-color:var(--border-strong);}
+  .gtitle{font-weight:800; font-size:16px;}
+  .stepdots{display:flex; align-items:center; gap:6px; margin-left:auto;}
+  .stepdots .sd{width:9px; height:9px; border-radius:999px; background:var(--surface-2); border:1px solid var(--border-strong); transition:background 0.2s;}
+  .stepdots .sd.past{background:var(--accent); border-color:var(--accent);}
+  .stepdots .sd.cur{background:var(--warn); border-color:var(--warn); box-shadow:0 0 8px rgba(251,191,36,0.6);}
+  .steplabel{color:var(--dim); font-size:12.5px;}
+
+  /* tabs (matches other Meimay apps) */
+  .tabs{display:flex; flex-wrap:wrap; gap:6px; background:var(--surface-3); border:1px solid var(--border); padding:5px; border-radius:12px; margin-top:14px;}
+  .tabs button{min-width:88px; flex:1; appearance:none; border:0; background:transparent; color:var(--dim); font-family:var(--sans); font-size:0.86rem; font-weight:600; padding:9px 8px; border-radius:8px; cursor:pointer; transition:all .18s ease;}
+  .tabs button:hover{color:var(--text); background:rgba(150,170,200,0.06);}
+  .tabs button.active{background:linear-gradient(180deg, var(--surface-2), var(--surface)); color:var(--text); box-shadow:inset 0 0 0 1px var(--border-strong), 0 2px 10px rgba(0,0,0,0.25);}
+  .tab-sep{width:1px; align-self:stretch; margin:5px 3px; background:var(--border); flex:0 0 auto;}
+  @media (max-width:720px){
+    .tabs{flex-wrap:nowrap; overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; scrollbar-width:none;}
+    .tabs::-webkit-scrollbar{display:none;}
+    .tabs button{flex:0 0 auto; min-width:auto; white-space:nowrap; min-height:42px;}
+    .tab-sep{display:none;}
+  }
+  .tabsec{margin-top:16px;}
+
+  /* compact horizontal overview strip (always visible above the canvas) */
+  .strip{display:flex; align-items:center; gap:6px; background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:6px 10px; margin-bottom:10px; overflow-x:auto; -webkit-overflow-scrolling:touch;}
+  .scell{flex:1 1 0; min-width:110px;}
+  .scell .slabel{color:var(--accent); font-size:10px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:2px;}
+  .scell svg{width:100%; height:62px; display:block;}
+  .scell.condc{flex:0.9 1 0;}
+  .scell .conds{display:flex; flex-wrap:wrap; gap:4px;}
+  .scell .conds .chip{font-size:10.5px; color:var(--text); padding:2px 7px;}
+  .sarrow{flex:0 0 auto; color:var(--faint); font-size:17px;}
+
+  /* learn tab */
+  .lgrid{display:flex; flex-direction:column; gap:12px; margin-top:12px;}
+  .lcard{background:var(--surface-2); border:1px solid var(--border); border-radius:var(--r); padding:12px 14px;}
+  .lcard h3{margin:0 0 6px; font-size:15px;}
+  .lcard .pm{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;}
+  .lcard .strip{background:var(--surface-3); margin-bottom:8px;}
+  .lcard ol{margin:6px 0 10px; padding-left:20px; color:var(--dim); font-size:13px;}
+  .lcard ol li{margin:4px 0;}
+  .lcard .btn{font-size:13px; padding:7px 13px;}
+
+  .canvas-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:8px; position:relative;}
+  #stage{width:100%; height:auto; display:block; border-radius:10px; background:
+    radial-gradient(700px 320px at 50% 0%, rgba(45,212,191,0.05), transparent 70%), var(--surface-3);
+    touch-action:manipulation;}
+  .canvas-card.shake{animation:shake 0.4s;}
+  @keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+
+  /* SVG interaction styles */
+  .bond .bl{stroke:#C8D4E8; stroke-width:2; stroke-linecap:round;}
+  .bond .hit{stroke:transparent; stroke-width:18; stroke-linecap:round; cursor:pointer;}
+  .bond:hover .bl{stroke:var(--accent); filter:drop-shadow(0 0 4px rgba(45,212,191,0.7));}
+  .bond.sel .bl{stroke:var(--warn); filter:drop-shadow(0 0 5px rgba(251,191,36,0.8));}
+  .atom{cursor:pointer;}
+  .atom .ring{fill:transparent; stroke:transparent; stroke-width:1.5;}
+  .atom:hover .ring{fill:rgba(45,212,191,0.10); stroke:rgba(45,212,191,0.7);}
+  .atom.sel .ring{fill:rgba(251,191,36,0.10); stroke:var(--warn);}
+  .atom .vdot{fill:#7E8CA5;}
+  .atom:hover .vdot{fill:var(--accent);}
+  .atom.sel .vdot{fill:var(--warn);}
+  .atom text{font-family:var(--mono); font-weight:700; user-select:none;}
+  .lp{fill:#B9C6DC;}
+  .atom:hover .lp{fill:var(--accent);}
+  .atom.sel .lp{fill:var(--warn);}
+  .chg text{font-family:var(--mono);}
+  .arrow{cursor:pointer;}
+  .arrow .ap{stroke:var(--arrow); stroke-width:2.4; fill:none; stroke-linecap:round; filter:drop-shadow(0 0 3px rgba(251,191,36,0.45));}
+  .arrow .ah{fill:var(--arrow);}
+  .arrow .ahit{stroke:transparent; stroke-width:16; fill:none;}
+  .arrow:hover .ap{stroke:var(--bad);}
+  .arrow:hover .ah{fill:var(--bad);}
+  .arrow.hinted .ap{stroke-dasharray:5 5;}
+  .edot{fill:#FDE68A; filter:drop-shadow(0 0 5px rgba(251,191,36,0.9));}
+
+  .msg{min-height:24px; margin:10px 2px 2px; font-size:13.5px; color:var(--dim);}
+  .msg.ok{color:var(--good);}
+  .msg.bad{color:var(--bad);}
+  .msg.hint{color:var(--warn);}
+
+  .controls{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-top:10px;}
+  .btn{border:1px solid var(--border-strong); background:var(--surface-2); color:var(--text); border-radius:11px; padding:9px 16px; font-size:14px; font-weight:600; cursor:pointer; transition:transform 0.1s, border-color 0.15s;}
+  .btn:hover{border-color:var(--accent);}
+  .btn:active{transform:scale(0.97);}
+  .btn:disabled{opacity:0.4; cursor:default; transform:none;}
+  .btn.primary{background:linear-gradient(135deg, rgba(45,212,191,0.22), rgba(56,189,248,0.22)); border-color:rgba(45,212,191,0.55);}
+  .btn.primary:hover{border-color:var(--accent);}
+  .btn.ghost{background:transparent;}
+  .spacer{flex:1;}
+
+  /* completion overlay */
+  .done-ov{position:absolute; inset:0; border-radius:var(--r); background:rgba(11,15,23,0.82); backdrop-filter:blur(3px); display:none; align-items:center; justify-content:center; z-index:5;}
+  .done-ov.show{display:flex;}
+  .done-box{text-align:center; padding:26px 30px; background:var(--surface); border:1px solid rgba(52,211,153,0.45); border-radius:16px; max-width:88%;}
+  .done-box .big{font-size:34px;}
+  .done-box h2{margin:8px 0 4px; font-size:19px;}
+  .done-box p{color:var(--dim); font-size:13.5px; margin:0 0 16px;}
+  .done-box .row{display:flex; gap:8px; justify-content:center; flex-wrap:wrap;}
+
+  /* about */
+  .about{margin-top:26px;}
+  .about h2{font-size:16px; margin:18px 0 6px;}
+  .about p{color:var(--dim); font-size:13.5px; margin:6px 0;}
+  .about b{color:var(--text); font-weight:700;}
+  .legend{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:10px; margin-top:10px;}
+  .legend .lg{background:var(--surface-2); border:1px solid var(--border); border-radius:10px; padding:10px 12px; font-size:12.5px; color:var(--dim);}
+  .legend .lg b{color:var(--text); display:block; margin-bottom:3px; font-size:12.5px;}
+
+  /* footer + legal */
+  .ftr{margin-top:30px; padding-top:14px; border-top:1px solid var(--border); color:var(--faint); font-size:12px; line-height:1.7;}
+  .ftr a{color:var(--dim);}
+  .legalrow{margin-top:8px; display:flex; gap:12px; flex-wrap:wrap;}
+  .legalrow button{background:none; border:none; color:var(--dim); font-size:12px; cursor:pointer; padding:0; text-decoration:underline;}
+  .modal{position:fixed; inset:0; background:rgba(5,8,14,0.7); display:none; align-items:center; justify-content:center; z-index:50; padding:18px;}
+  .modal.show{display:flex;}
+  .modal .mbox{background:var(--surface); border:1px solid var(--border-strong); border-radius:var(--r); max-width:680px; max-height:80vh; overflow:auto; padding:22px;}
+  .modal .mbox h3{margin-top:0;}
+  .modal .mbox p{color:var(--dim); font-size:13px;}
+  .modal .mclose{float:right; background:none; border:1px solid var(--border); color:var(--dim); border-radius:8px; padding:4px 10px; cursor:pointer;}
+</style>
+</head>
+<body>
+  <div class="bgfx" aria-hidden="true">
+    <svg class="h1" viewBox="0 0 40 40"><polygon points="20,3 34,11.5 34,28.5 20,37 6,28.5 6,11.5" fill="none" stroke="#2DD4BF" stroke-width="1.2"/></svg>
+    <svg class="h2" viewBox="0 0 40 40"><polygon points="20,3 34,11.5 34,28.5 20,37 6,28.5 6,11.5" fill="none" stroke="#FBBF24" stroke-width="1.2"/></svg>
+    <svg class="h3" viewBox="0 0 40 40"><polygon points="20,3 34,11.5 34,28.5 20,37 6,28.5 6,11.5" fill="none" stroke="#38BDF8" stroke-width="1.2"/></svg>
+    <svg class="h4" viewBox="0 0 40 40"><polygon points="20,3 34,11.5 34,28.5 20,37 6,28.5 6,11.5" fill="none" stroke="#FB7185" stroke-width="1.2"/></svg>
+  </div>
+
+  <div class="app">
+    <header class="hdr">
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="20,4 33,12 33,28 20,36 7,28 7,12" stroke="#2DD4BF" stroke-width="1.6" fill="rgba(45,212,191,0.06)"/>
+          <path d="M11 26 Q20 8 29 22" stroke="#FBBF24" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+          <path d="M29 22 l-4.5 -0.6 M29 22 l-1.4 -4.2" stroke="#FBBF24" stroke-width="1.7" stroke-linecap="round"/>
+          <circle cx="11" cy="26" r="1.8" fill="#2DD4BF"/>
+        </svg>
+        <div>
+          <div class="brand-title">Meimay <b>·</b> <span id="tBrand">Curly Arrow Trainer</span></div>
+          <div class="brand-sub" id="tSub">Reaction mechanisms · electron pushing · step by step</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="acctbar">
+      <a class="apps-link" href="../" id="tApps">⊞ Choose an app</a>
+      <div class="acctbtns">
+        <button class="iconbtn" id="sfxBtn" aria-pressed="true">🔊 <span id="tSfx">Sound</span></button>
+        <div class="langswap-wrap">
+          <a class="langswap" href="./" aria-label="日本語に切り替え / Switch to Japanese"><span class="lt">JA</span><span class="lt on">EN</span></a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="tabs" id="tabs" role="tablist">
+      <button data-tab="about" id="tabAbout">About</button>
+      <button data-tab="guide" id="tabGuide">Guide</button>
+      <span class="tab-sep" aria-hidden="true"></span>
+      <button data-tab="learn" id="tabLearn">Learn</button>
+      <button data-tab="practice" id="tabPractice" class="active">Practice</button>
+    </nav>
+
+    <section class="tabsec" id="sec-practice">
+    <!-- HOME -->
+    <section id="home">
+      <div class="kicker" id="tHomeK">Problems</div>
+      <p class="home-lead" id="tHomeLead"></p>
+      <div class="pgrid" id="pgrid"></div>
+    </section>
+
+    <!-- GAME -->
+    <section id="game">
+      <div class="gtop">
+        <button class="backbtn" id="backBtn">← <span id="tBack">All problems</span></button>
+        <div class="gtitle" id="gTitle"></div>
+        <span class="chip" id="gDiff"></span>
+        <div class="stepdots" id="stepDots" aria-hidden="true"></div>
+        <span class="steplabel" id="stepLabel"></span>
+      </div>
+
+      <div class="strip">
+        <div class="scell">
+          <div class="slabel" id="tOvStart">Start</div>
+          <svg id="ovStart" aria-hidden="true"></svg>
+        </div>
+        <div class="sarrow" aria-hidden="true">→</div>
+        <div class="scell condc">
+          <div class="slabel" id="tOvCond">Conditions</div>
+          <div class="conds" id="ovCond"></div>
+        </div>
+        <div class="sarrow" aria-hidden="true">→</div>
+        <div class="scell">
+          <div class="slabel" id="tOvGoal">Goal</div>
+          <svg id="ovGoal" aria-hidden="true"></svg>
+        </div>
+      </div>
+
+      <div class="canvas-card" id="canvasCard">
+        <svg id="stage" viewBox="0 0 900 360" role="img" aria-label="Current structure"></svg>
+        <div class="done-ov" id="doneOv">
+          <div class="done-box">
+            <div class="big">🎉</div>
+            <h2 id="tDoneT">Mechanism complete!</h2>
+            <p id="tDoneP">You pushed every electron pair to the right place.</p>
+            <div class="row">
+              <button class="btn" id="doneHome"></button>
+              <button class="btn primary" id="doneNext"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="msg" id="msg" role="status" aria-live="polite"></div>
+
+      <div class="controls">
+        <button class="btn ghost" id="hintBtn"></button>
+        <button class="btn ghost" id="clearBtn"></button>
+        <div class="spacer"></div>
+        <button class="btn" id="undoBtn"></button>
+        <button class="btn primary" id="nextBtn"></button>
+      </div>
+    </section>
+
+    <!-- ABOUT / GUIDE / LEARN (tab sections) -->
+    </section><!-- /sec-practice -->
+
+    <section class="tabsec card" id="sec-learn" style="display:none"></section>
+    <section class="tabsec about card" id="sec-guide" style="display:none"></section>
+    <section class="tabsec about card" id="aboutBox" style="display:none"></section>
+
+    <footer class="ftr">
+      <span id="tFtr"></span>
+      <div class="legalrow">
+        <button id="privacyLink"></button>
+        <button id="disclaimerLink"></button>
+        <span style="margin-left:auto">© Meimay</span>
+      </div>
+    </footer>
+  </div>
+
+  <div class="modal" id="legalModal" role="dialog" aria-modal="true">
+    <div class="mbox">
+      <button class="mclose" id="mclose">✕</button>
+      <h3 id="mtitle"></h3>
+      <div id="mbody"></div>
+    </div>
+  </div>
+
+<script>
+"use strict";
+const LANG='en';
+
+/* ============================== DATA ============================== */
+/*__ENGINE_START__*/
+/*
+  Atom : {i,el,x,y, hs?:explicit-H-in-label, ch?:formal charge, lp?:lone pairs, lbl?:label override}
+  Bond : {i,a,b,o}
+  Arrow string : "src>dst"  src = "lp:atomId" | "bond:bondId"
+                            dst = "atom:atomId" | "bond:bondId"
+  Problem : { id, tag, diff, title:{en,ja}, cond:[{en,ja}],
+              states:[State...], steps:[{ans:[[arrow...] ...], note:{en,ja}}] }
+  steps[i] transforms states[i] -> states[i+1].
+*/
+const PROBLEMS=[
+{
+  id:'acidbase', tag:'Acid–base', diff:1,
+  title:{en:'Proton transfer: NH3 + H3O+', ja:'プロトン移動：NH3 + H3O+'},
+  cond:[{en:'aqueous solution', ja:'水溶液中'},{en:'NH3 acts as the base', ja:'NH3が塩基として働く'}],
+  states:[
+    {atoms:[
+      {i:'n1',el:'N',x:310,y:180,hs:3,lp:1},
+      {i:'h1',el:'H',x:520,y:180},
+      {i:'o1',el:'O',x:640,y:180,hs:2,ch:1,lp:1}
+    ],bonds:[{i:'b1',a:'h1',b:'o1',o:1}]},
+    {atoms:[
+      {i:'n1',el:'N',x:340,y:180,hs:4,ch:1},
+      {i:'o1',el:'O',x:620,y:180,hs:2,lp:2}
+    ],bonds:[]}
+  ],
+  steps:[
+    {ans:[['lp:n1>atom:h1','bond:b1>atom:o1']],
+     note:{en:'The nitrogen lone pair takes the proton, and the O–H bonding pair collapses back onto oxygen.',
+           ja:'窒素の非共有電子対がプロトンを受け取り，O–H結合の電子対は酸素上に戻る。'}}
+  ]
+},
+{
+  id:'sn2', tag:'SN2', diff:1,
+  title:{en:'SN2: HO− + CH3Br', ja:'SN2：HO− + CH3Br'},
+  cond:[{en:'HO− (strong nucleophile)', ja:'HO−(強い求核剤)'},{en:'one concerted step', ja:'協奏的な1段階'}],
+  states:[
+    {atoms:[
+      {i:'oh',el:'O',x:280,y:180,hs:1,ch:-1,lp:3},
+      {i:'c1',el:'C',x:500,y:180,hs:3},
+      {i:'br',el:'Br',x:670,y:180,lp:3}
+    ],bonds:[{i:'b1',a:'c1',b:'br',o:1}]},
+    {atoms:[
+      {i:'c1',el:'C',x:430,y:180,hs:3},
+      {i:'oh',el:'O',x:560,y:180,hs:1,lp:2},
+      {i:'br',el:'Br',x:730,y:180,ch:-1,lp:4}
+    ],bonds:[{i:'b2',a:'c1',b:'oh',o:1}]}
+  ],
+  steps:[
+    {ans:[['lp:oh>atom:c1','bond:b1>atom:br']],
+     note:{en:'Backside attack: the nucleophile bonds to carbon while the C–Br pair leaves on bromine.',
+           ja:'背面攻撃：求核剤が炭素に結合すると同時に，C–Br結合の電子対は臭素上へ抜ける。'}}
+  ]
+},
+{
+  id:'e2', tag:'E2', diff:2,
+  title:{en:'E2: CH3O− + CH3CH2Br', ja:'E2：CH3O− + CH3CH2Br'},
+  cond:[{en:'CH3O− (strong base)', ja:'CH3O−(強塩基)'},{en:'anti-periplanar, concerted', ja:'アンチペリプラナー・協奏的'}],
+  states:[
+    {atoms:[
+      {i:'cm',el:'C',x:170,y:140,hs:3},
+      {i:'om',el:'O',x:255,y:185,ch:-1,lp:3},
+      {i:'h1',el:'H',x:420,y:245},
+      {i:'cb',el:'C',x:490,y:200},
+      {i:'ca',el:'C',x:570,y:245},
+      {i:'br',el:'Br',x:645,y:165,lp:3}
+    ],bonds:[
+      {i:'bo',a:'cm',b:'om',o:1},
+      {i:'bh',a:'h1',b:'cb',o:1},
+      {i:'bcc',a:'cb',b:'ca',o:1},
+      {i:'bbr',a:'ca',b:'br',o:1}
+    ]},
+    {atoms:[
+      {i:'cm',el:'C',x:170,y:140,hs:3},
+      {i:'om',el:'O',x:255,y:185,hs:1,lp:2},
+      {i:'cb',el:'C',x:470,y:200},
+      {i:'ca',el:'C',x:555,y:200},
+      {i:'br',el:'Br',x:700,y:180,ch:-1,lp:4}
+    ],bonds:[
+      {i:'bo',a:'cm',b:'om',o:1},
+      {i:'bcc',a:'cb',b:'ca',o:2}
+    ]}
+  ],
+  steps:[
+    {ans:[['lp:om>atom:h1','bond:bh>bond:bcc','bond:bbr>atom:br']],
+     note:{en:'Three arrows fire at once: base takes the β-H, the C–H pair becomes the π bond, and Br− leaves.',
+           ja:'3本の矢印が同時に動く：塩基がβ水素を引き抜き，C–H結合の電子対がπ結合になり，Br−が脱離する。'}}
+  ]
+},
+{
+  id:'markov', tag:'Addition', diff:2,
+  title:{en:'HBr + propene (Markovnikov)', ja:'HBr + プロペン(マルコフニコフ付加)'},
+  cond:[{en:'HBr, no peroxides', ja:'HBr・過酸化物なし'},{en:'via the more stable carbocation', ja:'より安定なカルボカチオン経由'}],
+  states:[
+    {atoms:[
+      {i:'c1',el:'C',x:270,y:220},
+      {i:'c2',el:'C',x:350,y:175},
+      {i:'c3',el:'C',x:430,y:220},
+      {i:'h1',el:'H',x:560,y:175},
+      {i:'br',el:'Br',x:650,y:130,lp:3}
+    ],bonds:[
+      {i:'b12',a:'c1',b:'c2',o:2},
+      {i:'b23',a:'c2',b:'c3',o:1},
+      {i:'bhb',a:'h1',b:'br',o:1}
+    ]},
+    {atoms:[
+      {i:'c1',el:'C',x:270,y:220},
+      {i:'c2',el:'C',x:350,y:175,ch:1},
+      {i:'c3',el:'C',x:430,y:220},
+      {i:'br',el:'Br',x:640,y:175,ch:-1,lp:4}
+    ],bonds:[
+      {i:'b12',a:'c1',b:'c2',o:1},
+      {i:'b23',a:'c2',b:'c3',o:1}
+    ]},
+    {atoms:[
+      {i:'c1',el:'C',x:290,y:220},
+      {i:'c2',el:'C',x:370,y:175},
+      {i:'c3',el:'C',x:450,y:220},
+      {i:'br',el:'Br',x:430,y:105,lp:3}
+    ],bonds:[
+      {i:'b12',a:'c1',b:'c2',o:1},
+      {i:'b23',a:'c2',b:'c3',o:1},
+      {i:'b2b',a:'c2',b:'br',o:1}
+    ]}
+  ],
+  steps:[
+    {ans:[['bond:b12>atom:h1','bond:bhb>atom:br']],
+     note:{en:'The π bond grabs the proton so that the positive charge lands on the more substituted carbon (C2).',
+           ja:'π結合がプロトンを攻撃し，正電荷がより置換の多い炭素(C2)に生じる(マルコフニコフ則)。'}},
+    {ans:[['lp:br>atom:c2']],
+     note:{en:'Bromide donates a lone pair to the secondary carbocation.',
+           ja:'臭化物イオンの非共有電子対が第二級カルボカチオンに結合する。'}}
+  ]
+},
+{
+  id:'sn1', tag:'SN1', diff:3,
+  title:{en:'SN1 solvolysis of (CH3)3CBr', ja:'SN1：(CH3)3CBrの加溶媒分解'},
+  cond:[{en:'H2O (weak nucleophile)', ja:'H2O(弱い求核剤)'},{en:'heat, stepwise via carbocation', ja:'加熱・カルボカチオン経由の逐次反応'}],
+  states:[
+    {atoms:[
+      {i:'m1',el:'C',x:330,y:130},
+      {i:'m2',el:'C',x:330,y:230},
+      {i:'m3',el:'C',x:455,y:255},
+      {i:'cc',el:'C',x:410,y:180},
+      {i:'br',el:'Br',x:500,y:120,lp:3},
+      {i:'w1',el:'O',x:700,y:140,hs:2,lp:2},
+      {i:'w2',el:'O',x:700,y:255,hs:2,lp:2}
+    ],bonds:[
+      {i:'bm1',a:'cc',b:'m1',o:1},
+      {i:'bm2',a:'cc',b:'m2',o:1},
+      {i:'bm3',a:'cc',b:'m3',o:1},
+      {i:'bbr',a:'cc',b:'br',o:1}
+    ]},
+    {atoms:[
+      {i:'m1',el:'C',x:330,y:130},
+      {i:'m2',el:'C',x:330,y:230},
+      {i:'m3',el:'C',x:475,y:225},
+      {i:'cc',el:'C',x:410,y:180,ch:1},
+      {i:'br',el:'Br',x:555,y:110,ch:-1,lp:4},
+      {i:'w1',el:'O',x:700,y:140,hs:2,lp:2},
+      {i:'w2',el:'O',x:700,y:255,hs:2,lp:2}
+    ],bonds:[
+      {i:'bm1',a:'cc',b:'m1',o:1},
+      {i:'bm2',a:'cc',b:'m2',o:1},
+      {i:'bm3',a:'cc',b:'m3',o:1}
+    ]},
+    {atoms:[
+      {i:'m1',el:'C',x:300,y:130},
+      {i:'m2',el:'C',x:300,y:230},
+      {i:'m3',el:'C',x:445,y:225},
+      {i:'cc',el:'C',x:380,y:180},
+      {i:'w1',el:'O',x:490,y:135,hs:1,ch:1,lp:1},
+      {i:'hw',el:'H',x:575,y:100},
+      {i:'br',el:'Br',x:640,y:200,ch:-1,lp:4},
+      {i:'w2',el:'O',x:750,y:255,hs:2,lp:2}
+    ],bonds:[
+      {i:'bm1',a:'cc',b:'m1',o:1},
+      {i:'bm2',a:'cc',b:'m2',o:1},
+      {i:'bm3',a:'cc',b:'m3',o:1},
+      {i:'bcw',a:'cc',b:'w1',o:1},
+      {i:'bwh',a:'w1',b:'hw',o:1}
+    ]},
+    {atoms:[
+      {i:'m1',el:'C',x:300,y:130},
+      {i:'m2',el:'C',x:300,y:230},
+      {i:'m3',el:'C',x:445,y:225},
+      {i:'cc',el:'C',x:380,y:180},
+      {i:'w1',el:'O',x:490,y:135,hs:1,lp:2},
+      {i:'br',el:'Br',x:620,y:230,ch:-1,lp:4},
+      {i:'w2',el:'O',x:720,y:135,lbl:'H3O',ch:1,lp:1}
+    ],bonds:[
+      {i:'bm1',a:'cc',b:'m1',o:1},
+      {i:'bm2',a:'cc',b:'m2',o:1},
+      {i:'bm3',a:'cc',b:'m3',o:1},
+      {i:'bcw',a:'cc',b:'w1',o:1}
+    ]}
+  ],
+  steps:[
+    {ans:[['bond:bbr>atom:br']],
+     note:{en:'Rate-determining ionization: the C–Br pair leaves on bromine, giving a tertiary carbocation.',
+           ja:'律速段階のイオン化：C–Br結合の電子対が臭素上へ抜け，第三級カルボカチオンが生じる。'}},
+    {ans:[['lp:w1>atom:cc']],
+     note:{en:'Water attacks the empty p orbital of the carbocation, forming an oxocarbenium-type intermediate.',
+           ja:'水の非共有電子対がカルボカチオンの空軌道を攻撃し，酸素上に正電荷をもつ中間体になる。'}},
+    {ans:[['lp:w2>atom:hw','bond:bwh>atom:w1']],
+     note:{en:'A second water deprotonates the oxonium to give the neutral alcohol.',
+           ja:'2分子目の水がオキソニウムからプロトンを引き抜き，中性のアルコールが得られる。'}}
+  ]
+},
+{
+  id:'cyanohydrin', tag:'Carbonyl', diff:3,
+  title:{en:'Cyanohydrin: CN− + acetone', ja:'シアノヒドリン生成：CN− + アセトン'},
+  cond:[{en:'NaCN then aqueous workup', ja:'NaCN・その後水系処理'},{en:'nucleophilic addition to C=O', ja:'C=Oへの求核付加'}],
+  states:[
+    {atoms:[
+      {i:'ma',el:'C',x:230,y:235},
+      {i:'cc',el:'C',x:305,y:190},
+      {i:'mb',el:'C',x:380,y:235},
+      {i:'oc',el:'O',x:305,y:105,lp:2},
+      {i:'cn',el:'C',x:520,y:215,ch:-1,lp:1},
+      {i:'nn',el:'N',x:600,y:170,lp:1},
+      {i:'ow',el:'O',x:740,y:120,hs:1,lp:2},
+      {i:'hw',el:'H',x:800,y:180}
+    ],bonds:[
+      {i:'ba',a:'ma',b:'cc',o:1},
+      {i:'bb',a:'cc',b:'mb',o:1},
+      {i:'bco',a:'cc',b:'oc',o:2},
+      {i:'bcn',a:'cn',b:'nn',o:3},
+      {i:'bwh',a:'ow',b:'hw',o:1}
+    ]},
+    {atoms:[
+      {i:'ma',el:'C',x:230,y:235},
+      {i:'cc',el:'C',x:305,y:190},
+      {i:'mb',el:'C',x:380,y:235},
+      {i:'oc',el:'O',x:305,y:105,ch:-1,lp:3},
+      {i:'cn',el:'C',x:460,y:160},
+      {i:'nn',el:'N',x:540,y:115,lp:1},
+      {i:'ow',el:'O',x:740,y:120,hs:1,lp:2},
+      {i:'hw',el:'H',x:800,y:180}
+    ],bonds:[
+      {i:'ba',a:'ma',b:'cc',o:1},
+      {i:'bb',a:'cc',b:'mb',o:1},
+      {i:'bco',a:'cc',b:'oc',o:1},
+      {i:'bnew',a:'cc',b:'cn',o:1},
+      {i:'bcn',a:'cn',b:'nn',o:3},
+      {i:'bwh',a:'ow',b:'hw',o:1}
+    ]},
+    {atoms:[
+      {i:'ma',el:'C',x:230,y:235},
+      {i:'cc',el:'C',x:305,y:190},
+      {i:'mb',el:'C',x:380,y:235},
+      {i:'oc',el:'O',x:305,y:105,hs:1,lp:2},
+      {i:'cn',el:'C',x:460,y:160},
+      {i:'nn',el:'N',x:540,y:115,lp:1},
+      {i:'ow',el:'O',x:760,y:150,hs:1,ch:-1,lp:3}
+    ],bonds:[
+      {i:'ba',a:'ma',b:'cc',o:1},
+      {i:'bb',a:'cc',b:'mb',o:1},
+      {i:'bco',a:'cc',b:'oc',o:1},
+      {i:'bnew',a:'cc',b:'cn',o:1},
+      {i:'bcn',a:'cn',b:'nn',o:3}
+    ]}
+  ],
+  steps:[
+    {ans:[['lp:cn>atom:cc','bond:bco>atom:oc']],
+     note:{en:'Cyanide attacks the carbonyl carbon; the π pair moves onto oxygen to give an alkoxide.',
+           ja:'シアン化物イオンがカルボニル炭素を攻撃し，π電子対は酸素上へ移ってアルコキシドになる。'}},
+    {ans:[['lp:oc>atom:hw','bond:bwh>atom:ow']],
+     note:{en:'The alkoxide is protonated by water, giving the cyanohydrin and hydroxide.',
+           ja:'アルコキシドが水からプロトンを受け取り，シアノヒドリンと水酸化物イオンが生じる。'}}
+  ]
+},
+{
+  id:'enolate', tag:'Enolate', diff:3,
+  title:{en:'Enolization of acetone (base)', ja:'アセトンのエノール化(塩基性条件)'},
+  cond:[{en:'HO− removes the α-hydrogen', ja:'HO−がα水素を引き抜く'},{en:'via the enolate ion', ja:'エノラートイオン経由'}],
+  states:[
+    {atoms:[
+      {i:'ha',el:'H',x:190,y:280},
+      {i:'ma',el:'C',x:260,y:235},
+      {i:'cc',el:'C',x:335,y:190},
+      {i:'mb',el:'C',x:410,y:235},
+      {i:'oc',el:'O',x:335,y:105,lp:2},
+      {i:'oh',el:'O',x:610,y:190,hs:1,ch:-1,lp:3}
+    ],bonds:[
+      {i:'bah',a:'ha',b:'ma',o:1},
+      {i:'bam',a:'ma',b:'cc',o:1},
+      {i:'bb',a:'cc',b:'mb',o:1},
+      {i:'bco',a:'cc',b:'oc',o:2}
+    ]},
+    {atoms:[
+      {i:'ma',el:'C',x:260,y:235},
+      {i:'cc',el:'C',x:335,y:190},
+      {i:'mb',el:'C',x:410,y:235},
+      {i:'oc',el:'O',x:335,y:105,ch:-1,lp:3},
+      {i:'ow',el:'O',x:610,y:190,hs:1,lp:2},
+      {i:'hw',el:'H',x:685,y:145}
+    ],bonds:[
+      {i:'bam',a:'ma',b:'cc',o:2},
+      {i:'bb',a:'cc',b:'mb',o:1},
+      {i:'bco',a:'cc',b:'oc',o:1},
+      {i:'bwh',a:'ow',b:'hw',o:1}
+    ]},
+    {atoms:[
+      {i:'ma',el:'C',x:260,y:235},
+      {i:'cc',el:'C',x:335,y:190},
+      {i:'mb',el:'C',x:410,y:235},
+      {i:'oc',el:'O',x:335,y:105,hs:1,lp:2},
+      {i:'ow',el:'O',x:640,y:190,hs:1,ch:-1,lp:3}
+    ],bonds:[
+      {i:'bam',a:'ma',b:'cc',o:2},
+      {i:'bb',a:'cc',b:'mb',o:1},
+      {i:'bco',a:'cc',b:'oc',o:1}
+    ]}
+  ],
+  steps:[
+    {ans:[['lp:oh>atom:ha','bond:bah>bond:bam','bond:bco>atom:oc']],
+     note:{en:'Hydroxide removes the α-H; the C–H pair becomes a π bond and the carbonyl π pair moves onto oxygen: the enolate.',
+           ja:'水酸化物イオンがα水素を引き抜き，C–H結合の電子対がπ結合に，C=Oのπ電子対が酸素上に移る：エノラートの生成。'}},
+    {ans:[['lp:oc>atom:hw','bond:bwh>atom:ow']],
+     note:{en:'Protonation on oxygen gives the enol tautomer (protonation on carbon would return the ketone).',
+           ja:'酸素上でプロトン化されるとエノール形になる(炭素上なら元のケトンに戻る)。'}}
+  ]
+},
+{
+  id:'saponif', tag:'Ester', diff:3,
+  title:{en:'Saponification of methyl acetate', ja:'酢酸メチルのけん化'},
+  cond:[{en:'NaOH (aq), heat', ja:'NaOH水溶液・加熱'},{en:'addition–elimination via tetrahedral intermediate', ja:'四面体中間体を経る付加–脱離'}],
+  states:[
+    {atoms:[
+      {i:'ma',el:'C',x:210,y:235},
+      {i:'cc',el:'C',x:285,y:190},
+      {i:'o1',el:'O',x:285,y:105,lp:2},
+      {i:'o2',el:'O',x:360,y:235,lp:2},
+      {i:'cm',el:'C',x:440,y:190,hs:3},
+      {i:'oh',el:'O',x:620,y:145,hs:1,ch:-1,lp:3}
+    ],bonds:[
+      {i:'ba',a:'ma',b:'cc',o:1},
+      {i:'bpi',a:'cc',b:'o1',o:2},
+      {i:'bco2',a:'cc',b:'o2',o:1},
+      {i:'bom',a:'o2',b:'cm',o:1}
+    ]},
+    {atoms:[
+      {i:'ma',el:'C',x:230,y:240},
+      {i:'cc',el:'C',x:305,y:195},
+      {i:'o1',el:'O',x:305,y:110,ch:-1,lp:3},
+      {i:'o2',el:'O',x:380,y:240,lp:2},
+      {i:'cm',el:'C',x:460,y:195,hs:3},
+      {i:'oh',el:'O',x:390,y:140,hs:1,lp:2}
+    ],bonds:[
+      {i:'ba',a:'ma',b:'cc',o:1},
+      {i:'bpi',a:'cc',b:'o1',o:1},
+      {i:'bco2',a:'cc',b:'o2',o:1},
+      {i:'bom',a:'o2',b:'cm',o:1},
+      {i:'bch',a:'cc',b:'oh',o:1}
+    ]},
+    {atoms:[
+      {i:'ma',el:'C',x:230,y:240},
+      {i:'cc',el:'C',x:305,y:195},
+      {i:'o1',el:'O',x:305,y:110,lp:2},
+      {i:'oa',el:'O',x:385,y:240,lp:2},
+      {i:'ha',el:'H',x:460,y:280},
+      {i:'om',el:'O',x:640,y:195,ch:-1,lp:3},
+      {i:'cm',el:'C',x:720,y:150,hs:3}
+    ],bonds:[
+      {i:'ba',a:'ma',b:'cc',o:1},
+      {i:'bpi',a:'cc',b:'o1',o:2},
+      {i:'bca',a:'cc',b:'oa',o:1},
+      {i:'boh',a:'oa',b:'ha',o:1},
+      {i:'bom',a:'om',b:'cm',o:1}
+    ]},
+    {atoms:[
+      {i:'ma',el:'C',x:230,y:240},
+      {i:'cc',el:'C',x:305,y:195},
+      {i:'o1',el:'O',x:305,y:110,lp:2},
+      {i:'oa',el:'O',x:385,y:240,ch:-1,lp:3},
+      {i:'om',el:'O',x:640,y:195,hs:1,lp:2},
+      {i:'cm',el:'C',x:720,y:150,hs:3}
+    ],bonds:[
+      {i:'ba',a:'ma',b:'cc',o:1},
+      {i:'bpi',a:'cc',b:'o1',o:2},
+      {i:'bca',a:'cc',b:'oa',o:1},
+      {i:'bom',a:'om',b:'cm',o:1}
+    ]}
+  ],
+  steps:[
+    {ans:[['lp:oh>atom:cc','bond:bpi>atom:o1']],
+     note:{en:'Hydroxide adds to the carbonyl carbon; the π pair moves onto oxygen: the tetrahedral intermediate.',
+           ja:'水酸化物イオンがカルボニル炭素に付加し，π電子対は酸素上へ：四面体中間体の生成。'}},
+    {ans:[['lp:o1>bond:bpi','bond:bco2>atom:o2']],
+     note:{en:'The alkoxide pair re-forms the C=O while methoxide is expelled.',
+           ja:'アルコキシドの電子対がC=Oを再生し，同時にメトキシドが脱離する。'}},
+    {ans:[['lp:om>atom:ha','bond:boh>atom:oa']],
+     note:{en:'Fast, irreversible proton transfer: methoxide deprotonates the acid, giving acetate and methanol.',
+           ja:'速く不可逆なプロトン移動：メトキシドがカルボン酸を脱プロトン化し，酢酸イオンとメタノールになる。'}}
+  ]
+}
+];
+
+/* ---- shared helpers (pure) ---- */
+function parseArrow(s){
+  const gt=s.indexOf('>');
+  const src=s.slice(0,gt), dst=s.slice(gt+1);
+  const [st,si]=src.split(':'), [dt,di]=dst.split(':');
+  return {sk:src, dk:dst, st, si, dt, di};
+}
+function stateCharge(st){ return st.atoms.reduce((s,a)=>s+(a.ch||0),0); }
+function findAtom(st,id){ return st.atoms.find(a=>a.i===id); }
+function findBond(st,id){ return st.bonds.find(b=>b.i===id); }
+
+function validateData(){
+  const errs=[];
+  const ok=(c,m)=>{ if(!c) errs.push(m); };
+  ok(PROBLEMS.length>0,'no problems');
+  const ids=new Set();
+  for(const p of PROBLEMS){
+    ok(!ids.has(p.id),`dup problem id ${p.id}`); ids.add(p.id);
+    ok(p.states.length>=2,`${p.id}: needs >=2 states`);
+    ok(p.steps.length===p.states.length-1,`${p.id}: steps(${p.steps.length}) != states-1(${p.states.length-1})`);
+    ok(p.title&&p.title.en&&p.title.ja,`${p.id}: title i18n missing`);
+    for(const c of p.cond) ok(c.en&&c.ja,`${p.id}: cond i18n missing`);
+    const q0=stateCharge(p.states[0]);
+    p.states.forEach((st,k)=>{
+      const aset=new Set(), bset=new Set();
+      for(const a of st.atoms){ ok(!aset.has(a.i),`${p.id} s${k}: dup atom ${a.i}`); aset.add(a.i);
+        ok(Number.isFinite(a.x)&&Number.isFinite(a.y),`${p.id} s${k}: atom ${a.i} bad coords`); }
+      for(const b of st.bonds){ ok(!bset.has(b.i),`${p.id} s${k}: dup bond ${b.i}`); bset.add(b.i);
+        ok(aset.has(b.a)&&aset.has(b.b),`${p.id} s${k}: bond ${b.i} refs missing atom`);
+        ok(b.o>=1&&b.o<=3,`${p.id} s${k}: bond ${b.i} bad order`); }
+      ok(stateCharge(st)===q0,`${p.id} s${k}: charge ${stateCharge(st)} != ${q0} (not conserved)`);
+    });
+    p.steps.forEach((sp,k)=>{
+      ok(sp.note&&sp.note.en&&sp.note.ja,`${p.id} step${k}: note i18n missing`);
+      ok(Array.isArray(sp.ans)&&sp.ans.length>=1,`${p.id} step${k}: no answers`);
+      const st=p.states[k];
+      for(const ansSet of sp.ans){
+        ok(ansSet.length>=1,`${p.id} step${k}: empty answer set`);
+        const seen=new Set();
+        for(const s of ansSet){
+          ok(!seen.has(s),`${p.id} step${k}: dup arrow ${s}`); seen.add(s);
+          const a=parseArrow(s);
+          ok(a.st==='lp'||a.st==='bond',`${p.id} step${k}: bad src ${s}`);
+          ok(a.dt==='atom'||a.dt==='bond',`${p.id} step${k}: bad dst ${s}`);
+          if(a.st==='lp'){ const at=findAtom(st,a.si); ok(!!at,`${p.id} step${k}: src atom ${a.si} missing`);
+            if(at) ok((at.lp||0)>0,`${p.id} step${k}: src atom ${a.si} has no lone pair`); }
+          if(a.st==='bond') ok(!!findBond(st,a.si),`${p.id} step${k}: src bond ${a.si} missing`);
+          if(a.dt==='atom') ok(!!findAtom(st,a.di),`${p.id} step${k}: dst atom ${a.di} missing`);
+          if(a.dt==='bond') ok(!!findBond(st,a.di),`${p.id} step${k}: dst bond ${a.di} missing`);
+        }
+      }
+    });
+  }
+  return errs;
+}
+/* ---- 2D geometry optimiser (pure, deterministic) ----
+   Regularises each hand-authored state into clean skeletal geometry:
+   ideal bond lengths, evenly spaced bond angles (120°; 90° at quaternary
+   centres; 180° at sp centres), non-bonded repulsion — then rigidly
+   re-aligns every connected component onto its authored position
+   (2D Procrustes, rotation+translation only, no reflection) so the
+   authored scene composition and orientation are preserved. */
+function optimizeState(st){
+  const L0=78, HF=0.7, MIN=52, IT=400;
+  const atoms=st.atoms, bonds=st.bonds, n=atoms.length;
+  if(n<2) return st;
+  const idx={}; atoms.forEach((a,k)=>{ idx[a.i]=k; });
+  const P=atoms.map(a=>[a.x,a.y]);
+  const orig=atoms.map(a=>[a.x,a.y]);
+  const nbr=atoms.map(()=>[]);
+  for(const b of bonds){ const i=idx[b.a], j=idx[b.b]; nbr[i].push(j); nbr[j].push(i); }
+  const isH=atoms.map(a=>a.el==='H');
+  const sp=atoms.map(()=>false);
+  for(const b of bonds) if(b.o===3){ sp[idx[b.a]]=sp[idx[b.b]]=true; }
+  /* connected components */
+  const cid=new Array(n).fill(-1); let nc=0;
+  for(let s=0;s<n;s++){ if(cid[s]!==-1) continue; const q=[s]; cid[s]=nc;
+    while(q.length){ const v=q.pop(); for(const w of nbr[v]) if(cid[w]===-1){ cid[w]=nc; q.push(w); } } nc++; }
+  const bondSet=new Set();
+  for(const b of bonds){ const i=idx[b.a], j=idx[b.b]; bondSet.add(i*4096+j); bondSet.add(j*4096+i); }
+  const rot=(k,c,phi)=>{ const dx=P[k][0]-P[c][0], dy=P[k][1]-P[c][1];
+    const co=Math.cos(phi), si=Math.sin(phi);
+    P[k][0]=P[c][0]+dx*co-dy*si; P[k][1]=P[c][1]+dx*si+dy*co; };
+  for(let it=0; it<IT; it++){
+    /* bond-length springs */
+    for(const b of bonds){ const i=idx[b.a], j=idx[b.b];
+      const L=L0*((isH[i]||isH[j])?HF:1);
+      const dx=P[j][0]-P[i][0], dy=P[j][1]-P[i][1], d=Math.hypot(dx,dy)||1e-6;
+      const f=0.25*(d-L)/d;
+      P[i][0]+=f*dx; P[i][1]+=f*dy; P[j][0]-=f*dx; P[j][1]-=f*dy; }
+    /* bond-angle spacing around each centre (order-preserving) */
+    for(let c=0;c<n;c++){
+      const ns=nbr[c], m=ns.length; if(m<2) continue;
+      const ang=ns.map(j=>Math.atan2(P[j][1]-P[c][1],P[j][0]-P[c][0]));
+      const ord=ns.map((_,k)=>k).sort((a,b)=>ang[a]-ang[b]);
+      if(m===2){
+        const u=ord[0], v=ord[1];
+        let g=ang[v]-ang[u]; if(g<0) g+=2*Math.PI;
+        const small=2*Math.PI/3;
+        const t=sp[c]?Math.PI:(g<=Math.PI? small : 2*Math.PI-small);
+        const e=(g-t)*0.08;
+        rot(ns[u],c,e/2); rot(ns[v],c,-e/2);
+        continue;
+      }
+      const target=2*Math.PI/m;
+      for(let k=0;k<m;k++){
+        const u=ord[k], v=ord[(k+1)%m];
+        let gap=ang[v]-ang[u]; if(k===m-1) gap+=2*Math.PI;
+        const e=(gap-target)*0.08;
+        rot(ns[u],c,e/2); rot(ns[v],c,-e/2);
+      }
+    }
+    /* non-bonded repulsion */
+    for(let i=0;i<n;i++) for(let j=i+1;j<n;j++){
+      if(bondSet.has(i*4096+j)) continue;
+      const dx=P[j][0]-P[i][0], dy=P[j][1]-P[i][1], d=Math.hypot(dx,dy)||1e-6;
+      if(d<MIN){ const f=0.3*(MIN-d)/d;
+        P[i][0]-=f*dx; P[i][1]-=f*dy; P[j][0]+=f*dx; P[j][1]+=f*dy; }
+    }
+  }
+  /* rigid re-alignment per component onto authored coords (2D Procrustes) */
+  for(let c=0;c<nc;c++){
+    const ids=[]; for(let k=0;k<n;k++) if(cid[k]===c) ids.push(k);
+    let qx=0,qy=0,px=0,py=0;
+    for(const k of ids){ qx+=P[k][0]; qy+=P[k][1]; px+=orig[k][0]; py+=orig[k][1]; }
+    qx/=ids.length; qy/=ids.length; px/=ids.length; py/=ids.length;
+    let sN=0,sD=0;
+    for(const k of ids){ const ax=P[k][0]-qx, ay=P[k][1]-qy, bx=orig[k][0]-px, by=orig[k][1]-py;
+      sN+=ax*by-ay*bx; sD+=ax*bx+ay*by; }
+    const phi=(sN===0&&sD===0)?0:Math.atan2(sN,sD);
+    const co=Math.cos(phi), si=Math.sin(phi);
+    for(const k of ids){ const ax=P[k][0]-qx, ay=P[k][1]-qy;
+      P[k][0]=px+ax*co-ay*si; P[k][1]=py+ax*si+ay*co; }
+  }
+  /* keep the whole scene inside the 900x360 canvas */
+  let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
+  for(const p of P){ x0=Math.min(x0,p[0]); y0=Math.min(y0,p[1]); x1=Math.max(x1,p[0]); y1=Math.max(y1,p[1]); }
+  let ddx=0, ddy=0;
+  if(x0<46) ddx=46-x0; else if(x1>854) ddx=854-x1;
+  if(y0<44) ddy=44-y0; else if(y1>316) ddy=316-y1;
+  atoms.forEach((a,k)=>{ a.x=Math.round(P[k][0]+ddx); a.y=Math.round(P[k][1]+ddy); });
+  return st;
+}
+/*__ENGINE_END__*/
+
+/* ============================== I18N ============================== */
+const I18N={
+en:{
+  sub:'Reaction mechanisms · electron pushing · step by step',
+  apps:'⊞ Choose an app', sfx:'Sound',
+  homeK:'Problems',
+  homeLead:'Push electrons like a chemist. Click a bond or a lone-pair atom to start a curly arrow, click its destination to finish it, then press Advance to let the structure react step by step until you reach the goal.',
+  back:'All problems',
+  ovStart:'Start', ovCond:'Conditions', ovGoal:'Goal',
+  step:'Step', of:'of',
+  hint:'💡 Hint', clear:'Clear arrows', undo:'← Back one step', next:'Advance →',
+  diff:['Basics','Standard','Advanced'],
+  pickSource:'Pick the start of the arrow: a bond, or an atom with a lone pair.',
+  pickTarget:'Now pick the destination: an atom or a bond.',
+  noLp:'That atom has no lone pair to donate. Start from a bond instead.',
+  cancelled:'Selection cancelled.',
+  dup:'That arrow is already drawn.',
+  added:'Arrow added. Draw all arrows for this step, then press Advance.',
+  removed:'Arrow removed.',
+  needArrows:'Draw at least one curly arrow first.',
+  correct:'Correct! The electrons flow…',
+  wrongFmt:(k,n,x)=>`Not quite: ${k} of ${n} required arrow${n>1?'s':''} match${x>0?`, ${x} extra`:''}. Check each start and end point.`,
+  hintAdded:'Hint: one correct arrow has been drawn for you (dashed).',
+  hintNone:'All required arrows are already on screen — press Advance.',
+  atStart:'Already at the first step.',
+  doneT:'Mechanism complete!',
+  doneP:'You pushed every electron pair to the right place.',
+  doneHome:'All problems', doneNext:'Next problem →',
+  cleared:'cleared',
+  tab_about:'About', tab_guide:'How to use', tab_learn:'Learn', tab_practice:'Practice',
+  learnK:'Learn',
+  learnIntroHtml:
+    '<h2>The grammar of curly arrows</h2>'+
+    '<p>A curly arrow always means the same thing: <b>one electron pair moves</b>. It starts where the electrons are now (a lone pair or a bond) and ends where they will be (an atom or a bond). In every correct step the total charge is conserved and no second-row atom exceeds its octet — if your arrows break either rule, the step is wrong. Below, each mechanism in this trainer is summarised so you can study the electron flow before (or after) trying it yourself.</p>',
+  learnSteps:'Electron flow, step by step',
+  learnTry:'Practice this problem →',
+  guideHtml:
+    '<div class="kicker">How to use</div>'+
+    '<h2>Playing a problem</h2>'+
+    '<p>1. Pick a problem from the <b>Practice</b> tab. The slim strip above the canvas keeps the <b>start</b>, the <b>conditions</b> and the <b>goal</b> in view while you work — the whole game is to turn the left structure into the right one.</p>'+
+    '<p>2. Draw a curly arrow with two clicks: first click the <b>source</b> of the electron pair (a bond, or an atom that carries lone-pair dots), then click the <b>destination</b> (an atom or a bond). Click an arrow to delete it; click empty space or press Esc to cancel a selection.</p>'+
+    '<p>3. When every arrow for the current step is on screen, press <b>Advance</b>. If the arrows are chemically correct, the electron pairs flow along them and the structure reacts to the next intermediate — freshly optimised skeletal geometry each step. If not, you get feedback on how many arrows match.</p>'+
+    '<p>4. Use <b>Back one step</b> to return to the previous intermediate, <b>Clear arrows</b> to start the step over, and <b>Hint</b> to reveal one correct arrow (shown dashed).</p>'+
+    '<h2>How to read and draw the arrows</h2>'+
+    '<div class="legend">'+
+    '<div class="lg"><b>Start at a lone pair</b>Click an atom that carries lone-pair dots. Its electron pair will form a new bond (or take a proton).</div>'+
+    '<div class="lg"><b>Start at a bond</b>Click a bond to move that bonding pair — the bond breaks or its order decreases.</div>'+
+    '<div class="lg"><b>End at an atom</b>The electrons arrive on that atom: a new bond forms to it, or it gains a lone pair.</div>'+
+    '<div class="lg"><b>End at a bond</b>The electrons join that bond, increasing its order (e.g. forming a π bond in E2 or elimination steps).</div>'+
+    '</div>',
+  aboutHtml:
+    '<div class="kicker">About</div>'+
+    '<h2>What is the Curly Arrow Trainer?</h2>'+
+    '<p><b>Meimay · Curly Arrow Trainer</b> is a free, browser-based drill for organic reaction mechanisms. Instead of watching arrows in a textbook, you draw them yourself: every curly arrow represents the movement of one electron pair, and the structure only advances when your arrows describe a chemically correct step. It is aimed at undergraduate organic chemistry students and anyone preparing for exams that ask you to "draw the mechanism".</p>'+
+    '<h2>Study tips</h2>'+
+    '<p>Always account for every arrow: in a correct step, charges are conserved and no atom exceeds its octet. Keep the goal in sight in the strip above the canvas, use the step dots to track your position, and use the hint button sparingly — the whole point is to make the electron flow yours. Mechanisms follow the standard depictions found in mainstream organic chemistry textbooks (e.g. McMurry, Clayden).</p>',
+  ftr:'Mechanisms follow standard textbook curved-arrow conventions (one arrow = one electron pair). An independent educational project by Meimay (Shintaro Shimizu &amp; Jumpei Toshimori).',
+  privacy:'Privacy Policy', disclaimer:'Disclaimer',
+  privacyHtml:'<p>"Meimay · Curly Arrow Trainer" (the "App") is a free learning tool for organic reaction mechanisms. This policy describes how privacy is handled.</p><p>1. The App stores your progress (cleared problems, sound preference) only in your own browser (localStorage). No account is required and no personal information is collected by the App itself.</p><p>2. This site uses Google AdSense and Google Analytics. These services may use cookies to serve ads and measure traffic. See Google\'s policies for details on how data is processed and how to opt out of personalized advertising.</p><p>3. Clearing your browser storage removes all saved progress.</p>',
+  disclaimerHtml:'<p>The App is provided "as is" for educational purposes, without warranty of any kind. While mechanisms follow standard textbook conventions, simplifications are made (e.g. spectator ions, solvation and stereochemical detail may be omitted). Always verify against your course materials. Meimay accepts no liability for damages arising from the use of the App.</p>'
+},
+ja:{
+  sub:'反応機構 · 電子の押し出し · 逐次演習',
+  apps:'⊞ アプリを選ぶ', sfx:'効果音',
+  homeK:'問題一覧',
+  homeLead:'化学者のように電子を動かそう。結合または非共有電子対をもつ原子をクリックして巻矢印の始点を決め，終点をクリックして矢印を完成させたら「進める」で構造を1段階ずつ反応させ，ゴールの構造を目指します。',
+  back:'問題一覧',
+  ovStart:'初期状態', ovCond:'条件', ovGoal:'ゴール',
+  step:'ステップ', of:'/',
+  hint:'💡 ヒント', clear:'矢印を消す', undo:'← 1つ戻る', next:'進める →',
+  diff:['基礎','標準','応用'],
+  pickSource:'矢印の始点を選択：結合，または非共有電子対をもつ原子。',
+  pickTarget:'次に終点を選択：原子または結合。',
+  noLp:'この原子には動かせる非共有電子対がありません。結合を始点にしてください。',
+  cancelled:'選択を解除しました。',
+  dup:'その矢印はすでに描かれています。',
+  added:'矢印を追加しました。このステップの矢印をすべて描いたら「進める」を押してください。',
+  removed:'矢印を削除しました。',
+  needArrows:'まず巻矢印を1本以上描いてください。',
+  correct:'正解！電子が流れます…',
+  wrongFmt:(k,n,x)=>`不正解：必要な${n}本のうち${k}本が一致${x>0?`(余分な矢印が${x}本)`:''}。始点と終点をもう一度確認してください。`,
+  hintAdded:'ヒント：正しい矢印を1本描画しました(破線表示)。',
+  hintNone:'必要な矢印はすべて描かれています。「進める」を押してください。',
+  atStart:'これ以上戻れません(最初のステップです)。',
+  doneT:'反応機構を完成させました！',
+  doneP:'すべての電子対を正しい場所へ動かしました。',
+  doneHome:'問題一覧へ', doneNext:'次の問題へ →',
+  cleared:'クリア済',
+  tab_about:'About', tab_guide:'使い方', tab_learn:'学ぶ', tab_practice:'演習',
+  learnK:'学ぶ',
+  learnIntroHtml:
+    '<h2>巻矢印の文法</h2>'+
+    '<p>巻矢印の意味は常にひとつ：<b>電子対1組の移動</b>です。矢印は電子が今ある場所(非共有電子対または結合)から始まり，電子の行き先(原子または結合)で終わります。正しいステップでは必ず全体の電荷が保存され，第2周期の原子はオクテットを超えません。矢印がこのどちらかを破っていれば，そのステップは誤りです。以下では本トレーナーの各機構の電子の流れをまとめています。挑戦の前後どちらに読んでも構いません。</p>',
+  learnSteps:'電子の流れ(ステップ順)',
+  learnTry:'この問題を演習する →',
+  guideHtml:
+    '<div class="kicker">使い方</div>'+
+    '<h2>問題の進め方</h2>'+
+    '<p>1. <b>演習</b>タブから問題を選びます。キャンバス上部の細いストリップに<b>初期状態</b>・<b>条件</b>・<b>ゴール</b>が常に横並びで表示されるので，見ながら矢印を引けます。左の構造を右の構造に変えることがゴールです。</p>'+
+    '<p>2. 巻矢印は2クリックで描きます：まず電子対の<b>始点</b>(結合，または非共有電子対の点をもつ原子)をクリックし，次に<b>終点</b>(原子または結合)をクリックします。矢印をクリックすると削除，余白クリックまたはEscで選択解除です。</p>'+
+    '<p>3. そのステップに必要な矢印をすべて描いたら<b>進める</b>を押します。化学的に正しければ電子対が矢印に沿って流れ，構造が次の中間体へ反応します。骨格構造の幾何はステップごとに最適化されます。誤りなら，何本一致したかのフィードバックが返ります。</p>'+
+    '<p>4. <b>1つ戻る</b>で前の中間体へ，<b>矢印を消す</b>でステップをやり直し，<b>ヒント</b>で正しい矢印を1本表示(破線)できます。</p>'+
+    '<h2>矢印の読み方・描き方</h2>'+
+    '<div class="legend">'+
+    '<div class="lg"><b>始点：非共有電子対</b>非共有電子対の点をもつ原子をクリック。その電子対が新しい結合を作る(またはプロトンを受け取る)。</div>'+
+    '<div class="lg"><b>始点：結合</b>結合をクリックすると，その結合電子対が移動する。結合は切れるか，結合次数が下がる。</div>'+
+    '<div class="lg"><b>終点：原子</b>電子はその原子に到達し，新しい結合ができるか，非共有電子対として残る。</div>'+
+    '<div class="lg"><b>終点：結合</b>電子はその結合に合流し，結合次数が上がる(E2や脱離でπ結合ができる場合など)。</div>'+
+    '</div>',
+  aboutHtml:
+    '<div class="kicker">About</div>'+
+    '<h2>巻矢印トレーナーとは</h2>'+
+    '<p><b>Meimay · 巻矢印トレーナー</b>は，有機反応機構を自分の手で組み立てるための無料ブラウザ演習ツールです。教科書の矢印を眺めるのではなく，自分で描きます。巻矢印1本は電子対1組の移動を表し，描いた矢印が化学的に正しいステップを記述しているときだけ構造が次へ進みます。大学の有機化学を学ぶ学生や，「機構を書け」と問われる試験の対策に向いています。</p>'+
+    '<h2>学習のヒント</h2>'+
+    '<p>矢印は1本残らず説明できるように：正しいステップでは電荷が保存され，どの原子もオクテットを超えません。キャンバス上部のストリップでゴールを常に確認し，ステップドットで現在位置を把握し，ヒントは控えめに。電子の流れを自分のものにすることが目的です。機構は標準的な有機化学教科書(McMurry，Claydenなど)の記載に準拠しています。</p>',
+  ftr:'機構は標準的な巻矢印記法(矢印1本＝電子対1組)に準拠。Meimay(清水慎太朗・歳森淳平)による独立の教育プロジェクトです。',
+  privacy:'プライバシーポリシー', disclaimer:'免責事項',
+  privacyHtml:'<p>「Meimay · 巻矢印トレーナー」(以下「本アプリ」)は，有機反応機構の無料学習ツールです。プライバシーの取り扱いを以下のとおり定めます。</p><p>1. 本アプリは進捗(クリア状況・効果音設定)を利用者のブラウザ内(localStorage)にのみ保存します。アカウント登録は不要で，本アプリ自体が個人情報を収集することはありません。</p><p>2. 本サイトはGoogle AdSenseおよびGoogle Analyticsを利用しています。これらのサービスは広告配信・アクセス解析のためにCookieを使用することがあります。データの処理やパーソナライズ広告の無効化についてはGoogleのポリシーをご確認ください。</p><p>3. ブラウザの保存データを消去すると，保存された進捗はすべて削除されます。</p>',
+  disclaimerHtml:'<p>本アプリは教育目的で現状有姿のまま提供され，いかなる保証も行いません。機構は標準的な教科書記法に準拠していますが，簡略化(対イオン・溶媒和・立体化学の詳細の省略など)を含みます。必ずご自身の教材と照らし合わせてください。本アプリの利用により生じた損害について，Meimayは一切の責任を負いません。</p>'
+}
+};
+const STR=I18N[LANG];
+const T=o=>o[LANG];
+
+/* ============================== SFX ============================== */
+const SFX={
+  ctx:null, on:true,
+  ac(){ if(!this.ctx){ try{ this.ctx=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} } return this.ctx; },
+  beep(f,d,type,vol,when){ const c=this.ac(); if(!c||!this.on) return;
+    const t=(c.currentTime)+(when||0);
+    const o=c.createOscillator(), g=c.createGain();
+    o.type=type||'sine'; o.frequency.value=f;
+    g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(vol||0.08,t+0.01);
+    g.gain.exponentialRampToValueAtTime(0.0001,t+d);
+    o.connect(g); g.connect(c.destination); o.start(t); o.stop(t+d+0.05); },
+  click(){ this.beep(660,0.06,'sine',0.05); },
+  pick(){ this.beep(520,0.07,'triangle',0.06); },
+  good(){ this.beep(523,0.12,'sine',0.07); this.beep(659,0.12,'sine',0.07,0.09); this.beep(784,0.2,'sine',0.08,0.18); },
+  bad(){ this.beep(190,0.18,'sawtooth',0.05); },
+  win(){ [523,659,784,1047].forEach((f,i)=>this.beep(f,0.22,'sine',0.08,i*0.11)); }
+};
+
+/* ============================== STORAGE ============================== */
+const KEY='meimay_arrow_v1';
+function loadProg(){ try{ return JSON.parse(localStorage.getItem(KEY))||{cleared:{},sfx:true}; }catch(e){ return {cleared:{},sfx:true}; } }
+function saveProg(p){ try{ localStorage.setItem(KEY,JSON.stringify(p)); }catch(e){} }
+let PROG=loadProg();
+SFX.on=PROG.sfx!==false;
+
+/* ============================== RENDERER ============================== */
+const NS_SVG='http://www.w3.org/2000/svg';
+const EL_COLOR={O:'var(--el-O)',N:'var(--el-N)',Br:'var(--el-Br)',Cl:'var(--el-Cl)',H:'var(--el-H)',C:'#E7EEF8'};
+function svgEl(tag,attrs,parent){
+  const e=document.createElementNS(NS_SVG,tag);
+  for(const k in attrs) e.setAttribute(k,attrs[k]);
+  if(parent) parent.appendChild(e);
+  return e;
+}
+function atomLabel(a){
+  if(a.lbl) return a.lbl;
+  if(a.el==='C'&&!a.hs) return null;           /* skeletal vertex */
+  let s=a.el; if(a.hs) s+= (a.hs===1?'H':'H'+a.hs);
+  return s;
+}
+function labelRadius(a){
+  const l=atomLabel(a);
+  if(!l) return 6;
+  return 10 + 4.6*l.replace(/\d/g,'').length + 2.4*(l.match(/\d/g)||[]).length;
+}
+function bondsOfAtom(state,aid){ return state.bonds.filter(b=>b.a===aid||b.b===aid); }
+function bondAngles(state,a){
+  return bondsOfAtom(state,a.i).map(b=>{
+    const other=findAtom(state, b.a===a.i?b.b:b.a);
+    return Math.atan2(other.y-a.y, other.x-a.x);
+  });
+}
+function angDist(x,y){ let d=Math.abs(x-y)%(2*Math.PI); return d>Math.PI?2*Math.PI-d:d; }
+function lpDirections(state,a){
+  const n=a.lp||0; if(!n) return [];
+  const bonds=bondAngles(state,a);
+  const cands=[]; for(let d=0; d<360; d+=15) cands.push(d*Math.PI/180);
+  const chosen=[];
+  const presets=[ -Math.PI/2, Math.PI/2, Math.PI, 0, -Math.PI/4, -3*Math.PI/4, Math.PI/4, 3*Math.PI/4 ];
+  for(let k=0;k<n;k++){
+    let best=null, bestScore=-1;
+    const pool = bonds.length? cands : presets;
+    for(const c of pool){
+      let s = bonds.length? Math.min(...bonds.map(b=>angDist(c,b))) : 10;
+      if(chosen.length) s = Math.min(s, ...chosen.map(ch=>angDist(c,ch)));
+      if(!bonds.length){ /* keep preset order preference */ s = 10 - presets.indexOf(c)*0.01 - (chosen.length? (Math.min(...chosen.map(ch=>angDist(c,ch)))<0.6?9:0):0); }
+      if(s>bestScore){ bestScore=s; best=c; }
+    }
+    chosen.push(best);
+  }
+  return chosen;
+}
+function trimmedBond(state,b){
+  const A=findAtom(state,b.a), B=findAtom(state,b.b);
+  const dx=B.x-A.x, dy=B.y-A.y, L=Math.hypot(dx,dy)||1;
+  const ux=dx/L, uy=dy/L;
+  const rA=atomLabel(A)?labelRadius(A)+3:5, rB=atomLabel(B)?labelRadius(B)+3:5;
+  return {x1:A.x+ux*rA, y1:A.y+uy*rA, x2:B.x-ux*rB, y2:B.y-uy*rB, ux, uy, nx:-uy, ny:ux,
+          mx:(A.x+B.x)/2, my:(A.y+B.y)/2};
+}
+function renderState(svg,state,opts){
+  opts=opts||{};
+  while(svg.firstChild) svg.removeChild(svg.firstChild);
+  const gB=svgEl('g',{},svg), gA=svgEl('g',{},svg), gArr=svgEl('g',{'class':'arrlayer'},svg);
+  /* bonds */
+  for(const b of state.bonds){
+    const t=trimmedBond(state,b);
+    const g=svgEl('g',{'class':'bond','data-id':b.i},gB);
+    const offs = b.o===1?[0] : b.o===2?[-3.2,3.2] : [-4.5,0,4.5];
+    for(const o of offs){
+      svgEl('line',{x1:t.x1+t.nx*o, y1:t.y1+t.ny*o, x2:t.x2+t.nx*o, y2:t.y2+t.ny*o, 'class':'bl'},g);
+    }
+    svgEl('line',{x1:t.x1,y1:t.y1,x2:t.x2,y2:t.y2,'class':'hit'},g);
+    if(opts.interactive){
+      g.addEventListener('click',ev=>{ ev.stopPropagation(); Game.clickBond(b.i); });
+    }
+  }
+  /* atoms */
+  for(const a of state.atoms){
+    const g=svgEl('g',{'class':'atom','data-id':a.i,transform:`translate(${a.x},${a.y})`},gA);
+    const label=atomLabel(a);
+    const r=label?labelRadius(a):13;
+    svgEl('circle',{cx:0,cy:0,r:r+4,'class':'ring'},g);
+    if(label){
+      const txt=svgEl('text',{x:0,y:0,'text-anchor':'middle','dominant-baseline':'central','font-size':'17','fill':EL_COLOR[a.el]||'#E7EEF8'},g);
+      /* digits as subscripts */
+      let sub=false;
+      for(const part of label.match(/\d+|\D+/g)){
+        const isD=/\d/.test(part);
+        const ts=svgEl('tspan',{},txt);
+        if(isD){ ts.setAttribute('font-size','12'); if(!sub) ts.setAttribute('dy','4'); sub=true; }
+        else{ if(sub) ts.setAttribute('dy','-4'); sub=false; }
+        ts.textContent=part;
+      }
+    }else{
+      svgEl('circle',{cx:0,cy:0,r:3,'class':'vdot'},g);
+    }
+    /* lone pairs */
+    const dirs=lpDirections(state,a);
+    for(const th of dirs){
+      const R=(label?labelRadius(a):6)+8;
+      const cx=Math.cos(th)*R, cy=Math.sin(th)*R;
+      const px=-Math.sin(th)*3.4, py=Math.cos(th)*3.4;
+      svgEl('circle',{cx:cx+px,cy:cy+py,r:2,'class':'lp'},g);
+      svgEl('circle',{cx:cx-px,cy:cy-py,r:2,'class':'lp'},g);
+    }
+    /* formal charge badge */
+    if(a.ch){
+      const bx=(label?labelRadius(a):6)+7, by=-((label?labelRadius(a):6)+7);
+      const cg=svgEl('g',{'class':'chg'},g);
+      svgEl('circle',{cx:bx,cy:by,r:7,fill:'none',stroke:a.ch>0?'#FBBF24':'#38BDF8','stroke-width':1.3},cg);
+      const t=svgEl('text',{x:bx,y:by,'text-anchor':'middle','dominant-baseline':'central','font-size':'11',fill:a.ch>0?'#FBBF24':'#38BDF8'},cg);
+      t.textContent=a.ch>0?'+':'\u2212';
+    }
+    if(opts.interactive){
+      g.addEventListener('click',ev=>{ ev.stopPropagation(); Game.clickAtom(a.i); });
+    }
+  }
+  return {gArr};
+}
+function fitMini(svg,state){
+  let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
+  for(const a of state.atoms){ x0=Math.min(x0,a.x); y0=Math.min(y0,a.y); x1=Math.max(x1,a.x); y1=Math.max(y1,a.y); }
+  const pad=52;
+  svg.setAttribute('viewBox',`${x0-pad} ${y0-pad} ${(x1-x0)+2*pad} ${(y1-y0)+2*pad}`);
+  svg.setAttribute('preserveAspectRatio','xMidYMid meet');
+}
+
+/* ---- arrow geometry ---- */
+function anchorFor(state,ref,towards){
+  if(ref.st==='lp'||ref.t==='lp'){
+    const a=findAtom(state,ref.si||ref.id);
+    const dirs=lpDirections(state,a);
+    let best=dirs[0]!==undefined?dirs[0]:-Math.PI/2, bd=1e9;
+    for(const th of dirs){
+      const px=a.x+Math.cos(th)*20, py=a.y+Math.sin(th)*20;
+      const d=Math.hypot(px-towards.x,py-towards.y);
+      if(d<bd){ bd=d; best=th; }
+    }
+    const R=(atomLabel(a)?labelRadius(a):6)+10;
+    return {x:a.x+Math.cos(best)*R, y:a.y+Math.sin(best)*R};
+  }
+  if(ref.st==='bond'||ref.t==='bond'){
+    const b=findBond(state,ref.si||ref.id);
+    const t=trimmedBond(state,b);
+    return {x:t.mx,y:t.my};
+  }
+  return null;
+}
+function targetPoint(state,ref){
+  if(ref.dt==='atom'){ const a=findAtom(state,ref.di); return {x:a.x,y:a.y,r:atomLabel(a)?labelRadius(a)+8:12}; }
+  const b=findBond(state,ref.di); const t=trimmedBond(state,b);
+  return {x:t.mx,y:t.my,r:8};
+}
+function arrowPath(state,arrow){
+  const dstP=targetPoint(state,arrow);
+  const srcRough = arrow.st==='lp' ? findAtom(state,arrow.si) : (()=>{const t=trimmedBond(state,findBond(state,arrow.si)); return {x:t.mx,y:t.my};})();
+  const srcP=anchorFor(state,arrow,dstP);
+  const dx=dstP.x-srcP.x, dy=dstP.y-srcP.y, L=Math.hypot(dx,dy)||1;
+  const mx=(srcP.x+dstP.x)/2, my=(srcP.y+dstP.y)/2;
+  let nx=-dy/L, ny=dx/L;
+  /* bow upward when possible, otherwise to the right */
+  if(Math.abs(dy)>Math.abs(dx)){ if(nx<0){nx=-nx; ny=-ny;} } else { if(ny>0){nx=-nx; ny=-ny;} }
+  const bow=Math.max(28,Math.min(70,L*0.3));
+  const cx=mx+nx*bow, cy=my+ny*bow;
+  /* end point: back off from the target centre along the curve tangent */
+  const tx=dstP.x-cx, ty=dstP.y-cy, TL=Math.hypot(tx,ty)||1;
+  const ex=dstP.x-(tx/TL)*dstP.r, ey=dstP.y-(ty/TL)*dstP.r;
+  const d=`M ${srcP.x.toFixed(1)} ${srcP.y.toFixed(1)} Q ${cx.toFixed(1)} ${cy.toFixed(1)} ${ex.toFixed(1)} ${ey.toFixed(1)}`;
+  /* arrowhead */
+  const ang=Math.atan2(ey-cy,ex-cx);
+  const h=10, w=0.46;
+  const hd=`M ${ex} ${ey} L ${ex-h*Math.cos(ang-w)} ${ey-h*Math.sin(ang-w)} L ${ex-h*Math.cos(ang+w)} ${ey-h*Math.sin(ang+w)} Z`;
+  return {d,hd,srcRough};
+}
+
+/* ============================== GAME ============================== */
+const $=id=>document.getElementById(id);
+const Game={
+  p:null, step:0, arrows:[], sel:null, arrLayer:null, animating:false,
+
+  openHome(){
+    this.p=null;
+    $('game').style.display='none';
+    $('home').style.display='block';
+    renderHome();
+    window.scrollTo({top:0});
+  },
+  open(pid){
+    this.p=PROBLEMS.find(x=>x.id===pid);
+    this.step=0; this.arrows=[]; this.sel=null;
+    $('home').style.display='none';
+    $('game').style.display='block';
+    $('doneOv').classList.remove('show');
+    $('gTitle').textContent=T(this.p.title);
+    const d=$('gDiff'); d.textContent=STR.diff[this.p.diff-1]; d.className='chip d'+this.p.diff;
+    /* overview */
+    const s0=this.p.states[0], sN=this.p.states[this.p.states.length-1];
+    renderState($('ovStart'),s0,{}); fitMini($('ovStart'),s0);
+    renderState($('ovGoal'),sN,{}); fitMini($('ovGoal'),sN);
+    const oc=$('ovCond'); oc.innerHTML='';
+    for(const c of this.p.cond){ const s=document.createElement('span'); s.className='chip'; s.textContent=T(c); oc.appendChild(s); }
+    this.draw();
+    this.say(STR.pickSource,'');
+    window.scrollTo({top:0});
+  },
+  cur(){ return this.p.states[this.step]; },
+  isDone(){ return this.step>=this.p.states.length-1; },
+
+  draw(){
+    const st=this.cur();
+    const {gArr}=renderState($('stage'),st,{interactive:!this.isDone()});
+    this.arrLayer=gArr;
+    this.drawArrows();
+    this.drawDots();
+    this.applySel();
+    $('undoBtn').disabled=(this.step===0);
+    $('nextBtn').disabled=this.isDone();
+    $('hintBtn').disabled=this.isDone();
+    $('clearBtn').disabled=this.isDone();
+    $('stepLabel').textContent=`${STR.step} ${Math.min(this.step+1,this.p.steps.length)} ${STR.of} ${this.p.steps.length}`;
+  },
+  drawDots(){
+    const el=$('stepDots'); el.innerHTML='';
+    for(let k=0;k<this.p.states.length;k++){
+      const d=document.createElement('div');
+      d.className='sd'+(k<this.step?' past':(k===this.step?' cur':''));
+      if(this.isDone()&&k===this.step) d.className='sd past';
+      el.appendChild(d);
+    }
+  },
+  drawArrows(){
+    const g=this.arrLayer; while(g.firstChild) g.removeChild(g.firstChild);
+    const st=this.cur();
+    this.arrows.forEach((ar,idx)=>{
+      const {d,hd}=arrowPath(st,ar);
+      const ga=svgEl('g',{'class':'arrow'+(ar.hint?' hinted':'')},g);
+      const p=svgEl('path',{d,'class':'ap'},ga);
+      svgEl('path',{d:hd,'class':'ah'},ga);
+      svgEl('path',{d,'class':'ahit'},ga);
+      if(ar.fresh){
+        if(typeof p.getTotalLength==='function'){
+          const len=p.getTotalLength(); p.style.strokeDasharray=len; p.style.strokeDashoffset=len;
+          requestAnimationFrame(()=>{ p.style.transition='stroke-dashoffset 0.35s ease'; p.style.strokeDashoffset='0';
+            setTimeout(()=>{ p.style.strokeDasharray=ar.hint?'5 5':'none'; p.style.transition=''; },380); });
+        }
+        delete ar.fresh; }
+      ga.addEventListener('click',ev=>{ ev.stopPropagation(); if(Game.animating) return;
+        Game.arrows.splice(idx,1); Game.drawArrows(); Game.say(STR.removed,''); SFX.click(); });
+    });
+  },
+  applySel(){
+    document.querySelectorAll('#stage .atom, #stage .bond').forEach(e=>e.classList.remove('sel'));
+    if(!this.sel) return;
+    const q=this.sel.st==='lp'?`.atom[data-id="${this.sel.si}"]`:`.bond[data-id="${this.sel.si}"]`;
+    const e=document.querySelector('#stage '+q); if(e) e.classList.add('sel');
+  },
+  say(t,cls){ const m=$('msg'); m.textContent=t; m.className='msg'+(cls?' '+cls:''); },
+
+  clickAtom(id){
+    if(this.animating||this.isDone()) return;
+    const st=this.cur(), a=findAtom(st,id);
+    if(!this.sel){
+      if((a.lp||0)>0){ this.sel={st:'lp',si:id}; this.applySel(); this.say(STR.pickTarget,''); SFX.pick(); }
+      else{ this.say(STR.noLp,'bad'); SFX.bad(); }
+      return;
+    }
+    if(this.sel.st==='lp'&&this.sel.si===id){ this.sel=null; this.applySel(); this.say(STR.cancelled,''); return; }
+    this.addArrow(this.sel,{dt:'atom',di:id});
+  },
+  clickBond(id){
+    if(this.animating||this.isDone()) return;
+    if(!this.sel){ this.sel={st:'bond',si:id}; this.applySel(); this.say(STR.pickTarget,''); SFX.pick(); return; }
+    if(this.sel.st==='bond'&&this.sel.si===id){ this.sel=null; this.applySel(); this.say(STR.cancelled,''); return; }
+    this.addArrow(this.sel,{dt:'bond',di:id});
+  },
+  addArrow(src,dst){
+    const ar={st:src.st,si:src.si,dt:dst.dt,di:dst.di,sk:src.st+':'+src.si,dk:dst.dt+':'+dst.di,fresh:true};
+    if(this.arrows.some(x=>x.sk===ar.sk&&x.dk===ar.dk)){ this.say(STR.dup,'bad'); SFX.bad(); this.sel=null; this.applySel(); return; }
+    this.arrows.push(ar); this.sel=null; this.applySel();
+    this.drawArrows(); this.say(STR.added,''); SFX.pick();
+  },
+
+  hint(){
+    if(this.isDone()) return;
+    const ans=this.bestAnswer();
+    const drawn=new Set(this.arrows.map(a=>a.sk+'>'+a.dk));
+    const missing=ans.find(s=>!drawn.has(s));
+    if(!missing){ this.say(STR.hintNone,'hint'); return; }
+    const pa=parseArrow(missing);
+    this.arrows.push({st:pa.st,si:pa.si,dt:pa.dt,di:pa.di,sk:pa.sk,dk:pa.dk,hint:true,fresh:true});
+    this.drawArrows(); this.say(STR.hintAdded,'hint'); SFX.pick();
+  },
+  bestAnswer(){
+    const drawn=new Set(this.arrows.map(a=>a.sk+'>'+a.dk));
+    const sets=this.p.steps[this.step].ans;
+    let best=sets[0], bm=-1;
+    for(const s of sets){ const m=s.filter(x=>drawn.has(x)).length; if(m>bm){ bm=m; best=s; } }
+    return best;
+  },
+  clearArrows(){ if(this.animating) return; this.arrows=[]; this.sel=null; this.drawArrows(); this.applySel(); this.say(STR.pickSource,''); SFX.click(); },
+  undo(){
+    if(this.animating) return;
+    if(this.step===0){ this.say(STR.atStart,'bad'); return; }
+    $('doneOv').classList.remove('show');
+    this.step--; this.arrows=[]; this.sel=null; this.draw(); this.say(STR.pickSource,''); SFX.click();
+  },
+  advance(){
+    if(this.animating||this.isDone()) return;
+    if(this.arrows.length===0){ this.say(STR.needArrows,'bad'); SFX.bad(); return; }
+    const drawn=new Set(this.arrows.map(a=>a.sk+'>'+a.dk));
+    const sets=this.p.steps[this.step].ans;
+    const hit=sets.find(s=>s.length===drawn.size&&s.every(x=>drawn.has(x)));
+    if(!hit){
+      const best=this.bestAnswer();
+      const k=best.filter(x=>drawn.has(x)).length;
+      const extra=drawn.size-k;
+      this.say(STR.wrongFmt(k,best.length,extra),'bad'); SFX.bad();
+      const cc=$('canvasCard'); cc.classList.remove('shake'); void cc.offsetWidth; cc.classList.add('shake');
+      return;
+    }
+    /* correct */
+    this.animating=true;
+    this.say(STR.correct+' '+T(this.p.steps[this.step].note),'ok'); SFX.good();
+    /* electron-pair dots travel along each arrow */
+    const st=this.cur();
+    for(const ar of this.arrows){
+      const {d}=arrowPath(st,ar);
+      const dot=svgEl('circle',{r:4,'class':'edot'},this.arrLayer);
+      const am=svgEl('animateMotion',{dur:'0.7s',fill:'freeze',path:d},dot);
+      if(am.beginElement){ try{ am.beginElement(); }catch(e){} }
+    }
+    const stage=$('stage');
+    setTimeout(()=>{
+      stage.style.transition='opacity 0.25s'; stage.style.opacity='0.15';
+      setTimeout(()=>{
+        this.step++; this.arrows=[]; this.sel=null; this.draw();
+        stage.style.opacity='1';
+        setTimeout(()=>{ stage.style.transition=''; this.animating=false;
+          if(this.isDone()){ this.complete(); }
+        },260);
+      },260);
+    },720);
+  },
+  complete(){
+    PROG.cleared[this.p.id]=true; saveProg(PROG);
+    SFX.win();
+    $('doneOv').classList.add('show');
+    const idx=PROBLEMS.indexOf(this.p);
+    $('doneNext').style.display = (idx<PROBLEMS.length-1)?'inline-block':'none';
+  }
+};
+
+/* ============================== HOME ============================== */
+function renderHome(){
+  const g=$('pgrid'); g.innerHTML='';
+  PROBLEMS.forEach(p=>{
+    const c=document.createElement('div');
+    c.className='pcard'; c.tabIndex=0; c.setAttribute('role','button');
+    const svg=document.createElementNS(NS_SVG,'svg'); svg.setAttribute('class','mini');
+    c.appendChild(svg);
+    const t=document.createElement('div'); t.className='pt'; t.textContent=T(p.title); c.appendChild(t);
+    const m=document.createElement('div'); m.className='pm';
+    const tg=document.createElement('span'); tg.className='chip'; tg.textContent=p.tag; m.appendChild(tg);
+    const df=document.createElement('span'); df.className='chip d'+p.diff; df.textContent=STR.diff[p.diff-1]; m.appendChild(df);
+    const stc=document.createElement('span'); stc.className='chip'; stc.textContent=p.steps.length+(LANG==='ja'?'ステップ':(p.steps.length>1?' steps':' step')); m.appendChild(stc);
+    c.appendChild(m);
+    if(PROG.cleared[p.id]){ const d=document.createElement('div'); d.className='done'; d.title=STR.cleared; d.textContent='✓'; c.appendChild(d); }
+    const go=()=>{ SFX.click(); Game.open(p.id); };
+    c.addEventListener('click',go);
+    c.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(); } });
+    g.appendChild(c);
+    renderState(svg,p.states[p.states.length-1],{}); fitMini(svg,p.states[p.states.length-1]);
+  });
+}
+
+/* ============================== LEARN / TABS ============================== */
+function miniPair(parent,p){
+  const strip=document.createElement('div'); strip.className='strip';
+  const mk=(labelTxt)=>{ const cell=document.createElement('div'); cell.className='scell';
+    const l=document.createElement('div'); l.className='slabel'; l.textContent=labelTxt; cell.appendChild(l);
+    const svg=document.createElementNS(NS_SVG,'svg'); cell.appendChild(svg);
+    strip.appendChild(cell); return svg; };
+  const s1=mk(STR.ovStart);
+  const ar1=document.createElement('div'); ar1.className='sarrow'; ar1.textContent='→'; strip.appendChild(ar1);
+  const cc=document.createElement('div'); cc.className='scell condc';
+  const cl=document.createElement('div'); cl.className='slabel'; cl.textContent=STR.ovCond; cc.appendChild(cl);
+  const cds=document.createElement('div'); cds.className='conds';
+  for(const c of p.cond){ const s=document.createElement('span'); s.className='chip'; s.textContent=T(c); cds.appendChild(s); }
+  cc.appendChild(cds); strip.appendChild(cc);
+  const ar2=document.createElement('div'); ar2.className='sarrow'; ar2.textContent='→'; strip.appendChild(ar2);
+  const s2=mk(STR.ovGoal);
+  parent.appendChild(strip);
+  renderState(s1,p.states[0],{}); fitMini(s1,p.states[0]);
+  renderState(s2,p.states[p.states.length-1],{}); fitMini(s2,p.states[p.states.length-1]);
+}
+function renderLearn(){
+  const box=$('sec-learn'); box.innerHTML='';
+  const k=document.createElement('div'); k.className='kicker'; k.textContent=STR.learnK; box.appendChild(k);
+  const intro=document.createElement('div'); intro.className='about'; intro.innerHTML=STR.learnIntroHtml; box.appendChild(intro);
+  const grid=document.createElement('div'); grid.className='lgrid'; box.appendChild(grid);
+  for(const p of PROBLEMS){
+    const c=document.createElement('div'); c.className='lcard';
+    const h=document.createElement('h3'); h.textContent=T(p.title); c.appendChild(h);
+    const pm=document.createElement('div'); pm.className='pm';
+    const tg=document.createElement('span'); tg.className='chip'; tg.textContent=p.tag; pm.appendChild(tg);
+    const df=document.createElement('span'); df.className='chip d'+p.diff; df.textContent=STR.diff[p.diff-1]; pm.appendChild(df);
+    c.appendChild(pm);
+    miniPair(c,p);
+    const sh=document.createElement('div'); sh.className='slabel'; sh.style.color='var(--dim)'; sh.textContent=STR.learnSteps; c.appendChild(sh);
+    const ol=document.createElement('ol');
+    for(const sp of p.steps){ const li=document.createElement('li'); li.textContent=T(sp.note); ol.appendChild(li); }
+    c.appendChild(ol);
+    const b=document.createElement('button'); b.className='btn'; b.textContent=STR.learnTry;
+    b.addEventListener('click',()=>{ SFX.click(); setTab('practice'); Game.open(p.id); });
+    c.appendChild(b);
+    grid.appendChild(c);
+  }
+}
+function setTab(name){
+  document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
+  $('sec-practice').style.display = name==='practice'?'block':'none';
+  $('sec-learn').style.display   = name==='learn'  ?'block':'none';
+  $('sec-guide').style.display   = name==='guide'  ?'block':'none';
+  $('aboutBox').style.display    = name==='about'  ?'block':'none';
+  window.scrollTo({top:0});
+}
+
+/* ============================== LEGAL / CHROME ============================== */
+function openLegal(kind){
+  $('mtitle').textContent = kind==='privacy'?STR.privacy:STR.disclaimer;
+  $('mbody').innerHTML = kind==='privacy'?STR.privacyHtml:STR.disclaimerHtml;
+  $('legalModal').classList.add('show');
+}
+function applyStatic(){
+  $('tSub').textContent=STR.sub;
+  $('tApps').textContent=STR.apps;
+  $('tSfx').textContent=STR.sfx;
+  $('tHomeK').textContent=STR.homeK;
+  $('tHomeLead').textContent=STR.homeLead;
+  $('tBack').textContent=STR.back;
+  $('tOvStart').textContent=STR.ovStart;
+  $('tOvCond').textContent=STR.ovCond;
+  $('tOvGoal').textContent=STR.ovGoal;
+  $('hintBtn').textContent=STR.hint;
+  $('clearBtn').textContent=STR.clear;
+  $('undoBtn').textContent=STR.undo;
+  $('nextBtn').textContent=STR.next;
+  $('tDoneT').textContent=STR.doneT;
+  $('tDoneP').textContent=STR.doneP;
+  $('doneHome').textContent=STR.doneHome;
+  $('doneNext').textContent=STR.doneNext;
+  $('tabAbout').textContent=STR.tab_about;
+  $('tabGuide').textContent=STR.tab_guide;
+  $('tabLearn').textContent=STR.tab_learn;
+  $('tabPractice').textContent=STR.tab_practice;
+  $('sec-guide').innerHTML=STR.guideHtml;
+  $('aboutBox').innerHTML=STR.aboutHtml;
+  $('tFtr').innerHTML=STR.ftr;
+  $('privacyLink').textContent=STR.privacy;
+  $('disclaimerLink').textContent=STR.disclaimer;
+  if(LANG==='ja'){ $('tBrand').textContent='巻矢印トレーナー'; document.title='Meimay · 巻矢印トレーナー — 反応機構の演習'; }
+}
+function updateSfxBtn(){
+  $('sfxBtn').innerHTML=(SFX.on?'🔊 ':'🔇 ')+'<span id="tSfx">'+STR.sfx+'</span>';
+  $('sfxBtn').setAttribute('aria-pressed',String(SFX.on));
+}
+
+/* ============================== INIT ============================== */
+(function init(){
+  const errs=validateData();
+  if(errs.length){ console.error('DATA ERRORS:',errs); }
+  /* geometry optimisation of every state (re-applied to each intermediate,
+     so the skeletal structure the user sees is freshly optimised whenever
+     the reaction advances) */
+  PROBLEMS.forEach(p=>p.states.forEach(optimizeState));
+  applyStatic(); updateSfxBtn(); renderHome(); renderLearn();
+  $('tabs').addEventListener('click',e=>{
+    const b=e.target.closest('button[data-tab]');
+    if(b){ SFX.click(); setTab(b.dataset.tab); }
+  });
+  $('backBtn').addEventListener('click',()=>{ SFX.click(); Game.openHome(); });
+  $('hintBtn').addEventListener('click',()=>Game.hint());
+  $('clearBtn').addEventListener('click',()=>Game.clearArrows());
+  $('undoBtn').addEventListener('click',()=>Game.undo());
+  $('nextBtn').addEventListener('click',()=>Game.advance());
+  $('doneHome').addEventListener('click',()=>{ SFX.click(); Game.openHome(); });
+  $('doneNext').addEventListener('click',()=>{
+    const idx=PROBLEMS.indexOf(Game.p);
+    if(idx<PROBLEMS.length-1){ SFX.click(); Game.open(PROBLEMS[idx+1].id); }
+  });
+  $('stage').addEventListener('click',()=>{ if(Game.sel){ Game.sel=null; Game.applySel(); Game.say(STR.cancelled,''); } });
+  $('sfxBtn').addEventListener('click',()=>{ SFX.on=!SFX.on; PROG.sfx=SFX.on; saveProg(PROG); updateSfxBtn(); if(SFX.on) SFX.click(); });
+  $('privacyLink').addEventListener('click',()=>openLegal('privacy'));
+  $('disclaimerLink').addEventListener('click',()=>openLegal('disclaimer'));
+  $('mclose').addEventListener('click',()=>$('legalModal').classList.remove('show'));
+  $('legalModal').addEventListener('click',e=>{ if(e.target.id==='legalModal') $('legalModal').classList.remove('show'); });
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){
+      if($('legalModal').classList.contains('show')){ $('legalModal').classList.remove('show'); return; }
+      if(Game.sel){ Game.sel=null; Game.applySel(); Game.say(STR.cancelled,''); }
+    }
+  });
+})();
+</script>
+<noscript><p style="color:#9CA9C0;text-align:center">This app requires JavaScript.</p></noscript>
+</body>
+</html>

@@ -3,49 +3,65 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://meimay-chem.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://meimay-chem.com/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://meimay-chem.com/ja.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://meimay-chem.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meimay-chem.com/en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://meimay-chem.com/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://meimay-chem.com/ja.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://meimay-chem.com/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://meimay-chem.com/ja.html"/>
+    <loc>https://meimay-chem.com/en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://meimay-chem.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meimay-chem.com/en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://meimay-chem.com/"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://meimay-chem.com/iupac/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://meimay-chem.com/iupac/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://meimay-chem.com/iupac/ja.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://meimay-chem.com/iupac/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meimay-chem.com/iupac/en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://meimay-chem.com/iupac/"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://meimay-chem.com/iupac/ja.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://meimay-chem.com/iupac/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://meimay-chem.com/iupac/ja.html"/>
+    <loc>https://meimay-chem.com/iupac/en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://meimay-chem.com/iupac/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meimay-chem.com/iupac/en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://meimay-chem.com/iupac/"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://meimay-chem.com/spectrum/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://meimay-chem.com/spectrum/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://meimay-chem.com/spectrum/ja.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://meimay-chem.com/spectrum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meimay-chem.com/spectrum/en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://meimay-chem.com/spectrum/"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://meimay-chem.com/spectrum/ja.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://meimay-chem.com/spectrum/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://meimay-chem.com/spectrum/ja.html"/>
+    <loc>https://meimay-chem.com/spectrum/en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://meimay-chem.com/spectrum/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meimay-chem.com/spectrum/en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://meimay-chem.com/spectrum/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://meimay-chem.com/arrow/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://meimay-chem.com/arrow/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meimay-chem.com/arrow/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://meimay-chem.com/arrow/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://meimay-chem.com/arrow/en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://meimay-chem.com/arrow/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meimay-chem.com/arrow/en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://meimay-chem.com/arrow/"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

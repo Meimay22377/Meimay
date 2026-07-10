@@ -12,7 +12,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Meimay · 化学トレーナー</title>
-<meta name="description" content="ブラウザだけで動く無料の化学学習ツール Meimay。IUPAC 命名トレーナーと，IR・NMR・MS のスペクトル解析トレーナーを収録。インストール不要・登録不要でオフライン完結。">
+<meta name="description" content="ブラウザだけで動く無料の化学学習ツール Meimay。IUPAC 命名トレーナー，IR・NMR・MS のスペクトル解析トレーナー，巻矢印の反応機構トレーナーを収録。インストール不要・登録不要でオフライン完結。">
 <link rel="canonical" href="https://meimay-chem.com/">
 <link rel="alternate" hreflang="ja" href="https://meimay-chem.com/">
 <link rel="alternate" hreflang="en" href="https://meimay-chem.com/en.html">
@@ -92,7 +92,7 @@
 
   @media (max-width:680px){
     .wrap{padding:22px 14px 60px;}
-    .bgfx{display:block;}
+    .bgfx{display:none;}
     .brand-title{font-size:1.28rem;}
   }
 
@@ -104,8 +104,9 @@
   .lead{animation-delay:.12s;}
   .grid .appcard:nth-child(1){animation-delay:.18s;}
   .grid .appcard:nth-child(2){animation-delay:.26s;}
-  .about{animation-delay:.34s;}
-  .ftr{animation-delay:.40s;}
+  .grid .appcard:nth-child(3){animation-delay:.34s;}
+  .about{animation-delay:.42s;}
+  .ftr{animation-delay:.48s;}
 
   /* カード上端に走るアクセントバー＋ホバー時の淡い発光 */
   .appcard{overflow:hidden;}
@@ -126,6 +127,10 @@
   @keyframes scanDraw{from{stroke-dashoffset:120;} to{stroke-dashoffset:0;}}
   .ico .wave{stroke-dasharray:120; animation:scanDraw 1.5s ease-out .55s backwards;}
 
+  /* 巻矢印のアイコンが矢印を描くように現れる（機構のモチーフ） */
+  @keyframes curlDraw{from{stroke-dashoffset:44;} to{stroke-dashoffset:0;}}
+  .ico .curl{stroke-dasharray:44; animation:curlDraw 1.2s ease-out .6s backwards;}
+
   /* 背景の六角形（＝分子）がゆっくり漂う（PCのみ） */
   @keyframes drift1{0%,100%{transform:translate(0,0) rotate(0);} 50%{transform:translate(10px,-14px) rotate(7deg);}}
   @keyframes drift2{0%,100%{transform:translate(0,0) rotate(0);} 50%{transform:translate(-14px,12px) rotate(-8deg);}}
@@ -144,13 +149,11 @@
   /* 動きを減らす設定の人には自動アニメを止める */
   @media (prefers-reduced-motion: reduce){
     .brand,.langtoggle,.lead,.appcard,.about,.ftr,
-    .bgfx .h1,.bgfx .h2,.bgfx .h3,.ico .wave{animation:none !important;}
+    .bgfx .h1,.bgfx .h2,.bgfx .h3,.ico .wave,.ico .curl{animation:none !important;}
     .go::after{display:none;}
     .appcard::before{transition:none;}
   }
 </style>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8449288336764592" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="bgfx" aria-hidden="true">
@@ -204,6 +207,20 @@
         <h2>Meimay 分光</h2>
         <p>IR・¹H/¹³C-NMR・MS のスペクトルを読み，構造を推定する練習。特性吸収と化学シフトの読み方を学び，個別特訓で反射を鍛え，総合解析で未知試料をパーツから組み立てます。</p>
         <a class="go" href="spectrum/">はじめる →</a>
+      </article>
+
+      <!-- 反応機構（稼働中） -->
+      <article class="appcard live">
+        <svg class="ico" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="20,4 33,12 33,28 20,36 7,28 7,12" stroke="#2DD4BF" stroke-width="1.6" fill="rgba(45,212,191,0.06)"/>
+          <path class="curl" d="M11 26 Q20 8 29 22" stroke="#FBBF24" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+          <path d="M29 22 l-4.5 -0.6 M29 22 l-1.4 -4.2" stroke="#FBBF24" stroke-width="1.7" stroke-linecap="round"/>
+          <circle cx="11" cy="26" r="1.8" fill="#2DD4BF"/>
+        </svg>
+        <div class="tag">反応機構</div>
+        <h2>Meimay 巻矢印</h2>
+        <p>巻矢印(電子の押し出し)を自分の手で描き，有機反応機構を組み立てる練習。結合や非共有電子対を始点に矢印を引き，SN1・SN2・E2・カルボニル付加などの機構を1段階ずつ進めます。</p>
+        <a class="go" href="arrow/">はじめる →</a>
       </article>
 
     </div>
